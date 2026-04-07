@@ -19,6 +19,22 @@ set -a
 source "$SECRETS_FILE"
 set +a
 
+# GH_TOKEN の貼り付けミス（改行・前後空白・余分な "）で URL が壊れるのを防ぐ
+sanitize_gh_token() {
+  local t="${1:-}"
+  t="${t//$'\r'/}"
+  t="${t//$'\n'/}"
+  t="${t#"${t%%[![:space:]]*}"}"
+  t="${t%"${t##*[![:space:]]}"}"
+  # 全体が "..." で囲まれているときだけ外す（macOS の bash 3.2 でも動くよう sed を使用）
+  t="$(printf '%s' "$t" | sed 's/^"\(.*\)"$/\1/')"
+  printf '%s' "$t"
+}
+
+if [[ -n "${GH_TOKEN:-}" ]]; then
+  GH_TOKEN="$(sanitize_gh_token "$GH_TOKEN")"
+fi
+
 if [[ -z "${GIT_USER_NAME:-}" || -z "${GIT_USER_EMAIL:-}" ]]; then
   echo "エラー: setup.secrets.env に GIT_USER_NAME と GIT_USER_EMAIL を設定してください。"
   exit 1
@@ -57,9 +73,13 @@ git branch -M main
 # remote は常にトークンなし URL（トークンは push の URL にだけ使う）
 git remote set-url origin "$REMOTE_HTTPS"
 
+# トークンを URL に埋め込まず Basic 認証ヘッダーで送る（特殊文字・改行混入でも安全）
 push_with_token() {
-  local url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_OWNER}/${GITHUB_REPO}.git"
-  git push "$url" "refs/heads/main:refs/heads/main"
+  local auth
+  auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+  GIT_TERMINAL_PROMPT=0 git \
+    -c http.extraHeader="Authorization: Basic ${auth}" \
+    push "$REMOTE_HTTPS" "refs/heads/main:refs/heads/main"
 }
 
 if [[ -n "${GH_TOKEN:-}" ]]; then
