@@ -9,6 +9,9 @@ export const TAG_LABELS: Record<string, string> = {
   budget: "予算",
   policy: "政策",
   r8: "R8年度",
+  logistics: "物流",
+  "direct-payment": "直接支払交付金",
+  facility: "共同利用施設",
 };
 
 export function getTagLabel(slug: string): string {

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "setup:first-push": "bash scripts/first-push.sh",
-    "setup:vercel": "bash scripts/vercel-first-deploy.sh"
+    "setup:vercel": "bash scripts/vercel-first-deploy.sh",
+    "article:publish": "bash scripts/publish-article.sh"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
