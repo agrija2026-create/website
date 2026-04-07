@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import { Header } from "@/components/Header";
+import { ArticleImageLightbox } from "@/components/ArticleImageLightbox";
 import "./globals.css";
 
 const notoSansJp = Noto_Sans_JP({
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={`${notoSansJp.variable} font-sans`}>
         <Header />
         {children}
+        <ArticleImageLightbox />
       </body>
     </html>
   );

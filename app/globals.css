@@ -77,6 +77,10 @@
     @apply rounded-lg border border-stone-200 bg-stone-50 p-4;
   }
 
+  .article-body figure img {
+    @apply mx-auto block h-auto max-w-full cursor-zoom-in rounded-md;
+  }
+
   .article-body figcaption {
     @apply mt-2 text-center text-sm text-stone-600;
   }
