@@ -73,10 +73,28 @@ git branch -M main
 # remote は常にトークンなし URL（トークンは push の URL にだけ使う）
 git remote set-url origin "$REMOTE_HTTPS"
 
-# トークンを URL に埋め込まず Basic 認証ヘッダーで送る（特殊文字・改行混入でも安全）
+# HTTPS のユーザー名: Classic PAT は x-access-token でよいが、
+# Fine-grained（github_pat_）は「トークンを作ったアカウントの GitHub ユーザー名」が必須。
+git_https_username() {
+  if [[ -n "${GITHUB_LOGIN:-}" ]]; then
+    printf '%s' "$GITHUB_LOGIN"
+    return
+  fi
+  if [[ "$GH_TOKEN" == github_pat_* ]]; then
+    echo ""
+    echo "エラー: Fine-grained トークン（github_pat_）を使うときは、setup.secrets.env に次を追加してください。"
+    echo "  GITHUB_LOGIN=\"あなたのGitHubユーザー名\""
+    echo "（組織名ではなく、ログインしている個人アカウントのユーザー名です。）"
+    exit 1
+  fi
+  printf 'x-access-token'
+}
+
+# トークンを URL に埋め込まず Basic 認証ヘッダーで送る
 push_with_token() {
-  local auth
-  auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+  local user auth
+  user="$(git_https_username)"
+  auth="$(printf '%s:%s' "$user" "$GH_TOKEN" | base64 | tr -d '\n')"
   GIT_TERMINAL_PROMPT=0 git \
     -c http.extraHeader="Authorization: Basic ${auth}" \
     push "$REMOTE_HTTPS" "refs/heads/main:refs/heads/main"
