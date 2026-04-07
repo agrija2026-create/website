@@ -35,6 +35,16 @@ if [[ -n "${GH_TOKEN:-}" ]]; then
   GH_TOKEN="$(sanitize_gh_token "$GH_TOKEN")"
 fi
 
+# GITHUB_LOGIN（Fine-grained 用）の整形・誤入力防止
+if [[ -n "${GITHUB_LOGIN:-}" ]]; then
+  GITHUB_LOGIN="$(sanitize_gh_token "$GITHUB_LOGIN")"
+  if [[ "$GITHUB_LOGIN" == *"@"* || "$GITHUB_LOGIN" == *"github.com"* || "$GITHUB_LOGIN" == *"://"* ]]; then
+    echo "エラー: GITHUB_LOGIN にメールや URL が入っています。"
+    echo "  プロフィールの URL が https://github.com/abc なら、ユーザー名は abc だけです。"
+    exit 1
+  fi
+fi
+
 if [[ -z "${GIT_USER_NAME:-}" || -z "${GIT_USER_EMAIL:-}" ]]; then
   echo "エラー: setup.secrets.env に GIT_USER_NAME と GIT_USER_EMAIL を設定してください。"
   exit 1
@@ -102,6 +112,13 @@ push_with_token() {
 
 if [[ -n "${GH_TOKEN:-}" ]]; then
   echo "GitHub へ push しています（トークン認証）…"
+  if [[ -n "${GITHUB_LOGIN:-}" ]]; then
+    echo "  （HTTPS ユーザー名: ${GITHUB_LOGIN}）"
+  elif [[ "$GH_TOKEN" == github_pat_* ]]; then
+    : # 上で必須チェック済み
+  else
+    echo "  （HTTPS ユーザー名: x-access-token … Classic PAT 想定）"
+  fi
   push_with_token
   git branch --set-upstream-to=origin/main main 2>/dev/null || true
 elif command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then
