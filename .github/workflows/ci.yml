@@ -1,0 +1,35 @@
+# main への push / PR ごとにビルド・Lint を自動実行します。
+# Vercel と GitHub を連携済みなら、同じタイミングで本番／プレビューへのデプロイも自動です。
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリを取得
+        uses: actions/checkout@v4
+
+      - name: Node.js をセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          # package-lock.json をコミットしたら cache: npm を追加すると高速化できます
+
+      - name: 依存関係をインストール
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: 本番ビルド
+        run: npm run build
