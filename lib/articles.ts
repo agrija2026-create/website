@@ -21,7 +21,7 @@ function readArticleFiles(): string[] {
   if (!fs.existsSync(articlesDirectory)) return [];
   return fs
     .readdirSync(articlesDirectory)
-    .filter((f) => f.endsWith(".md"))
+    .filter((f) => f.endsWith(".md") && !f.startsWith("_"))
     .map((f) => path.join(articlesDirectory, f));
 }
 
