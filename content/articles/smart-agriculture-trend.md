@@ -34,7 +34,7 @@ tags:
 
     <h2>スマート農業技術の例</h2>
     <figure>
-      <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0f7b64?auto=format&fit=crop&w=1600&q=80" alt="スマート農業技術のイメージ">
+      <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=1600&q=80" alt="スマート農業技術のイメージ">
       <figcaption>【図】スマート農業技術について（技術イメージ）</figcaption>
     </figure>
     <p>ロボット、AI、IoT等の情報通信技術を活用した「スマート農業技術」により、<strong>農作業の効率化</strong>、<strong>身体の負担の軽減</strong>、<strong>経営管理の合理化</strong>による生産性の向上が期待されています。</p>
