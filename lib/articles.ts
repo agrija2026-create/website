@@ -11,6 +11,7 @@ export type ArticleMeta = {
   publishedAt: string;
   category: string;
   tags: string[];
+  sourceHtmlFile?: string;
 };
 
 export type Article = ArticleMeta & {
@@ -36,6 +37,21 @@ function parseArticleFile(filePath: string): Article {
       ? [tagsRaw]
       : [];
 
+  const sourceHtmlFile =
+    typeof d.sourceHtmlFile === "string" ? d.sourceHtmlFile : undefined;
+  let htmlBody = content.trim();
+
+  if (sourceHtmlFile) {
+    const sourcePath = path.join(process.cwd(), sourceHtmlFile);
+    if (fs.existsSync(sourcePath)) {
+      const sourceRaw = fs.readFileSync(sourcePath, "utf8");
+      const articleMatch = sourceRaw.match(/<article[\s\S]*<\/article>/i);
+      if (articleMatch?.[0]) {
+        htmlBody = articleMatch[0];
+      }
+    }
+  }
+
   return {
     title: String(d.title ?? ""),
     slug: String(d.slug ?? ""),
@@ -43,7 +59,8 @@ function parseArticleFile(filePath: string): Article {
     publishedAt: String(d.publishedAt ?? ""),
     category: String(d.category ?? ""),
     tags,
-    htmlBody: content.trim(),
+    sourceHtmlFile,
+    htmlBody,
   };
 }
 
