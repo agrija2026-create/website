@@ -87,7 +87,15 @@
 
     .article-table-scroll::after {
       content: "表は横にスクロールできます";
-      @apply pointer-events-none absolute bottom-1 left-0 right-0 text-center text-xs text-stone-500;
+      pointer-events: none;
+      position: absolute;
+      bottom: 0.25rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: #78716c;
     }
   }
 
@@ -151,9 +159,11 @@
   }
 }
 
+/* print 内は @apply を使わない（Tailwind v4 / PostCSS でビルドエラーになる環境があるため） */
 @media print {
   body {
-    @apply bg-white text-black;
+    background-color: #fff !important;
+    color: #000 !important;
   }
 
   .no-print {
@@ -169,7 +179,8 @@
   }
 
   .article-body {
-    @apply max-w-none text-black;
+    max-width: none !important;
+    color: #000 !important;
   }
 
   .article-body a[href^="http"]::after {

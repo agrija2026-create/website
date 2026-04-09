@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type Props = {
   url: string;
@@ -10,7 +10,6 @@ type Props = {
 export function ArticleShareActions({ url, title }: Props) {
   const [status, setStatus] = useState<string | null>(null);
   const [canNativeShare, setCanNativeShare] = useState(false);
-  const statusRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     setCanNativeShare(typeof navigator.share === "function");
@@ -92,7 +91,7 @@ export function ArticleShareActions({ url, title }: Props) {
       >
         印刷
       </button>
-      <p ref={statusRef} className="sr-only" role="status" aria-live="polite">
+      <p className="sr-only" role="status" aria-live="polite">
         {status ?? ""}
       </p>
     </div>

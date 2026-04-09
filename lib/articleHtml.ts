@@ -21,12 +21,16 @@ function ensureUniqueId(base: string, used: Set<string>): string {
   return id;
 }
 
+/** Unicode プロパティエスケープはビルドターゲットによって失敗することがあるため、漢字・かな・英数字のレンジで除去する */
 function slugifyHeadingId(text: string, index: number, used: Set<string>): string {
   const normalized = text
     .normalize("NFKC")
     .trim()
     .replace(/\s+/g, "-")
-    .replace(/[^\p{L}\p{N}_-]+/gu, "")
+    .replace(
+      /[^a-zA-Z0-9\u3005-\u3007\u3041-\u3096\u309D-\u309E\u30A1-\u30FA\u30FC-\u30FE\u4E00-\u9FFF_-]+/g,
+      "",
+    )
     .slice(0, 80)
     .toLowerCase();
   const base = normalized || `section-${index}`;
