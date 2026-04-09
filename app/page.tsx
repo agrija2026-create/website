@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Sidebar } from "@/components/Sidebar";
 import { getAllArticles } from "@/lib/articles";
 import { CATEGORY_SLUGS, getCategoryName } from "@/lib/categories";
 
-const RECENT_COUNT = 6;
+const RECENT_COUNT = 3;
 const PER_CATEGORY_PREVIEW = 4;
 
 export default async function HomePage() {
@@ -29,6 +30,14 @@ export default async function HomePage() {
                   {recent.map((article) => (
                     <ArticleCard key={article.slug} article={article} />
                   ))}
+                </div>
+                <div className="mt-6">
+                  <Link
+                    href="/recent"
+                    className="inline-flex items-center rounded-lg border border-orange-200 bg-orange-50 px-4 py-2.5 text-sm font-semibold text-orange-900 transition-colors hover:border-orange-300 hover:bg-orange-100"
+                  >
+                    新着記事一覧を見る
+                  </Link>
                 </div>
               </section>
 

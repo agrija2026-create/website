@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Article } from "@/lib/articles";
 import { getCategoryName } from "@/lib/categories";
-import { getTagLabel, partitionTags } from "@/lib/tags";
+import { encodeTagForUrl, getTagLabel, partitionTags } from "@/lib/tags";
 
 function formatDate(iso: string): string {
   const d = new Date(iso);
@@ -38,7 +38,7 @@ export function ArticleCard({ article }: Props) {
           {audience.map((t) => (
             <Link
               key={t}
-              href={`/tags/${encodeURIComponent(t)}`}
+              href={`/tags/${encodeTagForUrl(t)}`}
               className="rounded-full bg-sky-50 px-2 py-0.5 text-xs font-medium text-sky-900 transition-colors hover:bg-sky-100"
             >
               {t}
@@ -52,7 +52,7 @@ export function ArticleCard({ article }: Props) {
           {other.map((t) => (
             <Link
               key={t}
-              href={`/tags/${encodeURIComponent(t)}`}
+              href={`/tags/${encodeTagForUrl(t)}`}
               className="rounded-full border border-stone-200 bg-stone-50 px-2 py-0.5 text-xs font-medium text-stone-700 transition-colors hover:border-orange-200 hover:bg-orange-50/80"
             >
               {getTagLabel(t)}

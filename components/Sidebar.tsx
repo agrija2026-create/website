@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { CATEGORY_MAP } from "@/lib/categories";
 import { getAllTagSlugs } from "@/lib/articles";
-import { AUDIENCE_TAGS, getTagLabel, isAudienceTag } from "@/lib/tags";
+import {
+  AUDIENCE_TAGS,
+  encodeTagForUrl,
+  getTagLabel,
+  isAudienceTag,
+} from "@/lib/tags";
 
 export async function Sidebar() {
   const tagSlugs = (await getAllTagSlugs()).filter((t) => !isAudienceTag(t));
@@ -41,7 +46,7 @@ export async function Sidebar() {
             {AUDIENCE_TAGS.map((label) => (
               <li key={label}>
                 <Link
-                  href={`/tags/${encodeURIComponent(label)}`}
+                  href={`/tags/${encodeTagForUrl(label)}`}
                   className="inline-block rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-medium text-sky-900 transition-colors hover:border-sky-300 hover:bg-sky-100"
                 >
                   {label}
@@ -57,7 +62,7 @@ export async function Sidebar() {
             {tagSlugs.map((slug) => (
               <li key={slug}>
                 <Link
-                  href={`/tags/${slug}`}
+                  href={`/tags/${encodeTagForUrl(slug)}`}
                   className="inline-block rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-700 transition-colors hover:border-orange-300 hover:bg-orange-50 hover:text-orange-900"
                 >
                   {getTagLabel(slug)}

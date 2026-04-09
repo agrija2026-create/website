@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { cache } from "react";
 import { sanitizeTrustedHtml } from "@/lib/sanitizeHtml";
-import { validateArticleAudienceTags } from "@/lib/tags";
+import { encodeTagForUrl, validateArticleAudienceTags } from "@/lib/tags";
 
 const articlesDirectory = path.join(process.cwd(), "content/articles");
 const sourceHtmlDirectoryPrefix = "content/source-html/";
@@ -254,11 +254,22 @@ export async function getRecentArticles(n: number): Promise<Article[]> {
   return (await getAllArticles()).slice(0, n);
 }
 
-/** 全記事からユニークなタグ slug（ソート済み） */
+/** 全記事からユニークなタグ（記事データ上の文字列・ソート済み） */
 export async function getAllTagSlugs(): Promise<string[]> {
   const set = new Set<string>();
   for (const a of await getAllArticles()) {
     for (const t of a.tags) set.add(t);
+  }
+  return Array.from(set).sort((x, y) => x.localeCompare(y, "ja"));
+}
+
+/** `/tags/[slug]` の generateStaticParams 用（URL セグメント・重複なし） */
+export async function getAllTagUrlParams(): Promise<string[]> {
+  const set = new Set<string>();
+  for (const a of await getAllArticles()) {
+    for (const t of a.tags) {
+      set.add(encodeTagForUrl(t));
+    }
   }
   return Array.from(set).sort((x, y) => x.localeCompare(y, "ja"));
 }

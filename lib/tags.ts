@@ -6,6 +6,27 @@ export const AUDIENCE_TAGS = ["生産者向け", "小売向け", "流通向け"]
 
 export type AudienceTag = (typeof AUDIENCE_TAGS)[number];
 
+/** 読者タグは URL を ASCII に固定（本番で日本語パスが静的生成と一致しない問題を避ける） */
+export const READER_TAG_PATH: Record<string, string> = {
+  生産者向け: "reader-producers",
+  小売向け: "reader-retail",
+  流通向け: "reader-distribution",
+};
+
+const pathToReaderTag = Object.fromEntries(
+  Object.entries(READER_TAG_PATH).map(([ja, pathSeg]) => [pathSeg, ja]),
+);
+
+/** 記事データ上のタグ → `/tags/[slug]` 用のパスセグメント */
+export function encodeTagForUrl(tag: string): string {
+  return READER_TAG_PATH[tag] ?? tag;
+}
+
+/** `/tags/[slug]` の param → 記事の tags と照合する文字列 */
+export function decodeTagFromUrl(segment: string): string {
+  return pathToReaderTag[segment] ?? segment;
+}
+
 const audienceSet = new Set<string>(AUDIENCE_TAGS);
 
 export function isAudienceTag(tag: string): boolean {
