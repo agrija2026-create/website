@@ -57,7 +57,7 @@ export function enrichArticleHtml(html: string): { html: string; toc: TocItem[] 
 
       if (existingId) {
         let id = existingId;
-        if (usedIds.has(id)) {
+        if (usedIds.has(id) && idAttrMatch) {
           id = ensureUniqueId(`${existingId}-dup`, usedIds);
           const newAttrs = attrs.replace(idAttrMatch[0], `id="${id}"`);
           toc.push({ level, text, id });
