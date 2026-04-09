@@ -6,160 +6,255 @@
   --color-brand-orange-dark: #c2410c;
 }
 
+/* @layer 内の @apply は Vercel 上の Tailwind v4 / PostCSS で失敗することがあるため、記事まわりは生 CSS に統一 */
+
 @layer base {
   body {
-    @apply bg-stone-100 text-stone-900 antialiased;
+    background-color: #f5f5f4;
+    color: #1c1917;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-@layer components {
-  .article-body {
-    @apply max-w-none text-stone-800;
-  }
+.article-body {
+  max-width: none;
+  color: #292524;
+}
 
-  .article-body article {
-    @apply space-y-6;
-  }
+.article-body article > * + * {
+  margin-top: 1.5rem;
+}
 
-  .article-body .article-header {
-    @apply space-y-4 border-b border-stone-200 pb-8;
-  }
+.article-body .article-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 1px solid #e7e5e4;
+  padding-bottom: 2rem;
+}
 
+.article-body h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1c1917;
+}
+
+@media (min-width: 768px) {
   .article-body h1 {
-    @apply text-3xl font-bold leading-tight text-stone-900 md:text-4xl;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+.article-body .lead {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  color: #57534e;
+}
+
+.article-body h2 {
+  margin-top: 2.5rem;
+  scroll-margin-top: 6rem;
+  border-bottom: 1px solid #e7e5e4;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #1c1917;
+}
+
+.article-body h2:first-of-type {
+  margin-top: 0;
+}
+
+.article-body p {
+  line-height: 1.625;
+}
+
+.article-body p,
+.article-body li,
+.article-body td,
+.article-body th,
+.article-body a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.article-body a {
+  color: #c2410c;
+  text-decoration: underline;
+  text-decoration-color: #fdba74;
+  text-underline-offset: 2px;
+  transition-property: color, background-color, border-color, text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.article-body a:hover {
+  color: #7c2d12;
+}
+
+.article-body strong {
+  font-weight: 600;
+  color: #1c1917;
+}
+
+.article-body ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.article-body ul > li + li {
+  margin-top: 0.5rem;
+}
+
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.article-table-scroll {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #e7e5e4;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+}
+
+.article-table-scroll table {
+  margin: 0;
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 640px) {
+  .article-table-scroll {
+    padding-bottom: 1.5rem;
+  }
+
+  .article-table-scroll::after {
+    content: "表は横にスクロールできます";
+    pointer-events: none;
+    position: absolute;
+    bottom: 0.25rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #78716c;
+  }
+}
+
+.article-body tr {
+  border-bottom: 1px solid #e7e5e4;
+}
+
+.article-body tr:last-child {
+  border-bottom-width: 0;
+}
+
+.article-body th {
+  width: 28%;
+  background-color: #f5f5f4;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  font-weight: 600;
+  color: #292524;
+}
+
+.article-body td {
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+  color: #44403c;
+}
+
+.article-body figure {
+  border-radius: 0.5rem;
+  border: 1px solid #e7e5e4;
+  background-color: #fafaf9;
+  padding: 1rem;
+}
+
+.article-body figure img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  cursor: zoom-in;
+  border-radius: 0.375rem;
+}
+
+.article-body figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #57534e;
+}
+
+.article-body .source {
+  margin-top: 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e7e5e4;
+  background-color: #fafaf9;
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: #57534e;
+}
+
+.article-body .source a {
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .article-body h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .article-body .lead {
-    @apply text-lg leading-relaxed text-stone-600;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .article-body h2 {
-    @apply mt-10 scroll-mt-24 border-b border-stone-200 pb-2 text-2xl font-bold text-stone-900;
-  }
-
-  .article-body h2:first-of-type {
-    @apply mt-0;
-  }
-
-  .article-body p {
-    @apply leading-relaxed;
-  }
-
-  .article-body p,
-  .article-body li,
-  .article-body td,
-  .article-body th,
-  .article-body a {
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-  .article-body a {
-    @apply text-orange-700 underline decoration-orange-300 underline-offset-2 transition-colors hover:text-orange-900;
-  }
-
-  .article-body strong {
-    @apply font-semibold text-stone-900;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .article-body ul {
-    @apply list-disc space-y-2 pl-6;
+    padding-left: 1.25rem;
   }
 
-  .article-body table {
-    @apply w-full border-collapse text-sm;
-  }
-
-  .article-table-scroll {
-    @apply relative my-4 w-full overflow-x-auto rounded-lg border border-stone-200 bg-white shadow-sm;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-gutter: stable;
-  }
-
-  .article-table-scroll table {
-    @apply m-0 block w-max min-w-full rounded-none shadow-none;
-  }
-
-  @media (max-width: 640px) {
-    .article-table-scroll {
-      @apply pb-6;
-    }
-
-    .article-table-scroll::after {
-      content: "表は横にスクロールできます";
-      pointer-events: none;
-      position: absolute;
-      bottom: 0.25rem;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 0.75rem;
-      line-height: 1rem;
-      color: #78716c;
-    }
-  }
-
-  .article-body tr {
-    @apply border-b border-stone-200 last:border-b-0;
-  }
-
-  .article-body th {
-    @apply w-[28%] bg-stone-100 px-4 py-3 text-left align-top font-semibold text-stone-800;
-  }
-
+  .article-body th,
   .article-body td {
-    @apply bg-white px-4 py-3 align-top text-stone-700;
+    padding: 0.5rem 0.75rem;
   }
 
   .article-body figure {
-    @apply rounded-lg border border-stone-200 bg-stone-50 p-4;
-  }
-
-  .article-body figure img {
-    @apply mx-auto block h-auto max-w-full cursor-zoom-in rounded-md;
-  }
-
-  .article-body figcaption {
-    @apply mt-2 text-center text-sm text-stone-600;
-  }
-
-  .article-body .source {
-    @apply mt-10 rounded-lg border border-stone-200 bg-stone-50 p-4 text-sm leading-relaxed text-stone-600;
-  }
-
-  .article-body .source a {
-    @apply font-medium;
-  }
-
-  @media (max-width: 640px) {
-    .article-body h1 {
-      @apply text-2xl;
-    }
-
-    .article-body .lead {
-      @apply text-base;
-    }
-
-    .article-body h2 {
-      @apply mt-8 text-xl;
-    }
-
-    .article-body ul {
-      @apply pl-5;
-    }
-
-    .article-body th,
-    .article-body td {
-      @apply px-3 py-2;
-    }
-
-    .article-body figure {
-      @apply p-3;
-    }
+    padding: 0.75rem;
   }
 }
 
-/* print 内は @apply を使わない（Tailwind v4 / PostCSS でビルドエラーになる環境があるため） */
 @media print {
   body {
     background-color: #fff !important;
