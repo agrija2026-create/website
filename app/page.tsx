@@ -1,14 +1,15 @@
 import { Hero } from "@/components/Hero";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Sidebar } from "@/components/Sidebar";
-import { getArticlesByCategory, getRecentArticles } from "@/lib/articles";
+import { getAllArticles } from "@/lib/articles";
 import { CATEGORY_SLUGS, getCategoryName } from "@/lib/categories";
 
 const RECENT_COUNT = 6;
 const PER_CATEGORY_PREVIEW = 4;
 
-export default function HomePage() {
-  const recent = getRecentArticles(RECENT_COUNT);
+export default async function HomePage() {
+  const allArticles = await getAllArticles();
+  const recent = allArticles.slice(0, RECENT_COUNT);
 
   return (
     <>
@@ -39,7 +40,7 @@ export default function HomePage() {
                   カテゴリ別
                 </h2>
                 {CATEGORY_SLUGS.map((slug) => {
-                  const inCategory = getArticlesByCategory(slug).slice(
+                  const inCategory = allArticles.filter((a) => a.category === slug).slice(
                     0,
                     PER_CATEGORY_PREVIEW,
                   );

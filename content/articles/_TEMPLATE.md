@@ -3,10 +3,12 @@ title: "記事タイトル"
 slug: "example-slug"
 description: "記事の要約（120文字前後）"
 publishedAt: "2026-04-07"
-category: "seisaku"
+category: "policy"
+# 読者タグ（生産者向け・小売向け・流通向け）を必ず1〜3個。表記ゆれ禁止。
 tags:
-  - "smart-agriculture"
+  - 生産者向け
   - "maff"
+  - "smart-agriculture"
 ---
 
 <article>

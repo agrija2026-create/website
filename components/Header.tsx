@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const navItems = [
   { href: "/", label: "トップ" },
-  { href: "/categories/yosan", label: "R8年度予算" },
-  { href: "/categories/seisaku", label: "政策・制度" },
+  { href: "/categories/budget", label: "予算・財政" },
+  { href: "/categories/policy", label: "政策・制度" },
   { href: "/tags/smart-agriculture", label: "スマート農業" },
 ];
 

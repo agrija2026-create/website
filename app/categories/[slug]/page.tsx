@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }: Props) {
   const { slug } = await params;
   if (!isValidCategorySlug(slug)) notFound();
 
-  const articles = getArticlesByCategory(slug);
+  const articles = await getArticlesByCategory(slug);
   const name = getCategoryName(slug);
 
   return (

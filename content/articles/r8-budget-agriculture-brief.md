@@ -3,8 +3,11 @@ title: "R8年度 農林水産関係予算の読み方（ミニ解説）"
 slug: r8-budget-agriculture-brief
 description: "令和8年度予算における農林水産分野の位置づけを、キーワード中心に短く整理したミニ記事です（構成・数値は例示）。"
 publishedAt: "2026-04-01"
-category: yosan
+category: budget
 tags:
+  - 生産者向け
+  - 小売向け
+  - 流通向け
   - budget
   - maff
   - r8

@@ -3,8 +3,9 @@ title: "スマート農業をめぐる情勢とは？背景・技術・政策の
 slug: smart-agriculture-trend
 description: "農林水産省資料「スマート農業をめぐる情勢について」（2026年3月）に基づき、背景・定義・技術例・政策の流れ・基本計画での位置づけ・KPIを整理した解説です。"
 publishedAt: "2026-03-15"
-category: seisaku
+category: technology
 tags:
+  - 生産者向け
   - smart-agriculture
   - maff
   - basic-plan

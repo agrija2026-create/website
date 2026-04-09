@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-import { Header } from "@/components/Header";
 import { ArticleImageLightbox } from "@/components/ArticleImageLightbox";
+import { Header } from "@/components/Header";
+import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
+import { SITE_URL_ORIGIN } from "@/lib/site";
 import "./globals.css";
 
 const notoSansJp = Noto_Sans_JP({
@@ -12,6 +14,7 @@ const notoSansJp = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL_ORIGIN),
   title: {
     default: "農業情報メディア",
     template: "%s | 農業情報メディア",
@@ -27,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${notoSansJp.variable} font-sans`}>
+        <OrganizationJsonLd />
         <Header />
         {children}
         <ArticleImageLightbox />

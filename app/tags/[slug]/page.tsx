@@ -9,13 +9,13 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  return getAllTagSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  return (await getAllTagSlugs()).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const articles = getArticlesByTag(slug);
+  const articles = await getArticlesByTag(slug);
   if (articles.length === 0) {
     return { title: "タグが見つかりません" };
   }
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TagPage({ params }: Props) {
   const { slug } = await params;
-  const articles = getArticlesByTag(slug);
+  const articles = await getArticlesByTag(slug);
   if (articles.length === 0) notFound();
 
   const label = getTagLabel(slug);

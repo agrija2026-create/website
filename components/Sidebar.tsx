@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { CATEGORY_MAP } from "@/lib/categories";
 import { getAllTagSlugs } from "@/lib/articles";
-import { getTagLabel } from "@/lib/tags";
+import { AUDIENCE_TAGS, getTagLabel, isAudienceTag } from "@/lib/tags";
 
-export function Sidebar() {
-  const tagSlugs = getAllTagSlugs();
+export async function Sidebar() {
+  const tagSlugs = (await getAllTagSlugs()).filter((t) => !isAudienceTag(t));
 
   return (
     <aside className="w-full shrink-0 lg:w-72">
@@ -33,6 +33,22 @@ export function Sidebar() {
               <span>@agri_ja</span>
             </a>
           </div>
+        </section>
+
+        <section>
+          <h2 className="text-sm font-bold text-stone-900">読者別</h2>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {AUDIENCE_TAGS.map((label) => (
+              <li key={label}>
+                <Link
+                  href={`/tags/${encodeURIComponent(label)}`}
+                  className="inline-block rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-medium text-sky-900 transition-colors hover:border-sky-300 hover:bg-sky-100"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section>
