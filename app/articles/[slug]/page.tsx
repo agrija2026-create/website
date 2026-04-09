@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArticleBreadcrumb } from "@/components/ArticleBreadcrumb";
+import { ArticleShareActions } from "@/components/ArticleShareActions";
 import { ArticleStructuredData } from "@/components/ArticleStructuredData";
+import { ArticleTakeaways } from "@/components/ArticleTakeaways";
+import { ArticleToc } from "@/components/ArticleToc";
+import { RelatedArticles } from "@/components/RelatedArticles";
 import { Sidebar } from "@/components/Sidebar";
-import { getAllArticles, getArticleBySlug } from "@/lib/articles";
+import { estimateReadingMinutesJa } from "@/lib/articleHtml";
+import {
+  getAllArticles,
+  getArticleBySlug,
+  getRelatedArticles,
+} from "@/lib/articles";
 import { getCategoryName } from "@/lib/categories";
 import { absoluteUrl, toIsoDateTime } from "@/lib/site";
 import { encodeTagForUrl, getTagLabel, partitionTags } from "@/lib/tags";
@@ -53,18 +63,18 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   const { audience, other } = partitionTags(article.tags);
+  const pageUrl = absoluteUrl(`/articles/${slug}`);
+  const readingMinutes = estimateReadingMinutesJa(article.htmlBody, article.description);
+  const related = await getRelatedArticles(slug, article.category, 3);
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-start lg:gap-10">
         <div className="min-w-0 flex-1">
           <ArticleStructuredData article={article} slug={slug} />
-          <nav className="text-sm text-stone-500">
-            <Link href="/" className="hover:text-orange-800 hover:underline">
-              トップ
-            </Link>
-          </nav>
-          <header className="mt-6 border-b border-stone-200 pb-6">
+          <ArticleBreadcrumb categorySlug={article.category} articleTitle={article.title} />
+          <ArticleShareActions url={pageUrl} title={article.title} />
+          <header className="mt-2 border-b border-stone-200 pb-6">
             <div className="flex flex-wrap items-center gap-2 text-sm text-stone-500">
               <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
               <span aria-hidden>·</span>
@@ -104,12 +114,19 @@ export default async function ArticlePage({ params }: Props) {
               </div>
             )}
           </header>
+          <ArticleTakeaways takeaways={article.takeaways} readingMinutes={readingMinutes} />
+          <div className="mt-6 max-w-3xl">
+            <ArticleToc items={article.toc} variant="mobile" />
+          </div>
           <div
-            className="article-body mt-10 max-w-3xl"
+            className="article-body mt-6 max-w-3xl"
             dangerouslySetInnerHTML={{ __html: article.htmlBody }}
           />
+          <div className="max-w-3xl">
+            <RelatedArticles articles={related} />
+          </div>
         </div>
-        <Sidebar />
+        <Sidebar tocItems={article.toc} />
       </div>
     </div>
   );

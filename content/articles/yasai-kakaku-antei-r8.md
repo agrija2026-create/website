@@ -10,6 +10,10 @@ tags:
   - "budget"
   - "maff"
   - "yasai"
+takeaways:
+  - 指定野菜・特定野菜の違いと価格安定対策の考え方
+  - 令和8年度で変わる点のチェックポイント
+  - 農林水産省・ALIC等の一次情報での確認が前提であること
 sourceHtmlFile: "content/source-html/yasai-kakaku-antei-r8.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->

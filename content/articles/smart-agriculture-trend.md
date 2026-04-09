@@ -9,6 +9,10 @@ tags:
   - smart-agriculture
   - maff
   - basic-plan
+takeaways:
+  - スマート農業をめぐる政策背景と定義・効果の整理
+  - 技術例・政策の流れ・食料・農業・農村基本計画での位置づけ
+  - KPIや制度詳細は農林水産省の一次情報で確認すること
 ---
 
 <article class="article-smart-meguji">

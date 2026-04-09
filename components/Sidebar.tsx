@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { CATEGORY_MAP } from "@/lib/categories";
 import { getAllTagSlugs } from "@/lib/articles";
+import { CATEGORY_MAP } from "@/lib/categories";
+import type { TocItem } from "@/lib/articleHtml";
+import { ArticleToc } from "@/components/ArticleToc";
 import {
   AUDIENCE_TAGS,
   encodeTagForUrl,
@@ -8,12 +10,22 @@ import {
   isAudienceTag,
 } from "@/lib/tags";
 
-export async function Sidebar() {
+type SidebarProps = {
+  tocItems?: TocItem[];
+};
+
+export async function Sidebar({ tocItems }: SidebarProps = {}) {
   const tagSlugs = (await getAllTagSlugs()).filter((t) => !isAudienceTag(t));
 
   return (
     <aside className="w-full shrink-0 lg:w-72">
       <div className="space-y-8 rounded-xl border border-stone-200 bg-white p-6 shadow-sm lg:sticky lg:top-20">
+        {tocItems && tocItems.length > 0 ? (
+          <div className="hidden lg:block">
+            <ArticleToc items={tocItems} variant="desktop" />
+          </div>
+        ) : null}
+
         <section>
           <h2 className="text-sm font-bold text-stone-900">このサイトについて</h2>
           <p className="mt-2 text-sm leading-relaxed text-stone-600">

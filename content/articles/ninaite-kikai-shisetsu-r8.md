@@ -9,6 +9,10 @@ tags:
   - "budget"
   - "maff"
   - "policy"
+takeaways:
+  - 担い手向け機械・施設導入支援の対象と補助の考え方
+  - 補助率・上限額など確認すべき数字の置き場所
+  - 最新の要件は省庁・事業要綱で確認すること
 sourceHtmlFile: "content/source-html/ninaite-kikai-shisetsu-r8.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->

@@ -2,6 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { cache } from "react";
+import { enrichArticleHtml } from "@/lib/articleHtml";
+import type { TocItem } from "@/lib/articleHtml";
 import { sanitizeTrustedHtml } from "@/lib/sanitizeHtml";
 import { encodeTagForUrl, validateArticleAudienceTags } from "@/lib/tags";
 
@@ -17,11 +19,14 @@ export type ArticleMeta = {
   publishedAt: string;
   category: string;
   tags: string[];
+  /** 冒頭「この記事でわかること」用（任意） */
+  takeaways: string[];
   sourceHtmlFile?: string;
 };
 
 export type Article = ArticleMeta & {
   htmlBody: string;
+  toc: TocItem[];
 };
 
 function readLocalArticleFiles(): string[] {
@@ -77,6 +82,13 @@ function parseArticleFile(filePath: string): Article {
       ? [tagsRaw]
       : [];
 
+  const takeawaysRaw = d.takeaways;
+  const takeaways = Array.isArray(takeawaysRaw)
+    ? takeawaysRaw.map(String).filter(Boolean)
+    : typeof takeawaysRaw === "string" && takeawaysRaw.trim()
+      ? [takeawaysRaw.trim()]
+      : [];
+
   const sourceHtmlFile =
     typeof d.sourceHtmlFile === "string" ? d.sourceHtmlFile : undefined;
   let htmlBody = content.trim();
@@ -94,6 +106,9 @@ function parseArticleFile(filePath: string): Article {
 
   validateArticleAudienceTags(tags, path.basename(filePath));
 
+  const sanitized = sanitizeTrustedHtml(htmlBody);
+  const { html: enrichedHtml, toc } = enrichArticleHtml(sanitized);
+
   return {
     title: String(d.title ?? ""),
     slug: String(d.slug ?? ""),
@@ -101,8 +116,10 @@ function parseArticleFile(filePath: string): Article {
     publishedAt: String(d.publishedAt ?? ""),
     category: String(d.category ?? ""),
     tags,
+    takeaways,
     sourceHtmlFile,
-    htmlBody: sanitizeTrustedHtml(htmlBody),
+    htmlBody: enrichedHtml,
+    toc,
   };
 }
 
@@ -174,6 +191,16 @@ function normalizeMicroCmsArticle(item: MicroCmsArticle): Article | null {
 
   validateArticleAudienceTags(tags, `microCMS:${slug}`);
 
+  const takeawaysRaw = item.takeaways;
+  const takeaways = Array.isArray(takeawaysRaw)
+    ? takeawaysRaw.map(String).filter(Boolean)
+    : typeof takeawaysRaw === "string" && takeawaysRaw.trim()
+      ? [takeawaysRaw.trim()]
+      : [];
+
+  const sanitized = sanitizeTrustedHtml(bodyCandidate);
+  const { html: enrichedHtml, toc } = enrichArticleHtml(sanitized);
+
   return {
     title,
     slug,
@@ -181,7 +208,9 @@ function normalizeMicroCmsArticle(item: MicroCmsArticle): Article | null {
     publishedAt,
     category,
     tags,
-    htmlBody: sanitizeTrustedHtml(bodyCandidate),
+    takeaways,
+    htmlBody: enrichedHtml,
+    toc,
   };
 }
 
@@ -252,6 +281,33 @@ export async function getArticlesByTag(tagSlug: string): Promise<Article[]> {
 
 export async function getRecentArticles(n: number): Promise<Article[]> {
   return (await getAllArticles()).slice(0, n);
+}
+
+/** 同カテゴリを優先し、足りなければ他カテゴリの新着で埋める */
+export async function getRelatedArticles(
+  slug: string,
+  category: string,
+  limit = 3,
+): Promise<Article[]> {
+  const all = await getAllArticles();
+  const out: Article[] = [];
+  const seen = new Set<string>();
+
+  for (const a of all) {
+    if (a.slug === slug || a.category !== category) continue;
+    out.push(a);
+    seen.add(a.slug);
+    if (out.length >= limit) return out;
+  }
+
+  for (const a of all) {
+    if (a.slug === slug || seen.has(a.slug)) continue;
+    out.push(a);
+    seen.add(a.slug);
+    if (out.length >= limit) return out;
+  }
+
+  return out;
 }
 
 /** 全記事からユニークなタグ（記事データ上の文字列・ソート済み） */

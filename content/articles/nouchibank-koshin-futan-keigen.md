@@ -10,6 +10,10 @@ tags:
   - "maff"
   - "nouchibank"
   - "policy"
+takeaways:
+  - 農地バンクの更新手続で使われる主な負担軽減の工夫（契約会・相談会・委託等）
+  - AI-OCRや権限移譲など、デジタル・体制面の取り組みの位置づけ
+  - 運用の詳細は農林水産省・各機関の一次情報で確認すること
 sourceHtmlFile: "content/source-html/nouchibank-koshin-futan-keigen.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->

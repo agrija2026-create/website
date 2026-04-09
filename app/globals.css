@@ -67,8 +67,28 @@
   }
 
   .article-body table {
-    @apply block w-full overflow-x-auto border-collapse rounded-lg text-sm shadow-sm;
+    @apply w-full border-collapse text-sm;
+  }
+
+  .article-table-scroll {
+    @apply relative my-4 w-full overflow-x-auto rounded-lg border border-stone-200 bg-white shadow-sm;
     -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
+  }
+
+  .article-table-scroll table {
+    @apply m-0 block w-max min-w-full rounded-none shadow-none;
+  }
+
+  @media (max-width: 640px) {
+    .article-table-scroll {
+      @apply pb-6;
+    }
+
+    .article-table-scroll::after {
+      content: "表は横にスクロールできます";
+      @apply pointer-events-none absolute bottom-1 left-0 right-0 text-center text-xs text-stone-500;
+    }
   }
 
   .article-body tr {
@@ -128,5 +148,55 @@
     .article-body figure {
       @apply p-3;
     }
+  }
+}
+
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  header {
+    display: none !important;
+  }
+
+  aside {
+    display: none !important;
+  }
+
+  .article-body {
+    @apply max-w-none text-black;
+  }
+
+  .article-body a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #444;
+    word-break: break-all;
+  }
+
+  .article-table-scroll {
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .article-table-scroll::after {
+    content: none !important;
+  }
+
+  .article-table-scroll table {
+    display: table !important;
+    width: 100% !important;
+    font-size: 10pt;
+  }
+
+  .article-body tr {
+    break-inside: avoid;
   }
 }

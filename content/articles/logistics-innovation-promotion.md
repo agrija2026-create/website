@@ -10,6 +10,10 @@ tags:
   - "policy"
   - "maff"
   - "logistics"
+takeaways:
+  - 物流革新に向けた農林水産分野の背景と主な施策の整理
+  - 予算・政策パッケージの見方のヒント
+  - 一次情報（農林水産省資料等）との照合の重要性
 sourceHtmlFile: "content/source-html/logistics-innovation-promotion.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->
