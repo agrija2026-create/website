@@ -96,7 +96,7 @@ function wrapTables(html: string): string {
       break;
     }
     const end = closeIdx + "</table>".length;
-    const chunk = html.slice(open, end);
+    const chunk = normalizeTableChunk(html.slice(open, end));
     result +=
       '<div class="article-table-scroll" tabindex="0" role="region" aria-label="表（横にスクロールできます）">' +
       chunk +
@@ -104,6 +104,55 @@ function wrapTables(html: string): string {
     i = end;
   }
   return result;
+}
+
+function normalizeTableChunk(chunk: string): string {
+  const hasSummaryClass = /\barticle-summary-table\b/i.test(chunk);
+  const hasDataClass = /\barticle-data-table\b/i.test(chunk);
+  if (hasSummaryClass || hasDataClass) {
+    return chunk;
+  }
+
+  const columnCount = inferTableColumnCount(chunk);
+  const inferredClass = columnCount <= 2 ? "article-summary-table" : "article-data-table";
+  return appendClassToTable(chunk, inferredClass);
+}
+
+function inferTableColumnCount(chunk: string): number {
+  const rows = chunk.match(/<tr\b[\s\S]*?<\/tr>/gi) ?? [];
+  let maxCells = 0;
+
+  for (const row of rows) {
+    const cellCount = row.match(/<(?:th|td)\b/gi)?.length ?? 0;
+    if (cellCount > maxCells) {
+      maxCells = cellCount;
+    }
+  }
+
+  return Math.max(maxCells, 1);
+}
+
+function appendClassToTable(chunk: string, className: string): string {
+  return chunk.replace(/<table\b([^>]*)>/i, (full, attrs: string) => {
+    const classMatch = attrs.match(/\bclass\s*=\s*(["'])(.*?)\1/i);
+
+    if (classMatch) {
+      const existingClasses = classMatch[2]
+        .split(/\s+/)
+        .map((value) => value.trim())
+        .filter(Boolean);
+
+      if (!existingClasses.includes(className)) {
+        existingClasses.push(className);
+      }
+
+      return `<table${attrs.replace(classMatch[0], `class="${existingClasses.join(" ")}"`)}>`;
+    }
+
+    return attrs.trim()
+      ? `<table${attrs} class="${className}">`
+      : `<table class="${className}">`;
+  });
 }
 
 /** 日本語本文のおおよその読了時間（分）。文字数÷500、最低1分 */

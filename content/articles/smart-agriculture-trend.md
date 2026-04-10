@@ -43,7 +43,7 @@ takeaways:
 
     <h2>スマート農業技術の例</h2>
     <figure>
-      <img src="/article-images/smart-agriculture-trend/figure-01.avif" alt="スマート農業技術のイメージ">
+      <img src="/article-images/smart-agriculture-trend/figure-01.png" alt="スマート農業技術のイメージ">
       <figcaption>【図】スマート農業技術について（技術イメージ）</figcaption>
     </figure>
     <p>ロボット、AI、IoT等の情報通信技術を活用した「スマート農業技術」により、<strong>農作業の効率化</strong>、<strong>身体の負担の軽減</strong>、<strong>経営管理の合理化</strong>による生産性の向上が期待されています。</p>
@@ -54,7 +54,7 @@ takeaways:
 
     <h2>スマート農業とは何か</h2>
     <figure>
-      <img src="/article-images/smart-agriculture-trend/figure-02.avif" alt="スマート農業の定義と三つの効果">
+      <img src="/article-images/smart-agriculture-trend/figure-02.png" alt="スマート農業の定義と三つの効果">
       <figcaption>【図】スマート農業について（定義・効果・データ連携）</figcaption>
     </figure>
     <p><strong>「スマート農業」</strong>とは、<strong>ロボット、AI、IoTなど先端技術を活用する農業</strong>のことです。政府は「生産現場の課題を先端技術で解決する——農業分野におけるSociety5.0の実現」を掲げています。</p>
@@ -66,7 +66,7 @@ takeaways:
 
     <h2>スマート農業をめぐる政策の流れ</h2>
     <figure>
-      <img src="/article-images/smart-agriculture-trend/figure-03.avif" alt="スマート農業分野の取組の経緯">
+      <img src="/article-images/smart-agriculture-trend/figure-03.png" alt="スマート農業分野の取組の経緯">
       <figcaption>【図】スマート農業分野の取組について</figcaption>
     </figure>
     <p>2013年（平成25年）に「スマート農業の実現に向けた研究会」が立ち上げられ、スマート農業の将来像とロードマップが取りまとめられました。2019年（令和元年）からは<strong>スマート農業実証プロジェクト</strong>（〜令和6年）が始まり、スマート農業技術を生産現場に導入し、経営改善の効果を明らかにする取組が進められました。</p>
@@ -75,7 +75,7 @@ takeaways:
 
     <h2>基本計画での位置づけ</h2>
     <figure>
-      <img src="/article-images/smart-agriculture-trend/figure-04.avif" alt="基本法の改正内容とスマート農業の位置づけ">
+      <img src="/article-images/smart-agriculture-trend/figure-04.png" alt="基本法の改正内容とスマート農業の位置づけ">
       <figcaption>【図】食料・農業・農村基本法の改正内容</figcaption>
     </figure>
     <p>食料・農業・農村基本法では、<strong>農業の持続的な発展</strong>を基本理念とし、望ましい農業構造の確立、将来の農業生産の方向性として<strong>生産性向上・付加価値向上・環境負荷低減</strong>を掲げています。</p>

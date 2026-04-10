@@ -115,6 +115,7 @@
   border-collapse: collapse;
   font-size: 0.875rem;
   line-height: 1.6;
+  table-layout: fixed;
 }
 
 .article-table-scroll {
@@ -133,8 +134,8 @@
 
 .article-table-scroll table {
   margin: 0;
-  display: block;
-  width: max-content;
+  display: table;
+  width: 100%;
   min-width: 100%;
   border-radius: 0;
   box-shadow: none;
@@ -147,11 +148,19 @@
 .article-table-scroll .article-summary-table {
   display: table;
   width: 100%;
-  min-width: 46rem;
+  min-width: 100%;
+}
+
+.article-body .article-data-table {
+  table-layout: fixed;
+}
+
+.article-table-scroll .article-data-table {
+  min-width: 42rem;
 }
 
 .article-body .article-summary-table-col-key {
-  width: 5.25rem;
+  width: clamp(7rem, 24%, 10rem);
 }
 
 .article-body .article-summary-table-col-value {
@@ -186,13 +195,15 @@
 }
 
 .article-body th {
-  width: 28%;
+  width: auto;
+  min-width: 7rem;
   background-color: #f5f5f4;
   padding: 0.75rem 1rem;
   text-align: left;
   vertical-align: top;
   font-weight: 600;
   color: #292524;
+  overflow-wrap: anywhere;
 }
 
 .article-body td {
@@ -200,6 +211,7 @@
   padding: 0.75rem 1rem;
   vertical-align: top;
   color: #44403c;
+  overflow-wrap: anywhere;
 }
 
 .article-body .article-summary-table th,
@@ -209,9 +221,10 @@
 
 .article-body .article-summary-table th:first-child,
 .article-body .article-summary-table td:first-child {
-  width: 5.25rem;
-  min-width: 5.25rem;
-  white-space: nowrap;
+  width: clamp(7rem, 24%, 10rem);
+  min-width: 7rem;
+  max-width: 10rem;
+  white-space: normal;
   padding-right: 0.6rem;
 }
 
@@ -223,6 +236,11 @@
 
 .article-body .article-summary-table td {
   line-height: 1.75;
+}
+
+.article-body .article-data-table th,
+.article-body .article-data-table td {
+  min-width: 8rem;
 }
 
 .article-body figure {
@@ -292,7 +310,11 @@
   }
 
   .article-table-scroll .article-summary-table {
-    min-width: 38rem;
+    min-width: 32rem;
+  }
+
+  .article-table-scroll .article-data-table {
+    min-width: 40rem;
   }
 
   .article-body .article-summary-table th,
