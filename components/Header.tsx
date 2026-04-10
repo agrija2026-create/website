@@ -35,27 +35,6 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden lg:min-w-0 lg:flex-1 lg:justify-end lg:block" aria-label="メインナビゲーション">
-          <div className="grid grid-cols-4 gap-x-3 gap-y-1 text-right">
-          {navItems.map((item) => {
-            const active = isCurrentPath(pathname, item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`rounded-md px-1 py-0.5 text-xs font-medium leading-tight transition-colors xl:text-sm ${
-                  active
-                    ? "text-orange-900"
-                    : "text-stone-700 hover:text-orange-800"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-          </div>
-        </nav>
-
         <button
           type="button"
           className="inline-flex items-center justify-center rounded-lg border border-stone-200 bg-white p-2 text-stone-700 transition-colors hover:border-orange-300 hover:text-orange-800 lg:hidden"

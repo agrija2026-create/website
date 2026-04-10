@@ -29,10 +29,10 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
         <section>
           <h2 className="text-sm font-bold text-stone-900">このサイトについて</h2>
           <p className="mt-2 text-sm leading-relaxed text-stone-600">
-            農林水産の政策・予算・現場の動きを、要点を押さえてわかりやすく整理します。一次情報との照合を前提にご活用ください。
+            農林水産の政策・予算・現場の動きを、要点を押さえてわかりやすく整理します。記事の制作には一部生成AIを利用しています。一次情報との照合を前提にご活用ください。
           </p>
           <div className="mt-3 space-y-2">
-            <p className="text-sm leading-relaxed text-stone-600">運営：農業の人</p>
+            <p className="text-sm leading-relaxed text-stone-600">運営：農業情報メディア編集部</p>
             <a
               href="https://x.com/agri_ja"
               target="_blank"
