@@ -3,29 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { CATEGORY_SLUGS, getCategoryName } from "@/lib/categories";
 
-const navItems = [
-  {
-    href: "/categories/policy",
-    title: "政策・制度",
-    description: "制度改正や方針の要点",
-  },
-  {
-    href: "/categories/budget",
-    title: "予算・財政",
-    description: "補助金や予算措置を整理",
-  },
-  {
-    href: "/categories/market",
-    title: "市場・価格・需給",
-    description: "価格動向と流通の変化",
-  },
-  {
-    href: "/categories/technology",
-    title: "技術・DX・スマート農業",
-    description: "省力化と新技術の動き",
-  },
-] as const;
+const navItems = CATEGORY_SLUGS.map((slug) => ({
+  href: `/categories/${slug}`,
+  label: getCategoryName(slug),
+}));
 
 function isCurrentPath(pathname: string, href: string): boolean {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -52,29 +35,25 @@ export function Header() {
           </span>
         </Link>
 
-        <nav
-          className="hidden lg:grid lg:grid-cols-2 lg:gap-x-3 lg:gap-y-2"
-          aria-label="メインナビゲーション"
-        >
+        <nav className="hidden lg:min-w-0 lg:flex-1 lg:justify-end lg:block" aria-label="メインナビゲーション">
+          <div className="grid grid-cols-4 gap-x-3 gap-y-1 text-right">
           {navItems.map((item) => {
             const active = isCurrentPath(pathname, item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-xl border px-3 py-2 text-left transition-colors ${
+                className={`rounded-md px-1 py-0.5 text-xs font-medium leading-tight transition-colors xl:text-sm ${
                   active
-                    ? "border-orange-300 bg-orange-50 text-orange-950"
-                    : "border-transparent text-stone-700 hover:border-stone-200 hover:bg-stone-50 hover:text-orange-800"
+                    ? "text-orange-900"
+                    : "text-stone-700 hover:text-orange-800"
                 }`}
               >
-                <span className="block text-sm font-semibold leading-tight">{item.title}</span>
-                <span className="mt-1 block text-xs leading-snug text-stone-500">
-                  {item.description}
-                </span>
+                {item.label}
               </Link>
             );
           })}
+          </div>
         </nav>
 
         <button
@@ -101,7 +80,7 @@ export function Header() {
           className="border-t border-stone-200 bg-white px-4 py-3 lg:hidden"
           aria-label="モバイルメインナビゲーション"
         >
-          <div className="mx-auto max-w-6xl space-y-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-2 sm:grid-cols-2">
             {navItems.map((item) => {
               const active = isCurrentPath(pathname, item.href);
               return (
@@ -114,10 +93,7 @@ export function Header() {
                       : "border-stone-200 bg-white hover:border-orange-200 hover:bg-orange-50/40"
                   }`}
                 >
-                  <span className="block text-sm font-semibold text-stone-900">{item.title}</span>
-                  <span className="mt-1 block text-xs leading-relaxed text-stone-500">
-                    {item.description}
-                  </span>
+                  <span className="block text-sm font-semibold text-stone-900">{item.label}</span>
                 </Link>
               );
             })}
