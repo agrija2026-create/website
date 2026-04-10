@@ -141,13 +141,21 @@
 }
 
 .article-body .article-summary-table {
-  table-layout: auto;
+  table-layout: fixed;
 }
 
 .article-table-scroll .article-summary-table {
   display: table;
   width: 100%;
   min-width: 46rem;
+}
+
+.article-body .article-summary-table-col-key {
+  width: 7.25rem;
+}
+
+.article-body .article-summary-table-col-value {
+  width: auto;
 }
 
 @media (max-width: 640px) {
@@ -199,9 +207,10 @@
   padding: 1rem 1.125rem;
 }
 
-.article-body .article-summary-table th {
-  width: 6.5rem;
-  min-width: 6.5rem;
+.article-body .article-summary-table th:first-child,
+.article-body .article-summary-table td:first-child {
+  width: 7.25rem;
+  min-width: 7.25rem;
   white-space: nowrap;
 }
 
