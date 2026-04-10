@@ -5,9 +5,24 @@ import { useCallback, useEffect, useState } from "react";
 type Props = {
   url: string;
   title: string;
+  className?: string;
+  label?: string | null;
+  showLineShare?: boolean;
+  showNativeShare?: boolean;
+  copyLabel?: string;
+  printLabel?: string;
 };
 
-export function ArticleShareActions({ url, title }: Props) {
+export function ArticleShareActions({
+  url,
+  title,
+  className,
+  label = "共有・印刷",
+  showLineShare = true,
+  showNativeShare = true,
+  copyLabel = "URLをコピー",
+  printLabel = "印刷",
+}: Props) {
   const [status, setStatus] = useState<string | null>(null);
   const [canNativeShare, setCanNativeShare] = useState(false);
 
@@ -56,26 +71,29 @@ export function ArticleShareActions({ url, title }: Props) {
   }, []);
 
   const lineShareUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(url)}`;
+  const rootClassName = className ?? "article-share-actions no-print mt-6 flex flex-wrap items-center gap-2 border-b border-stone-200 pb-6";
 
   return (
-    <div className="article-share-actions no-print mt-6 flex flex-wrap items-center gap-2 border-b border-stone-200 pb-6">
-      <span className="mr-1 text-sm font-semibold text-stone-600">共有・印刷</span>
+    <div className={rootClassName}>
+      {label ? <span className="mr-1 text-sm font-semibold text-stone-600">{label}</span> : null}
       <button
         type="button"
         onClick={copyLink}
         className="rounded-md border border-stone-200 bg-white px-3 py-1.5 text-sm font-medium text-stone-800 shadow-sm hover:border-orange-300 hover:bg-orange-50"
       >
-        URLをコピー
+        {copyLabel}
       </button>
-      <a
-        href={lineShareUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="rounded-md border border-stone-200 bg-white px-3 py-1.5 text-sm font-medium text-stone-800 shadow-sm hover:border-green-400 hover:bg-green-50"
-      >
-        LINEで送る
-      </a>
-      {canNativeShare ? (
+      {showLineShare ? (
+        <a
+          href={lineShareUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-md border border-stone-200 bg-white px-3 py-1.5 text-sm font-medium text-stone-800 shadow-sm hover:border-green-400 hover:bg-green-50"
+        >
+          LINEで送る
+        </a>
+      ) : null}
+      {showNativeShare && canNativeShare ? (
         <button
           type="button"
           onClick={shareNative}
@@ -89,7 +107,7 @@ export function ArticleShareActions({ url, title }: Props) {
         onClick={printPage}
         className="rounded-md border border-stone-200 bg-white px-3 py-1.5 text-sm font-medium text-stone-800 shadow-sm hover:border-orange-300 hover:bg-orange-50"
       >
-        印刷
+        {printLabel}
       </button>
       <p className="sr-only" role="status" aria-live="polite">
         {status ?? ""}

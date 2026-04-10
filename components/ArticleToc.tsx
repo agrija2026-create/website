@@ -2,10 +2,17 @@ import type { TocItem } from "@/lib/articleHtml";
 
 type Props = {
   items: TocItem[];
-  variant: "mobile" | "desktop";
+  variant: "mobile" | "desktop" | "accordion";
+  summaryLabel?: string;
+  summaryHint?: string;
 };
 
-export function ArticleToc({ items, variant }: Props) {
+export function ArticleToc({
+  items,
+  variant,
+  summaryLabel = "このページ内",
+  summaryHint = "タップで開く",
+}: Props) {
   if (items.length === 0) return null;
 
   const list = (
@@ -26,14 +33,14 @@ export function ArticleToc({ items, variant }: Props) {
     </ul>
   );
 
-  if (variant === "mobile") {
+  if (variant === "mobile" || variant === "accordion") {
     return (
-      <details className="lg:hidden">
+      <details className={variant === "mobile" ? "lg:hidden" : ""}>
         <summary className="cursor-pointer list-none rounded-lg border border-stone-200 bg-white px-4 py-3 text-sm font-semibold text-stone-900 shadow-sm [&::-webkit-details-marker]:hidden">
           <span className="inline-flex w-full items-center justify-between gap-2">
-            このページ内
+            {summaryLabel}
             <span className="text-xs font-normal text-stone-500" aria-hidden>
-              タップで開く
+              {summaryHint}
             </span>
           </span>
         </summary>
