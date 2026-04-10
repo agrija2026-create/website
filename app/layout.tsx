@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Script from "next/script";
 import { ArticleImageLightbox } from "@/components/ArticleImageLightbox";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { SITE_URL_ORIGIN } from "@/lib/site";
@@ -44,8 +45,11 @@ export default function RootLayout({
           `}
         </Script>
         <OrganizationJsonLd />
-        <Header />
-        {children}
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </div>
         <ArticleImageLightbox />
       </body>
     </html>
