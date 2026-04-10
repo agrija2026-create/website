@@ -151,7 +151,7 @@
 }
 
 .article-body .article-summary-table-col-key {
-  width: 6rem;
+  width: 5.25rem;
 }
 
 .article-body .article-summary-table-col-value {
@@ -204,21 +204,21 @@
 
 .article-body .article-summary-table th,
 .article-body .article-summary-table td {
-  padding: 0.9rem 0.95rem;
+  padding: 0.8rem 0.85rem;
 }
 
 .article-body .article-summary-table th:first-child,
 .article-body .article-summary-table td:first-child {
-  width: 6rem;
-  min-width: 6rem;
+  width: 5.25rem;
+  min-width: 5.25rem;
   white-space: nowrap;
-  padding-right: 0.75rem;
+  padding-right: 0.6rem;
 }
 
 .article-body .article-summary-table th:last-child,
 .article-body .article-summary-table td:last-child {
   width: auto;
-  padding-left: 0.75rem;
+  padding-left: 0.6rem;
 }
 
 .article-body .article-summary-table td {
