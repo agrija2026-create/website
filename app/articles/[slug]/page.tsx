@@ -84,51 +84,47 @@ export default async function ArticlePage({ params }: Props) {
           {isCustomHeroArticle ? (
             <>
               <header className="mt-2 border-b border-stone-200 pb-6">
-                <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-                  <div className="min-w-0 flex-1">
-                    <h1 className="text-3xl font-bold tracking-tight text-stone-950 md:text-4xl">
-                      {article.title}
-                    </h1>
-                    <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-stone-500">
-                      <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
-                    </div>
-                    <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
-                      <span className="font-semibold text-stone-600">タグ</span>
-                      <Link
-                        href={`/categories/${article.category}`}
-                        className="rounded-full bg-orange-50 px-3 py-1 text-xs font-medium text-orange-900 hover:bg-orange-100"
-                      >
-                        {getCategoryName(article.category)}
-                      </Link>
-                      {audience.map((t) => (
-                        <Link
-                          key={t}
-                          href={`/tags/${encodeTagForUrl(t)}`}
-                          className="rounded-full bg-sky-50 px-3 py-1 text-xs font-medium text-sky-900 hover:bg-sky-100"
-                        >
-                          {t}
-                        </Link>
-                      ))}
-                      {other.map((t) => (
-                        <Link
-                          key={t}
-                          href={`/tags/${encodeTagForUrl(t)}`}
-                          className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-700 hover:border-orange-200 hover:bg-orange-50/80"
-                        >
-                          {getTagLabel(t)}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+                <h1 className="text-3xl font-bold tracking-tight text-stone-950 md:text-4xl">
+                  {article.title}
+                </h1>
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-stone-500">
+                  <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
                   <ArticleShareActions
                     url={pageUrl}
                     title={article.title}
-                    className="article-share-actions no-print flex flex-wrap items-center justify-end gap-2 lg:mt-1 lg:w-auto"
+                    className="article-share-actions no-print flex flex-wrap items-center gap-2"
                     label={null}
                     showLineShare={false}
                     showNativeShare={false}
                     printLabel="印刷する"
                   />
+                </div>
+                <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
+                  <span className="font-semibold text-stone-600">タグ</span>
+                  <Link
+                    href={`/categories/${article.category}`}
+                    className="rounded-full bg-orange-50 px-3 py-1 text-xs font-medium text-orange-900 hover:bg-orange-100"
+                  >
+                    {getCategoryName(article.category)}
+                  </Link>
+                  {audience.map((t) => (
+                    <Link
+                      key={t}
+                      href={`/tags/${encodeTagForUrl(t)}`}
+                      className="rounded-full bg-sky-50 px-3 py-1 text-xs font-medium text-sky-900 hover:bg-sky-100"
+                    >
+                      {t}
+                    </Link>
+                  ))}
+                  {other.map((t) => (
+                    <Link
+                      key={t}
+                      href={`/tags/${encodeTagForUrl(t)}`}
+                      className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-700 hover:border-orange-200 hover:bg-orange-50/80"
+                    >
+                      {getTagLabel(t)}
+                    </Link>
+                  ))}
                 </div>
               </header>
               <div className="mt-6 max-w-3xl space-y-4">
@@ -161,7 +157,7 @@ export default async function ArticlePage({ params }: Props) {
                 <ArticleToc
                   items={article.toc}
                   variant="accordion"
-                  summaryLabel="章ごとのリンク"
+                  summaryLabel="目次"
                   summaryHint="クリックで開く"
                 />
               </div>
