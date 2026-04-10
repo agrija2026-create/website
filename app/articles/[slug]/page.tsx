@@ -5,6 +5,7 @@ import { ArticleBreadcrumb } from "@/components/ArticleBreadcrumb";
 import { ArticleShareActions } from "@/components/ArticleShareActions";
 import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 import { ArticleTakeaways } from "@/components/ArticleTakeaways";
+import { ArticleTextToSpeech } from "@/components/ArticleTextToSpeech";
 import { ArticleToc } from "@/components/ArticleToc";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { Sidebar } from "@/components/Sidebar";
@@ -89,15 +90,22 @@ export default async function ArticlePage({ params }: Props) {
                 </h1>
                 <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-stone-500">
                   <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
-                  <ArticleShareActions
-                    url={pageUrl}
-                    title={article.title}
-                    className="article-share-actions no-print flex flex-wrap items-center gap-2"
-                    label={null}
-                    showLineShare={false}
-                    showNativeShare={false}
-                    printLabel="印刷する"
-                  />
+                  <div className="flex flex-wrap items-center justify-end gap-2">
+                    <ArticleTextToSpeech
+                      title={article.title}
+                      takeaways={article.takeaways}
+                      rootSelector='[data-tts-root="nouchibank-basic-guide"]'
+                    />
+                    <ArticleShareActions
+                      url={pageUrl}
+                      title={article.title}
+                      className="article-share-actions no-print flex flex-wrap items-center gap-2"
+                      label={null}
+                      showLineShare={false}
+                      showNativeShare={false}
+                      printLabel="印刷する"
+                    />
+                  </div>
                 </div>
                 <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
                   <span className="font-semibold text-stone-600">タグ</span>
@@ -213,6 +221,7 @@ export default async function ArticlePage({ params }: Props) {
           )}
           <div
             className="article-body mt-6 max-w-3xl"
+            data-tts-root={isCustomHeroArticle ? slug : undefined}
             dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
           />
           <div className="max-w-3xl">
