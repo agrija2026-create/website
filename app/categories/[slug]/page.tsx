@@ -3,12 +3,20 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Sidebar } from "@/components/Sidebar";
-import { getArticlesByCategory } from "@/lib/articles";
+import { getArticlesByCategory, toArticleCardData } from "@/lib/articles";
 import {
   CATEGORY_SLUGS,
   getCategoryName,
   isValidCategorySlug,
 } from "@/lib/categories";
+import {
+  SITE_LOCALE,
+  SITE_NAME,
+  absoluteUrl,
+  buildCategoryPageDescription,
+  getDefaultOgImage,
+  getDefaultOgImageUrl,
+} from "@/lib/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -24,9 +32,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "カテゴリが見つかりません" };
   }
   const name = getCategoryName(slug);
+  const title = `${name}の記事一覧`;
+  const fullTitle = `${title} | ${SITE_NAME}`;
+  const description = buildCategoryPageDescription(name);
+  const url = absoluteUrl(`/categories/${slug}`);
   return {
-    title: `${name}の記事一覧`,
-    description: `カテゴリ「${name}」の記事一覧です。`,
+    title: {
+      absolute: fullTitle,
+    },
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      url,
+      locale: SITE_LOCALE,
+      siteName: SITE_NAME,
+      title: fullTitle,
+      description,
+      images: getDefaultOgImage(),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      images: [getDefaultOgImageUrl()],
+    },
   };
 }
 
@@ -50,11 +80,12 @@ export default async function CategoryPage({ params }: Props) {
             カテゴリ：{name}
           </h1>
           <p className="mt-2 text-stone-600">
-            {articles.length}件の記事
+            {buildCategoryPageDescription(name)}
           </p>
+          <p className="mt-2 text-sm text-stone-500">{articles.length}件の記事</p>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {articles.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
+              <ArticleCard key={article.slug} article={toArticleCardData(article)} />
             ))}
           </div>
           {articles.length === 0 && (

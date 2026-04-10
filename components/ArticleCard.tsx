@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Article } from "@/lib/articles";
+import type { ArticleCardData } from "@/lib/articles";
 import { getCategoryName } from "@/lib/categories";
 import { encodeTagForUrl, getTagLabel, partitionTags } from "@/lib/tags";
 
@@ -14,7 +14,7 @@ function formatDate(iso: string): string {
 }
 
 type Props = {
-  article: Article;
+  article: ArticleCardData;
 };
 
 export function ArticleCard({ article }: Props) {

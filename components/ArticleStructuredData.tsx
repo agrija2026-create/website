@@ -1,13 +1,14 @@
-import type { Article } from "@/lib/articles";
+import type { ArticleMeta } from "@/lib/articles";
 import { getCategoryName } from "@/lib/categories";
 import {
   ORGANIZATION_ID,
   absoluteUrl,
+  getDefaultOgImageUrl,
   toIsoDateTime,
 } from "@/lib/site";
 
 type Props = {
-  article: Article;
+  article: Pick<ArticleMeta, "title" | "description" | "publishedAt" | "category">;
   slug: string;
 };
 
@@ -16,6 +17,7 @@ export function ArticleStructuredData({ article, slug }: Props) {
   const categoryUrl = absoluteUrl(`/categories/${article.category}`);
   const categoryName = getCategoryName(article.category);
   const publishedIso = toIsoDateTime(article.publishedAt);
+  const imageUrl = getDefaultOgImageUrl();
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -24,8 +26,16 @@ export function ArticleStructuredData({ article, slug }: Props) {
     description: article.description,
     datePublished: publishedIso,
     dateModified: publishedIso,
+    image: [imageUrl],
     author: { "@type": "Organization", "@id": ORGANIZATION_ID },
-    publisher: { "@type": "Organization", "@id": ORGANIZATION_ID },
+    publisher: {
+      "@type": "Organization",
+      "@id": ORGANIZATION_ID,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/icon.png"),
+      },
+    },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": pageUrl,

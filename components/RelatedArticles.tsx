@@ -1,8 +1,8 @@
 import Link from "next/link";
-import type { Article } from "@/lib/articles";
+import type { RelatedArticleData } from "@/lib/articles";
 
 type Props = {
-  articles: Article[];
+  articles: RelatedArticleData[];
 };
 
 function formatDate(iso: string): string {

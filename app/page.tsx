@@ -1,12 +1,45 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Sidebar } from "@/components/Sidebar";
-import { getAllArticles } from "@/lib/articles";
+import { getAllArticles, toArticleCardData } from "@/lib/articles";
 import { CATEGORY_SLUGS, getCategoryName } from "@/lib/categories";
+import {
+  SITE_DESCRIPTION,
+  SITE_LOCALE,
+  SITE_NAME,
+  TOP_PAGE_TITLE,
+  absoluteUrl,
+  getDefaultOgImage,
+  getDefaultOgImageUrl,
+} from "@/lib/site";
 
 const RECENT_COUNT = 3;
 const PER_CATEGORY_PREVIEW = 4;
+
+export const metadata: Metadata = {
+  title: {
+    absolute: TOP_PAGE_TITLE,
+  },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: absoluteUrl("/") },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl("/"),
+    locale: SITE_LOCALE,
+    siteName: SITE_NAME,
+    title: TOP_PAGE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: getDefaultOgImage(),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TOP_PAGE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [getDefaultOgImageUrl()],
+  },
+};
 
 export default async function HomePage() {
   const allArticles = await getAllArticles();
@@ -28,7 +61,7 @@ export default async function HomePage() {
                 </h2>
                 <div className="mt-6 grid gap-5 sm:grid-cols-1">
                   {recent.map((article) => (
-                    <ArticleCard key={article.slug} article={article} />
+                    <ArticleCard key={article.slug} article={toArticleCardData(article)} />
                   ))}
                 </div>
                 <div className="mt-6">
@@ -61,7 +94,10 @@ export default async function HomePage() {
                       </h3>
                       <div className="mt-4 grid gap-4">
                         {inCategory.map((article) => (
-                          <ArticleCard key={article.slug} article={article} />
+                          <ArticleCard
+                            key={article.slug}
+                            article={toArticleCardData(article)}
+                          />
                         ))}
                       </div>
                     </div>

@@ -33,6 +33,12 @@ export function isAudienceTag(tag: string): boolean {
   return audienceSet.has(tag);
 }
 
+const audiencePathSet = new Set<string>(Object.values(READER_TAG_PATH));
+
+export function isAudienceTagPath(segment: string): boolean {
+  return audiencePathSet.has(segment);
+}
+
 /** 読者タグの個数が 1〜3 でなければ例外（ビルド・開発時に検知） */
 export function validateArticleAudienceTags(tags: string[], context: string): void {
   const n = tags.filter(isAudienceTag).length;

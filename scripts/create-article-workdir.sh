@@ -59,6 +59,8 @@ if [[ ! -f "${ARTICLE_HTML}" ]]; then
 </head>
 <body>
   <article>
+    <!-- 重要: data:image / base64 画像は最終公開時に外部画像へ変換する。巨大な inline style / script は使わない -->
+    <!-- 図版は使ってよいが、軽量な外部画像として扱い、figcaption を付ける -->
     <p>${BASE_NAME}の要点を、対象者・内容・期限・金額の観点で整理します。</p>
 
     <h2>要点</h2>
@@ -80,9 +82,18 @@ if [[ ! -f "${MEMO_FILE}" ]]; then
 - ステータス: 作成開始
 
 ## 次の手順
-1. \`${ARTICLE_HTML}\` を編集して記事本文を完成させる
-2. 完成後、確認OKなら \`bash scripts/stage-article-for-web.sh "${ARTICLE_HTML}" <slug>\` を実行する
-3. 最後に \`bash scripts/publish-article.sh <slug>\` で公開する
+1. \`docs/記事生成プロンプト.md\` を開き、制約に沿って \`${ARTICLE_HTML}\` を編集して記事本文を完成させる
+2. 特に \`data:image\` / Base64 画像 / 巨大な inline style を含めていないことを確認する
+3. 完成後、確認OKなら \`bash scripts/stage-article-for-web.sh "${ARTICLE_HTML}" <slug>\` を実行する
+4. 最後に \`bash scripts/publish-article.sh <slug>\` で公開する
+
+## 重要ルール
+- 本文は \`<article>\` 内に書く
+- \`<h1>\` や先頭 \`<header>\` は原則不要
+- \`data:image\` や Base64 画像は最終公開時にそのまま残さない
+- 図版は使ってよいが、軽量な外部画像として扱う
+- 図版には \`alt\` と \`figcaption\` を付ける
+- 出典名と URL を必ず入れる
 EOF
 fi
 

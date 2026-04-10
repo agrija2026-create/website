@@ -67,6 +67,8 @@ npm run article:start -- "../記事化入力/<ファイル名>.pdf"
 補足:
 - ページ上部の `タイトル / 日付 / タグ / 読了目安 / 目次 / 共有操作` はサイト側で共通表示されます。
 - HTML本文側では `<article>` 内に本文を記述し、`<h1>` や先頭 `<header>` は原則不要です（重複表示を避けるため）。
+- 記事生成時のルールは [docs/記事生成プロンプト.md](docs/記事生成プロンプト.md) を必ず参照してください。
+- **`data:image` / Base64画像 / SVGの data URI はそのまま公開しません**。Google が読む HTML を極端に肥大化させるため、公開時には外部画像へ変換・軽量化します。
 
 ### 3) 確認OK後にWEB用ファイルを生成する
 
@@ -84,6 +86,11 @@ npm run article:stage -- "../記事/元資料/記事と元資料/25_物流革新
 
 - `content/source-html/<slug>.html`
 - `content/articles/<slug>.md`（`sourceHtmlFile` 参照型）
+
+補足:
+- `stage-article-for-web.sh` は、HTML 内の `data:image` やローカル画像を `public/article-images/<slug>/` に書き出し、HTML の `src` を公開用パスへ差し替えます。
+- CSS の `url(data:...)` は変換対象外のため、含まれている場合はエラーで停止します。
+- 図版そのものは禁止ではありません。禁止しているのは **HTML への画像バイナリ埋め込みを、そのまま公開すること** です。
 
 ### 4) 最後に公開する（手動）
 

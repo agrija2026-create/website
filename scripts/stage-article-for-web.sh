@@ -56,19 +56,29 @@ mkdir -p "${SOURCE_HTML_DIR}" "${ARTICLES_DIR}"
 TARGET_HTML="${SOURCE_HTML_DIR}/${SLUG}.html"
 TARGET_MD="${ARTICLES_DIR}/${SLUG}.md"
 
-cp -f "${ARTICLE_HTML}" "${TARGET_HTML}"
+python3 "scripts/prepare-article-assets.py" \
+  --input "${ARTICLE_HTML}" \
+  --output "${TARGET_HTML}" \
+  --slug "${SLUG}"
 
-TITLE="$(sed -n 's:.*<title>\(.*\)</title>.*:\1:p' "${ARTICLE_HTML}" | head -n 1)"
+HTML_BYTES="$(wc -c < "${TARGET_HTML}" | tr -d '[:space:]')"
+if [[ "${HTML_BYTES}" -gt 1500000 ]]; then
+  echo "警告: 変換後の HTML ファイルサイズが大きいです (${HTML_BYTES} bytes)。"
+  echo "  - 本文の表や図版点数が多すぎないか確認してください。"
+  echo "  - Google が読む HTML を軽く保つため、可能なら 1.5MB 未満を目安にしてください。"
+fi
+
+TITLE="$(sed -n 's:.*<title>\(.*\)</title>.*:\1:p' "${TARGET_HTML}" | head -n 1)"
 if [[ -z "${TITLE}" ]]; then
-  TITLE="$(sed -n 's:.*<h1>\(.*\)</h1>.*:\1:p' "${ARTICLE_HTML}" | head -n 1)"
+  TITLE="$(sed -n 's:.*<h1>\(.*\)</h1>.*:\1:p' "${TARGET_HTML}" | head -n 1)"
 fi
 if [[ -z "${TITLE}" ]]; then
   TITLE="記事タイトル"
 fi
 
-DESCRIPTION="$(sed -n 's:.*<meta name="description" content="\([^"]*\)".*:\1:p' "${ARTICLE_HTML}" | head -n 1)"
+DESCRIPTION="$(sed -n 's:.*<meta name="description" content="\([^"]*\)".*:\1:p' "${TARGET_HTML}" | head -n 1)"
 if [[ -z "${DESCRIPTION}" ]]; then
-  DESCRIPTION="$(sed -n 's:.*<p class="lead">\([^<]*\)</p>.*:\1:p' "${ARTICLE_HTML}" | head -n 1)"
+  DESCRIPTION="$(sed -n 's:.*<p class="lead">\([^<]*\)</p>.*:\1:p' "${TARGET_HTML}" | head -n 1)"
 fi
 if [[ -z "${DESCRIPTION}" ]]; then
   DESCRIPTION="${TITLE}の解説記事です。"

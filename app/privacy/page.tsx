@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description:
     "農業情報メディアにおける Google アナリティクス4（GA4）によるアクセス解析について。",
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const googleLinks = [

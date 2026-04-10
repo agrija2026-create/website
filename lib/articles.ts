@@ -29,6 +29,36 @@ export type Article = ArticleMeta & {
   toc: TocItem[];
 };
 
+export type ArticleCardData = Pick<
+  ArticleMeta,
+  "title" | "slug" | "description" | "publishedAt" | "category" | "tags"
+>;
+
+export type RelatedArticleData = Pick<
+  ArticleMeta,
+  "title" | "slug" | "description" | "publishedAt"
+>;
+
+export function toArticleCardData(article: ArticleMeta): ArticleCardData {
+  return {
+    title: article.title,
+    slug: article.slug,
+    description: article.description,
+    publishedAt: article.publishedAt,
+    category: article.category,
+    tags: article.tags,
+  };
+}
+
+export function toRelatedArticleData(article: ArticleMeta): RelatedArticleData {
+  return {
+    title: article.title,
+    slug: article.slug,
+    description: article.description,
+    publishedAt: article.publishedAt,
+  };
+}
+
 function readLocalArticleFiles(): string[] {
   if (!fs.existsSync(articlesDirectory)) return [];
   return fs

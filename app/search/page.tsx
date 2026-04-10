@@ -21,12 +21,20 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     return {
       title: "記事検索",
       description: "農業情報メディアの記事をタイトル・概要・タグから検索できます。",
+      robots: {
+        index: false,
+        follow: true,
+      },
     };
   }
 
   return {
     title: `「${query}」の検索結果`,
     description: `「${query}」に一致する記事を表示します。`,
+    robots: {
+      index: false,
+      follow: true,
+    },
   };
 }
 

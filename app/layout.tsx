@@ -5,7 +5,14 @@ import { ArticleImageLightbox } from "@/components/ArticleImageLightbox";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
-import { SITE_URL_ORIGIN } from "@/lib/site";
+import {
+  SITE_DESCRIPTION,
+  SITE_LOCALE,
+  SITE_NAME,
+  SITE_URL_ORIGIN,
+  SITE_X_HANDLE,
+  getDefaultOgImage,
+} from "@/lib/site";
 import "./globals.css";
 
 const notoSansJp = Noto_Sans_JP({
@@ -18,10 +25,25 @@ const notoSansJp = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL_ORIGIN),
   title: {
-    default: "農業情報メディア",
-    template: "%s | 農業情報メディア",
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: "農政をもっと身近に。農林水産の政策・予算・現場の動きをわかりやすく整理します。",
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    locale: SITE_LOCALE,
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: getDefaultOgImage(),
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: SITE_X_HANDLE,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [getDefaultOgImage()[0].url],
+  },
 };
 
 export default function RootLayout({

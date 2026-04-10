@@ -18,6 +18,7 @@ SLUG="$1"
 MESSAGE="${2:-content: add/update article ${SLUG}}"
 FILE="content/articles/${SLUG}.md"
 SOURCE_HTML_FILE=""
+PUBLIC_IMAGE_DIR="public/article-images/${SLUG}"
 
 if [[ ! -f "$FILE" ]]; then
   echo "エラー: ${FILE} が見つかりません。"
@@ -35,6 +36,10 @@ if [[ -n "${SOURCE_HTML_FILE}" ]]; then
   fi
 fi
 
+if [[ -d "${PUBLIC_IMAGE_DIR}" ]]; then
+  git add "${PUBLIC_IMAGE_DIR}"
+fi
+
 if git diff --staged --quiet; then
   echo "変更がないため、コミットは作成しません。"
   exit 0
@@ -43,7 +48,9 @@ fi
 git commit -m "$MESSAGE"
 git push
 
-if [[ -n "${SOURCE_HTML_FILE}" ]]; then
+if [[ -n "${SOURCE_HTML_FILE}" && -d "${PUBLIC_IMAGE_DIR}" ]]; then
+  echo "公開完了: ${FILE} と ${SOURCE_HTML_FILE}、${PUBLIC_IMAGE_DIR} を push しました。"
+elif [[ -n "${SOURCE_HTML_FILE}" ]]; then
   echo "公開完了: ${FILE} と ${SOURCE_HTML_FILE} を push しました。"
 else
   echo "公開完了: ${FILE} を push しました。"

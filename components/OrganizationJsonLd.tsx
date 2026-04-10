@@ -3,6 +3,7 @@ import {
   SAME_AS_SOCIAL,
   SITE_NAME,
   SITE_URL_ORIGIN,
+  absoluteUrl,
 } from "@/lib/site";
 
 export function OrganizationJsonLd() {
@@ -12,6 +13,10 @@ export function OrganizationJsonLd() {
     "@id": ORGANIZATION_ID,
     name: SITE_NAME,
     url: SITE_URL_ORIGIN,
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/icon.png"),
+    },
     sameAs: [...SAME_AS_SOCIAL],
   };
 

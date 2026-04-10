@@ -2,11 +2,36 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Sidebar } from "@/components/Sidebar";
-import { getAllArticles } from "@/lib/articles";
+import { getAllArticles, toArticleCardData } from "@/lib/articles";
+import {
+  SITE_LOCALE,
+  SITE_NAME,
+  absoluteUrl,
+  getDefaultOgImage,
+  getDefaultOgImageUrl,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "新着記事一覧",
+  title: {
+    absolute: `新着記事一覧 | ${SITE_NAME}`,
+  },
   description: "農業情報メディアの新着記事を日付順に一覧します。",
+  alternates: { canonical: absoluteUrl("/recent") },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl("/recent"),
+    locale: SITE_LOCALE,
+    siteName: SITE_NAME,
+    title: `新着記事一覧 | ${SITE_NAME}`,
+    description: "農業情報メディアの新着記事を日付順に一覧します。",
+    images: getDefaultOgImage(),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `新着記事一覧 | ${SITE_NAME}`,
+    description: "農業情報メディアの新着記事を日付順に一覧します。",
+    images: [getDefaultOgImageUrl()],
+  },
 };
 
 export default async function RecentArticlesPage() {
@@ -29,7 +54,7 @@ export default async function RecentArticlesPage() {
           </p>
           <div className="grid gap-5 sm:grid-cols-1">
             {articles.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
+              <ArticleCard key={article.slug} article={toArticleCardData(article)} />
             ))}
           </div>
         </main>

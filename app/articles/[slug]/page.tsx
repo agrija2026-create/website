@@ -13,9 +13,17 @@ import {
   getAllArticles,
   getArticleBySlug,
   getRelatedArticles,
+  toRelatedArticleData,
 } from "@/lib/articles";
 import { getCategoryName } from "@/lib/categories";
-import { absoluteUrl, toIsoDateTime } from "@/lib/site";
+import {
+  SITE_LOCALE,
+  SITE_NAME,
+  absoluteUrl,
+  getDefaultOgImage,
+  getDefaultOgImageUrl,
+  toIsoDateTime,
+} from "@/lib/site";
 import { encodeTagForUrl, getTagLabel, partitionTags } from "@/lib/tags";
 
 type Props = {
@@ -33,16 +41,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "記事が見つかりません" };
   }
   const url = absoluteUrl(`/articles/${slug}`);
+  const title = article.title;
+  const fullTitle = `${title} | ${SITE_NAME}`;
+  const description = article.description;
+  const publishedTime = toIsoDateTime(article.publishedAt);
   return {
-    title: article.title,
-    description: article.description,
+    title: {
+      absolute: fullTitle,
+    },
+    description,
     alternates: { canonical: url },
     openGraph: {
       type: "article",
       url,
-      title: article.title,
-      description: article.description,
-      publishedTime: toIsoDateTime(article.publishedAt),
+      locale: SITE_LOCALE,
+      siteName: SITE_NAME,
+      title: fullTitle,
+      description,
+      publishedTime,
+      modifiedTime: publishedTime,
+      images: getDefaultOgImage(),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      images: [getDefaultOgImageUrl()],
     },
   };
 }
@@ -76,7 +100,15 @@ export default async function ArticlePage({ params }: Props) {
     <div className="px-4 py-10 md:px-6 md:py-14">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-start lg:gap-10">
         <div className="min-w-0 flex-1">
-          <ArticleStructuredData article={article} slug={slug} />
+          <ArticleStructuredData
+            article={{
+              title: article.title,
+              description: article.description,
+              publishedAt: article.publishedAt,
+              category: article.category,
+            }}
+            slug={slug}
+          />
           <ArticleBreadcrumb categorySlug={article.category} articleTitle={article.title} />
           <header className="mt-2 border-b border-stone-200 pb-6">
             <h1 className="text-3xl font-bold tracking-tight text-stone-950 md:text-4xl">
@@ -173,7 +205,7 @@ export default async function ArticlePage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
           />
           <div className="max-w-3xl">
-            <RelatedArticles articles={related} />
+            <RelatedArticles articles={related.map(toRelatedArticleData)} />
           </div>
         </div>
         <Sidebar />
