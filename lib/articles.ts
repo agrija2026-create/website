@@ -5,7 +5,7 @@ import { cache } from "react";
 import { enrichArticleHtml } from "@/lib/articleHtml";
 import type { TocItem } from "@/lib/articleHtml";
 import { sanitizeTrustedHtml } from "@/lib/sanitizeHtml";
-import { encodeTagForUrl, validateArticleAudienceTags } from "@/lib/tags";
+import { encodeTagForUrl, getTagLabel, validateArticleAudienceTags } from "@/lib/tags";
 
 const articlesDirectory = path.join(process.cwd(), "content/articles");
 const sourceHtmlDirectoryPrefix = "content/source-html/";
@@ -127,6 +127,23 @@ function sortByDateDesc(a: Article, b: Article): number {
   return (
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
+}
+
+function normalizeSearchText(value: string): string {
+  return value.normalize("NFKC").trim().toLocaleLowerCase("ja-JP");
+}
+
+function splitSearchTerms(query: string): string[] {
+  return normalizeSearchText(query).split(/\s+/).filter(Boolean);
+}
+
+function buildArticleSearchText(article: Article): string {
+  return normalizeSearchText([
+    article.title,
+    article.description,
+    ...article.tags,
+    ...article.tags.map(getTagLabel),
+  ].join(" "));
 }
 
 function getAllLocalArticles(): Article[] {
@@ -281,6 +298,16 @@ export async function getArticlesByTag(tagSlug: string): Promise<Article[]> {
 
 export async function getRecentArticles(n: number): Promise<Article[]> {
   return (await getAllArticles()).slice(0, n);
+}
+
+export async function searchArticles(query: string): Promise<Article[]> {
+  const terms = splitSearchTerms(query);
+  if (terms.length === 0) return [];
+
+  return (await getAllArticles()).filter((article) => {
+    const searchText = buildArticleSearchText(article);
+    return terms.every((term) => searchText.includes(term));
+  });
 }
 
 /** 同カテゴリを優先し、足りなければ他カテゴリの新着で埋める */
