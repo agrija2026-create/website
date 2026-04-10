@@ -68,9 +68,14 @@ def parse_dimensions(path: pathlib.Path) -> tuple[int, int] | None:
 
 
 def choose_output_ext(input_ext: str) -> str:
+    """公開図版の拡張子を決める。
+
+    AVIF は軽量だが、macOS sips が出力する AVIF が環境によってデコードされず
+    真っ白になる事例があるため、ラスタ画像の既定出力は PNG とする。
+    """
     ext = input_ext.lower()
-    if ext in {".png", ".jpg", ".jpeg", ".webp", ".heic", ".heif", ".tiff"}:
-        return ".avif"
+    if ext in {".png", ".jpg", ".jpeg", ".webp", ".heic", ".heif", ".tiff", ".avif"}:
+        return ".png"
     if ext in WRITABLE_EXTS:
         return ext
     return ".png"

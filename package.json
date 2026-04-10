@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "verify:article-images": "bash scripts/check-article-images-no-avif.sh",
+    "build": "npm run verify:article-images && next build",
     "start": "next start",
     "lint": "next lint",
     "setup:first-push": "bash scripts/first-push.sh",

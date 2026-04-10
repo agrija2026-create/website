@@ -91,6 +91,7 @@ npm run article:stage -- "../記事/元資料/記事と元資料/25_物流革新
 - `stage-article-for-web.sh` は、HTML 内の `data:image` やローカル画像を `public/article-images/<slug>/` に書き出し、HTML の `src` を公開用パスへ差し替えます。
 - CSS の `url(data:...)` は変換対象外のため、含まれている場合はエラーで停止します。
 - 図版そのものは禁止ではありません。禁止しているのは **HTML への画像バイナリ埋め込みを、そのまま公開すること** です。
+- **公開図版は PNG を既定**とします（`prepare-article-assets.py`）。AVIF は環境によってデコードされず真っ白になることがあるため、`public/article-images/**/*.avif` と `source-html` 内の `.avif` 参照は **`npm run build` 前の検証で失敗**します。
 
 ### 4) 最後に公開する（手動）
 
