@@ -1,40 +1,129 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const navItems = [
-  { href: "/", label: "トップ" },
-  { href: "/categories/budget", label: "予算・財政" },
-  { href: "/categories/policy", label: "政策・制度" },
-  { href: "/tags/smart-agriculture", label: "スマート農業" },
-];
+  {
+    href: "/categories/policy",
+    title: "政策・制度",
+    description: "制度改正や方針の要点",
+  },
+  {
+    href: "/categories/budget",
+    title: "予算・財政",
+    description: "補助金や予算措置を整理",
+  },
+  {
+    href: "/categories/market",
+    title: "市場・価格・需給",
+    description: "価格動向と流通の変化",
+  },
+  {
+    href: "/categories/technology",
+    title: "技術・DX・スマート農業",
+    description: "省力化と新技術の動き",
+  },
+] as const;
+
+function isCurrentPath(pathname: string, href: string): boolean {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function Header() {
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <Link href="/" className="group flex items-center gap-3">
+        <Link href="/" className="group flex shrink-0 items-center gap-3">
           <span
             className="h-8 w-1 rounded-full bg-orange-600 transition-colors group-hover:bg-orange-500"
             aria-hidden
           />
-          <span className="text-lg font-bold tracking-tight text-stone-900">
+          <span className="whitespace-nowrap text-base font-bold tracking-tight text-stone-900 sm:text-lg">
             農業情報メディア
           </span>
         </Link>
+
         <nav
-          className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 text-sm font-medium text-stone-700"
+          className="hidden lg:grid lg:grid-cols-2 lg:gap-x-3 lg:gap-y-2"
           aria-label="メインナビゲーション"
         >
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-md px-1 py-0.5 transition-colors hover:text-orange-700"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const active = isCurrentPath(pathname, item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`rounded-xl border px-3 py-2 text-left transition-colors ${
+                  active
+                    ? "border-orange-300 bg-orange-50 text-orange-950"
+                    : "border-transparent text-stone-700 hover:border-stone-200 hover:bg-stone-50 hover:text-orange-800"
+                }`}
+              >
+                <span className="block text-sm font-semibold leading-tight">{item.title}</span>
+                <span className="mt-1 block text-xs leading-snug text-stone-500">
+                  {item.description}
+                </span>
+              </Link>
+            );
+          })}
         </nav>
+
+        <button
+          type="button"
+          className="inline-flex items-center justify-center rounded-lg border border-stone-200 bg-white p-2 text-stone-700 transition-colors hover:border-orange-300 hover:text-orange-800 lg:hidden"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-none stroke-current">
+            {isMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 6l12 12M18 6 6 18" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7h16M4 12h16M4 17h16" />
+            )}
+          </svg>
+        </button>
       </div>
+
+      {isMenuOpen ? (
+        <nav
+          id="mobile-navigation"
+          className="border-t border-stone-200 bg-white px-4 py-3 lg:hidden"
+          aria-label="モバイルメインナビゲーション"
+        >
+          <div className="mx-auto max-w-6xl space-y-2">
+            {navItems.map((item) => {
+              const active = isCurrentPath(pathname, item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`block rounded-xl border px-4 py-3 transition-colors ${
+                    active
+                      ? "border-orange-300 bg-orange-50"
+                      : "border-stone-200 bg-white hover:border-orange-200 hover:bg-orange-50/40"
+                  }`}
+                >
+                  <span className="block text-sm font-semibold text-stone-900">{item.title}</span>
+                  <span className="mt-1 block text-xs leading-relaxed text-stone-500">
+                    {item.description}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
+      ) : null}
     </header>
   );
 }

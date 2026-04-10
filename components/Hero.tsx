@@ -5,7 +5,7 @@ const HERO_IMAGE =
 
 export function Hero() {
   return (
-    <section className="relative min-h-[320px] w-full md:min-h-[420px]">
+    <section className="relative min-h-[280px] w-full md:min-h-[360px]">
       <Image
         src={HERO_IMAGE}
         alt="緑豊かな農地の風景"
@@ -18,12 +18,12 @@ export function Hero() {
         className="absolute inset-0 bg-gradient-to-b from-stone-900/75 via-stone-900/65 to-stone-900/80"
         aria-hidden
       />
-      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-20 text-center md:py-28">
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center justify-center px-4 py-16 text-center md:py-20">
         <h1 className="text-3xl font-bold tracking-tight text-white drop-shadow-sm md:text-5xl">
           農業情報メディア
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-white/95 md:text-xl">
-          農政をもっと身近に
+          農政をもっと身近に。政策・制度をわかりやすく解説
         </p>
       </div>
     </section>

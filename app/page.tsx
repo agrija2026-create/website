@@ -15,7 +15,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <div className="relative z-10 -mt-12 px-4 pb-16 md:-mt-16 md:px-6">
+      <div className="relative z-10 -mt-16 px-4 pb-16 md:-mt-20 md:px-6">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-10">
             <main className="min-w-0 flex-1 space-y-12 rounded-xl border border-stone-200 bg-white p-6 shadow-lg md:p-8">
