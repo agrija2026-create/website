@@ -106,16 +106,33 @@ function wrapTables(html: string): string {
   return result;
 }
 
+const SUMMARY_COLGROUP =
+  '<colgroup><col class="article-summary-table-col-key" /><col class="article-summary-table-col-value" /></colgroup>';
+
+function ensureSummaryColgroup(chunk: string): string {
+  if (/<colgroup\b/i.test(chunk)) {
+    return chunk;
+  }
+  return chunk.replace(/(<table\b[^>]*>)/i, `$1${SUMMARY_COLGROUP}`);
+}
+
 function normalizeTableChunk(chunk: string): string {
   const hasSummaryClass = /\barticle-summary-table\b/i.test(chunk);
   const hasDataClass = /\barticle-data-table\b/i.test(chunk);
   if (hasSummaryClass || hasDataClass) {
+    if (hasSummaryClass) {
+      return ensureSummaryColgroup(chunk);
+    }
     return chunk;
   }
 
   const columnCount = inferTableColumnCount(chunk);
   const inferredClass = columnCount <= 2 ? "article-summary-table" : "article-data-table";
-  return appendClassToTable(chunk, inferredClass);
+  const withClass = appendClassToTable(chunk, inferredClass);
+  if (inferredClass === "article-summary-table") {
+    return ensureSummaryColgroup(withClass);
+  }
+  return withClass;
 }
 
 function inferTableColumnCount(chunk: string): number {
