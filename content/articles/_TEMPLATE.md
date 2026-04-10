@@ -17,10 +17,7 @@ takeaways:
 ---
 
 <article>
-  <header class="article-header">
-    <h1>記事タイトル</h1>
-    <p class="lead">導入文（2〜4行）</p>
-  </header>
+  <p>導入文（2〜4行）</p>
 
   <h2>見出し</h2>
   <p>本文（HTMLをそのまま記述）</p>

@@ -59,10 +59,7 @@ if [[ ! -f "${ARTICLE_HTML}" ]]; then
 </head>
 <body>
   <article>
-    <header>
-      <h1>${BASE_NAME}を解説</h1>
-      <p class="lead">${BASE_NAME}の要点を、対象者・内容・期限・金額の観点で整理します。</p>
-    </header>
+    <p>${BASE_NAME}の要点を、対象者・内容・期限・金額の観点で整理します。</p>
 
     <h2>要点</h2>
     <p>ここから本文を作成してください。</p>
