@@ -141,7 +141,7 @@
 }
 
 .article-body .article-summary-table {
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .article-table-scroll .article-summary-table {
@@ -200,8 +200,8 @@
 }
 
 .article-body .article-summary-table th {
-  width: 20%;
-  min-width: 7rem;
+  width: 6.5rem;
+  min-width: 6.5rem;
   white-space: nowrap;
 }
 
