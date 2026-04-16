@@ -22,6 +22,11 @@ export type ArticleMeta = {
   /** 冒頭「この記事でわかること」用（任意） */
   takeaways: string[];
   sourceHtmlFile?: string;
+  /**
+   * true のとき、ソースHTMLの `<article>` をそのままの見た目に近づける。
+   * `<style>` を許可し、サイト側の要点ブロック・目次を出さず、冒頭 `<header>` も残す。
+   */
+  embeddedSourceLayout?: boolean;
 };
 
 export type Article = ArticleMeta & {
@@ -121,6 +126,7 @@ function parseArticleFile(filePath: string): Article {
 
   const sourceHtmlFile =
     typeof d.sourceHtmlFile === "string" ? d.sourceHtmlFile : undefined;
+  const embeddedSourceLayout = d.embeddedSourceLayout === true;
   let htmlBody = content.trim();
 
   if (sourceHtmlFile) {
@@ -136,8 +142,12 @@ function parseArticleFile(filePath: string): Article {
 
   validateArticleAudienceTags(tags, path.basename(filePath));
 
-  const sanitized = sanitizeTrustedHtml(htmlBody);
-  const { html: enrichedHtml, toc } = enrichArticleHtml(sanitized);
+  const sanitized = sanitizeTrustedHtml(htmlBody, {
+    allowStyle: embeddedSourceLayout,
+  });
+  const { html: enrichedHtml, toc } = enrichArticleHtml(sanitized, {
+    skipTableScrollWrap: embeddedSourceLayout,
+  });
 
   return {
     title: String(d.title ?? ""),
@@ -148,6 +158,7 @@ function parseArticleFile(filePath: string): Article {
     tags,
     takeaways,
     sourceHtmlFile,
+    embeddedSourceLayout,
     htmlBody: enrichedHtml,
     toc,
   };
@@ -256,6 +267,7 @@ function normalizeMicroCmsArticle(item: MicroCmsArticle): Article | null {
     category,
     tags,
     takeaways,
+    embeddedSourceLayout: false,
     htmlBody: enrichedHtml,
     toc,
   };

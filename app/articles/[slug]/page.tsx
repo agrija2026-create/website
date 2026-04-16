@@ -94,7 +94,10 @@ export default async function ArticlePage({ params }: Props) {
   const pageUrl = absoluteUrl(`/articles/${slug}`);
   const readingMinutes = estimateReadingMinutesJa(article.htmlBody, article.description);
   const related = await getRelatedArticles(slug, article.category, 3);
-  const articleBodyHtml = stripLeadingArticleHeader(article.htmlBody);
+  const embedded = article.embeddedSourceLayout === true;
+  const articleBodyHtml = embedded
+    ? article.htmlBody
+    : stripLeadingArticleHeader(article.htmlBody);
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
@@ -111,15 +114,27 @@ export default async function ArticlePage({ params }: Props) {
           />
           <ArticleBreadcrumb categorySlug={article.category} articleTitle={article.title} />
           <header className="mt-2 border-b border-stone-200 pb-6">
-            <h1 className="text-3xl font-bold tracking-tight text-stone-950 md:text-4xl">
-              {article.title}
-            </h1>
+            {embedded ? (
+              <h1 className="sr-only">{article.title}</h1>
+            ) : (
+              <h1 className="text-3xl font-bold tracking-tight text-stone-950 md:text-4xl">
+                {article.title}
+              </h1>
+            )}
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-stone-500">
-              <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
+                {embedded ? (
+                  <span>
+                    読了の目安：
+                    <span className="ml-1 font-semibold text-stone-800">{readingMinutes}分</span>
+                  </span>
+                ) : null}
+              </div>
               <div className="flex flex-wrap items-center justify-end gap-2">
                 <ArticleTextToSpeech
                   title={article.title}
-                  takeaways={article.takeaways}
+                  takeaways={embedded ? [] : article.takeaways}
                   rootSelector={`[data-tts-root="${slug}"]`}
                 />
                 <ArticleShareActions
@@ -161,46 +176,52 @@ export default async function ArticlePage({ params }: Props) {
               ))}
             </div>
           </header>
-          <div className="mt-6 max-w-3xl space-y-4">
-            <section
-              aria-labelledby="takeaways-heading"
-              className="rounded-xl border border-orange-200/80 bg-orange-50/60 p-4 md:p-5"
-            >
-              <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                <div>
-                  <h2 id="takeaways-heading" className="text-sm font-bold text-stone-900">
-                    この記事でわかること
-                  </h2>
-                  {article.takeaways.length > 0 ? (
-                    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-stone-800">
-                      {article.takeaways.map((line, i) => (
-                        <li key={i}>{line}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="mt-3 text-sm leading-relaxed text-stone-700">
-                      この記事の要点を順次更新します。
-                    </p>
-                  )}
+          {!embedded ? (
+            <div className="mt-6 max-w-3xl space-y-4">
+              <section
+                aria-labelledby="takeaways-heading"
+                className="rounded-xl border border-orange-200/80 bg-orange-50/60 p-4 md:p-5"
+              >
+                <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <h2 id="takeaways-heading" className="text-sm font-bold text-stone-900">
+                      この記事でわかること
+                    </h2>
+                    {article.takeaways.length > 0 ? (
+                      <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-stone-800">
+                        {article.takeaways.map((line, i) => (
+                          <li key={i}>{line}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-3 text-sm leading-relaxed text-stone-700">
+                        この記事の要点を順次更新します。
+                      </p>
+                    )}
+                  </div>
+                  <p className="shrink-0 text-sm text-stone-500">
+                    読了の目安：
+                    <span className="ml-1 inline-flex items-baseline gap-0.5 font-semibold text-stone-800">
+                      <span className="text-3xl leading-none">{readingMinutes}</span>
+                      <span className="text-sm font-medium text-stone-600">分</span>
+                    </span>
+                  </p>
                 </div>
-                <p className="shrink-0 text-sm text-stone-500">
-                  読了の目安：
-                  <span className="ml-1 inline-flex items-baseline gap-0.5 font-semibold text-stone-800">
-                    <span className="text-3xl leading-none">{readingMinutes}</span>
-                    <span className="text-sm font-medium text-stone-600">分</span>
-                  </span>
-                </p>
-              </div>
-            </section>
-            <ArticleToc
-              items={article.toc}
-              variant="accordion"
-              summaryLabel="目次"
-              summaryHint="クリックで開く"
-            />
-          </div>
+              </section>
+              <ArticleToc
+                items={article.toc}
+                variant="accordion"
+                summaryLabel="目次"
+                summaryHint="クリックで開く"
+              />
+            </div>
+          ) : null}
           <div
-            className="article-body mt-6 max-w-3xl"
+            className={
+              embedded
+                ? "article-embed-root mt-6 w-full max-w-[920px]"
+                : "article-body mt-6 max-w-3xl"
+            }
             data-tts-root={slug}
             dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
           />

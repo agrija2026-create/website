@@ -13,9 +13,12 @@ const DANGEROUS_BLOCK_TAGS = [
   "link",
 ];
 
-function stripBlockedTags(html: string): string {
+function stripBlockedTags(html: string, allowStyle = false): string {
+  const tags = allowStyle
+    ? DANGEROUS_BLOCK_TAGS.filter((t) => t !== "style")
+    : DANGEROUS_BLOCK_TAGS;
   let out = html;
-  for (const tag of DANGEROUS_BLOCK_TAGS) {
+  for (const tag of tags) {
     const paired = new RegExp(`<${tag}\\b[\\s\\S]*?<\\/${tag}>`, "gi");
     const selfClosing = new RegExp(`<${tag}\\b[^>]*\\/?>`, "gi");
     out = out.replace(paired, "");
@@ -55,10 +58,20 @@ function ensureNoopenerForBlankTarget(html: string): string {
   });
 }
 
-export function sanitizeTrustedHtml(inputHtml: string): string {
+export type SanitizeTrustedHtmlOptions = {
+  /** 信頼できるビルド時HTMLのみ。`<style>` を残す（本文の見た目をソースHTMLに合わせる用途） */
+  allowStyle?: boolean;
+};
+
+export function sanitizeTrustedHtml(
+  inputHtml: string,
+  options?: SanitizeTrustedHtmlOptions,
+): string {
   const trimmed = inputHtml.trim();
   if (!trimmed) return "";
+  const allowStyle = options?.allowStyle === true;
+  const pass = stripBlockedTags(trimmed, allowStyle);
   return ensureNoopenerForBlankTarget(
-    stripJavaScriptScheme(stripInlineEventHandlers(stripBlockedTags(trimmed))),
+    stripJavaScriptScheme(stripInlineEventHandlers(pass)),
   );
 }
