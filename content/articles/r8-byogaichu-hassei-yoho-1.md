@@ -8,6 +8,10 @@ tags:
   - "生産者向け"
   - "maff"
   - "病害虫"
+takeaways:
+  - 令和8年度第1号の気象の見通しと、麦・野菜・花き・果樹などで多くなる見込みの病害虫が地域別に示されていること
+  - 水稲の種子消毒や縞葉枯病・斑点米カメムシ類・ジャンボタニシなど、防除・管理上の留意点がまとめられていること
+  - 都道府県の警報・注意報の例、「多い／やや多い」の用語、今後の予報発表予定日まで確認できること
 sourceHtmlFile: "content/source-html/r8-byogaichu-hassei-yoho-1.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->
