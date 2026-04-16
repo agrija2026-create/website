@@ -8,7 +8,6 @@ tags:
   - "生産者向け"
   - "maff"
   - "病害虫"
-embeddedSourceLayout: true
 sourceHtmlFile: "content/source-html/r8-byogaichu-hassei-yoho-1.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->

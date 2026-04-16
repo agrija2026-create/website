@@ -37,18 +37,10 @@ function slugifyHeadingId(text: string, index: number, used: Set<string>): strin
   return ensureUniqueId(base, used);
 }
 
-export type EnrichArticleHtmlOptions = {
-  /** ソースHTMLの表をそのまま使う（サイト共通の表ラップ・クラス付与をしない） */
-  skipTableScrollWrap?: boolean;
-};
-
 /**
  * h2/h3 に id を付与（無い場合）し、目次用配列を返す。表を横スクロール用ラッパーで囲む。
  */
-export function enrichArticleHtml(
-  html: string,
-  options?: EnrichArticleHtmlOptions,
-): { html: string; toc: TocItem[] } {
+export function enrichArticleHtml(html: string): { html: string; toc: TocItem[] } {
   const toc: TocItem[] = [];
   const usedIds = new Set<string>();
   let index = 0;
@@ -83,9 +75,7 @@ export function enrichArticleHtml(
     },
   );
 
-  const withTables = options?.skipTableScrollWrap
-    ? withHeadings
-    : wrapTables(withHeadings);
+  const withTables = wrapTables(withHeadings);
   return { html: withTables, toc };
 }
 
