@@ -69,6 +69,17 @@
   margin-top: 0;
 }
 
+/* 本文が <p class="lead"> の直後に <h2> で始まる記事で、先頭見出しがページ上詰まりすぎないようにする */
+.article-body article > .lead + h2 {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .article-body article > .lead + h2 {
+    margin-top: 2.5rem;
+  }
+}
+
 /* h3 はソースHTMLでは見出しとして太字。Preflight で太さが落ちるため明示する */
 .article-body h3 {
   margin-top: 1.75rem;
