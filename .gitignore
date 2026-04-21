@@ -34,3 +34,4 @@ setup.secrets.env
 
 # typescript
 *.tsbuildinfo
+.vercel
