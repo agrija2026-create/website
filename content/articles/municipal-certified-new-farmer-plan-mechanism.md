@@ -1,6 +1,6 @@
 ---
 title: "市町村の認定で支援がつながる――認定新規就農者制度と青年等就農計画の仕組み"
-slug: "nintei-syunou-10"
+slug: "municipal-certified-new-farmer-plan-mechanism"
 description: "農業経営基盤強化促進法に位置づく認定新規就農者制度。市町村が青年等就農計画を認定し、青年等就農資金や経営開始資金などのメリット措置が届く流れと、対象となる青年等・認定要件を整理します。"
 publishedAt: "2026-05-13"
 category: "policy"
@@ -13,6 +13,6 @@ takeaways:
   - 市町村が農業経営基盤強化促進法に基づく認定新規就農者制度で、青年等就農計画を認定して認定新規就農者を位置づけ、早期の経営安定に向けたメリット措置を集中的に実施していること。
   - 青年等の定義や、計画が市町村の基本構想に照らして適切であること、達成見込みが確実であることなどが認定判断の軸になること。
   - 青年等就農資金（無利子融資）、経営開始資金、担い手支援、所得安定対策、農地集積の促進、農業者年金の国庫補助など、代表例が束ねられていること。
-sourceHtmlFile: "content/source-html/nintei-syunou-10.html"
+sourceHtmlFile: "content/source-html/municipal-certified-new-farmer-plan-mechanism.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->
