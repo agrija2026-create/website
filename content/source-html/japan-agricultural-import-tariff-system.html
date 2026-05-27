@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>農林水産物の関税制度の解説</title>
+  <meta name="description" content="我が国の農林水産物の関税制度について、関税三法、関税の形態、主要品目の実行関税率、関税割当制度、EPAに基づく関税割当の要点を整理します。">
+  <meta property="article:modified_time" content="2026-05-27">
+  <link rel="stylesheet" href="../article-standalone.css">
+</head>
+<body>
+  <div class="article-body">
+  <article>
+    <header class="article-header">
+      <h1>農林水産物の関税制度の解説</h1>
+      <p class="article-meta"><time datetime="2026-05-27">2026年5月27日</time>更新</p>
+    </header>
+
+    <!-- 要点は frontmatter の takeaways に記載 -->
+
+    <p class="lead">輸入農林水産物の税率・枠・手続を一通り把握するため、農林水産省の整理資料に沿って、関税三法から関税の形態、主要品目の税率、一般の関税割当、EPA関税割当までを順にまとめます。適用税率の最終確認は関税率表・各協定の公表をご覧ください。</p>
+
+    <h2 id="summary">概要</h2>
+    <div class="article-table-scroll">
+    <table class="article-summary-table">
+      <colgroup>
+        <col class="article-summary-table-col-key">
+        <col class="article-summary-table-col-value">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">項目</th>
+          <th scope="col">内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>誰に関係するか</td>
+          <td>輸入業者、食品・農資材の調達担当、関税割当・EPA枠の適用を検討する事業者、通関・貿易実務に携わる方です。</td>
+        </tr>
+        <tr>
+          <td>何を</td>
+          <td><a href="#three-laws">関税三法</a>、<a href="#tariff-forms">関税の形態</a>、<a href="#major-rates">主要品目の実行関税率</a>、<a href="#kanwari">関税割当制度</a>、<a href="#epa-kanwari">EPAに基づく関税割当</a>の5論点です。</td>
+        </tr>
+        <tr>
+          <td>詳細はどこで</td>
+          <td>農林水産省「<a href="https://www.maff.go.jp/j/kokusai/boueki/index.html" target="_blank" rel="noopener">関税制度</a>」、同省「<a href="https://www.maff.go.jp/j/kokusai/boueki/attach/pdf/index-8.pdf" target="_blank" rel="noopener">我が国の農林水産物の関税制度について（PDF）</a>」、関税割当公表・関税率表をご覧ください。</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 id="three-laws">関税三法</h2>
+    <p>関税関係法規は次の三法に大別されます。</p>
+    <ul>
+      <li><strong><a href="#kw-zeiho">関税法</a></strong>——関税の確定・納付・徴収・還付と、通関・保税・犯則調査など<strong>税関手続</strong>の基本。</li>
+      <li><strong><a href="#kw-teiritsu">関税定率法</a></strong>——<strong>関税率・課税価格</strong>、減免戻税、報復関税・相殺関税・不当廉売関税・緊急関税など。</li>
+      <li><strong><a href="#kw-zantei">関税暫定措置法</a></strong>——関税割当、特恵関税、農産物の緊急関税など、<a href="#kw-teiritsu">関税定率法</a>・<a href="#kw-zeiho">関税法</a>の<strong>暫定特例</strong>。</li>
+    </ul>
+    <figure>
+      <img src="/article-images/japan-agricultural-import-tariff-system/figure-01.png" width="1600" height="1200" alt="関税三法の一覧。関税法、関税定率法、関税暫定措置法の主な規定内容。" loading="lazy" decoding="async">
+      <figcaption>関税関係法規（関税三法）の役割分担</figcaption>
+    </figure>
+
+    <h2 id="tariff-forms">関税の形態</h2>
+    <p><strong><a href="#kw-ad-valorem">従価税</a></strong>は<a href="#kw-cif">CIF価格</a>に応じて課され、牛肉は<strong>38.5％</strong>が例です。<strong><a href="#kw-specific">従量税</a></strong>は重量・個数等に応じ、コメの枠外は<strong>341円/kg</strong>が代表例です。</p>
+    <p>そのほか、<strong>複合税</strong>（バター：29.8％＋985円/kg）、<strong>選択税</strong>（とうもろこし：50％又は12円/kgの高い方）、<strong>季節関税</strong>（オレンジ生鮮：6/1～11/30は16％、12/1～翌5/31は32％）があります。<a href="#kw-cif">CIF価格</a>は輸入貨物価格に輸入港までの運賃・保険料を加えた価格です。</p>
+    <figure>
+      <img src="/article-images/japan-agricultural-import-tariff-system/figure-02.png" width="1600" height="1200" alt="関税の形態。従価税・従量税の模式図と、複合税・選択税・季節関税の例。" loading="lazy" decoding="async">
+      <figcaption>関税の形態と課税のイメージ</figcaption>
+    </figure>
+
+    <h2 id="major-rates">主要農林水産物の関税率</h2>
+    <p>実行関税率は品目ごとに無税・従価・従量・<a href="#kw-waku">枠内・枠外</a>・<a href="#kw-cif">CIF価格</a>連動などが組み合わされます。※印は関税に加え<strong>納付金・調整金</strong>が別途あることを示します。以下は代表例です。全品目は下図と関税率表をご覧ください。</p>
+    <figure>
+      <img src="/article-images/japan-agricultural-import-tariff-system/figure-03.png" width="1600" height="1200" alt="主要農林水産物の実行関税率一覧。穀物、砂糖、野菜、果物、乳製品、肉類、林産、水産の枠内・枠外税率と注記。" loading="lazy" decoding="async">
+      <figcaption>主要農林水産物の実行関税率</figcaption>
+    </figure>
+
+    <h3 id="rates-grains">穀物・砂糖・豆類</h3>
+    <div class="article-table-scroll">
+    <table>
+      <thead>
+        <tr><th scope="col">品目</th><th scope="col">枠内</th><th scope="col">枠外</th><th scope="col">備考</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>米</td><td>無税</td><td>341円/kg（※）</td><td>関税割当</td></tr>
+        <tr><td>小麦</td><td>無税</td><td>55円/kg（※）</td><td>同上</td></tr>
+        <tr><td>大麦</td><td>無税</td><td>39円/kg（※）</td><td>同上</td></tr>
+        <tr><td>粗糖</td><td>無税/3％</td><td>50％又は12円/kgの高い方</td><td>選択税</td></tr>
+        <tr><td>精製糖</td><td>10％</td><td>354円/kg</td><td>—</td></tr>
+        <tr><td>大豆・コーヒー豆（生豆）・菜種</td><td colspan="2">無税</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 id="rates-other">野菜・果物・畜産・水産など</h3>
+    <p>生鮮野菜の多くは<strong>3％</strong>です。<strong>たまねぎ（生鮮）</strong>は<a href="#kw-cif">CIF価格</a>に応じて8.5％、（73.70円－CIF価格）/kg、又は無税と段階的に変わります。<strong>牛肉38.5％</strong>、<strong>バター</strong>は枠外で29.8％＋985円/kg、水産の<strong>えび</strong>は3.5％、<strong>かつお・まぐろ・さけ・ます</strong>は19.1％～34％又は23円/kgのいずれか高い税率の幅があります。</p>
+
+    <h2 id="kanwari">関税割当制度</h2>
+    <p><a href="#kw-kanwari">関税割当制度</a>は、<strong>関税割当数量</strong>まで<strong>無税又は低税率（枠内）</strong>とし、超過分に<strong>高税率（枠外）</strong>を適用します。枠内は需要者への安価な供給、枠外は国内生産者保護の側面があります。数量は政令で定め、原則<strong>国内需要見込から国内生産見込を控除</strong>した考え方が基本です。</p>
+    <p>農林水産省所管の<strong>17品目</strong>は、とうもろこし（スターチ用等）、麦芽、無糖ココア調製品、トマトピューレー・ペースト、パイナップル缶詰、ナチュラルチーズ、脱脂粉乳、無糖れん乳、ホエイ等、バター及びバターオイル、その他の乳製品、豆類、でん粉等、落花生、こんにゃく芋、調製食用脂、繭及び生糸です（経済産業省所管2品目は別途）。</p>
+    <figure>
+      <img src="/article-images/japan-agricultural-import-tariff-system/figure-04.png" width="1600" height="1200" alt="関税割当制度の模式図と農林水産省所管17品目の一覧。" loading="lazy" decoding="async">
+      <figcaption>関税割当制度の仕組みと対象品目</figcaption>
+    </figure>
+
+    <h2 id="epa-kanwari">EPAに基づく関税割当</h2>
+    <p><a href="#kw-epa-kanwari">経済連携協定に基づく関税割当</a>は、締約国ごとに一定数量まで<strong>特恵税率（枠内）</strong>、超過分に<strong>一般税率（枠外）</strong>を適用します。数量・品目は<strong>各協定で規定</strong>され、一般の関税割当とは申請・公表が分かれます。</p>
+    <p>後半の締約国・地域の例：インドネシア（3品目）、フィリピン（7品目）、スイス（6品目）、ベトナム（1品目）、ペルー（5品目6枠）、オーストラリア（18品目19枠）、モンゴル（5品目）、米国（7品目8枠）、<strong>CPTPP（35品目38枠）</strong>、<strong>日EU（19品目）</strong>。英国は関税割当ではなく、日EU枠の<strong>利用残</strong>の範囲で事後的に同税率を適用する整理例があります。</p>
+    <figure>
+      <img src="/article-images/japan-agricultural-import-tariff-system/figure-05.png" width="1600" height="1200" alt="EPAに基づく関税割当の対象国・品目（インドネシア以降、CPTPP、日EU、英国参考）。" loading="lazy" decoding="async">
+      <figcaption>経済連携協定に基づく関税割当——対象国・品目（続き）</figcaption>
+    </figure>
+
+    <h3 id="epa-indonesia">インドネシア～米国（抜粋）</h3>
+    <ul>
+      <li><strong>インドネシア</strong>：生鮮バナナ、生鮮パイナップル（900g未満）、ソルビトール。</li>
+      <li><strong>フィリピン</strong>：鶏肉、生鮮パイナップル、ソーセージ、豚肉調製品、マスコバド糖、甘しゃ糖みつ、アイスクリーム。</li>
+      <li><strong>オーストラリア</strong>：牛肉調製品、豚肉、鶏肉、チーズ類、ジュース、麦芽、でん粉誘導体など18品目。</li>
+      <li><strong>米国</strong>：ケーキミックス、麦芽、プロセスチーズ、ホエイ、ぶどう糖・果糖、とうもろこしでん粉・ばれいしょでん粉、イノリン。</li>
+    </ul>
+
+    <h2 id="keywords">キーワード解説</h2>
+    <p>本文で繰り返し登場する用語を、輸入実務の観点から補足します。</p>
+
+    <h3 id="kw-zeiho"><strong>関税法</strong></h3>
+    <p>関税行政の<strong>基本法</strong>です。関税の確定・納付・徴収・還付の手続に加え、貨物の輸出・輸入に関する<strong>通関手続</strong>、<strong>保税手続</strong>、犯則調査、罰則などを定めます。品目ごとの税率そのものは主に<a href="#kw-teiritsu">関税定率法</a>・<a href="#kw-zantei">関税暫定措置法</a>側にあり、関税法は「いつ・どのように税関に申告し、税額を納めるか」という運用の骨格を担います。輸入申告のタイミングや保税蔵置の扱いを調べるときは、まず関税法の枠組みを押さえると整理しやすくなります。</p>
+
+    <h3 id="kw-teiritsu"><strong>関税定率法</strong></h3>
+    <p>我が国の関税制度の<strong>中身</strong>を定める法です。<strong>関税率</strong>の種類（基本税率など）と品目別の税率、<strong>課税価格</strong>の決め方、関税の減免・戻税、便益関税のほか、<strong>報復関税・相殺関税・不当廉売関税・緊急関税</strong>といった特殊関税もここに規定されます。「この品目の通常税率はいくらか」という問いの多くは、関税定率法と関税率表の組み合わせで答えます。ただし米・麦の枠内無税や関税割当など、農林水産物で頻出の特例は<a href="#kw-zantei">関税暫定措置法</a>に置かれることが多い点に留意してください。</p>
+
+    <h3 id="kw-zantei"><strong>関税暫定措置法</strong></h3>
+    <p><a href="#kw-teiritsu">関税定率法</a>および<a href="#kw-zeiho">関税法</a>の<strong>特別法</strong>で、経済情勢に応じた暫定措置をまとめたものです。<a href="#kw-kanwari">関税割当制度</a>、<strong>特恵関税制度</strong>（開発途上国向け）、農産物の<strong>特別緊急関税</strong>・<strong>緊急関税措置</strong>などが代表例です。農林水産物の輸入で「枠内・枠外」「割当数量」という語が出てきたときは、多くの場合この法と関税割当に関する政令・別表が根拠になります。単年度ごとに延長・見直しが行われる暫定税率（暫定税率）も、関税定率法上の基本税率を上書きする形で運用されます。</p>
+
+    <h3 id="kw-ad-valorem"><strong>従価税</strong></h3>
+    <p>輸入品の<strong>価格</strong>（原則として<a href="#kw-cif">CIF価格</a>）に対し、定められた<strong>百分率</strong>を乗じて関税額を算定する方式です。国際価格が下がると税額も下がり、値上がりすると税額が増えるため、価格変動と連動しやすいのが特徴です。農林水産物では<strong>牛肉38.5％</strong>、生鮮野菜の<strong>3％</strong>、乳製品の<strong>枠内35％</strong>などが従価税の例です。従価税だけでなく、従量部分と組み合わせた<strong>複合税</strong>や、従価・従量の高い方を採る<strong>選択税</strong>の一部にも従価の考え方が入ります。</p>
+
+    <h3 id="kw-specific"><strong>従量税</strong></h3>
+    <p>輸入品の<strong>重量・個数・容積</strong>など、物理量に対して「○円/kg」「○円/個」のように定められた単価を乗じて税額を算定する方式です。価格が下がっても単位あたりの税額は変わらないため、安価な輸入が国内市場を大きく揺らすのを抑える設計に向きます。穀物の<strong>枠外税率</strong>（コメ341円/kg、小麦55円/kg、大麦39円/kgなど）や、バターの枠外（29.8％＋985円/kg）の従量部分が代表例です。関税額の見積もりでは、申告数量（kg・トン・個）と税率表の単位が一致しているかを確認することが重要です。</p>
+
+    <h3 id="kw-cif"><strong>CIF価格</strong></h3>
+    <p><strong>Cost, Insurance and Freight</strong>（運賃・保険料込み価格）の略で、輸入貨物の<strong>取引価格に、輸入港までの運賃・保険料を加えた金額</strong>です。従価税の課税標準として広く用いられ、関税額はおおむね「CIF価格×従価税率」で計算されます。品目によっては、CIF価格の水準に応じて税率そのものが変わる<strong>段階税率</strong>が設けられます（たまねぎ生鮮など）。同一品目でも、船積条件（インコタームズ）や付随費用の扱いでCIFの算定が変わるため、申告価格の内訳は通関・税理の専門家と突き合わせることが望ましいです。</p>
+
+    <h3 id="kw-waku"><strong>枠内税率・枠外税率</strong></h3>
+    <p><a href="#kw-kanwari">関税割当</a>などで用いる、<strong>輸入数量の枠の内外で税率を分ける</strong>仕組みです。<strong>枠内税率</strong>は無税又は相対的に低い税率で、一定量までは安価な輸入を確保する（需要者保護）側面があります。<strong>枠外税率</strong>は高い従量税・複合税・選択税などが適用され、割当を超える輸入に対して国内生産者を守る（生産者保護）側面があります。表記上「枠内：無税、枠外：341円/kg」のように並ぶのはこの対比です。なお※印付きの枠外税率は、関税に加え<strong>政府又は代行機関の納付金・売買差額・調整金</strong>を含む場合があり、関税単体より実負担が大きくなる点に注意が必要です。</p>
+
+    <h3 id="kw-kanwari"><strong>関税割当制度</strong></h3>
+    <p>一定の輸入数量（<strong>関税割当数量</strong>）まで<strong>枠内税率</strong>を適用し、それを超える輸入に<strong>枠外税率</strong>を適用する制度です。割当数量は原則、国内需要見込から国内生産見込を控除した考え方を基準に、政令で定められます。農林水産省所管ではとうもろこし、乳製品、豆類、でん粉等など<strong>17品目</strong>が対象で、米・小麦・大麦の枠はWTO譲許に基づくアクセス枠として別途管理されます。枠内輸入を行うには、<strong>関税割当の申請・割当</strong>が必要な場合があり、年度・回次ごとの公表とeMAFF等の手続に従います。枠が埋まると枠外税率のみが適用され、コストが大きく跳ね上がる品目もあるため、輸入計画では割当の残量・申請期限を早めに確認する価値があります。</p>
+
+    <h3 id="kw-epa-kanwari"><strong>EPAに基づく関税割当</strong></h3>
+    <p>二国間・地域間の<strong>経済連携協定（EPA）</strong>で合意された、締約国・品目ごとの輸入枠に対する制度です。一定数量まで<strong>特恵税率（枠内）</strong>を適用し、超過分には<strong>一般税率等（枠外）</strong>を適用する点は一般の関税割当と同型ですが、<strong>数量・品目・対象国は各協定文書で規定</strong>され、政令数量の一般枠とは別管理です。メキシコ・豪州・米国・CPTPP・日EUなど、協定ごとに品目数・枠数が大きく異なり（CPTPPは35品目38枠、日EUは19品目など）、申請様式・公表回次・原産地証明の要件も協定単位で異なります。原産国が協定の締約国であること、該当する税表細分・枠番号が一致していることが適用の前提です。英国向けは関税割当そのものではなく、日EU枠の利用残に基づく事後適用の整理例が示されています。</p>
+
+    <h2 id="links">関連する一次情報</h2>
+    <ul>
+      <li><a href="https://www.maff.go.jp/j/kokusai/boueki/index.html" target="_blank" rel="noopener">関税制度（農林水産省）</a></li>
+      <li><a href="https://www.maff.go.jp/j/kokusai/boueki/triff/t_kanwari/summary/index.html" target="_blank" rel="noopener">関税割当制度の概要（農林水産省）</a></li>
+      <li><a href="https://www.maff.go.jp/j/kokusai/boueki/tpp/tpp2025/tpp2025_kohyo.html" target="_blank" rel="noopener">CPTPPに基づく関税割当公表（農林水産省）</a></li>
+      <li><a href="https://www.maff.go.jp/j/kokusai/boueki/attach/pdf/index-8.pdf" target="_blank" rel="noopener">我が国の農林水産物の関税制度について（農林水産省・PDF）</a></li>
+    </ul>
+
+    <footer class="source">
+      <p>出典：農林水産省「<a href="https://www.maff.go.jp/j/kokusai/boueki/index.html" target="_blank" rel="noopener">関税制度</a>」、同省「<a href="https://www.maff.go.jp/j/kokusai/boueki/attach/pdf/index-8.pdf" target="_blank" rel="noopener">我が国の農林水産物の関税制度について</a>」（令和7年6月・輸出・国際局国際経済課）。適用税率・割当数量・申請時期は関税率表・関税割当公表・各EPAの最新公表をご覧ください。</p>
+    </footer>
+  </article>
+  </div>
+</body>
+</html>
