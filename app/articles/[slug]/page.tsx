@@ -92,7 +92,9 @@ export default async function ArticlePage({ params }: Props) {
 
   const { audience, other } = partitionTags(article.tags);
   const pageUrl = absoluteUrl(`/articles/${slug}`);
-  const readingMinutes = estimateReadingMinutesJa(article.htmlBody, article.description);
+  const readingMinutes =
+    article.readingMinutes ??
+    estimateReadingMinutesJa(article.htmlBody, article.description);
   const related = await getRelatedArticles(slug, article.category, 3);
   const articleBodyHtml = stripLeadingArticleHeader(article.htmlBody);
 

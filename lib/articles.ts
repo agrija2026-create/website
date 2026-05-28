@@ -21,6 +21,8 @@ export type ArticleMeta = {
   tags: string[];
   /** 冒頭「この記事でわかること」用（任意） */
   takeaways: string[];
+  /** 読了目安（分）。未指定時は本文から自動算出 */
+  readingMinutes?: number;
   sourceHtmlFile?: string;
 };
 
@@ -119,6 +121,17 @@ function parseArticleFile(filePath: string): Article {
       ? [takeawaysRaw.trim()]
       : [];
 
+  const readingMinutesRaw = d.readingMinutes;
+  const readingMinutesParsed =
+    typeof readingMinutesRaw === "number"
+      ? readingMinutesRaw
+      : typeof readingMinutesRaw === "string" && readingMinutesRaw.trim()
+        ? Number(readingMinutesRaw)
+        : NaN;
+  const readingMinutes = Number.isFinite(readingMinutesParsed)
+    ? Math.max(1, Math.min(180, Math.round(readingMinutesParsed)))
+    : undefined;
+
   const sourceHtmlFile =
     typeof d.sourceHtmlFile === "string" ? d.sourceHtmlFile : undefined;
   let htmlBody = content.trim();
@@ -147,6 +160,7 @@ function parseArticleFile(filePath: string): Article {
     category: String(d.category ?? ""),
     tags,
     takeaways,
+    readingMinutes,
     sourceHtmlFile,
     htmlBody: enrichedHtml,
     toc,
