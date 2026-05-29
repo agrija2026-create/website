@@ -97,7 +97,8 @@ export default async function ArticlePage({ params }: Props) {
   const readingMinutes =
     article.readingMinutes ??
     estimateReadingMinutesJa(article.htmlBody, article.description);
-  const related = await getRelatedArticles(slug, article.category, 3);
+  const { articles: relatedArticles, source: relatedSource } =
+    await getRelatedArticles(slug, article.category, 3);
   const articleBodyHtml = stripLeadingArticleHeader(article.htmlBody);
 
   return (
@@ -209,7 +210,10 @@ export default async function ArticlePage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
           />
           <div className="max-w-3xl">
-            <RelatedArticles articles={related.map(toRelatedArticleData)} />
+            <RelatedArticles
+              articles={relatedArticles.map(toRelatedArticleData)}
+              source={relatedSource}
+            />
           </div>
         </div>
         <Sidebar />

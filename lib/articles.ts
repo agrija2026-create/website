@@ -5,6 +5,7 @@ import { cache } from "react";
 import { enrichArticleHtml } from "@/lib/articleHtml";
 import type { TocItem } from "@/lib/articleHtml";
 import { sanitizeTrustedHtml } from "@/lib/sanitizeHtml";
+import { getArticleCluster } from "@/lib/articleClusters";
 import {
   buildSidebarThemeTags,
   encodeTagForUrl,
@@ -366,13 +367,39 @@ export async function searchArticles(query: string): Promise<Article[]> {
   });
 }
 
-/** 同カテゴリを優先し、足りなければ他カテゴリの新着で埋める */
+export type RelatedArticlesSource = "cluster" | "category";
+
+export type RelatedArticlesResult = {
+  articles: Article[];
+  source: RelatedArticlesSource;
+};
+
+/** クラスター定義を優先し、なければ同カテゴリ→他カテゴリの新着で埋める */
 export async function getRelatedArticles(
   slug: string,
   category: string,
   limit = 3,
-): Promise<Article[]> {
+): Promise<RelatedArticlesResult> {
   const all = await getAllArticles();
+  const bySlug = new Map(all.map((a) => [a.slug, a]));
+
+  const cluster = getArticleCluster(slug);
+  if (cluster) {
+    const out: Article[] = [];
+    for (const memberSlug of cluster) {
+      if (memberSlug === slug) continue;
+      const article = bySlug.get(memberSlug);
+      if (!article) continue;
+      out.push(article);
+      if (out.length >= limit) {
+        return { articles: out, source: "cluster" };
+      }
+    }
+    if (out.length > 0) {
+      return { articles: out, source: "cluster" };
+    }
+  }
+
   const out: Article[] = [];
   const seen = new Set<string>();
 
@@ -380,17 +407,17 @@ export async function getRelatedArticles(
     if (a.slug === slug || a.category !== category) continue;
     out.push(a);
     seen.add(a.slug);
-    if (out.length >= limit) return out;
+    if (out.length >= limit) return { articles: out, source: "category" };
   }
 
   for (const a of all) {
     if (a.slug === slug || seen.has(a.slug)) continue;
     out.push(a);
     seen.add(a.slug);
-    if (out.length >= limit) return out;
+    if (out.length >= limit) return { articles: out, source: "category" };
   }
 
-  return out;
+  return { articles: out, source: "category" };
 }
 
 /** 全記事からユニークなタグ（記事データ上の文字列・ソート済み） */

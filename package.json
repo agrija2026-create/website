@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "verify:article-images": "bash scripts/check-article-images-no-avif.sh",
-    "build": "npm run verify:article-images && next build",
+    "articles:csv": "node scripts/generate-articles-csv.mjs",
+    "build": "npm run verify:article-images && npm run articles:csv && next build",
     "start": "next start",
     "lint": "next lint",
     "setup:first-push": "bash scripts/first-push.sh",

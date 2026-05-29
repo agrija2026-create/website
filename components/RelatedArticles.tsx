@@ -1,8 +1,17 @@
 import Link from "next/link";
-import type { RelatedArticleData } from "@/lib/articles";
+import type {
+  RelatedArticleData,
+  RelatedArticlesSource,
+} from "@/lib/articles";
 
 type Props = {
   articles: RelatedArticleData[];
+  source?: RelatedArticlesSource;
+};
+
+const SOURCE_HINT: Record<RelatedArticlesSource, string> = {
+  cluster: "同じテーマの関連記事です。",
+  category: "同じカテゴリを優先して表示しています。",
 };
 
 function formatDate(iso: string): string {
@@ -15,7 +24,7 @@ function formatDate(iso: string): string {
   });
 }
 
-export function RelatedArticles({ articles }: Props) {
+export function RelatedArticles({ articles, source = "category" }: Props) {
   if (articles.length === 0) return null;
 
   return (
@@ -26,7 +35,7 @@ export function RelatedArticles({ articles }: Props) {
       <h2 id="related-heading" className="text-lg font-bold text-stone-900">
         関連記事
       </h2>
-      <p className="mt-1 text-sm text-stone-500">同じカテゴリを優先して表示しています。</p>
+      <p className="mt-1 text-sm text-stone-500">{SOURCE_HINT[source]}</p>
       <ul className="mt-6 space-y-4">
         {articles.map((a) => (
           <li key={a.slug}>

@@ -100,7 +100,24 @@ npm run article:stage -- "../記事/元資料/記事と元資料/25_物流革新
 npm run article:publish -- <slug>
 ```
 
-`publish-article.sh` は `content/articles/<slug>.md` に加えて、`sourceHtmlFile` が指定されている場合は対応する `content/source-html/*.html` も一緒にコミットして push します。
+`publish-article.sh` は `content/articles/<slug>.md` に加えて、`sourceHtmlFile` が指定されている場合は対応する `content/source-html/*.html` も一緒にコミットして push します。あわせて **記事一覧 CSV**（`public/articles-index.csv`）も再生成してコミットします。
+
+### 記事一覧 CSV（タイトル・URL・公開日）
+
+全公開記事を **タイトル / URL / 公開日** の3列で出力します。
+
+| 項目 | 内容 |
+|------|------|
+| ファイル | `public/articles-index.csv` |
+| 本番URL | `https://agri-ja.net/articles-index.csv` |
+| 手動更新 | `npm run articles:csv` |
+
+**自動更新のタイミング**
+
+- `npm run article:publish` … 記事 push 時に CSV も同じコミットへ含める
+- `npm run build` … Vercel デプロイ前にも再生成（push 忘れがあっても本番 CSV は最新化）
+
+記事の元データは `content/articles/*.md` の frontmatter（`title` / `slug` / `publishedAt`）です。記事 URL は `/articles/<slug>` 形式です。
 
 ## ローカルでの起動
 

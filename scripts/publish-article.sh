@@ -27,6 +27,9 @@ fi
 
 git add "$FILE"
 
+npm run articles:csv
+git add public/articles-index.csv
+
 SOURCE_HTML_FILE="$(sed -n 's/^sourceHtmlFile:[[:space:]]*"\(.*\)".*$/\1/p' "$FILE" | head -n 1 || true)"
 if [[ -n "${SOURCE_HTML_FILE}" ]]; then
   if [[ -f "${SOURCE_HTML_FILE}" ]]; then
