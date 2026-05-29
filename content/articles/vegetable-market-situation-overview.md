@@ -1,7 +1,7 @@
 ---
 title: "野菜をめぐる情勢の解説"
 slug: "vegetable-market-situation-overview"
-description: "農林水産省「野菜をめぐる情勢」（令和8年1月）の前半をもとに、野菜の農業における位置づけ、需給・供給体制、輸出入、生産・経営・機械化の数値と論点を整理します。"
+description: "野菜の農業における位置づけ、需給・供給体制、輸出入、生産・経営・機械化の数値と論点を整理します。"
 publishedAt: "2026-05-26"
 category: "market"
 tags:
