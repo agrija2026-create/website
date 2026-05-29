@@ -6,6 +6,7 @@ const SLUG_REDIRECTS: ReadonlyArray<readonly [string, string]> = [
   ["farmland-efficiency-loan-support-type", "farm-land-efficiency-loan-support-r8"],
   ["seibi-55", "rural-resource-facility-infrastructure"],
   ["index-163", "vegetable-price-outlook-r8-may"],
+  ["index-164", "vegetable-price-outlook-r8-june"],
   ["sanchipu-71", "production-base-power-up-program"],
   ["budget-15", "domestic-fertilizer-resource-expansion"],
   ["kokusan-shea-dakkan-85", "domestic-vegetable-share-recovery"],
