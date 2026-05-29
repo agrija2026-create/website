@@ -11,8 +11,9 @@ export function Hero() {
         alt="緑豊かな農地の風景"
         fill
         priority
+        fetchPriority="high"
         className="object-cover"
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, 1920px"
       />
       <div
         className="absolute inset-0 bg-gradient-to-b from-stone-900/75 via-stone-900/65 to-stone-900/80"
