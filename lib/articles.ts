@@ -5,7 +5,16 @@ import { cache } from "react";
 import { enrichArticleHtml } from "@/lib/articleHtml";
 import type { TocItem } from "@/lib/articleHtml";
 import { sanitizeTrustedHtml } from "@/lib/sanitizeHtml";
-import { encodeTagForUrl, getTagLabel, validateArticleAudienceTags } from "@/lib/tags";
+import {
+  buildSidebarThemeTags,
+  encodeTagForUrl,
+  getTagLabel,
+  isAudienceTag,
+  isThemeTag,
+  stripCategoryOverlapThemeTags,
+  validateArticleAudienceTags,
+  validateArticleThemeTags,
+} from "@/lib/tags";
 
 const articlesDirectory = path.join(process.cwd(), "content/articles");
 const sourceHtmlDirectoryPrefix = "content/source-html/";
@@ -147,7 +156,9 @@ function parseArticleFile(filePath: string): Article {
     }
   }
 
+  const category = String(d.category ?? "");
   validateArticleAudienceTags(tags, path.basename(filePath));
+  validateArticleThemeTags(tags, path.basename(filePath));
 
   const sanitized = sanitizeTrustedHtml(htmlBody);
   const { html: enrichedHtml, toc } = enrichArticleHtml(sanitized);
@@ -157,7 +168,7 @@ function parseArticleFile(filePath: string): Article {
     slug: String(d.slug ?? ""),
     description: String(d.description ?? ""),
     publishedAt: String(d.publishedAt ?? ""),
-    category: String(d.category ?? ""),
+    category,
     tags,
     takeaways,
     readingMinutes,
@@ -251,6 +262,7 @@ function normalizeMicroCmsArticle(item: MicroCmsArticle): Article | null {
           : "";
 
   validateArticleAudienceTags(tags, `microCMS:${slug}`);
+  validateArticleThemeTags(tags, `microCMS:${slug}`);
 
   const takeawaysRaw = item.takeaways;
   const takeaways = Array.isArray(takeawaysRaw)
@@ -388,6 +400,24 @@ export async function getAllTagSlugs(): Promise<string[]> {
     for (const t of a.tags) set.add(t);
   }
   return Array.from(set).sort((x, y) => x.localeCompare(y, "ja"));
+}
+
+/** サイドバー「タグ一覧」用（テーマタグ・件数降順） */
+export async function getSidebarThemeTags() {
+  const counts = new Map<string, number>();
+  for (const a of await getAllArticles()) {
+    for (const t of a.tags) {
+      if (!isThemeTag(t)) continue;
+      counts.set(t, (counts.get(t) ?? 0) + 1);
+    }
+  }
+  return buildSidebarThemeTags(counts);
+}
+
+/** 記事カード等：テーマタグのみ（読者タグ・カテゴリ重複除外） */
+export function getVisibleThemeTags(tags: string[], category: string): string[] {
+  const theme = tags.filter((t) => !isAudienceTag(t) && isThemeTag(t));
+  return stripCategoryOverlapThemeTags(theme, category);
 }
 
 /** `/tags/[slug]` の generateStaticParams 用（URL セグメント・重複なし） */

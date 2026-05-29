@@ -1,13 +1,11 @@
 import Link from "next/link";
-import { getAllTagSlugs } from "@/lib/articles";
+import { getSidebarThemeTags } from "@/lib/articles";
 import { CATEGORY_MAP } from "@/lib/categories";
 import type { TocItem } from "@/lib/articleHtml";
 import { ArticleToc } from "@/components/ArticleToc";
 import {
   AUDIENCE_TAGS,
   encodeTagForUrl,
-  getTagLabel,
-  isAudienceTag,
 } from "@/lib/tags";
 
 type SidebarProps = {
@@ -15,7 +13,7 @@ type SidebarProps = {
 };
 
 export async function Sidebar({ tocItems }: SidebarProps = {}) {
-  const tagSlugs = (await getAllTagSlugs()).filter((t) => !isAudienceTag(t));
+  const themeTags = await getSidebarThemeTags();
 
   return (
     <aside className="w-full shrink-0 lg:w-72">
@@ -71,13 +69,14 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
         <section>
           <h2 className="text-sm font-bold text-stone-900">タグ一覧</h2>
           <ul className="mt-3 flex flex-wrap gap-2">
-            {tagSlugs.map((slug) => (
-              <li key={slug}>
+            {themeTags.map(({ label, count }) => (
+              <li key={label}>
                 <Link
-                  href={`/tags/${encodeTagForUrl(slug)}`}
+                  href={`/tags/${encodeTagForUrl(label)}`}
                   className="inline-block rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-700 transition-colors hover:border-orange-300 hover:bg-orange-50 hover:text-orange-900"
                 >
-                  {getTagLabel(slug)}
+                  {label}
+                  <span className="ml-1 text-stone-400">({count})</span>
                 </Link>
               </li>
             ))}

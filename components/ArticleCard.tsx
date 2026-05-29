@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { ArticleCardData } from "@/lib/articles";
+import { getVisibleThemeTags } from "@/lib/articles";
 import { getCategoryName } from "@/lib/categories";
-import { encodeTagForUrl, getTagLabel, partitionTags } from "@/lib/tags";
+import { encodeTagForUrl, partitionTags } from "@/lib/tags";
 
 function formatDate(iso: string): string {
   const d = new Date(iso);
@@ -18,7 +19,8 @@ type Props = {
 };
 
 export function ArticleCard({ article }: Props) {
-  const { audience, other } = partitionTags(article.tags);
+  const { audience } = partitionTags(article.tags);
+  const themeTags = getVisibleThemeTags(article.tags, article.category);
 
   return (
     <article className="group rounded-xl border border-stone-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
@@ -46,16 +48,16 @@ export function ArticleCard({ article }: Props) {
           ))}
         </div>
       )}
-      {other.length > 0 && (
+      {themeTags.length > 0 && (
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <span className="text-xs font-semibold text-stone-500">タグ</span>
-          {other.map((t) => (
+          {themeTags.map((t) => (
             <Link
               key={t}
               href={`/tags/${encodeTagForUrl(t)}`}
               className="rounded-full border border-stone-200 bg-stone-50 px-2 py-0.5 text-xs font-medium text-stone-700 transition-colors hover:border-orange-200 hover:bg-orange-50/80"
             >
-              {getTagLabel(t)}
+              {t}
             </Link>
           ))}
         </div>

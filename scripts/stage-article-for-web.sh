@@ -116,7 +116,7 @@ from pathlib import Path
 
 DEFAULT_PUBLISHED_AT = os.environ["CURRENT_DATE"]
 DEFAULT_CATEGORY = "policy"
-DEFAULT_TAGS = ["生産者向け", "maff"]
+DEFAULT_TAGS = ["生産者向け"]
 DEFAULT_BODY = "<!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->\n"
 
 target_md = Path(os.environ["TARGET_MD"])
@@ -226,6 +226,19 @@ else:
     tags = list(existing_tags) if isinstance(existing_tags, list) and existing_tags else list(DEFAULT_TAGS)
 if not tags:
     tags = list(DEFAULT_TAGS)
+
+AUDIENCE = {"生産者向け", "小売向け", "流通向け"}
+if not has_tags:
+    audience = [t for t in tags if t in AUDIENCE] or list(DEFAULT_TAGS)
+    import importlib.util
+
+    migrate_path = Path("scripts/migrate_theme_tags.py")
+    spec = importlib.util.spec_from_file_location("migrate_theme_tags", migrate_path)
+    if spec and spec.loader:
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        theme = mod.suggest_theme_tags(slug, category)
+        tags = audience + theme
 
 managed_keys = {
     "title",

@@ -5,14 +5,12 @@ description: "共同利用施設の整備・再編を支える制度について
 publishedAt: "2026-04-07"
 category: "budget"
 tags:
-  - 生産者向け
-  - "budget"
-  - "maff"
-  - "facility"
+  - "生産者向け"
+  - "共同利用"
 takeaways:
-  - 共同利用施設の整備・再編を支える制度の対象と論点
-  - 予算規模や事業選択の考え方の把握
-  - 申請・要件の詳細は公表資料で確認すること
+  - "共同利用施設の整備・再編を支える制度の対象と論点"
+  - "予算規模や事業選択の考え方の把握"
+  - "申請・要件の詳細は公表資料で確認すること"
 sourceHtmlFile: "content/source-html/kyodo-riyo-shisetsu-seibi-r8.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->

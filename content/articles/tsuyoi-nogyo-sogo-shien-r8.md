@@ -5,14 +5,12 @@ description: "強い農業づくり総合支援交付金について、食料シ
 publishedAt: "2026-04-09"
 category: "budget"
 tags:
-  - 生産者向け
-  - "budget"
-  - "maff"
-  - "hojo"
+  - "生産者向け"
+  - "補助金"
 takeaways:
-  - 強い農業づくり総合支援交付金の3つの支援タイプの違い
-  - 補助率・上限額・予算規模の読み方
-  - 制度の詳細は農林水産省の一次情報で確認すること
+  - "強い農業づくり総合支援交付金の3つの支援タイプの違い"
+  - "補助率・上限額・予算規模の読み方"
+  - "制度の詳細は農林水産省の一次情報で確認すること"
 sourceHtmlFile: "content/source-html/tsuyoi-nogyo-sogo-shien-r8.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->

@@ -6,9 +6,7 @@ publishedAt: "2026-04-27"
 category: "production"
 tags:
   - "生産者向け"
-  - "maff"
-  - "yasai"
-  - "seed"
+  - "種苗"
 sourceHtmlFile: "content/source-html/yasai-shushi-antei-kyokyu-r8.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->

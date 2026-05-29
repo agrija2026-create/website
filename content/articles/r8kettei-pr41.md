@@ -6,7 +6,7 @@ publishedAt: "2026-04-28"
 category: "budget"
 tags:
   - "生産者向け"
-  - "maff"
+  - "補助金"
 sourceHtmlFile: "content/source-html/r8kettei-pr41.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->

@@ -13,6 +13,7 @@ import {
   getAllArticles,
   getArticleBySlug,
   getRelatedArticles,
+  getVisibleThemeTags,
   toRelatedArticleData,
 } from "@/lib/articles";
 import { getCategoryName } from "@/lib/categories";
@@ -24,7 +25,7 @@ import {
   getDefaultOgImageUrl,
   toIsoDateTime,
 } from "@/lib/site";
-import { encodeTagForUrl, getTagLabel, partitionTags } from "@/lib/tags";
+import { encodeTagForUrl, partitionTags } from "@/lib/tags";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -90,7 +91,8 @@ export default async function ArticlePage({ params }: Props) {
   const article = await getArticleBySlug(slug);
   if (!article) notFound();
 
-  const { audience, other } = partitionTags(article.tags);
+  const { audience } = partitionTags(article.tags);
+  const themeTags = getVisibleThemeTags(article.tags, article.category);
   const pageUrl = absoluteUrl(`/articles/${slug}`);
   const readingMinutes =
     article.readingMinutes ??
@@ -152,13 +154,13 @@ export default async function ArticlePage({ params }: Props) {
                   {t}
                 </Link>
               ))}
-              {other.map((t) => (
+              {themeTags.map((t) => (
                 <Link
                   key={t}
                   href={`/tags/${encodeTagForUrl(t)}`}
                   className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-700 hover:border-orange-200 hover:bg-orange-50/80"
                 >
-                  {getTagLabel(t)}
+                  {t}
                 </Link>
               ))}
             </div>

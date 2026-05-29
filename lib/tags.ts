@@ -1,12 +1,82 @@
 /**
- * 読者向けタグ（表記固定・他タグと別扱い）。`tags` に1〜3個必須。
- * 英数字タグは従来どおり TAG_LABELS で表示名を補う。
+ * 読者向けタグ（表記固定）。`tags` に1〜3個必須。
+ * テーマタグは日本語ラベル固定・正規語彙のみ（`THEME_TAG_REGISTRY`）。
  */
 export const AUDIENCE_TAGS = ["生産者向け", "小売向け", "流通向け"] as const;
 
 export type AudienceTag = (typeof AUDIENCE_TAGS)[number];
 
-/** 読者タグは URL を ASCII に固定（本番で日本語パスが静的生成と一致しない問題を避ける） */
+export type ThemeTagDef = {
+  label: string;
+  urlSlug: string;
+  /** サイドバー「タグ一覧」に載せるか */
+  listedInSidebar: boolean;
+};
+
+/** 正規テーマタグ（frontmatter に書く日本語ラベル） */
+export const THEME_TAG_REGISTRY: readonly ThemeTagDef[] = [
+  { label: "補助金", urlSlug: "subsidy", listedInSidebar: true },
+  { label: "輸出", urlSlug: "export", listedInSidebar: true },
+  { label: "農地バンク", urlSlug: "nouchibank", listedInSidebar: true },
+  { label: "金融・融資", urlSlug: "finance", listedInSidebar: true },
+  { label: "食品ロス", urlSlug: "food-loss", listedInSidebar: true },
+  { label: "流通", urlSlug: "distribution", listedInSidebar: true },
+  { label: "就農", urlSlug: "employment", listedInSidebar: true },
+  { label: "六次産業", urlSlug: "sixth-industry", listedInSidebar: true },
+  { label: "共同利用", urlSlug: "facility", listedInSidebar: true },
+  { label: "大規模化", urlSlug: "large-scale-growth-subsidy", listedInSidebar: true },
+  { label: "交付金", urlSlug: "direct-payment", listedInSidebar: true },
+  { label: "オーガニックビレッジ", urlSlug: "organic-village", listedInSidebar: true },
+  { label: "災害対応", urlSlug: "disaster", listedInSidebar: true },
+  { label: "肥料", urlSlug: "fertilizer", listedInSidebar: true },
+  { label: "病害虫", urlSlug: "byogaichu", listedInSidebar: true },
+  { label: "種苗", urlSlug: "seed", listedInSidebar: true },
+  { label: "ドローン", urlSlug: "drone", listedInSidebar: true },
+] as const;
+
+export const THEME_TAG_LABELS = THEME_TAG_REGISTRY.map((t) => t.label);
+
+const themeByLabel = new Map(THEME_TAG_REGISTRY.map((t) => [t.label, t]));
+const themeByUrlSlug = new Map(THEME_TAG_REGISTRY.map((t) => [t.urlSlug, t]));
+
+/** カテゴリ slug → 付けてはいけないテーマタグ（カテゴリ表示と同義） */
+export const CATEGORY_THEME_OVERLAP: Record<string, string> = {
+  policy: "政策",
+  budget: "予算",
+  logistics: "物流",
+  technology: "スマート農業",
+  production: "野菜",
+  market: "野菜",
+};
+
+/** 移行用：旧英語・廃止タグ → 新ラベル（null は削除） */
+export const LEGACY_THEME_TAG_MAP: Record<string, string | null> = {
+  maff: null,
+  policy: null,
+  budget: null,
+  logistics: null,
+  yasai: null,
+  "smart-agriculture": null,
+  "basic-plan": null,
+  hojo: "補助金",
+  facility: "共同利用",
+  nouchibank: "農地バンク",
+  "direct-payment": "交付金",
+  export: "輸出",
+  輸出: "輸出",
+  seed: "種苗",
+  disaster: "災害対応",
+  drone: "ドローン",
+  employment: "就農",
+  fertilizer: "肥料",
+  finance: "金融・融資",
+  "new-farmer": "就農",
+  "large-scale-growth-subsidy": "大規模化",
+  病害虫: "病害虫",
+  オーガニックビレッジ: "オーガニックビレッジ",
+};
+
+/** 読者タグは URL を ASCII に固定 */
 export const READER_TAG_PATH: Record<string, string> = {
   生産者向け: "reader-producers",
   小売向け: "reader-retail",
@@ -17,14 +87,20 @@ const pathToReaderTag = Object.fromEntries(
   Object.entries(READER_TAG_PATH).map(([ja, pathSeg]) => [pathSeg, ja]),
 );
 
-/** 記事データ上のタグ → `/tags/[slug]` 用のパスセグメント */
 export function encodeTagForUrl(tag: string): string {
-  return READER_TAG_PATH[tag] ?? tag;
+  const reader = READER_TAG_PATH[tag];
+  if (reader) return reader;
+  const theme = themeByLabel.get(tag);
+  if (theme) return theme.urlSlug;
+  return tag;
 }
 
-/** `/tags/[slug]` の param → 記事の tags と照合する文字列 */
 export function decodeTagFromUrl(segment: string): string {
-  return pathToReaderTag[segment] ?? segment;
+  const reader = pathToReaderTag[segment];
+  if (reader) return reader;
+  const theme = themeByUrlSlug.get(segment);
+  if (theme) return theme.label;
+  return segment;
 }
 
 const audienceSet = new Set<string>(AUDIENCE_TAGS);
@@ -39,13 +115,38 @@ export function isAudienceTagPath(segment: string): boolean {
   return audiencePathSet.has(segment);
 }
 
-/** 読者タグの個数が 1〜3 でなければ例外（ビルド・開発時に検知） */
+export function isThemeTag(tag: string): boolean {
+  return themeByLabel.has(tag);
+}
+
+export function isListedInSidebar(tag: string): boolean {
+  return themeByLabel.get(tag)?.listedInSidebar ?? false;
+}
+
 export function validateArticleAudienceTags(tags: string[], context: string): void {
   const n = tags.filter(isAudienceTag).length;
   if (n < 1 || n > 3) {
     throw new Error(
       `[articles] 読者タグは1〜3個必須です（${AUDIENCE_TAGS.join("・")}）。${context} … 該当${n}個`,
     );
+  }
+}
+
+const MAX_THEME_TAGS = 3;
+
+export function validateArticleThemeTags(tags: string[], context: string): void {
+  const theme = tags.filter((t) => !isAudienceTag(t));
+  if (theme.length > MAX_THEME_TAGS) {
+    throw new Error(
+      `[articles] テーマタグは0〜${MAX_THEME_TAGS}個です。${context} … 該当${theme.length}個`,
+    );
+  }
+  for (const t of theme) {
+    if (!isThemeTag(t)) {
+      throw new Error(
+        `[articles] 未登録のテーマタグ「${t}」。正規語彙は docs/theme-tags.md を参照。${context}`,
+      );
+    }
   }
 }
 
@@ -58,22 +159,41 @@ export function partitionTags(tags: string[]): {
   return { audience, other };
 }
 
-export const TAG_LABELS: Record<string, string> = {
-  "smart-agriculture": "スマート農業",
-  maff: "農林水産省",
-  "basic-plan": "基本計画",
-  budget: "予算",
-  policy: "政策",
-  r8: "R8年度",
-  logistics: "物流",
-  "direct-payment": "直接支払交付金",
-  facility: "共同利用施設",
-  hojo: "補助金",
-  yasai: "野菜",
-  nouchibank: "農地銀行",
+/** カテゴリと同義のテーマタグを除去 */
+export function stripCategoryOverlapThemeTags(
+  themeTags: string[],
+  categorySlug: string,
+): string[] {
+  const overlap = CATEGORY_THEME_OVERLAP[categorySlug];
+  if (!overlap) return themeTags;
+  return themeTags.filter((t) => t !== overlap);
+}
+
+export function getTagLabel(tag: string): string {
+  if (isAudienceTag(tag)) return tag;
+  if (isThemeTag(tag)) return tag;
+  return tag;
+}
+
+export type SidebarThemeTag = {
+  label: string;
+  count: number;
 };
 
-export function getTagLabel(slug: string): string {
-  if (isAudienceTag(slug)) return slug;
-  return TAG_LABELS[slug] ?? slug;
+/** サイドバー「タグ一覧」用（listedInSidebar のみ・件数降順） */
+export function buildSidebarThemeTags(
+  tagCounts: Map<string, number>,
+): SidebarThemeTag[] {
+  const out: SidebarThemeTag[] = [];
+  for (const def of THEME_TAG_REGISTRY) {
+    if (!def.listedInSidebar) continue;
+    const count = tagCounts.get(def.label) ?? 0;
+    if (count < 1) continue;
+    out.push({ label: def.label, count });
+  }
+  out.sort(
+    (a, b) =>
+      b.count - a.count || a.label.localeCompare(b.label, "ja"),
+  );
+  return out;
 }
