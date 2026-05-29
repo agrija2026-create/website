@@ -3,7 +3,7 @@ title: "省エネルギー型ハウス転換事業の解説"
 slug: "energy-saving-greenhouse-conversion"
 description: "みどりの食料システム戦略推進交付金「省エネルギー型ハウス転換事業」の目的、再生可能エネルギー活用と低投入栽培実証の2本柱、優先採択、資金の流れを、施設園芸の協議会で事業化する関係者向けに整理します。"
 publishedAt: "2026-05-19"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

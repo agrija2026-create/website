@@ -3,7 +3,7 @@ title: "農林水産物の関税制度の解説"
 slug: "japan-agricultural-import-tariff-system"
 description: "我が国の農林水産物の関税制度について、関税三法、関税の形態、主要品目の実行関税率、関税割当制度、EPAに基づく関税割当の要点を整理します。"
 publishedAt: "2026-05-27"
-category: "policy"
+category: "market"
 tags:
   - "生産者向け"
   - "maff"

@@ -3,7 +3,7 @@ title: "農業生産におけるプラスチック排出抑制対策事業の解
 slug: "agricultural-plastic-emission-reduction"
 description: "みどりの食料システム戦略推進交付金「農業生産におけるプラスチック排出抑制対策事業」の3事業（行動計画の整理、代替資材の実用化、モデル地域）、5Rの優先順位、資金の流れと予算内数を整理します。"
 publishedAt: "2026-05-19"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

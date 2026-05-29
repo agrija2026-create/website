@@ -3,7 +3,7 @@ title: "優良品種の海外流出を防ぐ――植物品種等海外流出防
 slug: "plant-variety-overseas-protection"
 description: "令和8年度の植物品種等海外流出防止・活用推進総合対策事業について、育成者権の保護、海外ライセンス、国内管理、DNA品種識別技術、予算額と補助の流れを整理します。"
 publishedAt: "2026-05-13"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

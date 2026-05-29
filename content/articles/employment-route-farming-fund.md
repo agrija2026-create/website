@@ -3,7 +3,7 @@ title: "地域雇用と独立就農を支える――雇用就農資金の解説
 slug: "employment-route-farming-fund"
 description: "雇用就農の総合的な推進の枠組みのうち、雇用就農資金の位置づけ、三つの交付タイプ、就農希望者・農業法人等・派遣に関する条件の目安、国から農業法人等への定額交付の流れと支援上限の整理、令和8年度・令和7年度補正の予算内数、一次情報の確認先までを本文で整理します。"
 publishedAt: "2026-05-13"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

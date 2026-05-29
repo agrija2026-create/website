@@ -3,7 +3,7 @@ title: "産地生産基盤パワーアップ事業の要点"
 slug: "sanchipu-71"
 description: "収益力強化に取り組む産地を支援する農林水産省の産地生産基盤パワーアップ事業。趣旨、事業目標、三大対策、補正後の予算規模と資金の流れを整理します。"
 publishedAt: "2026-04-20"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

@@ -3,7 +3,7 @@ title: "食品ロスの現状の解説"
 slug: "japan-food-loss-current-situation"
 description: "世界と日本の食品ロスの規模、SDGsとの関係、事業系・家庭系の内訳、業種別構造、推移と推計方法を整理します。"
 publishedAt: "2026-05-28"
-category: "policy"
+category: "logistics"
 tags:
   - "流通向け"
   - "小売向け"

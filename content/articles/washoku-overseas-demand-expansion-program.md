@@ -3,7 +3,7 @@ title: "日本食・食文化の魅力発信による日本産品海外需要拡
 slug: "washoku-overseas-demand-expansion-program"
 description: "新市場開拓推進事業の一環として、外国人日本食料理人の育成と海外イベントでの発信により日本産品の輸出拡大を図る令和8年度事業の目的・予算・7つの育成施策と実施形態を整理します。"
 publishedAt: "2026-05-27"
-category: "policy"
+category: "market"
 tags:
   - "生産者向け"
   - "流通向け"

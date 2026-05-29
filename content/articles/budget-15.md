@@ -3,7 +3,7 @@ title: "国内肥料資源利用拡大対策事業の要点を解説"
 slug: "budget-15"
 description: "三つの柱（施設整備・利用拡大・土壌調査）、補助上限の目安、令和7年度補正7,000百万円、政策目標を整理。申請様式・採択条件は農林水産省の事業ページと要綱・募集案内を参照してください。"
 publishedAt: "2026-05-12"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

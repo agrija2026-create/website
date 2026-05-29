@@ -3,7 +3,7 @@ title: "認定後の設備・運転資金を公庫で――農林水産物・食
 slug: "jfc-agrifood-export-baseline-finance"
 description: "輸出促進法に基づく認定輸出事業計画に沿う事業者向けの日本政策金融公庫「農林水産物・食品輸出基盤強化資金」。対象事業、融資期間・限度、中小企業者の目安、農政局と公庫の手続の流れを整理します。"
 publishedAt: "2026-05-12"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

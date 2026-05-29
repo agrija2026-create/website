@@ -3,7 +3,7 @@ title: "有機転換推進事業の解説"
 slug: "organic-conversion-promotion"
 description: "みどりの食料システム戦略推進交付金「有機転換推進事業」の転換支援（10aあたり2万円以内）、新規就農3年・慣行からの転換、国際水準の有機・みどり認定要件、目標6.3万ha、予算内数を整理します。"
 publishedAt: "2026-05-19"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

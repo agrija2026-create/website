@@ -3,7 +3,7 @@ title: "農業経営基盤強化資金（スーパーL資金）の解説"
 slug: "super-l-agricultural-infrastructure-loan"
 description: "認定農業者向けの農業経営基盤強化資金（スーパーL資金）。使途、借入限度額、金利・償還条件、地域計画に位置づく認定農業者向けの利子助成枠、取扱融資機関の要点を整理する。"
 publishedAt: "2026-05-15"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

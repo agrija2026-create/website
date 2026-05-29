@@ -3,7 +3,7 @@ title: "先進的有機農業拡大促進事業の解説"
 slug: "advanced-organic-farming-expansion"
 description: "みどりの食料システム戦略緊急対策交付金「先進的有機農業拡大促進事業」の2本柱（スマート農業×有機・地域支援）、支援要件・目標6.3万haと50％、令和7年度補正4,000百万円を整理します。"
 publishedAt: "2026-05-19"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

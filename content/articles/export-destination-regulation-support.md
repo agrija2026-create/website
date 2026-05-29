@@ -3,7 +3,7 @@ title: "認証・施設認定・規制対応――輸出先国規制対応支援
 slug: "export-destination-regulation-support"
 description: "輸出環境整備推進事業のうち輸出先国規制対応支援事業。国際認証の新規取得、輸出先国に適合する施設認定、規制理解の講習、検査官招へい、輸出前検査等の五類型、資金の流れ、輸出額目標と予算内数の整理。公募・要領は農林水産省の案内で確認。"
 publishedAt: "2026-05-12"
-category: "policy"
+category: "food-safety"
 tags:
   - "生産者向け"
   - "maff"

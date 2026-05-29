@@ -3,7 +3,7 @@ title: "国際水準GAPの解説"
 slug: "international-standard-gap"
 description: "農林水産省の国際水準GAP（農業生産工程管理）について、GAPの意味、実践と認証の2つの進め方、取組のポイント、買い手側の意義、始め方まで、初めての方でもわかるように整理します。"
 publishedAt: "2026-05-22"
-category: "policy"
+category: "food-safety"
 tags:
   - "生産者向け"
   - "maff"

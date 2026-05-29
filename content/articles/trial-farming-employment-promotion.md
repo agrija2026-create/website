@@ -3,7 +3,7 @@ title: "トライアル雇用就農促進事業の要点――都道府県等に
 slug: "trial-farming-employment-promotion"
 description: "雇用就農の総合的推進のうちトライアル雇用就農促進事業。都道府県等が行う求人調査・募集、マッチング、フォローアップ、農業法人等への初期経費支援、事業目標、職業紹介に関する留意点を整理します。"
 publishedAt: "2026-05-13"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

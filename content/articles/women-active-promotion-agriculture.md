@@ -3,7 +3,7 @@ title: "女性活躍の推進の解説"
 slug: "women-active-promotion-agriculture"
 description: "女性の基幹的農業従事者の動向、農業女子プロジェクト、経営参画と販売額、みどり戦略学生チャレンジなど、最近5年間の女性活躍推進の動きを整理します。"
 publishedAt: "2026-05-25"
-category: "policy"
+category: "farmland"
 tags:
   - "生産者向け"
   - "maff"

@@ -3,7 +3,7 @@ title: "地域資源活用価値創出整備事業の解説"
 slug: "rural-resource-facility-infrastructure"
 description: "農山漁村振興交付金の整備事業について、定住促進・交流対策型と産業支援型の違い、再エネ設備、必要な計画、事業目標と令和8年度予算の内数を、施設整備を検討する事業者向けに整理します。"
 publishedAt: "2026-05-26"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

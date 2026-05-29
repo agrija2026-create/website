@@ -3,7 +3,7 @@ title: "農林水産物・食品輸出プロジェクト（GFP）の解説"
 slug: "gfp-export-community"
 description: "農林水産省が推進するGFP（農林水産物・食品輸出プロジェクト）とGFPコミュニティの概要です。無料のメンバー登録、輸出診断・マッチング・個別支援・交流会・情報発信の五つの機能と、登録の対象者を整理します。"
 publishedAt: "2026-05-22"
-category: "policy"
+category: "market"
 tags:
   - "生産者向け"
   - "maff"

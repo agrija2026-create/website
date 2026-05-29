@@ -3,7 +3,7 @@ title: "商慣習の見直し（納品期限・賞味期限）の解説"
 slug: "food-supply-chain-commercial-practices"
 description: "3分の1ルールの見直し、納品期限緩和、賞味期限の年月表示化・延長を三位一体で進める取組、物流拠点の課題、業界事例と効果を整理します。"
 publishedAt: "2026-05-28"
-category: "policy"
+category: "logistics"
 tags:
   - "流通向け"
   - "小売向け"

@@ -3,7 +3,7 @@ title: "ドローンによる農薬等の空中散布の解説"
 slug: "drone-aerial-pesticide-spraying"
 description: "農業用ドローンで農薬等を空中散布するあなたが取るべき航空法上の許可・承認、提出資料の省略、申請期限、安全ガイドライン上の留意点、ナビゲーター配置の例外を整理します。"
 publishedAt: "2026-05-18"
-category: "policy"
+category: "technology"
 tags:
   - "生産者向け"
   - "maff"

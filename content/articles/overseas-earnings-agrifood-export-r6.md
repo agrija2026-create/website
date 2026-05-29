@@ -3,7 +3,7 @@ title: "「海外から稼ぐ力」の強化の解説"
 slug: "overseas-earnings-agrifood-export-r6"
 description: "輸出拡大実行戦略、輸出重点品目、認定品目団体、産地育成、政府一体の規制対応、食品の海外展開とインバウンドまでを整理します。"
 publishedAt: "2026-05-25"
-category: "policy"
+category: "market"
 tags:
   - "生産者向け"
   - "流通向け"

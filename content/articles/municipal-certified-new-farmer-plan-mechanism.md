@@ -3,7 +3,7 @@ title: "市町村の認定で支援がつながる――認定新規就農者制
 slug: "municipal-certified-new-farmer-plan-mechanism"
 description: "農業経営基盤強化促進法に位置づく認定新規就農者制度。市町村が青年等就農計画を認定し、青年等就農資金や経営開始資金などのメリット措置が届く流れと、対象となる青年等・認定要件を整理します。"
 publishedAt: "2026-05-13"
-category: "policy"
+category: "farmland"
 tags:
   - "生産者向け"
   - "maff"

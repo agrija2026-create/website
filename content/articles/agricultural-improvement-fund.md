@@ -3,7 +3,7 @@ title: "農業改良資金の解説"
 slug: "agricultural-improvement-fund"
 description: "農業改良資金融通法に基づく無利子の農業改良資金。借入対象となる計画認定、使途、借入限度額・据置・償還、取扱融資機関と申込の進め方を整理する。"
 publishedAt: "2026-05-15"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

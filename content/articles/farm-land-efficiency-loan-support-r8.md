@@ -3,7 +3,7 @@ title: "農地利用効率化等支援事業（融資主体支援タイプ）の
 slug: "farm-land-efficiency-loan-support-r8"
 description: "令和8年度農地利用効率化等支援事業の融資主体支援タイプについて、対象地区・助成対象者・支援内容・優先枠・成果目標・助成金の算定と上限、信用保証を、融資で機械・施設を導入する担い手向けに整理します。"
 publishedAt: "2026-05-21"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

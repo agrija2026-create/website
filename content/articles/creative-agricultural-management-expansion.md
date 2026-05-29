@@ -3,7 +3,7 @@ title: "創意工夫を生かした農業経営の展開の解説"
 slug: "creative-agricultural-management-expansion"
 description: "認定農業者制度、法人化と経営基盤、労働力確保、外国人人材、育成就労制度、農業金融の動向を整理します。"
 publishedAt: "2026-05-25"
-category: "policy"
+category: "farmland"
 tags:
   - "生産者向け"
   - "maff"

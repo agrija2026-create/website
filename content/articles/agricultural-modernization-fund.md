@@ -3,7 +3,7 @@ title: "農業近代化資金の解説"
 slug: "agricultural-modernization-fund"
 description: "農業近代化資金は、都道府県等の利子補給と融資機関の貸付で、農業者等が施設・運転資金を長期・低利で借り入れる枠組みである。対象者、使途、限度額、金利、償還、融資率、目標地図上の認定農業者向け特例、取扱機関までを整理する。"
 publishedAt: "2026-05-15"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

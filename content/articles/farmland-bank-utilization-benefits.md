@@ -3,7 +3,7 @@ title: "農地バンクを活用するメリットの解説"
 slug: "farmland-bank-utilization-benefits"
 description: "農地中間管理機構（農地バンク）を活用したとき、農地の出し手・受け手・地域それぞれに得られるメリット（賃料の確実性、返却・再貸付、税制優遇、集約化支援金、農家負担ゼロの基盤整備など）を整理します。"
 publishedAt: "2026-05-21"
-category: "policy"
+category: "farmland"
 tags:
   - "生産者向け"
   - "maff"

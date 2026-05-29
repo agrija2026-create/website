@@ -3,7 +3,7 @@ title: "農地耕作条件改善事業の要点"
 slug: "farmland-cultivation-condition-improvement"
 description: "農地耕作条件改善事業を市町村・農業者が使うときの6つの支援メニュー、実施要件、特例費目、担い手への農地集積目標と令和8年度予算額を整理します。"
 publishedAt: "2026-05-18"
-category: "policy"
+category: "farmland"
 tags:
   - "生産者向け"
   - "maff"

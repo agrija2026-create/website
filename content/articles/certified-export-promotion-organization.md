@@ -3,7 +3,7 @@ title: "品目団体（認定輸出促進団体）認定制度の解説"
 slug: "certified-export-promotion-organization"
 description: "輸出促進法に基づく認定農林水産物・食品輸出促進団体（品目団体）の認定制度について、対象品目・認定要件・輸出促進業務・国の支援・体制の要点を整理します。"
 publishedAt: "2026-05-27"
-category: "policy"
+category: "market"
 tags:
   - "生産者向け"
   - "流通向け"

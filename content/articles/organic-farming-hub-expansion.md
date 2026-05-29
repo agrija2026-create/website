@@ -3,7 +3,7 @@ title: "有機農業拠点創出・拡大加速化事業の解説"
 slug: "organic-farming-hub-expansion"
 description: "みどりの食料システム戦略推進交付金「有機農業拠点創出・拡大加速化事業」の3段階支援、オーガニックビレッジ創出目標、産地・消費地連携の加算、優先採択、生産・加工・消費の流れと予算を整理します。"
 publishedAt: "2026-05-19"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

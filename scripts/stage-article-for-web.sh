@@ -278,6 +278,13 @@ PY
 echo "WEB反映用ファイルを作成しました。"
 echo "  - HTML: $TARGET_HTML"
 echo "  - MD:   $TARGET_MD"
+if [[ $HAS_CATEGORY -eq 0 ]]; then
+  echo ""
+  echo "警告: category（第4引数）が未指定です。既定値 policy が使われます。"
+  echo "  カテゴリ偏りを防ぐため、stage 時に category を指定してください。"
+  echo "  例: npm run article:stage -- \"../記事/...\" <slug> <publishedAt> budget \"生産者向け,maff\""
+  echo "  判定ルール: docs/メディア方針と実装メモ.md §2"
+fi
 echo ""
 echo "確認後の公開:"
 echo "  bash scripts/publish-article.sh $SLUG"

@@ -3,7 +3,7 @@ title: "地域資源活用価値創出推進事業（創出支援型）の解説
 slug: "rural-resource-promotion-soushutsu"
 description: "農山漁村振興交付金の創出支援型について、推進支援・中央・都道府県サポートの3区分、官民共創と専門家派遣の流れ、事業目標と令和8年度予算の内数を、交付金を使いたい事業主向けに整理します。"
 publishedAt: "2026-05-26"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"

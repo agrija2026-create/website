@@ -3,7 +3,7 @@ title: "農業競争力強化支援法（流通・加工分野）の解説"
 slug: "food-distribution-reorganization-support"
 description: "食品メーカー・小売・卸売市場など流通・加工事業者向けの農業競争力強化支援法について、事業再編計画の認定、公庫の低利融資・債務保証、申請の流れと計画のポイント、活用事例まで整理します。"
 publishedAt: "2026-05-22"
-category: "policy"
+category: "logistics"
 tags:
   - "maff"
   - "policy"

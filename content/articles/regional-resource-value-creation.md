@@ -3,7 +3,7 @@ title: "地域資源活用価値創出の解説"
 slug: "regional-resource-value-creation"
 description: "地域資源活用価値創出（旧農山漁村発イノベーション）の政府方針、六次産業化の意味と法律、総合化事業計画の認定要件、市場規模、多様な資源×分野×主体の考え方を整理します。"
 publishedAt: "2026-05-26"
-category: "policy"
+category: "farmland"
 tags:
   - "生産者向け"
   - "maff"

@@ -3,7 +3,7 @@ title: "グリーンな生産体系加速化事業の解説"
 slug: "green-production-system-acceleration"
 description: "みどりの食料システム戦略推進交付金「グリーンな生産体系加速化事業」の目的、栽培・飼養の2本柱、支援メニュー、優先採択、資金の流れと令和8年度予算内数を、協議会で事業化する農業者・自治体向けに整理します。"
 publishedAt: "2026-05-19"
-category: "policy"
+category: "budget"
 tags:
   - "生産者向け"
   - "maff"
