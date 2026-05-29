@@ -69,14 +69,13 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
         <section>
           <h2 className="text-sm font-bold text-stone-900">タグ一覧</h2>
           <ul className="mt-3 flex flex-wrap gap-2">
-            {themeTags.map(({ label, count }) => (
+            {themeTags.map(({ label }) => (
               <li key={label}>
                 <Link
                   href={`/tags/${encodeTagForUrl(label)}`}
                   className="inline-block rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-700 transition-colors hover:border-orange-300 hover:bg-orange-50 hover:text-orange-900"
                 >
                   {label}
-                  <span className="ml-1 text-stone-400">({count})</span>
                 </Link>
               </li>
             ))}
