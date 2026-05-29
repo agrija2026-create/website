@@ -6,20 +6,20 @@ export const ARTICLE_CLUSTERS: readonly (readonly string[])[] = [
   [
     "regional-resource-value-creation",
     "rural-resource-value-creation-policy",
-    "rural-resource-promotion-soushutsu",
+    "rural-resource-value-creation-promotion",
     "rural-resource-facility-infrastructure",
   ],
   [
-    "nouchibank-basic-guide",
+    "farmland-bank-guide",
     "farmland-bank-utilization-benefits",
-    "nouchibank-koshin-futan-keigen",
+    "farmland-bank-renewal-burden-reduction",
     "farmland-consolidation-promotion-program",
     "idle-farmland-elimination-measures",
     "farmland-bank-zero-farmer-infrastructure",
   ],
   [
     "vegetable-price-stability-system",
-    "yasai-kakaku-antei-r8",
+    "vegetable-price-stability-measures-r8",
   ],
 ] as const;
 

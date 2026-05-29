@@ -12,14 +12,14 @@ AUDIENCE = {"生産者向け", "小売向け", "流通向け"}
 
 # lib/themeTagAssign.ts と同期（Python 単体実行用）
 TAG_RULES: list[tuple[str, list[str]]] = [
-    ("交付金", [r"suiden-katsuyo-direct-payment"]),
-    ("大規模化", [r"daikibo-5koubo"]),
-    ("共同利用", [r"kyodo-riyo-shisetsu"]),
-    ("オーガニックビレッジ", [r"organic-village-124", r"organic-farming-hub-expansion"]),
-    ("病害虫", [r"byogaichu-hassei"]),
-    ("種苗", [r"yasai-shushi-antei"]),
+    ("交付金", [r"paddy-field-direct-payment"]),
+    ("大規模化", [r"large-scale-growth-investment"]),
+    ("共同利用", [r"shared-facility-infrastructure"]),
+    ("オーガニックビレッジ", [r"organic-village-certification-paths", r"organic-farming-hub-expansion"]),
+    ("病害虫", [r"pest-disease-forecast"]),
+    ("種苗", [r"vegetable-seed-supply"]),
     ("ドローン", [r"drone-aerial"]),
-    ("肥料", [r"^budget-15$"]),
+    ("肥料", [r"^domestic-fertilizer-resource-expansion$"]),
     ("災害対応", [r"heavy-rain-agrifood"]),
     (
         "食品ロス",
@@ -53,11 +53,11 @@ TAG_RULES: list[tuple[str, list[str]]] = [
             r"certified-export",
             r"export-destination",
             r"plant-variety-overseas",
-            r"kokusan-shea",
+            r"domestic-vegetable-share",
             r"overseas-earnings",
             r"haccp-facility-export",
-            r"^index-163$",
-            r"sanchipu-71",
+            r"^vegetable-price-outlook-r8-may$",
+            r"production-base-power-up-program",
         ],
     ),
     (
@@ -119,13 +119,13 @@ SLUG_OVERRIDES: dict[str, list[str] | None] = {
     "overseas-earnings-agrifood-export-r6": ["輸出"],
     "gfp-export-community": ["輸出"],
     "regional-farm-structure-transition-support": ["補助金"],
-    "koudoka-r7hosei-4": ["補助金"],
+    "livestock-budget-r7-supplement": ["補助金"],
     "facility-horticulture-fuel-safety-net": ["補助金"],
-    "r8kettei-pr41": ["補助金"],
-    "yasai-kakaku-antei-r8": ["補助金"],
-    "ninaite-kikai-shisetsu-r8": ["補助金"],
-    "tsuyoi-nogyo-sogo-shien-r8": ["補助金"],
-    "r8-byogaichu-hassei-yoho-1": ["病害虫"],
+    "private-capital-agriculture-finance-r8": ["補助金"],
+    "vegetable-price-stability-measures-r8": ["補助金"],
+    "successor-farm-machinery-facility-r8": ["補助金"],
+    "strong-agriculture-comprehensive-grant-r8": ["補助金"],
+    "pest-disease-forecast-r8-issue-1": ["病害虫"],
 }
 
 CATEGORY_OVERLAP = {
@@ -138,10 +138,10 @@ CATEGORY_OVERLAP = {
 }
 
 BUDGET_DEFAULT_EXCLUDE = re.compile(
-    r"export|finance|nouchibank|farmland-bank|suiden|daikibo|kyodo-riyo|"
+    r"export|finance|nouchibank|farmland-bank|paddy-field-direct|large-scale-growth|shared-facility|"
     r"employment-route-farming|mutual-aid|jfc-agrifood|super-l|modernization|"
-    r"improvement-fund|farm-land-efficiency|farmland-efficiency-loan|budget-15|"
-    r"heavy-rain|drone-aerial|byogaichu|organic-village|organic-farming-hub"
+    r"improvement-fund|farm-land-efficiency|farmland-efficiency-loan|domestic-fertilizer-resource-expansion|"
+    r"heavy-rain|drone-aerial|pest-disease-forecast|organic-village|organic-farming-hub"
 )
 
 

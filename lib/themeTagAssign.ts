@@ -15,17 +15,17 @@ type TagRule = {
 };
 
 const TAG_RULES: TagRule[] = [
-  { tag: "交付金", patterns: [/suiden-katsuyo-direct-payment/] },
-  { tag: "大規模化", patterns: [/daikibo-5koubo/] },
-  { tag: "共同利用", patterns: [/kyodo-riyo-shisetsu/] },
+  { tag: "交付金", patterns: [/paddy-field-direct-payment/] },
+  { tag: "大規模化", patterns: [/large-scale-growth-investment/] },
+  { tag: "共同利用", patterns: [/shared-facility-infrastructure/] },
   {
     tag: "オーガニックビレッジ",
-    patterns: [/organic-village-124|organic-farming-hub-expansion/],
+    patterns: [/organic-village-certification-paths|organic-farming-hub-expansion/],
   },
-  { tag: "病害虫", patterns: [/byogaichu-hassei/] },
-  { tag: "種苗", patterns: [/yasai-shushi-antei/] },
+  { tag: "病害虫", patterns: [/pest-disease-forecast/] },
+  { tag: "種苗", patterns: [/vegetable-seed-supply/] },
   { tag: "ドローン", patterns: [/drone-aerial/] },
-  { tag: "肥料", patterns: [/^budget-15$/] },
+  { tag: "肥料", patterns: [/^domestic-fertilizer-resource-expansion$/] },
   { tag: "災害対応", patterns: [/heavy-rain-agrifood/] },
   {
     tag: "食品ロス",
@@ -59,11 +59,11 @@ const TAG_RULES: TagRule[] = [
       /certified-export/,
       /export-destination/,
       /plant-variety-overseas/,
-      /kokusan-shea/,
+      /domestic-vegetable-share/,
       /overseas-earnings/,
       /haccp-facility-export/,
-      /^index-163$/,
-      /sanchipu-71/,
+      /^vegetable-price-outlook-r8-may$/,
+      /production-base-power-up-program/,
     ],
   },
   {
@@ -126,17 +126,17 @@ export const SLUG_THEME_OVERRIDES: Record<string, string[] | null> = {
   "overseas-earnings-agrifood-export-r6": ["輸出"],
   "gfp-export-community": ["輸出"],
   "regional-farm-structure-transition-support": ["補助金"],
-  "koudoka-r7hosei-4": ["補助金"],
+  "livestock-budget-r7-supplement": ["補助金"],
   "facility-horticulture-fuel-safety-net": ["補助金"],
-  "r8kettei-pr41": ["補助金"],
-  "yasai-kakaku-antei-r8": ["補助金"],
-  "ninaite-kikai-shisetsu-r8": ["補助金"],
-  "tsuyoi-nogyo-sogo-shien-r8": ["補助金"],
-  "r8-byogaichu-hassei-yoho-1": ["病害虫"],
+  "private-capital-agriculture-finance-r8": ["補助金"],
+  "vegetable-price-stability-measures-r8": ["補助金"],
+  "successor-farm-machinery-facility-r8": ["補助金"],
+  "strong-agriculture-comprehensive-grant-r8": ["補助金"],
+  "pest-disease-forecast-r8-issue-1": ["病害虫"],
 };
 
 const BUDGET_DEFAULT_EXCLUDE =
-  /export|finance|nouchibank|farmland-bank|suiden|daikibo|kyodo-riyo|employment-route-farming|mutual-aid|jfc-agrifood|super-l|modernization|improvement-fund|farm-land-efficiency|farmland-efficiency-loan|budget-15|heavy-rain|drone-aerial|byogaichu|organic-village|organic-farming-hub/;
+  /export|finance|nouchibank|farmland-bank|paddy-field-direct|large-scale-growth|shared-facility|employment-route-farming|mutual-aid|jfc-agrifood|super-l|modernization|improvement-fund|farm-land-efficiency|farmland-efficiency-loan|domestic-fertilizer-resource-expansion|heavy-rain|drone-aerial|pest-disease-forecast|organic-village|organic-farming-hub/;
 
 export function suggestThemeTags(slug: string, category: string): string[] {
   if (slug in SLUG_THEME_OVERRIDES) {

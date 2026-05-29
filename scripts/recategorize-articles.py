@@ -18,15 +18,15 @@ ARTICLES_DIR = ROOT / "content" / "articles"
 # slug → 新 category（2026-05 カテゴリ再分配）
 RECATEGORIZE_MAP: dict[str, str] = {
     # → budget
-    "budget-15": "budget",
-    "daikibo-5koubo-20260227": "budget",
-    "koudoka-r7hosei-4": "budget",
-    "r8kettei-pr41": "budget",
+    "domestic-fertilizer-resource-expansion": "budget",
+    "large-scale-growth-investment-subsidy-5": "budget",
+    "livestock-budget-r7-supplement": "budget",
+    "private-capital-agriculture-finance-r8": "budget",
     "agricultural-modernization-fund": "budget",
     "agricultural-improvement-fund": "budget",
     "super-l-agricultural-infrastructure-loan": "budget",
     "rural-resource-facility-infrastructure": "budget",
-    "rural-resource-promotion-soushutsu": "budget",
+    "rural-resource-value-creation-promotion": "budget",
     "jfc-agrifood-export-baseline-finance": "budget",
     "haccp-facility-export-r7": "budget",
     "employment-route-farming-fund": "budget",
@@ -38,7 +38,7 @@ RECATEGORIZE_MAP: dict[str, str] = {
     "green-production-system-acceleration": "budget",
     "agricultural-plastic-emission-reduction": "budget",
     "facility-horticulture-fuel-safety-net": "budget",
-    "sanchipu-71": "budget",
+    "production-base-power-up-program": "budget",
     "plant-variety-overseas-protection": "budget",
     "trial-farming-employment-promotion": "budget",
     "regional-farm-structure-transition-support": "budget",
@@ -48,8 +48,8 @@ RECATEGORIZE_MAP: dict[str, str] = {
     "gfp-export-community": "market",
     "agrifood-export-promotion": "market",
     "inbound-food-export-model-r8": "market",
-    "index-163": "market",
-    "kokusan-shea-dakkan-85": "market",
+    "vegetable-price-outlook-r8-may": "market",
+    "domestic-vegetable-share-recovery": "market",
     "japan-agricultural-import-tariff-system": "market",
     "certified-export-promotion-organization": "market",
     # → logistics
@@ -57,9 +57,9 @@ RECATEGORIZE_MAP: dict[str, str] = {
     "food-distribution-reorganization-support": "logistics",
     "japan-food-loss-current-situation": "logistics",
     # → production
-    "r8-byogaichu-hassei-yoho-1": "production",
-    "yasai-shushi-antei-kyokyu-r8": "production",
-    "organic-village-124": "production",
+    "pest-disease-forecast-r8-issue-1": "production",
+    "vegetable-seed-supply-stability-r8": "production",
+    "organic-village-certification-paths": "production",
     # → farmland
     "creative-agricultural-management-expansion": "farmland",
     "women-active-promotion-agriculture": "farmland",
