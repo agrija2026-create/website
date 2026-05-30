@@ -13,7 +13,6 @@ import {
   getAllArticles,
   getArticleBySlug,
   getRelatedArticles,
-  getVisibleThemeTags,
   toRelatedArticleData,
 } from "@/lib/articles";
 import { getCategoryName } from "@/lib/categories";
@@ -46,6 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fullTitle = `${title} | ${SITE_NAME}`;
   const description = article.description;
   const publishedTime = toIsoDateTime(article.publishedAt);
+  const modifiedTime = toIsoDateTime(article.updatedAt ?? article.publishedAt);
   return {
     title: {
       absolute: fullTitle,
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: fullTitle,
       description,
       publishedTime,
-      modifiedTime: publishedTime,
+      modifiedTime,
       images: getDefaultOgImage(),
     },
     twitter: {
@@ -92,7 +92,7 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   const { audience } = partitionTags(article.tags);
-  const themeTags = getVisibleThemeTags(article.tags, article.category);
+  const themeTags = article.themeTags;
   const pageUrl = absoluteUrl(`/articles/${slug}`);
   const readingMinutes =
     article.readingMinutes ??
@@ -110,7 +110,10 @@ export default async function ArticlePage({ params }: Props) {
               title: article.title,
               description: article.description,
               publishedAt: article.publishedAt,
+              updatedAt: article.updatedAt,
               category: article.category,
+              themeTags: article.themeTags,
+              sourceUrls: article.sourceUrls,
             }}
             slug={slug}
           />

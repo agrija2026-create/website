@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { cache } from "react";
 import { enrichArticleHtml } from "@/lib/articleHtml";
 import type { TocItem } from "@/lib/articleHtml";
+import { extractSourceUrlsFromHtml, mergeSourceUrls } from "@/lib/articleSources";
 import { sanitizeTrustedHtml } from "@/lib/sanitizeHtml";
 import { getArticleCluster } from "@/lib/articleClusters";
 import {
@@ -27,8 +28,14 @@ export type ArticleMeta = {
   slug: string;
   description: string;
   publishedAt: string;
+  /** 更新日（任意）。未指定時は publishedAt を dateModified に使用 */
+  updatedAt?: string;
   category: string;
   tags: string[];
+  /** JSON-LD about / keywords 用（テーマタグのみ、カテゴリ重複除外済み） */
+  themeTags: string[];
+  /** JSON-LD isBasedOn 用（出典 URL。HTML の source ブロックから自動抽出 + frontmatter 追加分） */
+  sourceUrls: string[];
   /** 冒頭「この記事でわかること」用（任意） */
   takeaways: string[];
   /** 読了目安（分）。未指定時は本文から自動算出 */
@@ -164,13 +171,38 @@ function parseArticleFile(filePath: string): Article {
   const sanitized = sanitizeTrustedHtml(htmlBody);
   const { html: enrichedHtml, toc } = enrichArticleHtml(sanitized);
 
+  const sourceUrlsRaw = d.sourceUrls;
+  const sourceUrlsFromFrontmatter = Array.isArray(sourceUrlsRaw)
+    ? sourceUrlsRaw.map(String)
+    : typeof sourceUrlsRaw === "string" && sourceUrlsRaw.trim()
+      ? [sourceUrlsRaw.trim()]
+      : undefined;
+
+  const updatedAtRaw = d.updatedAt;
+  const updatedAt =
+    typeof updatedAtRaw === "string" && updatedAtRaw.trim()
+      ? updatedAtRaw.trim()
+      : undefined;
+
+  const themeTags = stripCategoryOverlapThemeTags(
+    tags.filter((t) => !isAudienceTag(t) && isThemeTag(t)),
+    category,
+  );
+  const sourceUrls = mergeSourceUrls(
+    sourceUrlsFromFrontmatter,
+    extractSourceUrlsFromHtml(enrichedHtml),
+  );
+
   return {
     title: String(d.title ?? ""),
     slug: String(d.slug ?? ""),
     description: String(d.description ?? ""),
     publishedAt: String(d.publishedAt ?? ""),
+    updatedAt,
     category,
     tags,
+    themeTags,
+    sourceUrls,
     takeaways,
     readingMinutes,
     sourceHtmlFile,
@@ -275,13 +307,38 @@ function normalizeMicroCmsArticle(item: MicroCmsArticle): Article | null {
   const sanitized = sanitizeTrustedHtml(bodyCandidate);
   const { html: enrichedHtml, toc } = enrichArticleHtml(sanitized);
 
+  const updatedAtRaw = item.updatedAt;
+  const updatedAt =
+    typeof updatedAtRaw === "string" && updatedAtRaw.trim()
+      ? updatedAtRaw.trim()
+      : undefined;
+
+  const sourceUrlsRaw = item.sourceUrls;
+  const sourceUrlsFromFrontmatter = Array.isArray(sourceUrlsRaw)
+    ? sourceUrlsRaw.map(String)
+    : typeof sourceUrlsRaw === "string" && sourceUrlsRaw.trim()
+      ? [sourceUrlsRaw.trim()]
+      : undefined;
+
+  const themeTags = stripCategoryOverlapThemeTags(
+    tags.filter((t) => !isAudienceTag(t) && isThemeTag(t)),
+    category,
+  );
+  const sourceUrls = mergeSourceUrls(
+    sourceUrlsFromFrontmatter,
+    extractSourceUrlsFromHtml(enrichedHtml),
+  );
+
   return {
     title,
     slug,
     description,
     publishedAt,
+    updatedAt,
     category,
     tags,
+    themeTags,
+    sourceUrls,
     takeaways,
     htmlBody: enrichedHtml,
     toc,

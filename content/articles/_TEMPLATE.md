@@ -3,6 +3,7 @@ title: "記事タイトル"
 slug: "example-slug"
 description: "記事の要約（120文字前後）"
 publishedAt: "2026-04-07"
+# updatedAt: "2026-04-10"  # 更新した場合のみ（JSON-LD dateModified / OG modifiedTime に反映）
 category: "policy"
 # 読者タグ（生産者向け・小売向け・流通向け）を必ず1〜3個。
 # テーマタグは docs/theme-tags.md の正規語彙から0〜3個（例: 補助金・輸出・就農）。
