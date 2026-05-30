@@ -30,6 +30,9 @@ git add "$FILE"
 npm run articles:csv
 git add public/articles-index.csv
 
+npm run sitemap:generate
+git add public/sitemap.xml
+
 SOURCE_HTML_FILE="$(sed -n 's/^sourceHtmlFile:[[:space:]]*"\(.*\)".*$/\1/p' "$FILE" | head -n 1 || true)"
 if [[ -n "${SOURCE_HTML_FILE}" ]]; then
   if [[ -f "${SOURCE_HTML_FILE}" ]]; then
