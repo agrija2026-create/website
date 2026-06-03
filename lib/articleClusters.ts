@@ -21,6 +21,12 @@ export const ARTICLE_CLUSTERS: readonly (readonly string[])[] = [
     "vegetable-price-stability-system",
     "vegetable-price-stability-measures-r8",
   ],
+  [
+    "domestic-fertilizer-resource-expansion",
+    "livestock-budget-r7-supplement",
+    "biomass-local-consumption",
+    "green-production-system-acceleration",
+  ],
 ] as const;
 
 const slugToCluster = new Map<string, readonly string[]>(
