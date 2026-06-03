@@ -108,6 +108,37 @@ const TAG_RULES: TagRule[] = [
       /farmland-efficiency-loan-support/,
     ],
   },
+  { tag: "森林", patterns: [/^forest-/] },
+  { tag: "中山間", patterns: [/hilly-area|mountainous-area-rural/] },
+  { tag: "鳥獣・ジビエ", patterns: [/wildlife-damage|jibie-utilization/] },
+  {
+    tag: "農村振興",
+    patterns: [
+      /countryside-stay-nohaku/,
+      /savor-japan/,
+      /rural-revitalization-platform/,
+      /noufuku-collaboration/,
+    ],
+  },
+  {
+    tag: "米",
+    patterns: [
+      /rice-price-and-policy/,
+      /government-stockpiled-rice/,
+      /paddy-field-direct-payment/,
+    ],
+  },
+  {
+    tag: "みどり・環境",
+    patterns: [
+      /climate-biodiversity/,
+      /environmental-burden-reduction/,
+      /midori-business-support/,
+      /agrifood-circular-economy/,
+      /regional-circular-energy/,
+      /biomass-local-consumption/,
+    ],
+  },
 ];
 
 /** slug ごとの手動上書き（null = テーマタグなし） */
@@ -115,7 +146,7 @@ export const SLUG_THEME_OVERRIDES: Record<string, string[] | null> = {
   "international-standard-gap": [],
   "smart-agriculture-trend": [],
   "japan-agricultural-import-tariff-system": [],
-  "climate-biodiversity-response-r6": [],
+  "climate-biodiversity-response-r6": ["みどり・環境"],
   "food-supply-crisis-countermeasures-act": [],
   "new-food-agriculture-rural-basic-plan": [],
   "agricultural-competitiveness-support-act": [],

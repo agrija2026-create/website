@@ -424,7 +424,7 @@ export async function searchArticles(query: string): Promise<Article[]> {
   });
 }
 
-export type RelatedArticlesSource = "cluster" | "category";
+export type RelatedArticlesSource = "cluster" | "theme" | "category";
 
 export type RelatedArticlesResult = {
   articles: Article[];
@@ -454,6 +454,26 @@ export async function getRelatedArticles(
     }
     if (out.length > 0) {
       return { articles: out, source: "cluster" };
+    }
+  }
+
+  // ② 同じテーマタグを共有する記事（共有数が多い順／同数は公開日降順）。
+  const self = bySlug.get(slug);
+  const selfThemeTags = self ? self.tags.filter(isThemeTag) : [];
+  if (selfThemeTags.length > 0) {
+    const selfThemeSet = new Set(selfThemeTags);
+    const scored: { article: Article; shared: number }[] = [];
+    for (const a of all) {
+      if (a.slug === slug) continue;
+      const shared = a.tags.filter((t) => selfThemeSet.has(t)).length;
+      if (shared > 0) scored.push({ article: a, shared });
+    }
+    if (scored.length > 0) {
+      scored.sort((x, y) => y.shared - x.shared);
+      return {
+        articles: scored.slice(0, limit).map((s) => s.article),
+        source: "theme",
+      };
     }
   }
 

@@ -32,6 +32,12 @@ export const THEME_TAG_REGISTRY: readonly ThemeTagDef[] = [
   { label: "病害虫", urlSlug: "byogaichu", listedInSidebar: true },
   { label: "種苗", urlSlug: "seed", listedInSidebar: true },
   { label: "ドローン", urlSlug: "drone", listedInSidebar: true },
+  { label: "森林", urlSlug: "forestry", listedInSidebar: true },
+  { label: "中山間", urlSlug: "hilly-area", listedInSidebar: true },
+  { label: "鳥獣・ジビエ", urlSlug: "wildlife", listedInSidebar: true },
+  { label: "農村振興", urlSlug: "rural-revitalization", listedInSidebar: true },
+  { label: "米", urlSlug: "rice", listedInSidebar: true },
+  { label: "みどり・環境", urlSlug: "midori", listedInSidebar: true },
 ] as const;
 
 export const THEME_TAG_LABELS = THEME_TAG_REGISTRY.map((t) => t.label);

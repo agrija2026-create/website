@@ -11,6 +11,7 @@ type Props = {
 
 const SOURCE_HINT: Record<RelatedArticlesSource, string> = {
   cluster: "同じテーマの関連記事です。",
+  theme: "同じテーマの関連記事です。",
   category: "同じカテゴリを優先して表示しています。",
 };
 
