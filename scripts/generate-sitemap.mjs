@@ -80,6 +80,7 @@ function readArticles() {
       return {
         slug: String(d.slug ?? "").trim(),
         publishedAt: String(d.publishedAt ?? "").trim(),
+        updatedAt: String(d.updatedAt ?? "").trim(),
         tags,
       };
     })
@@ -164,7 +165,7 @@ function main() {
       urlEntry({
         origin,
         loc: absoluteUrl(origin, `/articles/${article.slug}`),
-        lastmod: formatLastmod(article.publishedAt),
+        lastmod: formatLastmod(article.updatedAt || article.publishedAt),
         changefreq: "monthly",
         priority: 0.8,
       }),

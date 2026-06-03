@@ -123,7 +123,15 @@ export default async function ArticlePage({ params }: Props) {
               {article.title}
             </h1>
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-stone-500">
-              <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
+              {article.updatedAt && article.updatedAt !== article.publishedAt ? (
+                <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}公開</time>
+                  <span aria-hidden="true">・</span>
+                  <time dateTime={article.updatedAt}>{formatDate(article.updatedAt)}更新</time>
+                </span>
+              ) : (
+                <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
+              )}
               <div className="flex flex-wrap items-center justify-end gap-2">
                 <ArticleTextToSpeech
                   title={article.title}
