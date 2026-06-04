@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日本の食料自給率と国際需給の解説</title>
-  <meta name="description" content="世界の穀物需給、日本の農産物貿易、令和6年度の食料自給率（カロリー38％・生産額64％）、食料国産率、備蓄、生産資材価格、FAOの食料安全保障の定義を整理します。">
-  <meta property="article:modified_time" content="2026-05-29">
+  <title>食料自給率はなぜ低い？カロリーベースと生産額ベースの違い・各国比較を解説</title>
+  <meta name="description" content="日本の食料自給率はなぜ低いのか。カロリーベース38％と生産額ベース64％の違い、品目別自給率や食料消費構造、各国比較、食料国産率・飼料自給率との違い、2030年度目標までをわかりやすく解説します。">
+  <meta property="article:modified_time" content="2026-06-04">
   <link rel="stylesheet" href="../article-standalone.css">
 </head>
 <body>
   <div class="article-body">
   <article>
     <header class="article-header">
-      <h1>日本の食料自給率と国際需給の解説</h1>
-      <p class="article-meta"><time datetime="2026-05-29">2026年5月29日</time>更新</p>
+      <h1>食料自給率はなぜ低い？カロリーベースと生産額ベースの違い・各国比較を解説</h1>
+      <p class="article-meta"><time datetime="2026-06-04">2026年6月4日</time>更新</p>
     </header>
 
     <!-- 本記事：冒頭の「この記事でわかること」は frontmatter の takeaways を使用 -->
 
-    <p class="lead">世界の穀物需要の増加と日本の大規模な輸入構造を踏まえ、令和6年度の<a href="#kw-shokuryo-jikyu">食料自給率</a>、<a href="#kw-shokuryo-kokusan">食料国産率</a>、備蓄、国際穀物価格、FAOの<a href="#kw-shokuryo-anzen">食料安全保障</a>の定義までを整理します。</p>
+    <p class="lead">「日本の<a href="#kw-shokuryo-jikyu">食料自給率</a>はなぜ低いのか」と疑問に思う方は多いはずです。この記事では、食料自給率とは何かという指標の意味から、カロリーベース38％と生産額ベース64％で数字が違う理由、品目別に見た低さの構造、各国との比較、<a href="#kw-shokuryo-kokusan">食料国産率</a>や<a href="#kw-shiryo-jikyu">飼料自給率</a>との違い、そして2030年度に向けてどう上げていくのかまでをわかりやすく解説します。</p>
 
-    <h2 id="summary">概要</h2>
+    <h2 id="summary">この記事でわかること（早わかり表）</h2>
     <div class="article-table-scroll">
     <table class="article-summary-table">
       <colgroup>
@@ -35,47 +35,62 @@
       </thead>
       <tbody>
         <tr>
-          <td>誰に</td>
-          <td>農業者、食品・流通事業者、自治体担当、食料・農村政策に関心のある方です。</td>
+          <td>食料自給率とは</td>
+          <td>国内で消費する食料のうち、国内生産でどれだけ賄えているかを示す割合です。カロリーベースと生産額ベースの2つがあります。</td>
         </tr>
         <tr>
-          <td>何を</td>
-          <td><a href="#world-grain">世界の穀物需給</a>、<a href="#trade">貿易と国際比較</a>、<a href="#import-partners">主要品目の輸入先</a>、<a href="#grain-prices">国際穀物価格</a>、<a href="#self-sufficiency">自給率・国産率</a>、<a href="#stockpile">備蓄</a>、<a href="#input-costs">生産資材</a>、<a href="#fao-definition">FAOの定義</a>です。</td>
+          <td>日本の数字（令和6年度）</td>
+          <td>カロリーベースで<strong>38％</strong>、生産額ベースで<strong>64％</strong>です。指標の取り方が違うため、同じ年でも数字が大きく異なります。</td>
         </tr>
         <tr>
-          <td>数値の目安</td>
-          <td>自給率・輸入額・備蓄などは<strong>令和6（2024）年度</strong>前後の公表値が中心です。最新の確報・改定は省の統計・公表をご覧ください。</td>
+          <td>なぜ低いのか</td>
+          <td>小麦・大豆・油脂・飼料など輸入に頼る品目が多く、食生活が変わったためです。今の食生活を国産だけで賄うには国内農地の<strong>約3.1倍</strong>が必要です。</td>
         </tr>
         <tr>
-          <td>詳細は</td>
-          <td>農林水産省「<a href="https://www.maff.go.jp/j/zyukyu/anpo/" target="_blank" rel="noopener">食料安全保障について</a>」、「<a href="https://www.maff.go.jp/j/zyukyu/zikyu_ritu/012.html" target="_blank" rel="noopener">日本の食料自給率</a>」、「<a href="https://www.maff.go.jp/j/zyukyu/jki/j_zyukyu_kakaku/index.html" target="_blank" rel="noopener">世界の穀物需給及び価格の推移</a>」をご覧ください。</td>
+          <td>これからの目標</td>
+          <td>食料・農業・農村基本計画では、2030年度にカロリーベース45％・生産額ベース69％を目指します。</td>
         </tr>
       </tbody>
     </table>
     </div>
 
-    <h2 id="world-grain">世界の穀物・大豆の需給</h2>
-    <p>2023年時点で、世界の主要穀物等の需要量は1970年比で、小麦が2.4倍、米が2.5倍、とうもろこしが4.5倍、大豆が8.4倍と増加しており、総人口の伸び（2.2倍）を上回っています。需要の増加に対して生産量も増えてきましたが、短期的には豊凶による変動があり、COVID-19パンデミック以前は生産が需要をやや上回る局面が続いた一方、近年は生産と需要がほぼ均衡する動きになっています。</p>
+    <h2 id="self-sufficiency-toha">食料自給率とは（指標の意味）</h2>
+    <p>食料自給率とは、国内で消費する食料のうち、どれだけを国内生産で賄えているかを示す割合です。農林水産省が毎年公表しており、日本の食料供給がどれだけ輸入に頼っているかを測るものさしになります。</p>
+    <p>自給率には大きく2つの測り方があります。1つは食べ物の熱量（カロリー）で比べる<strong>カロリーベース（供給熱量ベース）</strong>、もう1つは金額で比べる<strong>生産額ベース</strong>です。令和6年度の食料自給率は、<strong>カロリーベースで38％</strong>、<strong>生産額ベースで64％</strong>です。同じ年でも数字が大きく違うのは、この測り方の違いによるものです。</p>
+
+    <h2 id="calorie-vs-value">カロリーベースと生産額ベースの違い</h2>
+    <p>食料自給率の数字が「38％」とも「64％」とも言われるのは、計算の分子・分母に何を使うかが違うからです。それぞれの意味は次のとおりです。</p>
+    <ul>
+      <li><strong>カロリーベース（供給熱量ベース）：</strong>国民1人1日当たりの供給熱量のうち、国産で賄えている熱量の割合です。米や小麦、油脂など<strong>熱量の大きい品目</strong>の影響を強く受けます。令和6年度は、国内消費仕向熱量<strong>2,203kcal/人・日</strong>のうち国産供給熱量が<strong>841kcal/人・日</strong>で、自給率は38％です。</li>
+      <li><strong>生産額ベース：</strong>国内で消費する食料の金額のうち、国内生産が占める割合です。野菜や魚介類、畜産物など<strong>単価の高い品目</strong>が反映されやすくなります。令和6年度は、国内消費仕向額<strong>18.2兆円</strong>のうち国内生産額が<strong>11.1兆円</strong>で、自給率は64％です。</li>
+    </ul>
+    <p>カロリーの大半を占める穀物・油脂を多く輸入している一方、金額の大きい野菜や畜産は国内生産の割合が比較的高いため、カロリーベースは低く、生産額ベースは高く出ます。どちらが正しいということではなく、見たい側面によって使い分ける指標です。なお、平時の国民が日常生活で必要とする摂取熱量<strong>1,850kcal/人・日</strong>を国産でどの程度賄えるかを示す摂取熱量ベースの指標も公表されています。</p>
     <figure>
-      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-01.png" width="1600" height="1200" alt="世界の穀物及び大豆の需給と世界人口の推移、穀物及び大豆の需要の品目別内訳のグラフ。" loading="lazy" decoding="async">
-      <figcaption>世界の穀物・大豆の需給と人口動向（出典：<a href="https://www.maff.go.jp/j/zyukyu/jki/j_zyukyu_kakaku/index.html" target="_blank" rel="noopener">農林水産省・世界の穀物需給及び価格の推移</a>）</figcaption>
+      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-06.png" width="1600" height="1200" alt="食料自給率の長期推移グラフと基本計画の2030年度目標、令和6年度の分子分母の数値。" loading="lazy" decoding="async">
+      <figcaption>食料自給率の推移と基本計画の目標（出典：<a href="https://www.maff.go.jp/j/zyukyu/zikyu_ritu/012.html" target="_blank" rel="noopener">農林水産省・日本の食料自給率</a>）</figcaption>
     </figure>
 
-    <h2 id="trade">農産物貿易と農業の国際比較</h2>
-    <p>2023年の我が国の農産物純輸入額は<strong>532億ドル</strong>であり、世界有数の食料輸入国の一つです。主要国の農産物輸出入では、日本は輸入が輸出を大きく上回り、米国・中国・豪州などとの取引規模が大きくなっています。</p>
+    <h2 id="why-low">なぜ日本の食料自給率は低いのか</h2>
+    <p>日本のカロリーベース食料自給率が38％にとどまる最大の理由は、<strong>熱量の大きい品目を輸入に頼っている</strong>ことと、<strong>食生活が大きく変わった</strong>ことの2つです。</p>
+    <p>品目別の供給熱量自給率を見ると、米は99％前後と高い一方で、小麦は16％、大豆は24％、畜産物は17％、油脂類は4％と、輸入依存の大きい品目が目立ちます。これらはいずれも食事のカロリーを支える品目です。昭和40年度と比べると、畜産物・油脂・小麦などの輸入依存が拡大しており、パンや肉、油を多く使う食生活へ変化したことが自給率の低下につながりました。</p>
     <figure>
-      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-02.png" width="1600" height="1200" alt="主要国の農産物輸出額・輸入額・純輸入額・純輸出額の棒グラフ。日本の純輸入が突出している。" loading="lazy" decoding="async">
-      <figcaption>世界の農産物輸出入状況（出典：<a href="https://www.maff.go.jp/j/zyukyu/anpo/" target="_blank" rel="noopener">農林水産省・食料安全保障について</a>）</figcaption>
+      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-07.png" width="1600" height="1200" alt="昭和40年度と令和6年度の品目別供給熱量自給率の比較、国内消費全てを生産するのに必要な農地面積の試算。" loading="lazy" decoding="async">
+      <figcaption>食料消費構造と自給率の変化（出典：<a href="https://www.maff.go.jp/j/zyukyu/zikyu_ritu/012.html" target="_blank" rel="noopener">農林水産省・日本の食料自給率</a>）</figcaption>
     </figure>
-
-    <p>農林水産業総生産の対GDP比は、日本を含む欧米諸国と同程度の水準です。一方、国土面積に占める農用地面積の割合や平均経営面積は、欧米諸国と比べて低い水準にあります。令和6年の農林水産業総生産は<strong>434億米ドル</strong>（対GDP比1.0％）、農用地面積は<strong>464万ha</strong>（国土の12.3％）、農業経営体の平均経営面積は<strong>3.6ha/戸</strong>です（中国は香港・マカオ・台湾を除く）。</p>
+    <p>構造的な制約もあります。今の食生活で消費する食料をすべて国産で賄おうとすると、必要な農地は国内の農地面積の<strong>約3.1倍</strong>に相当します。日本は農用地面積が<strong>464万ha</strong>（国土の12.3％）にとどまり、すべてを国内で賄うのは現実的ではありません。輸入に頼る品目の国産化を進めつつ、国産化が難しい品目は安定的に輸入することが重要になります。</p>
+    <p>農業の経済的な位置づけを国際比較すると、農林水産業総生産の対GDP比は欧米諸国と同程度ですが、国土に占める農用地の割合や1戸当たりの経営面積は欧米より小さい水準です。令和6年の農林水産業総生産は<strong>434億米ドル</strong>（対GDP比1.0％）、農業経営体の平均経営面積は<strong>3.6ha/戸</strong>です。こうした農地・経営規模の制約も、自給率を押し上げにくい背景になっています（中国は香港・マカオ・台湾を除く）。</p>
     <figure>
       <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-03.png" width="1600" height="1200" alt="日本・米国・EU・英国・豪州・中国・韓国・仏・独の農林水産業総生産、予算、就業者、農地面積、経営体数の比較表。" loading="lazy" decoding="async">
       <figcaption>農業の経済的位置づけに関する国際比較（出典：<a href="https://www.maff.go.jp/j/zyukyu/anpo/" target="_blank" rel="noopener">農林水産省・食料安全保障について</a>）</figcaption>
     </figure>
 
-    <h2 id="import-partners">主要農産物の国別輸入割合（令和6年）</h2>
-    <p>令和6年の農産物輸入額は<strong>9兆5,461億円</strong>です。とうもろこし、大豆、小麦、豚肉、牛肉など主要品目では、良好な関係にある国からの輸入が大きい構成になっています。</p>
+    <h2 id="country-comparison">食料自給率の各国比較と日本の輸入構造</h2>
+    <p>日本は世界有数の食料輸入国です。2023年の農産物純輸入額は<strong>532億ドル</strong>で、主要国の中でも輸入が輸出を大きく上回り、米国・中国・豪州などとの取引規模が大きくなっています。先進国の中でも、これだけ大量の食料を輸入に頼っている点が日本の特徴です。</p>
+    <figure>
+      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-02.png" width="1600" height="1200" alt="主要国の農産物輸出額・輸入額・純輸入額・純輸出額の棒グラフ。日本の純輸入が突出している。" loading="lazy" decoding="async">
+      <figcaption>世界の農産物輸出入状況（出典：<a href="https://www.maff.go.jp/j/zyukyu/anpo/" target="_blank" rel="noopener">農林水産省・食料安全保障について</a>）</figcaption>
+    </figure>
+    <p>令和6年の農産物輸入額は<strong>9兆5,461億円</strong>です。とうもろこし、大豆、小麦、豚肉、牛肉といった主要品目では、特定の国に輸入が集中している点も見逃せません。どの品目をどこから輸入しているかは、次の表のとおりです。</p>
     <div class="article-table-scroll">
     <table>
       <thead>
@@ -119,31 +134,9 @@
       <figcaption>主要農産物の国別輸入割合（出典：<a href="https://www.maff.go.jp/j/kokusai/kokusei/kaigai_nogyo/k_boeki_tokei/im_ruinen.html" target="_blank" rel="noopener">農林水産省・輸入累年実績</a>、財務省貿易統計を基に作成）</figcaption>
     </figure>
 
-    <h2 id="grain-prices">国際穀物価格の動向</h2>
-    <p>穀物等の国際相場は、世界人口や経済発展に伴う需要、バイオ燃料向け需要、天候による生産変動などで変動します。とうもろこし・大豆は2012年に史上最高値を記録したあと世界的な豊作等で低下し、2020年後半から南米の乾燥や中国の輸入需要増、2021年の北米北部の高温乾燥などで上昇しました。2022年のロシアによるウクライナ侵攻で小麦は史上最高値（期近終値14.3ドル/ブッシェル、2022年3月7日）を更新したのち、臨時回廊等による輸出再開もあり侵攻前水準まで低下しました。とうもろこし・大豆も侵攻時に高騰したものの、ブラジル等の豊作から侵攻前水準まで戻る動きがみられます。</p>
-    <figure>
-      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-05.png" width="1600" height="1200" alt="小麦・とうもろこし・大豆のシカゴ商品取引所期近終値の長期推移と過去最高値の注記。" loading="lazy" decoding="async">
-      <figcaption>穀物等の国際価格の動向（出典：<a href="https://www.maff.go.jp/j/zyukyu/jki/j_zyukyu_kakaku/index.html" target="_blank" rel="noopener">農林水産省・世界の穀物需給及び価格の推移</a>）</figcaption>
-    </figure>
-
-    <h2 id="self-sufficiency">食料自給率の推移と目標</h2>
-    <p>我が国の<a href="#kw-shokuryo-jikyu">食料自給率</a>は長期的に低下傾向で推移してきました。令和6年度は、<strong>カロリーベース（供給熱量ベース）で38％</strong>、<strong>生産額ベースで64％</strong>です。食料・農業・農村基本計画では、2030年度に向けた目標として、供給熱量ベース38％→45％、生産額ベース61％→69％、摂取熱量ベース45％→53％が掲げられています。</p>
-    <p>令和6年度の国内消費仕向熱量は<strong>2,203kcal/人・日</strong>、国産供給熱量は<strong>841kcal/人・日</strong>です。食料の国内消費仕向額は<strong>18.2兆円</strong>、国内生産額は<strong>11.1兆円</strong>です。摂取熱量ベースでは、平時の国民日常生活に必要な摂取熱量<strong>1,850kcal/人・日</strong>のうち、国産でどの程度を賄えるかを示す指標が公表されています。</p>
-    <figure>
-      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-06.png" width="1600" height="1200" alt="食料自給率の長期推移グラフと基本計画の2030年度目標、令和6年度の分子分母の数値。" loading="lazy" decoding="async">
-      <figcaption>食料自給率の推移と基本計画の目標（出典：<a href="https://www.maff.go.jp/j/zyukyu/zikyu_ritu/012.html" target="_blank" rel="noopener">農林水産省・日本の食料自給率</a>）</figcaption>
-    </figure>
-
-    <h2 id="consumption-structure">食料消費構造と自給の限界</h2>
-    <p>小麦、大豆、飼料、油脂類などの自給率は低く、大部分を輸入に依存しています。現在の食生活を前提に、国内で消費される食料すべてを国産で賄うために必要な農地面積は、国内の農地面積の<strong>約3.1倍</strong>に相当し、すべてを国産でまかなうことは現実的ではありません。輸入農産物の国産化を進める一方、国産化が難しい品目については安定的な輸入を行うことが重要です。</p>
-    <p>品目別の供給熱量自給率では、米は99％前後と高い一方、小麦は16％、大豆は24％、畜産物は17％、油脂類は4％など、カロリーベース食料自給率38％を構成する品目差が大きくなっています。昭和40年度と比べると、畜産物・油脂・小麦などの輸入依存が拡大した構造変化が示されています。</p>
-    <figure>
-      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-07.png" width="1600" height="1200" alt="昭和40年度と令和6年度の品目別供給熱量自給率の比較、国内消費全てを生産するのに必要な農地面積の試算。" loading="lazy" decoding="async">
-      <figcaption>食料消費構造と自給率の変化（出典：<a href="https://www.maff.go.jp/j/zyukyu/zikyu_ritu/012.html" target="_blank" rel="noopener">農林水産省・日本の食料自給率</a>）</figcaption>
-    </figure>
-
-    <h2 id="domestic-rate">食料国産率と飼料自給率</h2>
-    <p>食料自給率は飼料自給率を考慮して計算しますが、令和2年の食料・農業・農村基本計画以降、国内畜産の生産基盤の強化を評価するため、輸入飼料で生産した畜産物分を除かない<strong><a href="#kw-shokuryo-kokusan">食料国産率</a></strong>も公表されています。</p>
+    <h2 id="domestic-rate">食料自給率・食料国産率・飼料自給率の違い</h2>
+    <p>自給率に似た指標として、<a href="#kw-shokuryo-kokusan">食料国産率</a>と<a href="#kw-shiryo-jikyu">飼料自給率</a>があります。混同しやすいので、違いを整理します。</p>
+    <p>食料自給率は、畜産物について<strong>輸入した飼料で育てた分を国産から差し引いて</strong>計算します。たとえば国産の牛肉でも、輸入飼料で育てた分は自給に数えません。一方の食料国産率は、輸入飼料で生産した畜産物分を<strong>差し引かずに</strong>計算する指標で、令和2年の食料・農業・農村基本計画以降、国内畜産の生産基盤の強化を評価するために公表されています。そのため、畜産物では自給率と国産率の差が大きく開きます。</p>
     <div class="article-table-scroll">
     <table>
       <thead>
@@ -200,14 +193,24 @@
       </tbody>
     </table>
     </div>
-    <p><a href="#kw-shiryo-jikyu">飼料自給率</a>は、純国内産飼料供給量（6,200 TDN千トン）を飼料供給量（23,677 TDN千トン）で除して<strong>26％</strong>です。カロリーベースの食料国産率は、1人1日当たり国産供給熱量1,064kcalを供給熱量2,248kcalで除して47％、生産額ベースでは国内生産額13.8兆円を国内消費仕向額20.1兆円で除して69％です。</p>
+    <p>飼料自給率は、国内で供給される飼料のうち国内生産（純国内産）が占める割合です。純国内産飼料供給量（6,200 TDN千トン）を飼料供給量（23,677 TDN千トン）で割って<strong>26％</strong>です。畜産物の食料自給率が低いのは、この飼料自給率の低さが大きく影響しています。カロリーベースの食料国産率は、1人1日当たり国産供給熱量1,064kcalを供給熱量2,248kcalで割って47％、生産額ベースでは国内生産額13.8兆円を国内消費仕向額20.1兆円で割って69％です。</p>
     <figure>
       <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-08.png" width="1600" height="1200" alt="食料自給率と食料国産率の品目別比較表、飼料自給率と食料国産率の算式。" loading="lazy" decoding="async">
       <figcaption>食料国産率・飼料自給率（出典：<a href="https://www.maff.go.jp/j/zyukyu/zikyu_ritu/012.html" target="_blank" rel="noopener">農林水産省・日本の食料自給率</a>）</figcaption>
     </figure>
 
-    <h2 id="stockpile">米・小麦・飼料穀物の備蓄</h2>
-    <p>米、食糧用小麦、飼料穀物について、国は備蓄事業を実施しています。備蓄水準の基本は、自給している米については「国内の不作に対し（緊急輸入等せずに）国産米をもって対処し得る水準」、食糧用小麦と飼料穀物については「不測時に代替輸入先からの輸入を確保するまでの期間に対処し得る水準」とされています。</p>
+    <h2 id="world-supply">世界の食料需給と国際穀物価格・備蓄</h2>
+    <p>自給率の低い日本にとって、輸入元である世界の需給は無関係ではありません。2023年時点で、世界の主要穀物等の需要量は1970年比で小麦が2.4倍、米が2.5倍、とうもろこしが4.5倍、大豆が8.4倍と増加し、総人口の伸び（2.2倍）を上回っています。生産量も増えてきましたが、近年は生産と需要がほぼ均衡する動きになっており、豊凶による短期変動も避けられません。世界全体で食料の取り合いが強まれば、輸入に頼る日本の調達環境も厳しくなります。</p>
+    <figure>
+      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-01.png" width="1600" height="1200" alt="世界の穀物及び大豆の需給と世界人口の推移、穀物及び大豆の需要の品目別内訳のグラフ。" loading="lazy" decoding="async">
+      <figcaption>世界の穀物・大豆の需給と人口動向（出典：<a href="https://www.maff.go.jp/j/zyukyu/jki/j_zyukyu_kakaku/index.html" target="_blank" rel="noopener">農林水産省・世界の穀物需給及び価格の推移</a>）</figcaption>
+    </figure>
+    <p>国際穀物価格も大きく変動します。とうもろこし・大豆は2012年に史上最高値を記録したあと世界的な豊作で低下し、2020年後半から南米の乾燥や中国の輸入需要増、2021年の北米北部の高温乾燥で上昇しました。2022年のロシアによるウクライナ侵攻で小麦は史上最高値（期近終値14.3ドル/ブッシェル、2022年3月7日）を更新したのち、輸出再開もあり侵攻前水準まで低下しました。とうもろこし・大豆も侵攻時に高騰したものの、ブラジル等の豊作で侵攻前水準まで戻る動きがみられます。</p>
+    <figure>
+      <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-05.png" width="1600" height="1200" alt="小麦・とうもろこし・大豆のシカゴ商品取引所期近終値の長期推移と過去最高値の注記。" loading="lazy" decoding="async">
+      <figcaption>穀物等の国際価格の動向（出典：<a href="https://www.maff.go.jp/j/zyukyu/jki/j_zyukyu_kakaku/index.html" target="_blank" rel="noopener">農林水産省・世界の穀物需給及び価格の推移</a>）</figcaption>
+    </figure>
+    <p>こうした不測の事態に備え、国は米、食糧用小麦、飼料穀物の備蓄事業を実施しています。自給している米は「国内の不作に緊急輸入等せずに国産米で対処し得る水準」、食糧用小麦と飼料穀物は「不測時に代替輸入先からの輸入を確保するまでの期間に対処し得る水準」を基本にします。備蓄米の仕組みは<a href="/articles/government-stockpiled-rice">政府備蓄米とは？仕組みと放出のルールを解説</a>でも詳しく扱っています。</p>
     <div class="article-table-scroll">
     <table>
       <thead>
@@ -241,24 +244,25 @@
       <figcaption>食料等の備蓄（出典：<a href="https://www.maff.go.jp/j/zyukyu/anpo/3.html" target="_blank" rel="noopener">農林水産省・備蓄の適切な運用・家庭での備蓄</a>）</figcaption>
     </figure>
 
-    <h2 id="input-costs">肥料・燃油・配合飼料の価格</h2>
-    <p>化学肥料原料の国際価格は、令和3年半ば以降の高騰が落ち着きつつある一方、円安や中国の輸入制限の影響などで調達コストを押し上げる傾向があります。燃油価格は為替や国際商品市況の影響で大きく変動し、ロシアによるウクライナ侵略以降は高い水準で推移した局面があります。配合飼料価格はとうもろこしの国際価格や為替の影響を受け、令和5年以降は主産国の豊作などにより国際価格が下落したこと等を受け、概ね低下傾向で推移しています。</p>
+    <h2 id="input-costs">肥料・燃油・配合飼料の価格と輸入依存</h2>
+    <p>自給率の低さは、食べ物そのものだけの問題ではありません。農業生産を支える肥料・燃油・飼料も多くを輸入に頼っており、その価格や調達は自給の足元を左右します。化学肥料原料の国際価格は、令和3年半ば以降の高騰が落ち着きつつある一方、円安や中国の輸入制限の影響で調達コストを押し上げる傾向があります。燃油価格は為替や国際商品市況で大きく変動し、配合飼料価格はとうもろこしの国際価格や為替の影響を受け、令和5年以降は主産国の豊作で国際価格が下落したこと等から概ね低下傾向で推移しています。</p>
     <figure>
       <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-10.png" width="1600" height="1200" alt="肥料原料の輸入通関価格、A重油・原油価格、配合飼料工場渡価格の推移グラフ。" loading="lazy" decoding="async">
       <figcaption>肥料原料・燃油・配合飼料価格の推移（出典：<a href="https://www.maff.go.jp/j/zyukyu/anpo/" target="_blank" rel="noopener">農林水産省・食料安全保障について</a>）</figcaption>
     </figure>
-
-    <h2 id="fertilizer-import">化学肥料原料の輸入相手国</h2>
-    <p>尿素、りん安（りん酸アンモニウム）、塩化加里（塩化カリウム）は、ほぼ全量を輸入しています。資源が世界的に偏在するため、輸入相手国も偏在します。尿素はマレーシアと中国、りん安は中国、塩化加里はカナダが主な相手国です。令和3年秋以降、中国による肥料原料の輸出検査の厳格化や、ロシアによるウクライナ侵略の影響で輸入が停滞したことを受け、代替国からの調達が進んでいます。</p>
-    <p>令和5年7月〜令和6年6月の輸入量の目安は、尿素<strong>202千トン</strong>（マレーシア75％）、塩化加里<strong>192千トン</strong>（カナダ68％）、りん安<strong>357千トン</strong>（中国73％、モロッコ15％）です。</p>
+    <p>特に化学肥料原料は輸入依存が際立ちます。尿素、りん安（りん酸アンモニウム）、塩化加里（塩化カリウム）はほぼ全量を輸入し、資源が世界的に偏在するため輸入相手国も偏ります。尿素はマレーシアと中国、りん安は中国、塩化加里はカナダが主な相手国です。令和5年7月〜令和6年6月の輸入量の目安は、尿素<strong>202千トン</strong>（マレーシア75％）、塩化加里<strong>192千トン</strong>（カナダ68％）、りん安<strong>357千トン</strong>（中国73％、モロッコ15％）です。肥料原料を国内資源で代替する取組は<a href="/articles/domestic-fertilizer-resource-expansion">堆肥・国産肥料づくりに使える補助金の解説</a>もあわせてご覧ください。</p>
     <figure>
       <img src="/article-images/japan-food-self-sufficiency-international-supply/figure-11.png" width="1600" height="1200" alt="尿素・塩化加里・りん安の輸入相手国別割合の円グラフと輸入量。" loading="lazy" decoding="async">
       <figcaption>化学肥料原料の輸入相手国（出典：<a href="https://www.maff.go.jp/j/zyukyu/anpo/" target="_blank" rel="noopener">農林水産省・食料安全保障について</a>、経済安全保障推進法に基づく調査結果）</figcaption>
     </figure>
 
-    <h2 id="fao-definition">FAOの食料安全保障の定義</h2>
-    <p>1996年11月のFAO食料サミットでは、世界規模で食料問題が論じられ、「すべての人の食料安全保障を達成し、2015年までに現在の栄養不足人口を半減すること」を目標とする「世界食料安全保障のためのローマ宣言」が取りまとめられました。その行動計画で、食料安全保障の定義が提起されています。</p>
-    <p>食料安全保障とは、全ての人が、いかなる時にも、活動的で健康的な生活に必要な食生活上のニーズと嗜好を満たすために、十分で安全かつ栄養ある食料を、物理的にも社会的にも経済的にも入手可能であるときに達成される状態です。四つの要素は次のとおりです。</p>
+    <h2 id="future">これから食料自給率はどうなる・どう上げるのか</h2>
+    <p>日本の食料自給率は長期的に低下傾向で推移してきましたが、ここから引き上げる目標が定められています。<a href="/articles/new-food-agriculture-rural-basic-plan">食料・農業・農村基本計画</a>では、2030年度に向けて、カロリーベース（供給熱量ベース）を38％→<strong>45％</strong>、生産額ベースを61％→<strong>69％</strong>、摂取熱量ベースを45％→<strong>53％</strong>に引き上げる目標を掲げています。</p>
+    <p>自給率を上げるには、輸入に頼る小麦・大豆・飼料作物などの国内生産を増やすこと、畜産の基盤を強めて飼料自給率を高めること、そして消費者が国産の農産物を選ぶことが欠かせません。同時に、価格が適正に生産者へ届く仕組みづくりも進んでいます。食料の安定供給と価格形成の考え方は<a href="/articles/japan-food-system-act">食料システムと価格形成の解説</a>で扱っています。輸入だけに頼らない食料安全保障へ向けて、国内生産の増大・安定的な輸入・備蓄を組み合わせる取組が重要になります。</p>
+
+    <h2 id="fao-definition">そもそも食料安全保障とは（FAOの定義）</h2>
+    <p>自給率の議論の土台にあるのが「食料安全保障」という考え方です。1996年11月のFAO（国連食糧農業機関）食料サミットでは、「すべての人の食料安全保障を達成し、2015年までに現在の栄養不足人口を半減すること」を目標とする「世界食料安全保障のためのローマ宣言」がまとまり、その行動計画で<a href="#kw-shokuryo-anzen">食料安全保障</a>が定義されました。</p>
+    <p>食料安全保障とは、すべての人が、いかなる時にも、活動的で健康的な生活に必要な食生活上のニーズと嗜好を満たすために、十分で安全かつ栄養ある食料を、物理的にも社会的にも経済的にも入手できる状態を指します。次の四つの要素から成ります。</p>
     <ul>
       <li><strong>供給面（Food Availability）：</strong>適切な品質の食料が、国内生産または輸入（食料援助を含む）により十分に供給されているか</li>
       <li><strong>アクセス面（Food Access）：</strong>個人が栄養ある食料を得るための資源・権利（法的・政治的・経済的・社会的な取り決め）を持ちうるか</li>
@@ -270,19 +274,40 @@
       <figcaption>FAOの食料安全保障の定義と四要素（出典：<a href="https://www.maff.go.jp/j/zyukyu/anpo/" target="_blank" rel="noopener">農林水産省・食料安全保障について</a>）</figcaption>
     </figure>
 
+    <h2 id="faq">よくある質問</h2>
+
+    <h3 id="faq-toha">食料自給率とは何ですか</h3>
+    <p>国内で消費する食料のうち、国内生産でどれだけ賄えているかを示す割合です。農林水産省が毎年公表しており、カロリー（供給熱量）で測るカロリーベースと、金額で測る生産額ベースがあります。</p>
+
+    <h3 id="faq-why">なぜ日本の食料自給率は低いのですか</h3>
+    <p>小麦・大豆・油脂・飼料など、カロリーの大きい品目を輸入に頼っているためです。パンや肉、油を多く使う食生活へ変わったことも影響しました。今の食生活を国産だけで賄うには国内農地の約3.1倍が必要で、農地や経営規模の制約もあります。</p>
+
+    <h3 id="faq-calorie">カロリーベースと生産額ベースは何が違いますか</h3>
+    <p>カロリーベースは熱量で測るため、米や油脂など熱量の大きい品目の影響を強く受け、令和6年度は38％です。生産額ベースは金額で測るため、野菜や畜産など単価の高い品目が反映されやすく、同じ年で64％です。見たい側面で使い分けます。</p>
+
+    <h3 id="faq-kokusan">食料自給率と食料国産率の違いは何ですか</h3>
+    <p>食料自給率は、畜産物について輸入飼料で育てた分を国産から差し引いて計算します。食料国産率はその分を差し引かずに計算し、国内畜産の生産基盤の強化を評価する指標です。畜産物では自給率17％に対し国産率65％と差が大きく開きます。</p>
+
+    <h3 id="faq-raise">食料自給率は上げられるのですか</h3>
+    <p>基本計画では2030年度にカロリーベース45％、生産額ベース69％を目指します。輸入に頼る小麦・大豆・飼料の国内生産を増やすこと、飼料自給率を高めること、消費者が国産を選ぶことが鍵です。最新の目標や進捗は<a href="/articles/new-food-agriculture-rural-basic-plan">食料・農業・農村基本計画</a>や省の公表をご覧ください。</p>
+
+    <h2 id="closing">まとめ</h2>
+    <p>食料自給率とは、国内で消費する食料を国内生産でどれだけ賄えているかを示す割合で、令和6年度はカロリーベース38％・生産額ベース64％です。数字が違うのは、熱量で測るか金額で測るかの違いによるものです。日本の自給率が低いのは、小麦・大豆・油脂・飼料など熱量の大きい品目を輸入に頼り、食生活が変わったためで、今の食生活を国産だけで賄うには国内農地の約3.1倍が必要という構造的な制約もあります。</p>
+    <p>畜産の基盤を測る食料国産率（カロリー47％）や飼料自給率（26％）も合わせて見ると、自給率の中身がよくわかります。基本計画は2030年度にカロリーベース45％を目指しており、輸入に頼る品目の国内生産拡大、飼料自給率の向上、国産を選ぶ消費が、自給率を上げる鍵になります。最新の数値や目標は、農林水産省の統計・公表をご覧ください。</p>
+
     <h2 id="keywords">キーワード解説</h2>
 
-    <h3 id="kw-shokuryo-anzen"><strong>食料安全保障</strong></h3>
-    <p>食料の安定的な供給を確保する考え方です。国内生産の増大、安定的な輸入、備蓄、輸出促進などを組み合わせ、需要減少下でも供給能力を維持する政策が進められています。</p>
-
     <h3 id="kw-shokuryo-jikyu"><strong>食料自給率</strong></h3>
-    <p>国内の食料供給に対する国内生産の割合を示す指標です。カロリー（供給熱量）ベースと生産額ベースがあり、農林水産省が毎年公表しています。</p>
+    <p>国内の食料供給に対する国内生産の割合を示す指標です。カロリー（供給熱量）ベースと生産額ベースがあり、農林水産省が毎年公表しています。令和6年度はカロリーベース38％、生産額ベース64％です。</p>
 
     <h3 id="kw-shokuryo-kokusan"><strong>食料国産率</strong></h3>
-    <p>輸入飼料で生産した畜産物分を自給率の計算から除かない指標です。国内畜産の生産基盤の強化を評価する観点から、令和2年以降の基本計画以降に公表されています。</p>
+    <p>輸入飼料で生産した畜産物分を自給率の計算から差し引かない指標です。国内畜産の生産基盤の強化を評価する観点から、令和2年以降の基本計画で公表されています。</p>
 
     <h3 id="kw-shiryo-jikyu"><strong>飼料自給率</strong></h3>
-    <p>国内で供給される飼料のうち、国内生産（純国内産）が占める割合です。畜産の<a href="#kw-shokuryo-jikyu">食料自給率</a>を左右する要因の一つです。</p>
+    <p>国内で供給される飼料のうち、国内生産（純国内産）が占める割合です。令和6年度は26％で、畜産物の<a href="#kw-shokuryo-jikyu">食料自給率</a>を左右する大きな要因です。</p>
+
+    <h3 id="kw-shokuryo-anzen"><strong>食料安全保障</strong></h3>
+    <p>すべての人が、いつでも十分で安全かつ栄養ある食料を入手できる状態を指す考え方です。国内生産の増大、安定的な輸入、備蓄などを組み合わせて確保します。</p>
 
     <footer class="source">
       <p>出典：農林水産省「<a href="https://www.maff.go.jp/j/zyukyu/anpo/" target="_blank" rel="noopener">食料安全保障について</a>」、「<a href="https://www.maff.go.jp/j/zyukyu/zikyu_ritu/012.html" target="_blank" rel="noopener">日本の食料自給率</a>」、「<a href="https://www.maff.go.jp/j/zyukyu/jki/j_zyukyu_kakaku/index.html" target="_blank" rel="noopener">世界の穀物需給及び価格の推移</a>」、「<a href="https://www.maff.go.jp/j/zyukyu/anpo/3.html" target="_blank" rel="noopener">備蓄の適切な運用・家庭での備蓄</a>」。自給率・貿易・備蓄の最新数値は、食料需給表・貿易統計・省の公表資料をご覧ください。</p>

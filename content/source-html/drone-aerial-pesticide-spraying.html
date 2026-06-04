@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ドローンによる農薬等の空中散布の解説</title>
-  <meta name="description" content="農業用ドローンで農薬等を空中散布するあなたが取るべき航空法上の許可・承認、提出資料の省略、申請期限、安全ガイドライン上の留意点、ナビゲーター配置の例外を整理します。">
-  <meta property="article:modified_time" content="2026-05-18">
+  <title>ドローンで農薬散布するには？必要な資格・許可と申請の流れを解説</title>
+  <meta name="description" content="ドローンで農薬を散布するには資格は必要か、どんな許可・承認が要るのかを、自分で散布したい農業者・受託事業者の目線で整理します。航空法に基づく国土交通省への申請、提出資料を省く方法、申請期限、散布の進め方までわかりやすく解説します。">
+  <meta property="article:modified_time" content="2026-06-04">
   <link rel="stylesheet" href="../article-standalone.css">
 </head>
 <body>
   <div class="article-body">
   <article>
     <header class="article-header">
-      <h1>ドローンによる農薬等の空中散布の解説</h1>
-      <p class="article-meta"><time datetime="2026-05-18">2026年5月18日</time>更新</p>
+      <h1>ドローンで農薬散布するには？必要な資格・許可と申請の流れを解説</h1>
+      <p class="article-meta"><time datetime="2026-06-04">2026年6月4日</time>更新</p>
     </header>
 
     <!-- 要点は frontmatter の takeaways に記載 -->
 
-    <p class="lead">農業用ドローンで農薬等を空中散布する際に、航空法の許可・承認、提出資料の省略、安全ガイドライン上の留意点を、散布する立場から整理します。</p>
+    <p class="lead">ドローンで農薬散布を始めたいけれど、<strong>資格や免許は要るのか、どこに許可をもらえばいいのか</strong>が分かりにくい――そんな疑問から整理します。結論を先に言うと、現時点でドローンの農薬散布そのものに「国家資格が必須」という決まりはなく、押さえるべきは<strong>航空法に基づく国土交通省への許可・承認</strong>です。ここでは、自分で散布したい農業者や受託で散布する事業者が、資格・許可・申請の流れと散布の進め方を順に把握できるようにまとめます。</p>
 
     <h2 id="overview">概要</h2>
     <div class="article-table-scroll">
@@ -36,19 +36,23 @@
       <tbody>
         <tr>
           <td>あなたが</td>
-          <td>農業用ドローンで農薬・肥料・種子・融雪剤等をほ場に空中散布する農業者、または散布を受託する事業者として手続と安全対策を進める場合。</td>
+          <td>農業用ドローンで農薬・肥料・種子・融雪剤等をほ場に空中散布したい農業者、または散布を受託する事業者として始める場合。</td>
         </tr>
         <tr>
-          <td>やること</td>
-          <td>航空法の許可・承認の取得、提出資料の準備（省略条件の活用）、散布計画と近隣周知、安全ガイドライン・農薬ラベルの順守、必要に応じた立入管理区画の設定。</td>
+          <td>資格は</td>
+          <td>農薬散布そのものに必須の国家資格はありません。ただし<strong><a href="#kw-minkan-kousyu">民間講習</a>の修了</strong>は、後述の許可・承認で提出資料を省くカギになります。</td>
+        </tr>
+        <tr>
+          <td>許可は</td>
+          <td><strong>航空法に基づく許可・承認</strong>を、飛行前に<strong><a href="#kw-koukuukyoku-syounin">国土交通省</a>地方航空局等</strong>へ申請します（オンライン・郵送・持参）。</td>
         </tr>
         <tr>
           <td>いつまでに</td>
-          <td>散布予定日の<strong>少なくとも10開庁日前</strong>までに、国土交通省地方航空局等へ許可・承認を申請する（オンライン・郵送・持参）。</td>
+          <td>散布予定日の<strong>少なくとも10開庁日前</strong>までに申請します。機体・操縦者・安全確保体制の3類の資料をそろえます。</td>
         </tr>
         <tr>
-          <td>詳細はどこで</td>
-          <td>農林水産省「<a href="https://www.maff.go.jp/j/kanbo/smart/drone.html" target="_blank" rel="noopener">農業用ドローンの普及拡大に向けた官民協議会</a>」、国土交通省航空局の無人航空機案内、最新の許可・承認要領・標準マニュアル・安全ガイドラインを<a href="https://www.maff.go.jp/j/kanbo/smart/attach/pdf/drone-28.pdf" target="_blank" rel="noopener">農林水産省の案内（PDF）</a>からご覧ください。</td>
+          <td>進め方</td>
+          <td>農薬ラベルと<a href="#kw-anzen-guideline">空中散布安全ガイドライン</a>に沿って散布計画を立て、近隣周知とドリフト防止を徹底します。</td>
         </tr>
       </tbody>
     </table>
@@ -59,56 +63,106 @@
       <figcaption><a href="https://www.maff.go.jp/j/kanbo/smart/attach/pdf/drone-28.pdf" target="_blank" rel="noopener">農林水産省「ドローンによる農薬等の空中散布を行う皆さんへ」（PDF）</a></figcaption>
     </figure>
 
-    <h2 id="background">散布を始める前に押さえること</h2>
-    <p>令和元年7月に農業用ドローンの利活用に向けた規制の見直しが行われた。あなたがドローンで農薬等を散布するなら、飛行の前に<strong>航空法に基づく許可・承認</strong>を国土交通省に申請しましょう。散布の実務では、<strong>農薬ラベル</strong>の遵守と、農薬の空中散布に係る<strong>安全ガイドライン</strong>の順守をセットで進めましょう。</p>
+    <h2 id="license">ドローンの農薬散布に「資格・免許」は必要か</h2>
+    <p>まず多くの人がつまずく「資格」から整理します。<strong>ドローンで農薬を散布する行為そのものに、必ず持っていなければならない国家資格や免許はありません</strong>。自動車のように「この免許がなければ操作できない」という制度ではないのです。</p>
+    <p>混同しやすいのが、無人航空機の<a href="#kw-gino-syoumei"><strong>操縦者技能証明（国家資格）</strong></a>と、ドローンスクール等が行う<a href="#kw-minkan-kousyu"><strong>民間講習</strong></a>、そして<strong>航空法の許可・承認</strong>の3つです。位置づけは次のように分かれます。</p>
+    <ul>
+      <li><strong>航空法の許可・承認</strong>――農薬散布のような物件投下や、人・建物の近くでの飛行などには、飛行前に国土交通省の許可・承認が要ります。農薬散布で<strong>最初に押さえるべきはこれ</strong>です。</li>
+      <li><strong>民間講習（修了証）</strong>――義務ではありませんが、修了していると許可・承認の申請で<strong>操縦者に関する提出資料を省ける</strong>ため、実務上はほぼ前提になります。後述します。</li>
+      <li><strong>操縦者技能証明（国家資格）</strong>――無人航空機を飛ばす技能・知識を国が証明する制度です。一定の飛行を行いやすくする位置づけで、農薬散布の前提として一律に必須とされるものではありません。自分の飛行形態に必要かは<a href="#kw-koukuukyoku-syounin">国土交通省</a>の案内で確認しましょう。</li>
+    </ul>
+    <p>つまり「資格がないと撒けない」のではなく、<strong>許可・承認を取り、その手続を軽くするために民間講習を受けておく</strong>、という順序で考えると分かりやすくなります。なお、ドローンの導入はスマート農業の一環でもあります。全体像は<a href="/articles/smart-agriculture-trend">スマート農業とは？最新動向と導入のポイント</a>もあわせてご覧ください。</p>
 
-    <h2 id="permit">許可・承認を取る（航空法）</h2>
-    <p>申請先は<strong>国土交通省地方航空局等</strong>です。次の3類の資料をそろえて申請しましょう。</p>
+    <h2 id="permit">必要な許可・承認（航空法）</h2>
+    <p>令和元年7月に農業用ドローンの利活用に向けた規制の見直しが行われ、手続が整理されました。あなたがドローンで農薬等を散布するなら、飛行の前に<strong>航空法に基づく許可・承認</strong>を取りましょう。申請先は<strong><a href="#kw-koukuukyoku-syounin">国土交通省</a>地方航空局等</strong>です。</p>
+    <p>申請には、次の3類の資料をそろえます。</p>
     <ol>
       <li><strong>機体の機能・性能</strong>に関する資料（取扱説明書等）</li>
       <li><strong>操縦者の飛行経歴・知識・技能</strong>に関する資料</li>
       <li><strong>空中散布に係る安全確保体制</strong>に関する資料（飛行マニュアル等）</li>
     </ol>
-    <p><strong>散布予定日の少なくとも10開庁日前</strong>までに申請しましょう。オンライン申請、郵送、持参のいずれかで提出できます。代表者（代行者）による申請や、ドローン販売店での受付が可能な場合もあるので、自分で手続するか代行するかを早めに決めましょう。</p>
-    <p>様式・審査基準の最新版は、<a href="http://www.mlit.go.jp/koku/koku_fr10_000042.html" target="_blank" rel="noopener">国土交通省航空局の無人航空機に関する案内</a>をご覧ください。</p>
+    <p>代表者（代行者）による申請や、ドローン販売店での受付が可能な場合もあります。自分で手続を進めるか代行を頼むかを早めに決めましょう。様式・審査基準の最新版は、<a href="http://www.mlit.go.jp/koku/koku_fr10_000042.html" target="_blank" rel="noopener">国土交通省航空局の無人航空機に関する案内</a>をご覧ください。</p>
 
-    <h2 id="omission">提出資料を減らす（省略の活用）</h2>
-    <p>次の条件を満たせば、申請時の提出資料の<strong>一部を省略</strong>できます。申請前に、自分の機体・講習履歴・マニュアルが該当するか照合しましょう。</p>
+    <h2 id="omission">提出資料を省略するには</h2>
+    <p>3類の資料を一から作るのは負担が大きいですが、次の条件を満たせば申請時の提出資料の<strong>一部を省略</strong>できます。申請前に、自分の機体・講習履歴・マニュアルが該当するかを照合しましょう。</p>
     <ul>
-      <li><strong>機体の機能・性能</strong>――「資料の一部を省略できる無人航空機」を使う（<a href="https://www.mlit.go.jp/common/001582421.pdf" target="_blank" rel="noopener">国土交通省（無人航空機の省略対象機体）</a>）。</li>
-      <li><strong>操縦者の飛行経歴・知識・技能</strong>――「無人航空機の民間講習団体及び管理団体」の講習を受ける（<a href="https://www.mlit.go.jp/common/001579421.pdf" target="_blank" rel="noopener">国土交通省（民間講習団体・管理団体）</a>）。</li>
-      <li><strong>安全確保体制</strong>――「航空局標準マニュアル（空中散布）」に沿って運用する（<a href="https://www.mlit.go.jp/common/001521379.pdf" target="_blank" rel="noopener">国土交通省（航空局標準マニュアル・空中散布）</a>）。農用地等での農薬・肥料・種子・融雪剤等の散布を想定したマニュアルなので、改訂版が出たら差し替えましょう。</li>
+      <li><strong>機体の機能・性能</strong>――「資料の一部を省略できる無人航空機」（認定された機体）を使う（<a href="https://www.mlit.go.jp/common/001582421.pdf" target="_blank" rel="noopener">国土交通省（無人航空機の省略対象機体）</a>）。</li>
+      <li><strong>操縦者の飛行経歴・知識・技能</strong>――「無人航空機の<a href="#kw-minkan-kousyu">民間講習</a>団体及び管理団体」の講習を受ける（<a href="https://www.mlit.go.jp/common/001579421.pdf" target="_blank" rel="noopener">国土交通省（民間講習団体・管理団体）</a>）。</li>
+      <li><strong>安全確保体制</strong>――「<a href="#kw-koukuukyoku-syounin">航空局標準マニュアル（空中散布）</a>」に沿って運用する（<a href="https://www.mlit.go.jp/common/001521379.pdf" target="_blank" rel="noopener">国土交通省（航空局標準マニュアル・空中散布）</a>）。農用地等での農薬・肥料・種子・融雪剤等の散布を想定したマニュアルなので、改訂版が出たら差し替えましょう。</li>
     </ul>
+    <p>つまり<strong>認定機体を選び、民間講習を修了し、航空局標準マニュアル（空中散布）に沿って運用する</strong>――この3点をそろえると、申請の準備が大きく楽になります。これが、実務で民間講習がほぼ前提になる理由です。</p>
+
+    <h2 id="apply">申請の流れと期限</h2>
+    <p>許可・承認は、思い立ってすぐ撒けるものではありません。<strong>散布予定日の少なくとも10開庁日前</strong>までに申請しましょう。提出はオンライン申請、郵送、持参のいずれかで行えます。おおまかな流れは次のとおりです。</p>
+    <ol>
+      <li>自分の飛行形態（目視内か目視外か、昼か夜か等）と散布対象を整理します。</li>
+      <li>認定機体・<a href="#kw-minkan-kousyu">民間講習</a>修了・航空局標準マニュアル（空中散布）の活用で、省ける提出資料を確認します。</li>
+      <li>機体・操縦者・安全確保体制の<strong>3類の資料</strong>をそろえます。</li>
+      <li>散布予定日の<strong>10開庁日前まで</strong>に、<a href="#kw-koukuukyoku-syounin">国土交通省</a>地方航空局等へ申請します。</li>
+      <li>許可・承認を受けてから散布します。</li>
+    </ol>
+    <p>余裕をもって動くほど、書類の差し戻しや散布時期のずれを避けられます。最新の様式・期限は<a href="http://www.mlit.go.jp/koku/koku_fr10_000042.html" target="_blank" rel="noopener">国土交通省航空局の無人航空機に関する案内</a>で確認しましょう。</p>
 
     <figure>
       <img src="/article-images/drone-aerial-pesticide-spraying/figure-02.png" width="1600" height="2312" alt="農薬等の空中散布時の留意事項。安全ガイドラインの主な内容、立入管理区画の設定イメージ、ナビゲーター配置の例外。" loading="lazy" decoding="async">
       <figcaption><a href="https://www.maff.go.jp/j/kanbo/smart/attach/pdf/drone-28.pdf" target="_blank" rel="noopener">農林水産省「ドローンによる農薬等の空中散布を行う皆さんへ」（PDF）</a></figcaption>
     </figure>
 
-    <h2 id="guideline">散布の当日までにやること（安全ガイドライン）</h2>
-    <p>散布では、まず<strong>農薬ラベルの記載事項</strong>を守りましょう。あわせて、無人マルチローターによる農薬の空中散布に係る<strong>安全ガイドライン</strong>（<a href="https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_kouku_zigyo/attach/pdf/muzinkoukuuki-2.pdf" target="_blank" rel="noopener">農林水産省（マルチローターによる農薬の空中散布に係る安全ガイドライン）</a>）に沿って計画し、実施しましょう。</p>
+    <h2 id="spraying">散布の進め方（安全ガイドライン）</h2>
+    <p>許可・承認が取れたら、いよいよ散布です。撒くときは、まず<strong>農薬ラベルの記載事項</strong>を守りましょう。あわせて、無人マルチローターによる農薬の空中散布に係る<a href="#kw-anzen-guideline"><strong>安全ガイドライン</strong></a>（<a href="https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_kouku_zigyo/attach/pdf/muzinkoukuuki-2.pdf" target="_blank" rel="noopener">農林水産省（マルチローターによる農薬の空中散布に係る安全ガイドライン）</a>）に沿って計画し、実施します。どの農薬を、いつ、どれだけ撒くかの判断には、病害虫の発生状況も欠かせません。前提となる発生予報は<a href="/articles/pest-disease-forecast-r8-issue-1">病害虫発生予報とは？読み方と防除への活かし方</a>もご覧ください。</p>
     <p>ガイドラインで特に押さえる点は次のとおりです。</p>
     <ul>
       <li>ほ場周辺の地理（住宅地、水道水源等）や耕作状況（収穫時期、有機農業のほ場等）を踏まえ、<strong>実施除外区域</strong>の設定や散布薬剤の種類・剤型の選定を含めた<strong>散布計画</strong>を作成しましょう。</li>
       <li>実施区域の周辺（公共施設、民家、巣箱を設置する養蜂家、有機農業に取り組む農家等）へ、散布前に<strong>情報提供</strong>しましょう。</li>
       <li>実施区域内への<strong>第三者の侵入</strong>を防ぐ体制をとりましょう。</li>
       <li>散布時は<strong>風向き</strong>を考慮した飛行経路を設定し、飛行速度・高度・間隔・最大風速は機体メーカーの取扱説明書等を参考に決めましょう。</li>
-      <li>散布中は農薬の状況と気象の変化を随時見て、<strong>散布区域外への飛散（ドリフト）</strong>が起きないよう注意しましょう。</li>
+      <li>散布中は農薬の状況と気象の変化を随時見て、<strong>散布区域外への飛散（<a href="#kw-drift">ドリフト</a>）</strong>が起きないよう注意しましょう。</li>
     </ul>
-    <p>安全確保体制の具体は、航空局標準マニュアル（空中散布）に沿って整えましょう。関連資料は<a href="https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_kouku_zigyo/mizin_tuuti/index.html" target="_blank" rel="noopener">農林水産省「無人航空機による農薬の空中散布における安全対策」</a>にもまとまっています。</p>
+    <p>なお、<strong>日中・夜間の目視内</strong>、または<strong>日中の目視外</strong>で散布する場合は、<a href="#kw-tachiiri"><strong>立入管理区画</strong></a>の設定等を行えば、操縦補助者（ナビゲーター）を置かずに運用できる場面があります。立入管理区画は、上の図版の設定イメージを参考に、自分のほ場に合わせて設計しましょう。安全確保体制の具体は、航空局標準マニュアル（空中散布）に沿って整えます。関連資料は<a href="https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_kouku_zigyo/mizin_tuuti/index.html" target="_blank" rel="noopener">農林水産省「無人航空機による農薬の空中散布における安全対策」</a>にもまとまっています。</p>
 
-    <h2 id="navigator">ナビゲーターを置かずに運用する</h2>
-    <p><strong>日中・夜間の目視内</strong>、または<strong>日中の目視外</strong>で散布する場合、<strong>立入管理区画</strong>の設定等を行えば、操縦補助者（ナビゲーター）を置かなくてよい。立入管理区画の設定イメージは、農林水産省「ドローンによる農薬等の空中散布を行う皆さんへ」の図版を参考に、自分のほ場に合わせて設計しましょう。</p>
+    <h2 id="faq">よくある質問</h2>
 
-    <h2 id="related">あわせて参照するリンク</h2>
-    <ul>
-      <li>農林水産省「<a href="https://www.maff.go.jp/j/kanbo/smart/drone.html" target="_blank" rel="noopener">農業用ドローンの普及拡大に向けた官民協議会</a>」――飛行制度、ドローンで使える農薬、Q&amp;A。</li>
-      <li>農林水産省「<a href="https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_kouku_zigyo/240117.html" target="_blank" rel="noopener">ドローンで使用可能な農薬</a>」――散布に使える農薬の一覧。</li>
-      <li>農林水産省・国土交通省「<a href="https://www.maff.go.jp/j/kanbo/smart/attach/pdf/drone-204.pdf" target="_blank" rel="noopener">農業用ドローンの活用に関するQ&amp;A</a>」――許可・承認と現場運用の関係。</li>
-    </ul>
+    <h3 id="faq-license">ドローンで農薬を撒くのに国家資格は必要ですか</h3>
+    <p>農薬散布そのものに必須の国家資格はありません。最初に必要なのは航空法に基づく国土交通省の許可・承認です。ただし、ドローンスクール等の<a href="#kw-minkan-kousyu">民間講習</a>を修了しておくと、申請時に操縦者の技能に関する提出資料を省けるため、実務上はほぼ前提になります。無人航空機の<a href="#kw-gino-syoumei">操縦者技能証明（国家資格）</a>が自分の飛行形態に必要かは、国土交通省の案内で確認しましょう。</p>
+
+    <h3 id="faq-where">申請はどこにしますか</h3>
+    <p><a href="#kw-koukuukyoku-syounin">国土交通省</a>の地方航空局等に申請します。提出はオンライン申請、郵送、持参のいずれかで行えます。様式・審査基準の最新版は<a href="http://www.mlit.go.jp/koku/koku_fr10_000042.html" target="_blank" rel="noopener">国土交通省航空局の無人航空機に関する案内</a>をご覧ください。</p>
+
+    <h3 id="faq-when">申請はいつまでに必要ですか</h3>
+    <p>散布予定日の<strong>少なくとも10開庁日前</strong>までに申請しましょう。書類の差し戻しや散布時期のずれを避けるため、余裕をもって準備するのがおすすめです。</p>
+
+    <h3 id="faq-notice">近隣への周知は必須ですか</h3>
+    <p>はい。空中散布安全ガイドラインでは、実施区域の周辺（公共施設、民家、養蜂家、有機農業に取り組む農家等）へ、散布前に情報提供することを求めています。あわせて実施区域内への第三者の侵入を防ぐ体制をとり、風向きを考慮して<a href="#kw-drift">ドリフト</a>を防ぎましょう。</p>
+
+    <h3 id="faq-navigator">ナビゲーターは必ず置かないといけませんか</h3>
+    <p>日中・夜間の目視内、または日中の目視外で散布する場合は、<a href="#kw-tachiiri">立入管理区画</a>の設定等を行えば、操縦補助者（ナビゲーター）を置かずに運用できる場面があります。自分の飛行形態に当てはまるかは、航空局標準マニュアル（空中散布）と申請内容に沿って確認しましょう。</p>
+
+    <h2 id="next">次の一歩</h2>
+    <p>ドローンで農薬散布を始めるなら、次の順で動きましょう。</p>
+    <ol>
+      <li>使いたい<strong>認定機体</strong>を選び、対応する<a href="#kw-minkan-kousyu">民間講習</a>を受講して修了証を取りましょう。</li>
+      <li>航空局標準マニュアル（空中散布）に沿って安全確保体制を整え、<strong>機体・操縦者・安全確保体制の3類の資料</strong>を準備しましょう。</li>
+      <li>散布予定日の<strong>10開庁日前まで</strong>に、国土交通省地方航空局等へ許可・承認を申請しましょう。</li>
+      <li>許可・承認が出たら、農薬ラベルと安全ガイドラインに沿って散布計画を立て、近隣周知のうえ散布しましょう。</li>
+    </ol>
+    <p>ドローンで使える農薬の一覧や現場運用の疑問は、農林水産省「<a href="https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_kouku_zigyo/240117.html" target="_blank" rel="noopener">ドローンで使用可能な農薬</a>」、農林水産省・国土交通省「<a href="https://www.maff.go.jp/j/kanbo/smart/attach/pdf/drone-204.pdf" target="_blank" rel="noopener">農業用ドローンの活用に関するQ&amp;A</a>」、農林水産省「<a href="https://www.maff.go.jp/j/kanbo/smart/drone.html" target="_blank" rel="noopener">農業用ドローンの普及拡大に向けた官民協議会</a>」で確認しましょう。</p>
+
+    <h2 id="keywords">キーワード解説</h2>
+    <h3 id="kw-koukuukyoku-syounin"><strong>航空法の許可・承認</strong></h3>
+    <p>農薬散布のような物件投下や、人・建物の近くでの飛行などを行うときに、飛行前に国土交通省（地方航空局等）から受ける手続です。ドローンの農薬散布で最初に押さえるべき手続で、認定機体・民間講習・航空局標準マニュアル（空中散布）を使うと提出資料の一部を省けます。</p>
+    <h3 id="kw-gino-syoumei"><strong>操縦者技能証明（国家資格）</strong></h3>
+    <p>無人航空機を飛ばす技能・知識を国が証明する制度です。一定の飛行を行いやすくする位置づけで、農薬散布の前提として一律に必須とされるものではありません。必要かどうかは自分の飛行形態に応じて国土交通省の案内で確認します。</p>
+    <h3 id="kw-minkan-kousyu"><strong>民間講習（講習団体・管理団体）</strong></h3>
+    <p>ドローンスクール等が行う講習です。義務ではありませんが、修了すると許可・承認の申請で操縦者の技能に関する提出資料を省けるため、農薬散布の実務ではほぼ前提になります。</p>
+    <h3 id="kw-anzen-guideline"><strong>空中散布安全ガイドライン</strong></h3>
+    <p>無人マルチローターによる農薬の空中散布の安全対策をまとめた農林水産省のガイドラインです。散布計画の作成、近隣への情報提供、第三者の侵入防止、ドリフト防止などの留意点を定めています。</p>
+    <h3 id="kw-tachiiri"><strong>立入管理区画</strong></h3>
+    <p>散布中に第三者が立ち入らないよう管理する区画です。目視内、または日中の目視外などの条件下でこれを設定すると、操縦補助者（ナビゲーター）を置かずに運用できる場面があります。</p>
+    <h3 id="kw-drift"><strong>ドリフト（飛散）</strong></h3>
+    <p>散布した農薬が、風などにより目的の区域外へ飛び散ることです。風向きを考慮した飛行経路の設定や、気象の変化への随時の対応で防ぎます。</p>
 
     <footer class="source">
-      <p><strong>出典：</strong>農林水産省「<a href="https://www.maff.go.jp/j/kanbo/smart/attach/pdf/drone-28.pdf" target="_blank" rel="noopener">ドローンによる農薬等の空中散布を行う皆さんへ</a>」（PDF）、「<a href="https://www.maff.go.jp/j/kanbo/smart/drone.html" target="_blank" rel="noopener">農業用ドローンの普及拡大に向けた官民協議会</a>」／国土交通省航空局「<a href="http://www.mlit.go.jp/koku/koku_fr10_000042.html" target="_blank" rel="noopener">無人航空機に関する情報</a>」</p>
+      <p><strong>出典：</strong>農林水産省「<a href="https://www.maff.go.jp/j/kanbo/smart/attach/pdf/drone-28.pdf" target="_blank" rel="noopener">ドローンによる農薬等の空中散布を行う皆さんへ</a>」（PDF）、「<a href="https://www.maff.go.jp/j/kanbo/smart/drone.html" target="_blank" rel="noopener">農業用ドローンの普及拡大に向けた官民協議会</a>」、「<a href="https://www.maff.go.jp/j/syouan/syokubo/gaicyu/g_kouku_zigyo/mizin_tuuti/index.html" target="_blank" rel="noopener">無人航空機による農薬の空中散布における安全対策</a>」／国土交通省航空局「<a href="http://www.mlit.go.jp/koku/koku_fr10_000042.html" target="_blank" rel="noopener">無人航空機に関する情報</a>」</p>
     </footer>
   </article>
   </div>

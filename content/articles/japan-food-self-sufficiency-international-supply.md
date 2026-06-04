@@ -1,17 +1,19 @@
 ---
-title: "日本の食料自給率と国際需給の解説"
-slug: "japan-food-self-sufficiency-international-supply"
-description: "世界の穀物需給、日本の農産物貿易、令和6年度の食料自給率（カロリー38％・生産額64％）、食料国産率、備蓄、生産資材価格、FAOの食料安全保障の定義を整理します。"
-publishedAt: "2026-05-29"
-category: "policy"
+title: 食料自給率はなぜ低い？カロリーベースと生産額ベースの違い・各国比較を解説
+slug: japan-food-self-sufficiency-international-supply
+description: >-
+  日本の食料自給率はなぜ低いのか。カロリーベース38％と生産額ベース64％の違い、品目別自給率や食料消費構造、各国比較、食料国産率・飼料自給率との違い、2030年度目標までをわかりやすく解説します。
+publishedAt: '2026-05-29'
+updatedAt: '2026-06-04'
+category: policy
 tags:
-  - "生産者向け"
-readingMinutes: "12"
+  - 生産者向け
+readingMinutes: '12'
 takeaways:
-  - "農林水産省は、世界の穀物・大豆の需要増と日本の大規模な農産物輸入構造を踏まえ、食料安全保障の課題を整理しています。"
-  - "令和6年度の食料自給率は、カロリーベース38％、生産額ベース64％です。食料・農業・農村基本計画では2030年度に供給熱量ベース45％などの目標が掲げられます。"
-  - "食料国産率（カロリー47％）と飼料自給率（26％）、米・食糧用小麦・飼料穀物の備蓄水準が、供給の多層的な備えとして示されています。"
-  - "国連食糧農業機関（FAO）の食料安全保障は、供給・アクセス・利用・安定の四要素で定義されます。"
-sourceHtmlFile: "content/source-html/japan-food-self-sufficiency-international-supply.html"
+  - 令和6年度の食料自給率は、カロリーベース38％、生産額ベース64％です。熱量で測るか金額で測るかの違いで、同じ年でも数字が大きく変わります。
+  - 日本の自給率が低いのは、小麦・大豆・油脂・飼料など熱量の大きい品目を輸入に頼り、食生活が変わったためです。今の食生活を国産だけで賄うには国内農地の約3.1倍が必要です。
+  - 畜産の基盤を測る食料国産率はカロリー47％、飼料自給率は26％で、自給率の中身を読み解く手がかりになります。
+  - 食料・農業・農村基本計画は、2030年度にカロリーベース45％・生産額ベース69％への引き上げを目指します。
+sourceHtmlFile: content/source-html/japan-food-self-sufficiency-international-supply.html
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->
