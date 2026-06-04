@@ -16,11 +16,20 @@ import {
   getDefaultOgImage,
   getDefaultOgImageUrl,
 } from "@/lib/site";
-import { decodeTagFromUrl, getTagLabel, isAudienceTag } from "@/lib/tags";
+import {
+  decodeTagFromUrl,
+  getTagLabel,
+  isAudienceTag,
+  isThemeTag,
+} from "@/lib/tags";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+// テーマタグの一覧ページは、束ねる記事がこの本数以上あるときだけ
+// インデックス解放する（薄い一覧ページを検索結果に出さないため）。
+const MIN_INDEXABLE_THEME_TAG_ARTICLES = 3;
 
 export async function generateStaticParams() {
   return (await getAllTagUrlParams()).map((slug) => ({ slug }));
@@ -35,6 +44,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const label = getTagLabel(canonicalTag);
   const isAudiencePage = isAudienceTag(canonicalTag);
+  const shouldIndex =
+    isAudiencePage ||
+    (isThemeTag(canonicalTag) &&
+      articles.length >= MIN_INDEXABLE_THEME_TAG_ARTICLES);
   const title = isAudiencePage ? `${label}の記事一覧` : `タグ：${label}`;
   const fullTitle = `${title} | ${SITE_NAME}`;
   const description = isAudiencePage
@@ -48,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: { canonical: url },
     robots: {
-      index: isAudiencePage,
+      index: shouldIndex,
       follow: true,
     },
     openGraph: {
