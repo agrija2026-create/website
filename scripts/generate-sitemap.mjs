@@ -34,6 +34,36 @@ const READER_TAG_PATH = {
 
 const AUDIENCE_TAG_PATHS = new Set(Object.values(READER_TAG_PATH));
 
+/** lib/tags.ts の THEME_TAG_REGISTRY（label → urlSlug）と同期 */
+const THEME_TAG_URLSLUG = {
+  補助金: "subsidy",
+  輸出: "export",
+  農地バンク: "nouchibank",
+  "金融・融資": "finance",
+  食品ロス: "food-loss",
+  流通: "distribution",
+  就農: "employment",
+  六次産業: "sixth-industry",
+  共同利用: "facility",
+  大規模化: "large-scale-growth-subsidy",
+  交付金: "direct-payment",
+  オーガニックビレッジ: "organic-village",
+  災害対応: "disaster",
+  肥料: "fertilizer",
+  病害虫: "byogaichu",
+  種苗: "seed",
+  ドローン: "drone",
+  森林: "forestry",
+  中山間: "hilly-area",
+  "鳥獣・ジビエ": "wildlife",
+  農村振興: "rural-revitalization",
+  米: "rice",
+  "みどり・環境": "midori",
+};
+
+/** app/tags/[slug]/page.tsx の MIN_INDEXABLE_THEME_TAG_ARTICLES と同期 */
+const MIN_INDEXABLE_THEME_TAG_ARTICLES = 3;
+
 function siteOrigin() {
   const raw =
     (process.env.NEXT_PUBLIC_SITE_URL ?? "").trim() || "https://agri-ja.net";
@@ -100,6 +130,21 @@ function collectAudienceTagPaths(articles) {
   return Array.from(paths).sort((a, b) => a.localeCompare(b, "ja"));
 }
 
+/** index 解放されるテーマタグ（記事 N 本以上）の URL セグメントを返す */
+function collectThemeTagPaths(articles) {
+  const counts = new Map();
+  for (const article of articles) {
+    for (const tag of article.tags) {
+      const slug = THEME_TAG_URLSLUG[tag];
+      if (slug) counts.set(slug, (counts.get(slug) ?? 0) + 1);
+    }
+  }
+  return Array.from(counts.entries())
+    .filter(([, n]) => n >= MIN_INDEXABLE_THEME_TAG_ARTICLES)
+    .map(([slug]) => slug)
+    .sort((a, b) => a.localeCompare(b, "ja"));
+}
+
 function urlEntry({ origin, loc, changefreq, priority, lastmod }) {
   const lines = ["<url>", `<loc>${escapeXml(loc)}</loc>`];
   if (lastmod) {
@@ -119,6 +164,7 @@ function main() {
   const origin = siteOrigin();
   const articles = readArticles();
   const tagPaths = collectAudienceTagPaths(articles);
+  const themeTagPaths = collectThemeTagPaths(articles);
   const entries = [];
 
   entries.push(
@@ -156,6 +202,17 @@ function main() {
         loc: absoluteUrl(origin, `/tags/${slug}`),
         changefreq: "weekly",
         priority: 0.7,
+      }),
+    );
+  }
+
+  for (const slug of themeTagPaths) {
+    entries.push(
+      urlEntry({
+        origin,
+        loc: absoluteUrl(origin, `/tags/${slug}`),
+        changefreq: "weekly",
+        priority: 0.6,
       }),
     );
   }
