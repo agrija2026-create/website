@@ -38,3 +38,5 @@ setup.secrets.env
 
 # 社内向け資料（外部公開しない・git管理から除外）
 docs/上司向けSEO説明*.md
+docs/keyword-targets.md
+content/drafts/
