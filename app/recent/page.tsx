@@ -7,8 +7,6 @@ import {
   SITE_LOCALE,
   SITE_NAME,
   absoluteUrl,
-  getDefaultOgImage,
-  getDefaultOgImageUrl,
 } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,13 +22,11 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `新着記事一覧 | ${SITE_NAME}`,
     description: "農業情報メディアの新着記事を日付順に一覧します。",
-    images: getDefaultOgImage(),
   },
   twitter: {
     card: "summary_large_image",
     title: `新着記事一覧 | ${SITE_NAME}`,
     description: "農業情報メディアの新着記事を日付順に一覧します。",
-    images: [getDefaultOgImageUrl()],
   },
 };
 

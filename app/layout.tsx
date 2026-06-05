@@ -11,7 +11,6 @@ import {
   SITE_NAME,
   SITE_URL_ORIGIN,
   SITE_X_HANDLE,
-  getDefaultOgImage,
 } from "@/lib/site";
 import "./globals.css";
 
@@ -46,14 +45,12 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: getDefaultOgImage(),
   },
   twitter: {
     card: "summary_large_image",
     site: SITE_X_HANDLE,
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: [getDefaultOgImage()[0].url],
   },
 };
 

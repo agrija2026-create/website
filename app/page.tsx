@@ -11,8 +11,6 @@ import {
   SITE_NAME,
   TOP_PAGE_TITLE,
   absoluteUrl,
-  getDefaultOgImage,
-  getDefaultOgImageUrl,
 } from "@/lib/site";
 
 const RECENT_COUNT = 3;
@@ -31,13 +29,11 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: TOP_PAGE_TITLE,
     description: SITE_DESCRIPTION,
-    images: getDefaultOgImage(),
   },
   twitter: {
     card: "summary_large_image",
     title: TOP_PAGE_TITLE,
     description: SITE_DESCRIPTION,
-    images: [getDefaultOgImageUrl()],
   },
 };
 

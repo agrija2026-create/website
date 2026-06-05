@@ -14,8 +14,6 @@ import {
   SITE_NAME,
   absoluteUrl,
   buildCategoryPageDescription,
-  getDefaultOgImage,
-  getDefaultOgImageUrl,
 } from "@/lib/site";
 
 type Props = {
@@ -49,13 +47,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: SITE_NAME,
       title: fullTitle,
       description,
-      images: getDefaultOgImage(),
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [getDefaultOgImageUrl()],
     },
   };
 }
