@@ -1,18 +1,22 @@
-import Link from "next/link";
+import { ArticleCard } from "@/components/ArticleCard";
+import NotFoundField from "@/components/NotFoundField";
+import { getAllArticles, toArticleCardData } from "@/lib/articles";
+import { CATEGORY_SLUGS, getCategoryName } from "@/lib/categories";
 
-export default function NotFound() {
-  return (
-    <div className="mx-auto max-w-lg px-4 py-24 text-center">
-      <h1 className="text-2xl font-bold text-stone-900">ページが見つかりません</h1>
-      <p className="mt-4 text-stone-600">
-        URLが間違っているか、ページが移動した可能性があります。
-      </p>
-      <Link
-        href="/"
-        className="mt-8 inline-flex rounded-lg bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-orange-500"
-      >
-        トップへ戻る
-      </Link>
-    </div>
-  );
+const RECOMMENDED_COUNT = 3;
+
+export default async function NotFound() {
+  const articles = await getAllArticles();
+  const recommended = articles.slice(0, RECOMMENDED_COUNT).map(toArticleCardData);
+
+  // ArticleCard は lib/articles（fs 依存）を介するため、サーバーで要素化してクライアントへ渡す
+  const cards = recommended.map((article) => (
+    <ArticleCard key={article.slug} article={article} />
+  ));
+  const categories = CATEGORY_SLUGS.map((slug) => ({
+    slug,
+    name: getCategoryName(slug),
+  }));
+
+  return <NotFoundField cards={cards} categories={categories} />;
 }
