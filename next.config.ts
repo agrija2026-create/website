@@ -25,6 +25,7 @@ const SLUG_REDIRECTS: ReadonlyArray<readonly [string, string]> = [
   ["suiden-katsuyo-direct-payment-r8", "paddy-field-direct-payment-r8"],
   ["r8-byogaichu-hassei-yoho-1", "pest-disease-forecast-r8-issue-1"],
   ["rural-resource-promotion-soushutsu", "rural-resource-value-creation-promotion"],
+  ["farmland-bank-utilization-benefits", "farmland-bank-guide"],
 ];
 
 const nextConfig: NextConfig = {

@@ -1,7 +1,7 @@
 ---
-title: "GAP認証とは？農業での意味・取り方・メリットをわかりやすく解説"
+title: "GAP認証とは？SDGsとの関係・農業での意味・取り方・メリットを解説"
 slug: "international-standard-gap"
-description: "GAP・GAP認証とは何か、農業での意味、取り方、費用、メリットをわかりやすく解説します。国際水準GAPの2つの進め方や実践のポイント、始め方、よくある質問まで初めての方向けにまとめます。"
+description: "GAP・GAP認証とは何か、SDGsとの関係、農業での意味、取り方、費用、メリットをわかりやすく解説します。国際水準GAPの2つの進め方や実践のポイント、始め方、よくある質問まで初めての方向けにまとめます。"
 publishedAt: "2026-05-22"
 updatedAt: "2026-06-04"
 category: "food-safety"
