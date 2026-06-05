@@ -20,8 +20,6 @@ import {
   SITE_LOCALE,
   SITE_NAME,
   absoluteUrl,
-  getDefaultOgImage,
-  getDefaultOgImageUrl,
   toIsoDateTime,
 } from "@/lib/site";
 import { encodeTagForUrl, partitionTags } from "@/lib/tags";
@@ -61,13 +59,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       publishedTime,
       modifiedTime,
-      images: getDefaultOgImage(),
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [getDefaultOgImageUrl()],
     },
   };
 }

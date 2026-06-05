@@ -3,7 +3,6 @@ import { getCategoryName } from "@/lib/categories";
 import {
   ORGANIZATION_ID,
   absoluteUrl,
-  getDefaultOgImageUrl,
   toIsoDateTime,
 } from "@/lib/site";
 
@@ -34,7 +33,7 @@ export function buildArticleJsonLd(
     description: article.description,
     datePublished: publishedIso,
     dateModified: modifiedIso,
-    image: [getDefaultOgImageUrl()],
+    image: [absoluteUrl(`/articles/${slug}/opengraph-image`)],
     author: { "@type": "Organization", "@id": ORGANIZATION_ID },
     publisher: {
       "@type": "Organization",
