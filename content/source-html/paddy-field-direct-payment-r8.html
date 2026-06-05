@@ -1,261 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>水田活用の直接支払交付金等とは？　令和8年度の戦略作物助成・産地交付金を解説</title>
-  <meta name="description" content="令和8年度概算決定ベースで、水田活用の直接支払交付金等の全体像・予算額・戦略作物助成の単価、産地交付金・都道府県連携型助成・畑地化促進・コメ新市場開拓事業の要点を整理。JA・自治体・農業者向け。制度の詳細は農林水産省の一次情報でご確認ください。">
-  <style>
-    body {
-      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-      line-height: 1.9;
-      color: #222;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 24px 20px 48px;
-      background: #fafafa;
-    }
-    article {
-      background: #fff;
-      padding: 32px 28px 40px;
-      box-shadow: 0 1px 4px rgba(0,0,0,.06);
-    }
-    .article-header {
-      border-bottom: 2px solid #333;
-      padding-bottom: 16px;
-      margin-bottom: 28px;
-    }
-    .article-header .lead {
-      font-size: 0.95rem;
-      margin-top: 12px;
-      color: #444;
-    }
-    h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.45;
-      margin: 0;
-    }
-    h2 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin: 36px 0 16px;
-      padding: 0 0 8px;
-      border-bottom: 1px solid #ccc;
-    }
-    h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin: 24px 0 10px;
-      color: #333;
-    }
-    h4 {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin: 18px 0 8px;
-      color: #444;
-    }
-    p {
-      margin: 0 0 1em;
-      text-align: justify;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 0.9rem;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px 12px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background: #f5f5f5;
-      font-weight: 600;
-      width: 22%;
-    }
-    figure {
-      margin: 28px 0;
-      padding: 16px;
-      background: #f8f8f8;
-      border: 1px solid #e8e8e8;
-    }
-    figure img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    figcaption {
-      font-size: 0.85rem;
-      color: #666;
-      margin-top: 10px;
-      padding: 0 2px;
-    }
-    ul {
-      margin: 0 0 1em 1.2em;
-      padding: 0;
-    }
-    li { margin-bottom: 0.4em; }
-    .sources {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      font-size: 0.88rem;
-      color: #444;
-    }
-    .note {
-      font-size: 0.88rem;
-      color: #555;
-      background: #f9f9f9;
-      padding: 12px 14px;
-      margin: 16px 0;
-      border-left: 3px solid #888;
-    }
-  </style>
+  <title>水田活用の直接支払交付金（水活）とは？対象・交付単価をわかりやすく解説</title>
+  <meta name="description" content="水田活用の直接支払交付金（水活）の仕組みを、対象になる作物・取組、麦・大豆や飼料用米などの交付単価、5年水張りルールなどの要件、令和9年度からの水田政策見直しの見通しまで、転作に取り組む米農家・集落・JA向けにわかりやすく解説します。">
+  <meta property="article:modified_time" content="2026-06-04">
+  <link rel="stylesheet" href="../article-standalone.css">
 </head>
 <body>
-<article>
-  <header class="article-header">
-    <h1>水田活用の直接支払交付金等とは？　令和8年度の戦略作物助成・産地交付金を解説</h1>
-    <p class="lead"><strong>水田活用の直接支払交付金等</strong>の制度全体像、令和8年度の予算規模、主な助成の単価と流れを整理します。交付の可否・申請要件・最新の告示は、農林水産省の一次情報をご覧ください。</p>
-  </header>
+  <div class="article-body">
+  <article>
+    <header class="article-header">
+      <h1>水田活用の直接支払交付金（水活）とは？対象・交付単価をわかりやすく解説</h1>
+      <p class="article-meta"><time datetime="2026-06-04">2026年6月4日</time>更新</p>
+    </header>
+    <!-- 要点は frontmatter の takeaways で表示 -->
 
-  <p>食料の自給率・自給力を高めるため、水田で<a href="#kw-senryaku">戦略作物</a>の本作化を進めるほか、地域の特色を生かした産地づくりや、<a href="#kw-jitsujusha">実需者</a>と結びついた生産の支援が柱になっています。麦・大豆の作付拡大や米の増産目標も明示されています。</p>
+    <p class="lead"><strong>水田活用の直接支払交付金（水活）</strong>は、主食用米から麦・大豆・飼料用米などへ転作する農業者に対し、作付ける作物に応じて10aあたりの交付単価を支払う国の交付金です。麦・大豆・飼料作物は3.5万円／10a、飼料用米や米粉用米は収量に応じて5.5万円〜10.5万円／10aといった単価が設定されています。この記事では、水活の仕組み、対象になる作物・取組、作物ごとの交付単価、5年水張りルールなどの要件、そして令和9年度から予定される水田政策の見直しまでを、転作に取り組む米農家・集落・JA向けにわかりやすく整理します。</p>
 
-  <p>要点を表にまとめました。</p>
-  <table class="article-summary-table">
-    <colgroup>
-      <col class="article-summary-table-col-key">
-      <col class="article-summary-table-col-value">
-    </colgroup>
-    <caption style="caption-side:bottom;font-size:0.85rem;color:#666;text-align:left;margin-top:8px;">※「いつまでに」は政策目標の到達年です。各交付・助成の申請期限は年度ごとに定められます。</caption>
-    <tbody>
-      <tr>
-        <th scope="row">誰が</th>
-        <td>主に水田で戦略作物等を生産する農業者、地域の産地づくりに関わる関係者、都道府県、地域農業再生協議会など。事業ごとに対象が異なります。</td>
-      </tr>
-      <tr>
-        <th scope="row">何を</th>
-        <td><a href="#kw-senryaku">戦略作物助成</a>、<a href="#kw-sanchi">産地交付金</a>、<a href="#kw-renkei">都道府県連携型助成</a>、<a href="#kw-hatachi">畑地化促進助成</a>、<a href="#kw-shijou">コメ新市場開拓等促進事業</a>のほか、直接支払交付金の枠組みで一体的に支援します。</td>
-      </tr>
-      <tr>
-        <th scope="row">いつまでに</th>
-        <td>政策目標の例：麦作付は令和12年度までに32.8万ha、大豆17万ha。米の生産量は同年度までに818万t。産地の育成・強化も掲げられています。</td>
-      </tr>
-      <tr>
-        <th scope="row">いくら</th>
-        <td>水田活用の直接支払交付金等の令和8年度概算決定額は<strong>275,200百万円</strong>（約<strong>2,752億円</strong>。前年度287,000百万円＝約2,870億円から減）。うちコメ新市場開拓等促進事業は<strong>14,000百万円</strong>（約<strong>140億円</strong>、前年度11,000百万円＝約110億円）です。内訳の詳細は同資料の該当箇所や各省庁の公表を参照してください。</td>
-      </tr>
-    </tbody>
-  </table>
+    <h2 id="summary">水田活用の直接支払交付金の全体像</h2>
+    <p>水活は単一の助成ではなく、戦略作物助成を軸に、産地交付金や畑地化促進助成などを束ねた交付金の枠組みです。まず全体像を表で押さえます。</p>
 
-  <figure>
-    <img src="/article-images/paddy-field-direct-payment-r8/figure-01.png" alt="水田活用の直接支払交付金等の事業内容・イメージ">
-    <figcaption>農林水産省「水田活用の直接支払交付金等」</figcaption>
-  </figure>
+    <div class="article-table-scroll">
+    <table class="article-summary-table">
+      <colgroup><col class="article-summary-table-col-key"><col class="article-summary-table-col-value"></colgroup>
+      <thead><tr><th scope="col">項目</th><th scope="col">内容</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>誰が</td>
+          <td>水田で麦・大豆・飼料用米などを生産する<strong>農業者</strong>、地域の産地づくりに取り組む<strong>集落・地域農業再生協議会</strong>、営農を支える<strong>JA・市町村・都道府県</strong>です。取組ごとに対象が異なります。</td>
+        </tr>
+        <tr>
+          <td>何を</td>
+          <td>主食用米から転作する作物に応じて交付します。<a href="#kw-senryaku"><strong>戦略作物助成</strong></a>、<a href="#kw-sanchi"><strong>産地交付金</strong></a>、都道府県連携型助成、<a href="#kw-hatachi"><strong>畑地化促進助成</strong></a>、コメ新市場開拓等促進事業を一体的に運用します。</td>
+        </tr>
+        <tr>
+          <td>交付単価</td>
+          <td>戦略作物助成は作物ごとに10aあたりで設定します。麦・大豆・飼料作物は3.5万円、加工用米は2万円、WCS用稲は8万円、飼料用米・米粉用米は収量に応じて5.5万円〜10.5万円です。</td>
+        </tr>
+        <tr>
+          <td>これから</td>
+          <td>水田政策は<strong>令和9年度から見直し</strong>が予定されています。交付の対象や単価の枠組みが変わる可能性があり、今年度の取組とあわせて確認が必要です。</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
 
-  <h2>麦や大豆、米粉用米まで　国が支援する作物のラインアップ</h2>
-  <p><a href="#kw-senryaku">戦略作物助成</a>は、水田を活用して麦、大豆、飼料作物、加工用米、<a href="#kw-wcs">WCS用稲</a>、飼料用米、米粉用米を生産する農業者を支援する枠組みです。交付単価は作物ごとに次のとおり資料に示されています。</p>
-  <ul>
-    <li>麦、大豆、飼料作物：<strong>3.5万円／10a</strong>（※1：多年生牧草で収穫のみの年は1万円／10a）</li>
-    <li>加工用米：<strong>2万円／10a</strong></li>
-    <li>WCS用稲：<strong>8万円／10a</strong></li>
-    <li>飼料用米、米粉用米：収量に応じ<strong>5.5万円〜10.5万円／10a</strong>（※2：飼料用米の一般品種は標準6.5万円／10a、5.5〜7.5万円のレンジ）</li>
-  </ul>
-  <p class="note">文中の<strong>10a</strong>（デカール）は、アール（a）が10枚分の面積で、おおむね1,000㎡（約100坪の3倍弱）に相当します。単価の適用条件・算定方法は年度ごとの要綱等で定められます。現場で説明する際は、都道府県・市町村の窓口と最新の農水省公表をあわせて確認してください。</p>
+    <figure>
+      <img src="/article-images/paddy-field-direct-payment-r8/figure-01.png" alt="水田活用の直接支払交付金の事業内容と対象作物のイメージ">
+      <figcaption>水田活用の直接支払交付金の事業内容と対象作物</figcaption>
+    </figure>
 
-  <h2>産地交付金　地域の産地づくりを国と県がどう支えるか</h2>
-  <p><a href="#kw-sanchi">産地交付金</a>は、「水田収益力強化ビジョン」に沿った、地域の特色を生かした産地づくりを支援します。国が資金枠を都道府県に配分し、県が助成内容を設定します。地域協議会ごとに内容を設定することも可能です。営農計画書・交付申請書などの取りまとめを経て交付されます。</p>
-  <h3>交付対象水田の注意点</h3>
-  <ul>
-    <li><strong>たん水設備（畦畔等）や用水路がない農地</strong>は、交付対象外です。</li>
-    <li><a href="#kw-mizu"><strong>5年水張りルール</strong></a>について、令和7年・8年の対応として、水稲を作付け可能な田で連作障害を避ける取組を行った場合は、水張りしなくても交付対象とする扱いが示されています。</li>
-  </ul>
+    <h2 id="towa">水田活用の直接支払交付金とは</h2>
+    <p>水田活用の直接支払交付金は、食料の自給率・自給力を高めるため、水田を使って<a href="#kw-senryaku"><strong>戦略作物</strong></a>の生産を進める農業者を支える交付金です。主食用米が需要を上回って余りやすい一方で、麦・大豆・飼料は国内生産が足りていません。そこで水田を麦・大豆・飼料用米などの生産に振り向け、需要に応じた生産へ転換する取組を、10aあたりの交付単価で後押しします。</p>
+    <p>水活は、米の需給と深く結びついた制度です。主食用米の作付を抑え、転作や新規需要米へ誘導することで需給の調整弁の役割も果たします。米価や米政策の全体像は<a href="/articles/rice-price-and-policy-overview">米価はなぜ動く？米政策と水田政策の見直しを解説</a>で整理しています。</p>
 
-  <h2>県の独自支援に国が上乗せ　都道府県連携型助成の仕組み</h2>
-  <p><a href="#kw-renkei">都道府県連携型助成</a>は、都道府県が<strong>転換作物</strong>（水稲から麦・大豆などへ作付を切り替える作物）を生産する農業者を独自に支援する場合に適用されます。農業者ごとの<strong>前年度からの転換拡大面積</strong>に応じて、都道府県の支援単価と同額を国が追加的に支えます。上限は<strong>0.5万円／10a</strong>です。</p>
-
-  <h2>水田を畑で使う　畑地化促進助成で押さえるポイント</h2>
-  <p><a href="#kw-hatachi">畑地化促進助成</a>は、水田を畑として利用し、高収益作物やその他の畑作物の定着を図る取組を支援します。資料に掲載の配分単価の例は次のとおりです。</p>
-  <table>
-    <thead>
-      <tr><th scope="col">取組内容</th><th scope="col">配分単価（目安）</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>そば・なたね、新市場開拓用米、地力増進作物の作付け（基幹作のみ）</td>
-        <td>2万円／10a</td>
-      </tr>
-      <tr>
-        <td>新市場開拓用米の複数年契約（3年以上の新規契約、令和8年度に配分）</td>
-        <td>1万円／10a</td>
-      </tr>
-      <tr>
-        <td>①畑地化支援</td>
-        <td>7万円／10a</td>
-      </tr>
-      <tr>
-        <td>②定着促進支援（①とセット）。5年按分または一括</td>
-        <td>2万円（3万円※6）／10a×5年、または10万円（15万円※6）／10a（一括）</td>
-      </tr>
-      <tr>
-        <td>③産地づくり体制構築等支援、④子実用とうもろこし支援</td>
-        <td>③は内容に応じて。④は1万円／10a</td>
-      </tr>
-    </tbody>
-  </table>
-  <p>①②の対象作物は麦、大豆、飼料作物（牧草等）、子実用とうもろこし、そば、野菜、果樹、花きなどです。※6は加工業務用野菜等の場合で、令和7年度補正予算と併せて実施する旨が記載されています。</p>
-
-  <h2>産地と実需をつなぐ　コメ新市場開拓等促進事業</h2>
-  <p><a href="#kw-shijou">コメ新市場開拓等促進事業</a>では、産地と<a href="#kw-jitsujusha">実需者</a>が連携し、酒造好適米・新市場開拓用米などの生産性向上に取り組む農業者を支援します。令和8年度の予算額は<strong>14,000百万円</strong>です。予算の範囲内で、助成対象となる地域農業再生協議会を決定する旨が注記されています。</p>
-
-  <h2>政策目標の数字で見る「いつまでに何を」</h2>
-  <p>資料に示された政策目標は次のとおりです。</p>
-  <ul>
-    <li>麦・大豆の作付面積：麦は令和5年度実績29.4万haから令和12年度までに32.8万haへ。大豆は16万haから17万haへ。</li>
-    <li>米（加工用米・新規需要米を含む）の生産量：令和5年度の791万tから、令和12年度までに818万tへ。</li>
-    <li>実需者との結びつきの下で、需要に応じた生産を行う産地の育成・強化。</li>
-  </ul>
-
-  <h2>立場別に見ると、どこから読むとよいか</h2>
-  <ul>
-    <li><strong>農業者</strong>：まず<a href="#kw-senryaku">戦略作物助成</a>の単価と、自分の作付が対象になるか。畑地化や新市場開拓米を検討する場合は<a href="#kw-hatachi">畑地化促進助成</a>と<a href="#kw-shijou">コメ新市場開拓等促進事業</a>を確認してください。</li>
-    <li><strong>JA・営農指導・自治体</strong>：<a href="#kw-sanchi">産地交付金</a>の枠配分と申請の流れ、<a href="#kw-mizu">5年水張りルール</a>の令和7・8年の扱いは説明のたびに問われやすい論点です。</li>
-    <li><strong>都道府県職員</strong>：<a href="#kw-renkei">都道府県連携型助成</a>の上乗せ条件（転換拡大面積・県の単価との関係）と、産地交付金での県の設計余地を押さえるとよいです。</li>
-  </ul>
-
-  <h2 id="キーワード解説">キーワード解説</h2>
-  <dl style="font-size:0.92rem;line-height:1.75;">
-    <dt id="kw-senryaku" style="margin-top:12px;font-weight:700;">戦略作物助成</dt>
-    <dd>水田で麦・大豆・飼料作物・加工用米・WCS用稲・飼料用米・米粉用米などを生産する農業者に対し、10aあたりの単価で交付する助成です。作物ごとに単価が異なります。</dd>
-    <dt id="kw-sanchi" style="margin-top:12px;font-weight:700;">産地交付金</dt>
-    <dd>水田収益力強化ビジョンに基づき、地域の魅力ある産地づくりを支援する交付金です。国が都道府県に資金枠を配分し、県や地域協議会が助成内容を設計します。</dd>
-    <dt id="kw-renkei" style="margin-top:12px;font-weight:700;">都道府県連携型助成</dt>
-    <dd>都道府県が転換作物生産者を独自支援する際、転換拡大面積に応じて県の支援単価と同額を国が上乗せする仕組みです（上限0.5万円／10a）。</dd>
-    <dt id="kw-hatachi" style="margin-top:12px;font-weight:700;">畑地化促進助成</dt>
-    <dd>水田を畑利用とし、そば・なたね・新市場開拓用米などの作付けや、畑地化支援・定着促進支援などを支援する助成です。取組内容ごとに配分単価が定められています。</dd>
-    <dt id="kw-shijou" style="margin-top:12px;font-weight:700;">コメ新市場開拓等促進事業</dt>
-    <dd>産地と実需者の連携の下で、酒造好適米や新市場開拓用米などの生産性向上に取り組む農業者を支援する事業です。地域農業再生協議会の選定など、予算の範囲で運用されます。</dd>
-    <dt id="kw-wcs" style="margin-top:12px;font-weight:700;">WCS用稲</dt>
-    <dd>Whole Crop Silage（全株サイレージ）用として栽培する稲で、飼料利用を想定した作物です。</dd>
-    <dt id="kw-mizu" style="margin-top:12px;font-weight:700;">5年水張りルール</dt>
-    <dd>水田の交付や助成において、一定期間の水張り（湛水）を要件とする制度上のルールです。令和7・8年については、連作障害回避の取組をした場合に水張りなしでも対象とする特例が示されています。</dd>
-    <dt id="kw-jitsujusha" style="margin-top:12px;font-weight:700;">実需者</dt>
-    <dd>酒蔵、加工業者、卸売業者など、米や作物を実際に需要として受け止める事業者を指すことが多い文脈です。</dd>
-  </dl>
-
-  <p class="note">制度の詳細や申請要件、対象区域は一次情報に従ってご確認ください。不明点は公募要領の問い合わせ先や所管窓口で確認してください。</p>
-
-  <section class="sources">
-    <h2>出典・参考リンク</h2>
+    <h2 id="taisho">対象になる作物・取組</h2>
+    <p>水活の中心は<a href="#kw-senryaku"><strong>戦略作物助成</strong></a>です。水田を活用して次の作物を生産する農業者が対象になります。</p>
     <ul>
-      <li>農林水産省「<a href="https://www.maff.go.jp/j/budget/r8kettei.html" target="_blank" rel="noopener">水田活用の直接支払交付金等</a>」（令和8年度概算決定時点）</li>
-      <li><a href="https://www.maff.go.jp/j/budget/r8kettei.html" target="_blank" rel="noopener noreferrer">農林水産省：令和8年度概算決定の説明資料（PDF）</a></li>
-      <li><a href="https://www.maff.go.jp/j/budget/" target="_blank" rel="noopener noreferrer">農林水産省：予算・決算・財務書類等</a></li>
+      <li>麦、大豆、飼料作物</li>
+      <li>加工用米</li>
+      <li><a href="#kw-wcs"><strong>WCS用稲</strong></a>（稲をまるごと家畜の飼料にする稲）</li>
+      <li>飼料用米、米粉用米</li>
     </ul>
-  </section>
-</article>
+    <p>飼料用米・米粉用米などは、需要に応じて生産する<strong>新規需要米</strong>として位置づけられます。主食用米とは別の販路へ向けることで、米の作付を続けながら需給の調整につなげる転換先です。米の需給と備蓄の関係は<a href="/articles/government-stockpiled-rice">政府備蓄米とは？米の需給と価格の仕組みを解説</a>もあわせてご覧ください。</p>
+    <p>戦略作物助成のほかに、地域の特色を生かした産地づくりを支える<a href="#kw-sanchi"><strong>産地交付金</strong></a>、水田を畑として使う<a href="#kw-hatachi"><strong>畑地化促進助成</strong></a>、産地と実需者をつなぐコメ新市場開拓等促進事業が、同じ交付金の枠組みで運用されます。</p>
+
+    <h3 id="taisho-sanchi">産地交付金</h3>
+    <p>産地交付金は、地域の「水田収益力強化ビジョン」に沿って、地域ならではの産地づくりを支援します。国が資金枠を都道府県に配分し、県や地域協議会が助成内容を設計します。地域協議会ごとに独自の助成メニューを設けることもできます。営農計画書や交付申請書の取りまとめを経て交付されます。</p>
+
+    <h3 id="taisho-renkei">都道府県連携型助成</h3>
+    <p>都道府県連携型助成は、都道府県が<strong>転換作物</strong>（水稲から麦・大豆などへ作付を切り替える作物）を生産する農業者を独自に支援する場合に上乗せされます。農業者ごとの<strong>前年度からの転換拡大面積</strong>に応じて、県の支援単価と同額を国が追加で支えます。上限は<strong>0.5万円／10a</strong>です。</p>
+
+    <h3 id="taisho-shijou">コメ新市場開拓等促進事業</h3>
+    <p>コメ新市場開拓等促進事業は、産地と<a href="#kw-jitsujusha"><strong>実需者</strong></a>が連携し、酒造好適米や新市場開拓用米などの生産性向上に取り組む農業者を支援します。令和8年度の予算額は140億円（14,000百万円）です。予算の範囲内で、助成の対象となる地域農業再生協議会を決定します。</p>
+
+    <h2 id="tanka">交付単価</h2>
+    <p>戦略作物助成の交付単価は、水田で作付ける作物ごとに10aあたりで定められています。</p>
+    <div class="article-table-scroll">
+    <table>
+      <thead>
+        <tr><th scope="col">対象作物</th><th scope="col">交付単価（10aあたり）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>麦、大豆、飼料作物</td><td>3.5万円（多年生牧草で収穫のみの年は1万円）</td></tr>
+        <tr><td>加工用米</td><td>2万円</td></tr>
+        <tr><td>WCS用稲</td><td>8万円</td></tr>
+        <tr><td>飼料用米、米粉用米</td><td>収量に応じて5.5万円〜10.5万円（一般品種の飼料用米は標準6.5万円、5.5万円〜7.5万円のレンジ）</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>飼料用米と米粉用米は、収量が多いほど交付単価が上がる仕組みです。10aは1辺がおよそ31mの正方形にあたる面積で、約1,000㎡（おおむね10アール）です。単価の適用条件や算定方法は年度ごとの要綱で定められます。</p>
+
+    <h3 id="tanka-hatachi">畑地化促進助成の単価</h3>
+    <p>水田を畑として利用し、高収益作物やその他の畑作物の定着を図る取組には、畑地化促進助成が用意されています。取組内容ごとの配分単価は次のとおりです。</p>
+    <div class="article-table-scroll">
+    <table>
+      <thead>
+        <tr><th scope="col">取組内容</th><th scope="col">配分単価（10aあたり）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>そば・なたね、新市場開拓用米、地力増進作物の作付け（基幹作のみ）</td><td>2万円</td></tr>
+        <tr><td>新市場開拓用米の複数年契約（3年以上の新規契約）</td><td>1万円</td></tr>
+        <tr><td>畑地化支援</td><td>7万円</td></tr>
+        <tr><td>定着促進支援（畑地化支援とセット）</td><td>2万円×5年、または一括10万円（加工業務用野菜等は3万円×5年、一括15万円）</td></tr>
+        <tr><td>子実用とうもろこし支援</td><td>1万円</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>定着促進支援の対象作物は、麦、大豆、飼料作物（牧草等）、子実用とうもろこし、そば、野菜、果樹、花きなどです。加工業務用野菜等の上乗せは、令和7年度補正予算とあわせて実施します。</p>
+
+    <h2 id="youken">要件・注意点</h2>
+    <p>交付を受けるには、交付対象になる水田の要件を満たす必要があります。貸す前・取り組む前に押さえておきたい点を整理します。</p>
+    <ul>
+      <li><strong>たん水設備（畦畔等）や用水路がない農地は交付対象外です。</strong>水を張れる構造であることが前提になります。</li>
+      <li><strong>5年水張りルール</strong>があります。<a href="#kw-mizu"><strong>5年水張りルール</strong></a>は、一定期間に水稲を作付けて水を張ることを交付の要件とする扱いです。令和7年・8年については、水稲を作付け可能な田で連作障害を避ける取組を行った場合、水張りをしなくても交付対象とする扱いです。</li>
+    </ul>
+    <p>産地交付金の枠配分や申請の流れ、5年水張りルールの令和7年・8年の取り扱いは、地域で説明するときに問われやすい論点です。自分の作付が対象になるか、どの単価が適用されるかは、市町村の窓口で年度ごとの取扱いを確認しながら進めると確実です。</p>
+
+    <h2 id="minaoshi">これからの水田政策の見直し</h2>
+    <p>水田政策は<strong>令和9年度から見直し</strong>が予定されています。主食用米の需給や水田の使い方をめぐる環境が変わるなかで、転作への支援のあり方も見直しの対象です。交付の対象や単価、5年水張りルールを含む要件の枠組みが変わる可能性があり、これから水活を活用する農業者にとっては最も注視すべき論点です。</p>
+    <p>あわせて、麦・大豆の作付拡大や米の生産量について、国は政策目標を掲げています。</p>
+    <ul>
+      <li>麦の作付面積は、令和5年度の29.4万haから令和12年度までに32.8万haへ。大豆は16万haから17万haへ。</li>
+      <li>米（加工用米・新規需要米を含む）の生産量は、令和5年度の791万tから令和12年度までに818万tへ。</li>
+      <li>実需者との結びつきの下で、需要に応じた生産を行う産地を育成・強化する。</li>
+    </ul>
+    <p>水田政策の見直しは、米政策や食料・農業・農村基本計画の方向性とつながっています。今後の方向性は<a href="/articles/new-food-agriculture-rural-basic-plan">食料・農業・農村基本計画とは？新計画の要点を解説</a>で整理しています。</p>
+
+    <h2 id="faq">よくある質問</h2>
+
+    <h3 id="faq-what">水田活用の直接支払交付金とは何ですか</h3>
+    <p>水田を使って麦・大豆・飼料用米などの戦略作物を生産する農業者に、作付ける作物に応じて10aあたりの交付単価を支払う国の交付金です。主食用米から転作する取組を後押しし、米の需給調整にもつながる制度で、「水活」とも呼ばれます。</p>
+
+    <h3 id="faq-target">対象になる作物は何ですか</h3>
+    <p>戦略作物助成の対象は、麦、大豆、飼料作物、加工用米、WCS用稲、飼料用米、米粉用米です。このほか、地域の産地づくりを支える産地交付金、水田を畑利用にする畑地化促進助成、産地と実需者をつなぐコメ新市場開拓等促進事業が同じ枠組みで運用されています。</p>
+
+    <h3 id="faq-tanka">交付単価はどのくらいですか</h3>
+    <p>戦略作物助成では、麦・大豆・飼料作物が3.5万円／10a、加工用米が2万円／10a、WCS用稲が8万円／10a、飼料用米・米粉用米が収量に応じて5.5万円〜10.5万円／10aです。畑地化促進助成や都道府県連携型助成には別の単価が設定されています。</p>
+
+    <h3 id="faq-until">いつまで続く制度ですか</h3>
+    <p>水田政策は令和9年度から見直しが予定されており、交付の対象や単価、要件の枠組みが変わる可能性があります。今年度の取組を進めつつ、見直しの内容は市町村の窓口や農林水産省の公表で確認しておくと安心です。</p>
+
+    <h2 id="next">次の一歩</h2>
+    <p>水活を使って転作を考えるなら、まず自分の水田が交付対象の要件（たん水設備・用水路・水張り）を満たすかを確かめ、作付けたい作物の交付単価を確認しましょう。産地交付金の地域メニューや5年水張りルールの今年度の取扱いは地域ごとに異なるため、市町村の農政担当やJAの営農指導窓口に相談するのが第一歩です。畑地化や新市場開拓用米を検討する場合は、畑地化促進助成とコメ新市場開拓等促進事業の単価・要件もあわせて確認しましょう。</p>
+
+    <h2 id="keywords">キーワード解説</h2>
+    <h3 id="kw-senryaku"><strong>戦略作物助成</strong></h3>
+    <p>水田で麦・大豆・飼料作物・加工用米・WCS用稲・飼料用米・米粉用米などを生産する農業者に、10aあたりの交付単価で支払う水活の中心的な助成です。作物ごとに単価が異なります。</p>
+    <h3 id="kw-sanchi"><strong>産地交付金</strong></h3>
+    <p>水田収益力強化ビジョンに基づき、地域の魅力ある産地づくりを支援する交付金です。国が都道府県に資金枠を配分し、県や地域協議会が助成内容を設計します。</p>
+    <h3 id="kw-hatachi"><strong>畑地化促進助成</strong></h3>
+    <p>水田を畑として利用し、そば・なたね・新市場開拓用米などの作付けや、畑地化支援・定着促進支援を後押しする助成です。取組内容ごとに配分単価が定められています。</p>
+    <h3 id="kw-wcs"><strong>WCS用稲</strong></h3>
+    <p>WCSは Whole Crop Silage（全株サイレージ）の略で、稲の実と茎葉をまるごと家畜の飼料として利用するために栽培する稲です。</p>
+    <h3 id="kw-mizu"><strong>5年水張りルール</strong></h3>
+    <p>水田の交付・助成で、一定期間に水稲を作付けて水を張ることを要件とする扱いです。令和7年・8年については、連作障害を避ける取組を行った場合に水張りなしでも交付対象とする特例があります。</p>
+    <h3 id="kw-jitsujusha"><strong>実需者</strong></h3>
+    <p>酒蔵、加工業者、卸売業者など、米や作物を実際の需要として受け止めて使う事業者です。</p>
+
+    <footer class="source">
+      <p>出典：農林水産省「<a href="https://www.maff.go.jp/j/budget/r8kettei.html" target="_blank" rel="noopener">水田活用の直接支払交付金等</a>」（令和8年度概算決定時点）</p>
+      <p><a href="https://www.maff.go.jp/j/budget/" target="_blank" rel="noopener">農林水産省：予算・決算・財務書類等</a></p>
+    </footer>
+  </article>
+  </div>
 </body>
 </html>
