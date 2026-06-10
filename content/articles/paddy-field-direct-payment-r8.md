@@ -3,7 +3,7 @@ title: "水田活用の直接支払交付金（水活）とは？対象・交付
 slug: "paddy-field-direct-payment-r8"
 description: "水田活用の直接支払交付金（水活）の仕組みを、対象になる作物・取組、麦・大豆や飼料用米などの交付単価、5年水張りルールなどの要件、令和9年度からの水田政策見直しまで、転作に取り組む米農家・集落・JA向けにわかりやすく解説します。"
 publishedAt: "2026-04-07"
-updatedAt: '2026-06-04'
+updatedAt: '2026-06-10'
 category: "budget"
 tags:
   - "生産者向け"

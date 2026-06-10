@@ -3,7 +3,7 @@ title: "農地集約化促進事業とは？支援金の単価・要件をわか
 slug: "farmland-consolidation-promotion-program"
 description: "農地をまとめて集約すると受け取れる農地集約化促進事業（機構集積協力金）の支援金を、わかりやすく解説します。集約化加速タイプ・地域集約化実現タイプの単価、対象・要件、申請から受け取りまでの流れ、農地バンク活用との関係を整理します。"
 publishedAt: "2026-05-21"
-updatedAt: '2026-06-04'
+updatedAt: '2026-06-10'
 category: "farmland"
 tags:
   - "生産者向け"

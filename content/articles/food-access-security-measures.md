@@ -3,7 +3,7 @@ title: "食品アクセス（買い物困難）対策とは？支援の仕組み
 slug: "food-access-security-measures"
 description: "食品アクセス問題（買い物に困る人）とは何か、なぜ起きるのか、移動販売・宅配・買い物拠点・地域連携・デジタルといった対策と、自治体・事業者を後押しする農林水産省の支援の仕組みをわかりやすく解説します。"
 publishedAt: "2026-06-01"
-updatedAt: "2026-06-04"
+updatedAt: "2026-06-10"
 category: "budget"
 tags:
   - "流通向け"
