@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleBreadcrumb } from "@/components/ArticleBreadcrumb";
+import { ArticleFeedback } from "@/components/ArticleFeedback";
 import { ArticleShareActions } from "@/components/ArticleShareActions";
 import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 import { ArticleTextToSpeech } from "@/components/ArticleTextToSpeech";
@@ -216,6 +217,9 @@ export default async function ArticlePage({ params }: Props) {
             data-tts-root={slug}
             dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
           />
+          <div className="max-w-3xl">
+            <ArticleFeedback slug={slug} />
+          </div>
           <div className="max-w-3xl">
             <RelatedArticles
               articles={relatedArticles.map(toRelatedArticleData)}
