@@ -93,7 +93,7 @@ export async function renderOgCard({
             bottom: 0,
             display: "flex",
             backgroundImage:
-              "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.58) 30%, rgba(0,0,0,0.05) 58%, rgba(0,0,0,0.18) 100%)",
+              "linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.7) 26%, rgba(0,0,0,0.42) 50%, rgba(0,0,0,0.06) 70%, rgba(0,0,0,0.18) 100%)",
           }}
         />
         <div
@@ -143,7 +143,7 @@ export async function renderOgCard({
             position: "absolute",
             left: "50px",
             right: "64px",
-            bottom: "54px",
+            bottom: "138px",
             display: "flex",
             flexDirection: "column",
           }}
