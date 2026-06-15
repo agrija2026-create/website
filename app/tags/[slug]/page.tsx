@@ -13,10 +13,12 @@ import {
   SITE_NAME,
   absoluteUrl,
   buildAudiencePageDescription,
+  buildThemeTagPageDescription,
 } from "@/lib/site";
 import {
   decodeTagFromUrl,
   getTagLabel,
+  getThemeTagSeoHead,
   isAudienceTag,
   isThemeTag,
 } from "@/lib/tags";
@@ -46,11 +48,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     isAudiencePage ||
     (isThemeTag(canonicalTag) &&
       articles.length >= MIN_INDEXABLE_THEME_TAG_ARTICLES);
-  const title = isAudiencePage ? `${label}の記事一覧` : `${label}について`;
+  const themeHead = getThemeTagSeoHead(canonicalTag);
+  const title = isAudiencePage
+    ? `${label}の農業情報まとめ｜補助金・制度の解説`
+    : `${themeHead}｜解説記事まとめ`;
   const fullTitle = `${title} | ${SITE_NAME}`;
   const description = isAudiencePage
     ? buildAudiencePageDescription(label)
-    : `${label}に関する記事の一覧です。`;
+    : buildThemeTagPageDescription(themeHead);
   const url = absoluteUrl(`/tags/${slug}`);
   return {
     title: {
@@ -86,9 +91,11 @@ export default async function TagPage({ params }: Props) {
 
   const label = getTagLabel(canonicalTag);
   const isAudiencePage = isAudienceTag(canonicalTag);
+  const themeHead = getThemeTagSeoHead(canonicalTag);
+  const heading = isAudiencePage ? `${label}の農業情報` : themeHead;
   const intro = isAudiencePage
     ? buildAudiencePageDescription(label)
-    : `${label}に関する記事を一覧で確認できます。`;
+    : buildThemeTagPageDescription(themeHead);
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
@@ -100,7 +107,7 @@ export default async function TagPage({ params }: Props) {
             </Link>
           </nav>
           <h1 className="mt-6 text-3xl font-bold text-stone-900">
-            {isAudiencePage ? label : `${label}について`}
+            {heading}
           </h1>
           <p className="mt-2 text-stone-600">{intro}</p>
           <p className="mt-2 text-sm text-stone-500">{articles.length}件の記事</p>

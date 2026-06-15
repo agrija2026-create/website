@@ -47,6 +47,11 @@ export function buildAudiencePageDescription(label: string): string {
   return `${label}に役立つ農業政策・制度・補助金・予算の記事を一覧で読めます。農業情報メディアが、一次情報ベースで要点をわかりやすく整理します。`;
 }
 
+/** テーマタグ一覧ページ用。head は getThemeTagSeoHead で得た検索ヘッドワード。 */
+export function buildThemeTagPageDescription(head: string): string {
+  return `${head}に関する制度・政策・最新動向を、一次情報をもとにわかりやすく整理。関連する解説記事をまとめて読めます。`;
+}
+
 export function buildCategoryPageDescription(name: string): string {
   return `カテゴリ「${name}」の記事一覧です。農業政策・制度・補助金・予算の動きを、農業情報メディアがわかりやすく整理します。`;
 }

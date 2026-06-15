@@ -184,6 +184,36 @@ export function getTagLabel(tag: string): string {
   return tag;
 }
 
+/**
+ * タグ一覧ページ（/tags/[slug]）は、個別記事では取りにくい「ビッグワード」を
+ * 束ねて狙うハブとして使う。各テーマタグの SEO タイトル先頭に置く検索ヘッドワード。
+ * 未登録のテーマタグは `農業の${label}` を既定とする（例: 補助金→農業の補助金）。
+ */
+const THEME_TAG_SEO_HEAD: Record<string, string> = {
+  輸出: "農産物の輸出",
+  農地バンク: "農地バンク",
+  "金融・融資": "農業の融資・資金調達",
+  "年金・保険": "農業者年金・農業保険",
+  食品ロス: "食品ロスの削減",
+  流通: "農産物の流通",
+  就農: "新規就農",
+  六次産業: "六次産業化",
+  共同利用: "農業機械の共同利用",
+  オーガニックビレッジ: "オーガニックビレッジ",
+  ドローン: "農業用ドローン",
+  森林: "森林・林業",
+  中山間: "中山間地域",
+  "鳥獣・ジビエ": "鳥獣被害・ジビエ",
+  農村振興: "農村振興",
+  米: "米政策・米価",
+  "みどり・環境": "みどりの食料システム戦略",
+};
+
+/** テーマタグ一覧ページの SEO タイトル先頭に置く検索ヘッドワードを返す。 */
+export function getThemeTagSeoHead(label: string): string {
+  return THEME_TAG_SEO_HEAD[label] ?? `農業の${label}`;
+}
+
 export type SidebarThemeTag = {
   label: string;
   count: number;
