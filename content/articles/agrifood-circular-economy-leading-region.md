@@ -3,7 +3,7 @@ title: "農業のサーキュラーエコノミーとは｜循環経済先導地
 slug: "agrifood-circular-economy-leading-region"
 description: "農業のサーキュラーエコノミー（循環経済）とは何かを、みどりの食料システム戦略推進交付金「農林漁業循環経済先導地域づくり」を例に解説します。未利用資源・資源循環の活用、対象、支援①②③、施設整備の優遇、補助の形態をわかりやすくまとめます。"
 publishedAt: "2026-05-19"
-updatedAt: "2026-06-10"
+updatedAt: "2026-06-29"
 category: "policy"
 tags:
   - "生産者向け"
