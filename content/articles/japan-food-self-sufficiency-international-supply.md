@@ -4,7 +4,7 @@ slug: japan-food-self-sufficiency-international-supply
 description: >-
   日本の食料自給率はなぜ低いのか。カロリーベース38％と生産額ベース64％の違い、品目別自給率や食料消費構造、各国比較、食料国産率・飼料自給率との違い、2030年度目標までをわかりやすく解説します。
 publishedAt: '2026-05-29'
-updatedAt: '2026-06-04'
+updatedAt: '2026-06-29'
 category: policy
 tags:
   - 生産者向け
