@@ -40,6 +40,7 @@ export const THEME_TAG_REGISTRY: readonly ThemeTagDef[] = [
   { label: "鳥獣・ジビエ", urlSlug: "wildlife", listedInSidebar: true },
   { label: "農村振興", urlSlug: "rural-revitalization", listedInSidebar: true },
   { label: "米", urlSlug: "rice", listedInSidebar: true },
+  { label: "畜産", urlSlug: "livestock", listedInSidebar: true },
   { label: "みどり・環境", urlSlug: "midori", listedInSidebar: true },
 ] as const;
 
