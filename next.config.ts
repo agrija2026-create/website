@@ -26,6 +26,11 @@ const SLUG_REDIRECTS: ReadonlyArray<readonly [string, string]> = [
   ["r8-byogaichu-hassei-yoho-1", "pest-disease-forecast-r8-issue-1"],
   ["rural-resource-promotion-soushutsu", "rural-resource-value-creation-promotion"],
   ["farmland-bank-utilization-benefits", "farmland-bank-guide"],
+  // 末尾sタイポ（外部由来のアクセスをGA未照合で検出）→ 正規slugへ301
+  ["gfp-export-communitys", "gfp-export-community"],
+  ["agricultural-subsidies-guides", "agricultural-subsidies-guide"],
+  ["farmland-bank-guides", "farmland-bank-guide"],
+  ["income-insurance-comparisons", "income-insurance-comparison"],
 ];
 
 const nextConfig: NextConfig = {
