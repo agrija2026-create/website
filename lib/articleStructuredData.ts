@@ -90,6 +90,27 @@ export function buildArticleFaqJsonLd(
   };
 }
 
+/**
+ * HowTo 構造化データ。ステップが2件未満なら null。
+ * ※ Google は HowTo リッチリザルトを2023年に廃止済み。有効なスキーマとして出力するが表示効果は限定的。
+ */
+export function buildArticleHowToJsonLd(
+  name: string,
+  steps: string[],
+): Record<string, unknown> | null {
+  if (steps.length < 2) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    step: steps.map((text, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      text,
+    })),
+  };
+}
+
 export function buildArticleBreadcrumbJsonLd(
   article: Pick<ArticleStructuredDataInput, "title" | "category">,
   slug: string,

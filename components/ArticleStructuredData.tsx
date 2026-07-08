@@ -1,6 +1,7 @@
 import {
   buildArticleBreadcrumbJsonLd,
   buildArticleFaqJsonLd,
+  buildArticleHowToJsonLd,
   buildArticleJsonLd,
   type ArticleStructuredDataInput,
 } from "@/lib/articleStructuredData";
@@ -10,12 +11,19 @@ type Props = {
   article: ArticleStructuredDataInput;
   slug: string;
   faqItems?: FaqItem[];
+  howToSteps?: string[];
 };
 
-export function ArticleStructuredData({ article, slug, faqItems = [] }: Props) {
+export function ArticleStructuredData({
+  article,
+  slug,
+  faqItems = [],
+  howToSteps = [],
+}: Props) {
   const articleLd = buildArticleJsonLd(article, slug);
   const breadcrumbLd = buildArticleBreadcrumbJsonLd(article, slug);
   const faqLd = buildArticleFaqJsonLd(faqItems);
+  const howToLd = buildArticleHowToJsonLd(article.title, howToSteps);
 
   return (
     <>
@@ -31,6 +39,12 @@ export function ArticleStructuredData({ article, slug, faqItems = [] }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      ) : null}
+      {howToLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
         />
       ) : null}
     </>
