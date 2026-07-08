@@ -1,9 +1,9 @@
 ---
-title: "国際水準GAPとは？ガイドライン・GAP認証との違い・取り方をわかりやすく解説"
+title: "国際水準GAPとは？ガイドライン6区分・GAP認証との違い比較表・認証なしの始め方"
 slug: "international-standard-gap"
-description: "国際水準GAPとは何か、国際水準GAPガイドラインの中身、GAP認証（JGAP・ASIAGAP・GLOBALG.A.P.）との違いを比較表でわかりやすく解説。認証は必須か、5分野の取組事項、メリット、SDGsとの関係、始め方、よくある質問までまとめます。"
+description: "国際水準GAPは認証がなくても取り組めます。ガイドライン（6区分）の中身、JGAP・ASIAGAP・GLOBALG.A.P.の管理点数比較、費用、2030年目標までを比較表で整理。"
 publishedAt: "2026-05-22"
-updatedAt: "2026-06-17"
+updatedAt: "2026-07-08"
 category: "food-safety"
 tags:
   - "生産者向け"
