@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eMAFF（農林水産省共通申請サービス）の使い方｜申請2.0への移行はいつから</title>
+  <meta name="description" content="補助金や認定農業者制度の申請をスマホ・パソコンから行えるeMAFF（農林水産省共通申請サービス）の始め方を、gBizIDの取得から順に整理します。令和8年10月から始まるeMAFF申請2.0への移行スケジュールと、移行前にやっておきたいデータのダウンロードもまとめます。最新情報は農林水産省の一次情報をご覧ください。">
+  <meta property="article:modified_time" content="2026-07-08">
+  <link rel="stylesheet" href="../article-standalone.css">
+</head>
+<body>
+  <div class="article-body">
+  <article>
+    <header class="article-header">
+      <h1>eMAFF（農林水産省共通申請サービス）の使い方｜申請2.0への移行はいつから</h1>
+      <p class="article-meta"><time datetime="2026-07-08">2026年7月8日</time>更新</p>
+    </header>
+    <!-- 要点は frontmatter の takeaways に移設 -->
+
+    <p class="lead">補助金・交付金の申請や認定農業者制度の手続きは、役所の窓口に行かなくても、eMAFF（農林水産省共通申請サービス）でオンライン申請できます。この記事では、農林水産省の案内資料に基づき、eMAFFでできること、利用を始めるまでの流れ、そして令和8年10月から始まる次期システム「eMAFF申請2.0」への移行で何がいつ変わるのかを整理します。制度ごとの最新スケジュールは農林水産省の一次情報をご覧ください。</p>
+
+    <h2 id="summary">eMAFFの全体像</h2>
+    <p>まず、誰が・何を・どう使えるサービスかをまとめます。</p>
+    <div class="article-table-scroll">
+    <table class="article-summary-table">
+      <colgroup><col class="article-summary-table-col-key"><col class="article-summary-table-col-value"></colgroup>
+      <thead><tr><th scope="col">項目</th><th scope="col">内容</th></tr></thead>
+      <tbody>
+        <tr><td>誰が</td><td>農林漁業者、農業法人、個人事業主など、農林水産省関係の申請を行う方</td></tr>
+        <tr><td>何を</td><td>農林水産省の所管する法令に基づく申請や、補助金・交付金の申請をオンラインで提出。審査状況の確認もできます</td></tr>
+        <tr><td>費用</td><td>利用は無料。<a href="#kw-gbizid">gBizID</a>アカウントの登録も無料です</td></tr>
+        <tr><td>必要なもの</td><td>gBizID（法人は印鑑証明書、個人事業主は印鑑登録証明書で本人確認）と、パソコン・スマートフォン・タブレットのいずれか</td></tr>
+        <tr><td>注意</td><td>令和8年10月から<a href="#kw-emaff2">eMAFF申請2.0</a>へ制度ごとに順次移行し、現行のeMAFF申請は令和9年3月中旬に稼働終了予定です</td></tr>
+        <tr><td>詳しくは</td><td><a href="https://e.maff.go.jp" target="_blank" rel="noopener">eMAFFポータル</a>と農林水産省の<a href="https://www.maff.go.jp/j/kanbo/dx/emaff.html" target="_blank" rel="noopener">案内ページ</a>をご覧ください</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2 id="towa">eMAFFとは</h2>
+    <figure>
+      <img src="/article-images/emaff-guide/figure-01.png" width="1600" height="2264" alt="eMAFFの案内チラシ。自宅のパソコンやスマートフォンから申請可能、紙の管理が不要、審査状況の確認も簡単という3つのポイントと、農林漁業者がgBizIDでログインしてオンライン申請し、農林水産省や県・市町村が審査・承認する仕組みの図。" loading="lazy" decoding="async">
+      <figcaption>農林水産省「<a href="https://www.maff.go.jp/j/kanbo/dx/emaff.html" target="_blank" rel="noopener">eMAFF周知用チラシ（申請者向け）</a>」（PDF）：eMAFFの利点と、申請から審査・承認までの流れ。</figcaption>
+    </figure>
+    <p>eMAFF（イーマフ）は、農林水産省が所管する法令に基づく申請や補助金・交付金の申請を、オンラインで行える共通申請サービスです。役所の開庁時間に縛られず、自宅のパソコンやスマートフォン、タブレットから、作業の合間に申請できます。</p>
+    <p>申請できる手続きには、認定農業者制度、経営所得安定対策、収入保険、強い農業づくり総合支援交付金、環境保全型農業直接支払交付金、集落農業振興地域制度などがあります。現在申請できる手続きの一覧は<a href="https://e.maff.go.jp/SearchFromAllTetsuzuki" target="_blank" rel="noopener">eMAFFポータルの手続一覧</a>で検索できます。</p>
+    <p>eMAFFを使うと、次の利点があります。</p>
+    <ul>
+      <li>一度提出した情報は再提出が不要になる<a href="#kw-onceonly">ワンスオンリー</a>の仕組みで、申請様式を記入する手間が減ります。</li>
+      <li>申請書類を紙で管理する必要がなくなり、過去の申請情報も利用できます。</li>
+      <li>自分の申請の審査状況をリアルタイムで確認できます。</li>
+      <li>デジタル庁が運用するgBizIDと<a href="#kw-niyoso">二要素認証</a>で、なりすまし対策が行われています。</li>
+    </ul>
+    <p>動作が保証されている環境は、パソコンがWindows 10・11またはmacOS 14.6.1以上、スマートフォン・タブレットがAndroid 14以上またはiOS 17.4.1以上です。</p>
+
+    <h2 id="hajimeru">利用を始めるまでの流れ</h2>
+    <figure>
+      <img src="/article-images/emaff-guide/figure-02.png" width="1600" height="2264" alt="eMAFF利用までの流れ。ステップ1でgBizIDエントリーを取得し、ステップ2で本人確認を行い、ステップ3でeMAFFにログインしてオンライン申請する手順の図。" loading="lazy" decoding="async">
+      <figcaption>農林水産省「<a href="https://www.maff.go.jp/j/kanbo/dx/emaff.html" target="_blank" rel="noopener">eMAFF周知用チラシ（申請者向け）</a>」（PDF）：gBizIDの取得から本人確認、オンライン申請までの3ステップ。</figcaption>
+    </figure>
+    <p>eMAFFは、次の3ステップで使い始められます。</p>
+    <ul>
+      <li><strong>gBizIDエントリーの取得</strong>：複数の行政サービスを1つのアカウントで使える認証システム「<a href="#kw-gbizid">gBizID</a>」に登録します。登録は無料で、取得方法は<a href="https://e.maff.go.jp" target="_blank" rel="noopener">eMAFFポータル</a>に案内があります。</li>
+      <li><strong>本人確認</strong>：法人は法務省が発行する印鑑証明書、個人事業主は市町村が発行する印鑑登録証明書を提出すると、gBizIDエントリーからgBizIDプライムに昇格します。個人事業主に限り、eMAFF側で本人確認する方法もあり、この場合は国・自治体・地域農業再生協議会などの審査機関を訪問し、本人確認証明書を提示して対面で行います。</li>
+      <li><strong>ログインしてオンライン申請</strong>：eMAFFポータル画面右上の「ログイン」からgBizIDのメールアドレスとパスワードを入力すると、eMAFF IDが自動生成されます。初回ログイン時に利用規約への同意が必要です。あとは各制度のマニュアルを参照しながら申請を進められます。</li>
+    </ul>
+
+    <h2 id="ikou">eMAFF申請2.0への移行はいつから</h2>
+    <p>現行のeMAFF申請は、令和8年10月から次期オンライン申請システム「<a href="#kw-emaff2">eMAFF申請2.0</a>」へ、制度ごとに順次切り替わっていきます。農林水産省が公表しているFAQに基づくと、移行のスケジュールと変更点は次のとおりです。</p>
+    <div class="article-table-scroll">
+    <table class="article-data-table">
+      <thead><tr><th scope="col">時期</th><th scope="col">何が起きるか</th></tr></thead>
+      <tbody>
+        <tr><td>令和8年5月以降</td><td>制度ごとの詳細な移行スケジュールが案内される予定です</td></tr>
+        <tr><td>令和8年10月から</td><td>eMAFF申請2.0の利用が制度ごとに順次始まります。全制度が一斉に切り替わるわけではありません</td></tr>
+        <tr><td>令和9年3月上旬まで</td><td>現行のeMAFF申請から申請データ（CSV形式）をダウンロードできます</td></tr>
+        <tr><td>令和9年3月中旬</td><td>現行のeMAFF申請が稼働終了となり、以降はログインできなくなる予定です</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>eMAFFが廃止されるわけではなく、新しいシステムへの段階的な移行です。ただし、移行先は制度によって異なり、eMAFF申請2.0のほか、別のシステムやメール申請に分かれる制度もあります。自分が使っている制度がどこへ移るかは、制度ごとの案内で確かめましょう。</p>
+    <p>eMAFF申請2.0では、ログインIDがGビズIDに統一され、エラーチェックや入力補助の機能が強化される予定です。操作方法の研修も予定されています。システムを見直す背景には、手続数が多く分かりにくいことや、費用対効果に課題があったことがあります。</p>
+
+    <h2 id="junbi">移行前にやっておきたいこと</h2>
+    <ul>
+      <li><strong>過去の申請データのダウンロード</strong>：現行のeMAFF申請の稼働終了後は、事前にダウンロードしたCSVファイルのデータで対応する必要があります。今後もデータを使う予定がある場合は、令和9年3月上旬までにダウンロードしておきましょう。ダウンロードしたCSVはExcelで表示・変換できます。</li>
+      <li><strong>使う予定がなければ不要</strong>：今後その申請データを利用する予定がない場合、ダウンロードは不要で、しなくても罰則はありません。eMAFF申請2.0に移行する制度の一部では申請データも移行されます。</li>
+      <li><strong>申請中の案件の扱いを確認</strong>：令和8年10月以降、申請中の案件も制度によって移行先が分かれます。制度ごとの今後の案内を確かめましょう。</li>
+    </ul>
+
+    <h2 id="keyword">キーワード解説</h2>
+    <h3 id="kw-gbizid"><strong>gBizID（GビズID）</strong></h3>
+    <p>デジタル庁が運用する、法人・個人事業主向けの共通認証システムです。1つのアカウントで複数の行政サービスにログインできます。登録は無料で、簡易な「エントリー」と、印鑑証明書などによる本人確認を経た「プライム」の区分があります。eMAFF申請2.0では、ログインIDがこのgBizIDに統一されます。</p>
+    <h3 id="kw-onceonly"><strong>ワンスオンリー</strong></h3>
+    <p>一度行政に提出した情報は、再提出を求めないという行政手続きの原則です。eMAFFでは過去の申請情報を利用できるため、同じ内容を毎回書き直す手間が省けます。</p>
+    <h3 id="kw-niyoso"><strong>二要素認証</strong></h3>
+    <p>パスワードに加えて、スマートフォンへの通知など2つの異なる方法を組み合わせて本人を確認する仕組みです。第三者によるなりすましを防ぎます。</p>
+    <h3 id="kw-emaff2"><strong>eMAFF申請2.0</strong></h3>
+    <p>令和8年10月から制度ごとに順次利用が始まる、次期オンライン申請システムです。利用者の声を踏まえて操作性が改善され、エラーチェックや入力補助機能が強化される予定です。現行のeMAFF申請は令和9年3月中旬に稼働を終了する予定です。</p>
+
+    <footer class="source">
+      <p>出典：農林水産省「<a href="https://www.maff.go.jp/j/kanbo/dx/emaff.html" target="_blank" rel="noopener">農林水産省共通申請サービス（eMAFF）</a>」（eMAFF周知用チラシ・次期オンライン申請システムへの移行と現行eMAFF申請の稼働終了に関するFAQ）、<a href="https://e.maff.go.jp" target="_blank" rel="noopener">eMAFFポータル</a></p>
+    </footer>
+  </article>
+  </div>
+</body>
+</html>
