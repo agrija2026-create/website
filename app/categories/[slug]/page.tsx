@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleCard } from "@/components/ArticleCard";
+import { ListPageStructuredData } from "@/components/ListPageStructuredData";
 import { Sidebar } from "@/components/Sidebar";
 import { getArticlesByCategory, toArticleCardData } from "@/lib/articles";
 import {
@@ -62,11 +63,24 @@ export default async function CategoryPage({ params }: Props) {
 
   const articles = await getArticlesByCategory(slug);
   const name = getCategoryName(slug);
+  const url = absoluteUrl(`/categories/${slug}`);
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-start lg:gap-10">
         <div className="min-w-0 flex-1">
+          {articles.length > 0 ? (
+            <ListPageStructuredData
+              name={`${name}の記事一覧`}
+              description={buildCategoryPageDescription(name)}
+              url={url}
+              breadcrumbs={[
+                { name: "トップ", url: absoluteUrl("/") },
+                { name, url },
+              ]}
+              items={articles.map((a) => ({ title: a.title, slug: a.slug }))}
+            />
+          ) : null}
           <nav className="text-sm text-stone-500">
             <Link href="/" className="hover:text-orange-800 hover:underline">
               トップ

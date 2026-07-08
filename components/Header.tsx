@@ -60,6 +60,31 @@ export function Header() {
         </div>
       </div>
 
+      <nav
+        className="hidden border-t border-stone-100 lg:block"
+        aria-label="カテゴリナビゲーション"
+      >
+        <ul className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-5 gap-y-1 px-4 py-2 md:px-6">
+          {navItems.map((item) => {
+            const active = isCurrentPath(pathname, item.href);
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={`text-sm transition-colors hover:text-orange-800 ${
+                    active
+                      ? "font-semibold text-orange-800"
+                      : "font-medium text-stone-600"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+
       {isMenuOpen ? (
         <nav
           id="mobile-navigation"

@@ -6,7 +6,7 @@ export type TocItem = {
   id: string;
 };
 
-function stripTags(html: string): string {
+export function stripTags(html: string): string {
   return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 

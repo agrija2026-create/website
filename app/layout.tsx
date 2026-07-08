@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Script from "next/script";
 import { ArticleImageLightbox } from "@/components/ArticleImageLightbox";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
+import { WebSiteJsonLd } from "@/components/WebSiteJsonLd";
 import {
   SITE_DESCRIPTION,
   SITE_LOCALE,
@@ -54,6 +55,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -75,6 +82,7 @@ export default function RootLayout({
           `}
         </Script>
         <OrganizationJsonLd />
+        <WebSiteJsonLd />
         <div className="flex min-h-screen flex-col">
           <Header />
           <div className="flex-1">{children}</div>

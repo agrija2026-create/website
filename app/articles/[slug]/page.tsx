@@ -9,6 +9,7 @@ import { ArticleTextToSpeech } from "@/components/ArticleTextToSpeech";
 import { ArticleToc } from "@/components/ArticleToc";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { Sidebar } from "@/components/Sidebar";
+import { extractFaqItems } from "@/lib/articleFaq";
 import { estimateReadingMinutesJa } from "@/lib/articleHtml";
 import {
   getAllArticles,
@@ -97,6 +98,7 @@ export default async function ArticlePage({ params }: Props) {
   const { articles: relatedArticles, source: relatedSource } =
     await getRelatedArticles(slug, article.category, 3);
   const articleBodyHtml = stripLeadingArticleHeader(article.htmlBody);
+  const faqItems = extractFaqItems(article.htmlBody);
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
@@ -113,6 +115,7 @@ export default async function ArticlePage({ params }: Props) {
               sourceUrls: article.sourceUrls,
             }}
             slug={slug}
+            faqItems={faqItems}
           />
           <ArticleBreadcrumb categorySlug={article.category} articleTitle={article.title} />
           <header className="mt-2 border-b border-stone-200 pb-6">

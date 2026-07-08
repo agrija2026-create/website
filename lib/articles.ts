@@ -469,7 +469,9 @@ export async function getRelatedArticles(
       if (shared > 0) scored.push({ article: a, shared });
     }
     if (scored.length > 0) {
-      scored.sort((x, y) => y.shared - x.shared);
+      scored.sort(
+        (x, y) => y.shared - x.shared || sortByDateDesc(x.article, y.article),
+      );
       return {
         articles: scored.slice(0, limit).map((s) => s.article),
         source: "theme",

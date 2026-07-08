@@ -215,6 +215,19 @@ export function getThemeTagSeoHead(label: string): string {
   return THEME_TAG_SEO_HEAD[label] ?? `農業の${label}`;
 }
 
+/** フッター等のハブ用：ヘッドワードを持つ主要テーマタグ（label / head / URL セグメント）。 */
+export function getSeoHeadThemeTags(): {
+  label: string;
+  head: string;
+  urlSlug: string;
+}[] {
+  return Object.keys(THEME_TAG_SEO_HEAD).map((label) => ({
+    label,
+    head: THEME_TAG_SEO_HEAD[label],
+    urlSlug: encodeTagForUrl(label),
+  }));
+}
+
 export type SidebarThemeTag = {
   label: string;
   count: number;

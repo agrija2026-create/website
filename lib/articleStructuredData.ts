@@ -69,6 +69,27 @@ export function buildArticleJsonLd(
   return articleLd;
 }
 
+/**
+ * FAQPage 構造化データ。Q&A が2件未満なら null（薄い FAQ・Google 要件回避）。
+ */
+export function buildArticleFaqJsonLd(
+  items: { question: string; answer: string }[],
+): Record<string, unknown> | null {
+  if (items.length < 2) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
 export function buildArticleBreadcrumbJsonLd(
   article: Pick<ArticleStructuredDataInput, "title" | "category">,
   slug: string,

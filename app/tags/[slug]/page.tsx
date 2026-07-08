@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleCard } from "@/components/ArticleCard";
+import { ListPageStructuredData } from "@/components/ListPageStructuredData";
 import { Sidebar } from "@/components/Sidebar";
 import {
   getArticlesByTag,
@@ -96,11 +97,29 @@ export default async function TagPage({ params }: Props) {
   const intro = isAudiencePage
     ? buildAudiencePageDescription(label)
     : buildThemeTagPageDescription(themeHead);
+  // 一覧ページの構造化データは、index 解放するページ（generateMetadata と同条件）のみ出力する。
+  const shouldIndex =
+    isAudiencePage ||
+    (isThemeTag(canonicalTag) &&
+      articles.length >= MIN_INDEXABLE_THEME_TAG_ARTICLES);
+  const url = absoluteUrl(`/tags/${slug}`);
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-start lg:gap-10">
         <div className="min-w-0 flex-1">
+          {shouldIndex ? (
+            <ListPageStructuredData
+              name={`${heading}｜解説記事まとめ`}
+              description={intro}
+              url={url}
+              breadcrumbs={[
+                { name: "トップ", url: absoluteUrl("/") },
+                { name: heading, url },
+              ]}
+              items={articles.map((a) => ({ title: a.title, slug: a.slug }))}
+            />
+          ) : null}
           <nav className="text-sm text-stone-500">
             <Link href="/" className="hover:text-orange-800 hover:underline">
               トップ

@@ -13,56 +13,92 @@ const ROOT = path.join(__dirname, "..");
 const ARTICLES_DIR = path.join(ROOT, "content/articles");
 const OUTPUT = path.join(ROOT, "public/sitemap.xml");
 
-/** lib/categories.ts の CATEGORY_SLUGS と同期 */
-const CATEGORY_SLUGS = [
-  "policy",
-  "budget",
-  "market",
-  "logistics",
-  "production",
-  "farmland",
-  "technology",
-  "food-safety",
-];
+/*
+ * カテゴリ／読者タグ／テーマタグ／index しきい値は lib/・app/ の「正本」から
+ * パースして導出する（旧: ここへハードコピーしていたためドリフトでタグ欠落が発生した）。
+ * 正本の書式が変わってパースに失敗した場合はビルドを落とす（サイレントなずれを防ぐ）。
+ */
+function readSource(relPath) {
+  return fs.readFileSync(path.join(ROOT, relPath), "utf8");
+}
 
-/** lib/tags.ts の READER_TAG_PATH と同期 */
-const READER_TAG_PATH = {
-  生産者向け: "reader-producers",
-  小売向け: "reader-retail",
-  流通向け: "reader-distribution",
-};
+/** `NAME ... = {` の `=` 以降で最初に現れる open から、対応する close までのブロック本文を返す（型注釈内の括弧を誤検出しないよう `=` の後から探す） */
+function sliceBraceBlock(source, marker, open, close) {
+  const start = source.indexOf(marker);
+  if (start === -1) return null;
+  const eq = source.indexOf("=", start);
+  if (eq === -1) return null;
+  const openIdx = source.indexOf(open, eq);
+  if (openIdx === -1) return null;
+  let depth = 0;
+  for (let i = openIdx; i < source.length; i += 1) {
+    if (source[i] === open) depth += 1;
+    else if (source[i] === close) {
+      depth -= 1;
+      if (depth === 0) return source.slice(openIdx + 1, i);
+    }
+  }
+  return null;
+}
 
+/** lib/categories.ts の CATEGORY_MAP からカテゴリ slug を導出 */
+function loadCategorySlugs() {
+  const src = readSource("lib/categories.ts");
+  const block = sliceBraceBlock(src, "const CATEGORY_MAP", "{", "}");
+  if (!block) throw new Error("generate-sitemap: CATEGORY_MAP を解析できません");
+  const slugs = [];
+  const re = /(?:"([^"]+)"|([A-Za-z0-9-]+))\s*:/g;
+  let m;
+  while ((m = re.exec(block))) slugs.push(m[1] ?? m[2]);
+  if (slugs.length === 0)
+    throw new Error("generate-sitemap: カテゴリ slug が空です");
+  return slugs;
+}
+
+/** lib/tags.ts の READER_TAG_PATH から 日本語ラベル→URL セグメント を導出 */
+function loadReaderTagPath() {
+  const src = readSource("lib/tags.ts");
+  const block = sliceBraceBlock(src, "const READER_TAG_PATH", "{", "}");
+  if (!block) throw new Error("generate-sitemap: READER_TAG_PATH を解析できません");
+  const map = {};
+  const re = /([^\s:,{}]+)\s*:\s*"([^"]+)"/g;
+  let m;
+  while ((m = re.exec(block))) map[m[1].replace(/"/g, "")] = m[2];
+  if (Object.keys(map).length === 0)
+    throw new Error("generate-sitemap: 読者タグが空です");
+  return map;
+}
+
+/** lib/tags.ts の THEME_TAG_REGISTRY から 日本語ラベル→urlSlug を導出 */
+function loadThemeTagUrlSlug() {
+  const src = readSource("lib/tags.ts");
+  const block = sliceBraceBlock(src, "const THEME_TAG_REGISTRY", "[", "]");
+  if (!block) throw new Error("generate-sitemap: THEME_TAG_REGISTRY を解析できません");
+  const map = {};
+  const re = /label:\s*"([^"]+)"\s*,\s*urlSlug:\s*"([^"]+)"/g;
+  let m;
+  while ((m = re.exec(block))) map[m[1]] = m[2];
+  if (Object.keys(map).length === 0)
+    throw new Error("generate-sitemap: テーマタグが空です");
+  return map;
+}
+
+/** app/tags/[slug]/page.tsx の MIN_INDEXABLE_THEME_TAG_ARTICLES を導出 */
+function loadMinIndexableThemeTagArticles() {
+  const src = readSource("app/tags/[slug]/page.tsx");
+  const m = src.match(/MIN_INDEXABLE_THEME_TAG_ARTICLES\s*=\s*(\d+)/);
+  if (!m)
+    throw new Error(
+      "generate-sitemap: MIN_INDEXABLE_THEME_TAG_ARTICLES を解析できません",
+    );
+  return Number(m[1]);
+}
+
+const CATEGORY_SLUGS = loadCategorySlugs();
+const READER_TAG_PATH = loadReaderTagPath();
 const AUDIENCE_TAG_PATHS = new Set(Object.values(READER_TAG_PATH));
-
-/** lib/tags.ts の THEME_TAG_REGISTRY（label → urlSlug）と同期 */
-const THEME_TAG_URLSLUG = {
-  補助金: "subsidy",
-  輸出: "export",
-  農地バンク: "nouchibank",
-  "金融・融資": "finance",
-  食品ロス: "food-loss",
-  流通: "distribution",
-  就農: "employment",
-  六次産業: "sixth-industry",
-  共同利用: "facility",
-  大規模化: "large-scale-growth-subsidy",
-  交付金: "direct-payment",
-  オーガニックビレッジ: "organic-village",
-  災害対応: "disaster",
-  肥料: "fertilizer",
-  病害虫: "byogaichu",
-  種苗: "seed",
-  ドローン: "drone",
-  森林: "forestry",
-  中山間: "hilly-area",
-  "鳥獣・ジビエ": "wildlife",
-  農村振興: "rural-revitalization",
-  米: "rice",
-  "みどり・環境": "midori",
-};
-
-/** app/tags/[slug]/page.tsx の MIN_INDEXABLE_THEME_TAG_ARTICLES と同期 */
-const MIN_INDEXABLE_THEME_TAG_ARTICLES = 3;
+const THEME_TAG_URLSLUG = loadThemeTagUrlSlug();
+const MIN_INDEXABLE_THEME_TAG_ARTICLES = loadMinIndexableThemeTagArticles();
 
 function siteOrigin() {
   const raw =
