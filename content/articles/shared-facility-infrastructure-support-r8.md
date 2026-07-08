@@ -3,7 +3,7 @@ title: "共同利用施設の整備に使える補助金とは｜対象・補助
 slug: "shared-facility-infrastructure-support-r8"
 description: "共同利用施設の整備に使える補助金をわかりやすく解説します。集出荷施設や農業倉庫など対象施設、補助率・上限額、産地パワーアップにつながる申請の進め方を確認できます。"
 publishedAt: "2026-04-07"
-updatedAt: "2026-06-10"
+updatedAt: "2026-07-08"
 category: "budget"
 tags:
   - "生産者向け"
