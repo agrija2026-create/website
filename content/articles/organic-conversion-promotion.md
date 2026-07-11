@@ -3,7 +3,7 @@ title: "有機転換推進事業とは？転換初年度の支援をわかりや
 slug: "organic-conversion-promotion"
 description: "慣行農業から有機農業へ切り替える初年度の負担を支える有機転換推進事業を解説します。10aあたり2万円以内の転換支援、対象者と要件、申請の流れ、オーガニックビレッジなど他の有機施策との関係まで、有機への転換を考える農家・産地向けに整理します。"
 publishedAt: "2026-05-19"
-updatedAt: '2026-06-04'
+updatedAt: '2026-07-11'
 category: "budget"
 tags:
   - "生産者向け"
