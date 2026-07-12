@@ -8,7 +8,6 @@ category: policy
 tags:
   - 生産者向け
   - 農村振興
-readingMinutes: '5'
 takeaways:
   - >-
     SAVOR JAPAN（正式名称：農泊

@@ -172,10 +172,10 @@ function appendClassToTable(chunk: string, className: string): string {
   });
 }
 
-/** 日本語本文のおおよその読了時間（分）。文字数÷500、最低1分 */
+/** 日本語本文のおおよその読了時間（分）。文字数÷1200、最低1分 */
 export function estimateReadingMinutesJa(html: string, description: string): number {
   const text = stripTags(html) + " " + (description || "");
   const charCount = [...text].length;
-  const minutes = Math.ceil(charCount / 500);
+  const minutes = Math.ceil(charCount / 1200);
   return Math.max(1, Math.min(minutes, 180));
 }
