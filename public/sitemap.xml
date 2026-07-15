@@ -196,7 +196,7 @@
 </url>
 <url>
 <loc>https://agri-ja.net/articles/agricultural-income-insurance</loc>
-<lastmod>2026-07-11T00:00:00.000Z</lastmod>
+<lastmod>2026-07-15T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
@@ -227,6 +227,12 @@
 <url>
 <loc>https://agri-ja.net/articles/agriculture-carbon-credit-guide</loc>
 <lastmod>2026-06-10T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://agri-ja.net/articles/agriculture-heat-gear-subsidy</loc>
+<lastmod>2026-07-15T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
@@ -765,6 +771,12 @@
 <priority>0.8</priority>
 </url>
 <url>
+<loc>https://agri-ja.net/articles/ja-vs-direct-sales-income</loc>
+<lastmod>2026-07-15T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
 <loc>https://agri-ja.net/articles/japan-agricultural-import-tariff-system</loc>
 <lastmod>2026-06-04T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
@@ -1127,6 +1139,12 @@
 <url>
 <loc>https://agri-ja.net/articles/school-lunch-local-vegetables</loc>
 <lastmod>2026-06-17T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://agri-ja.net/articles/sell-vegetables-without-ja</loc>
+<lastmod>2026-07-15T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
