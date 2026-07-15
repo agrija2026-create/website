@@ -1,6 +1,11 @@
 ---
 title: "水田活用の直接支払交付金（水活）とは？令和8年度の単価一覧・いつまで続くかを解説"
 slug: "paddy-field-direct-payment-r8"
+relatedSlugs:
+  - "new-paddy-field-policy-r9"
+  - "feed-rice-wcs-subsidy"
+  - "wheat-soybean-grower-payment"
+  - "upland-crop-production-area-formation"
 description: "麦・大豆3.5万円/10a、WCS用稲8万円、飼料用米は標準6.5万円——水田活用の直接支払交付金の令和8年度単価を一覧表で整理。5年水張りルールの扱い、令和9年度からの見直しでいつまで続くか、産地交付金の仕組みまで解説します。"
 publishedAt: "2026-04-07"
 updatedAt: '2026-07-09'

@@ -7,6 +7,8 @@ import { ArticleShareActions } from "@/components/ArticleShareActions";
 import { ArticleStructuredData } from "@/components/ArticleStructuredData";
 import { ArticleTextToSpeech } from "@/components/ArticleTextToSpeech";
 import { ArticleToc } from "@/components/ArticleToc";
+import { NextReadBar } from "@/components/NextReadBar";
+import { ReadCompleteBeacon } from "@/components/ReadCompleteBeacon";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { Sidebar } from "@/components/Sidebar";
 import { extractFaqItems } from "@/lib/articleFaq";
@@ -97,7 +99,7 @@ export default async function ArticlePage({ params }: Props) {
     article.readingMinutes ??
     estimateReadingMinutesJa(article.htmlBody, article.description);
   const { articles: relatedArticles, source: relatedSource } =
-    await getRelatedArticles(slug, article.category, 3);
+    await getRelatedArticles(slug, article.category, 6);
   const articleBodyHtml = stripLeadingArticleHeader(article.htmlBody);
   const faqItems = extractFaqItems(article.htmlBody);
   const howToSteps = extractHowToSteps(article.htmlBody);
@@ -223,18 +225,28 @@ export default async function ArticlePage({ params }: Props) {
             data-tts-root={slug}
             dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
           />
-          <div className="max-w-3xl">
-            <ArticleFeedback slug={slug} />
-          </div>
+          <ReadCompleteBeacon />
           <div className="max-w-3xl">
             <RelatedArticles
               articles={relatedArticles.map(toRelatedArticleData)}
               source={relatedSource}
             />
           </div>
+          <div className="max-w-3xl">
+            <ArticleFeedback slug={slug} />
+          </div>
         </div>
         <Sidebar />
       </div>
+      {relatedArticles.length > 0 ? (
+        <NextReadBar
+          currentSlug={slug}
+          article={{
+            slug: relatedArticles[0].slug,
+            title: relatedArticles[0].title,
+          }}
+        />
+      ) : null}
     </div>
   );
 }

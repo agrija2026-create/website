@@ -1,6 +1,11 @@
 ---
 title: "令和8年産の米価はどうなる？2026年の価格見通しと需給・令和9年度の水田政策見直し"
 slug: "rice-price-and-policy-overview"
+relatedSlugs:
+  - "new-paddy-field-policy-r9"
+  - "paddy-field-direct-payment-r8"
+  - "government-stockpiled-rice"
+  - "rice-advance-payment"
 description: "令和8年産（2026年産）の米価はどうなるのか。約3倍に高騰した米価が令和8年に下落へ転じた推移と、在庫過剰へ向かう需給からみた今後の価格の見通し、減反政策の歴史、令和9年度から根本的に変わる水田政策まで、米をつくる農家・農業法人に向けて農林水産省の最新資料で整理します。"
 publishedAt: "2026-06-03"
 updatedAt: '2026-07-10'

@@ -40,6 +40,8 @@ export type ArticleMeta = {
   takeaways: string[];
   /** 読了目安（分）。未指定時は本文から自動算出 */
   readingMinutes?: number;
+  /** 「次に読む」動線として手動指定する関連記事slug（最優先・記載順を維持） */
+  relatedSlugs?: string[];
   sourceHtmlFile?: string;
 };
 
@@ -149,6 +151,13 @@ function parseArticleFile(filePath: string): Article {
     ? Math.max(1, Math.min(180, Math.round(readingMinutesParsed)))
     : undefined;
 
+  const relatedSlugsRaw = d.relatedSlugs;
+  const relatedSlugs = Array.isArray(relatedSlugsRaw)
+    ? relatedSlugsRaw.map(String).map((s) => s.trim()).filter(Boolean)
+    : typeof relatedSlugsRaw === "string" && relatedSlugsRaw.trim()
+      ? [relatedSlugsRaw.trim()]
+      : undefined;
+
   const sourceHtmlFile =
     typeof d.sourceHtmlFile === "string" ? d.sourceHtmlFile : undefined;
   let htmlBody = content.trim();
@@ -205,6 +214,7 @@ function parseArticleFile(filePath: string): Article {
     sourceUrls,
     takeaways,
     readingMinutes,
+    relatedSlugs,
     sourceHtmlFile,
     htmlBody: enrichedHtml,
     toc,
@@ -304,6 +314,13 @@ function normalizeMicroCmsArticle(item: MicroCmsArticle): Article | null {
       ? [takeawaysRaw.trim()]
       : [];
 
+  const relatedSlugsRaw = item.relatedSlugs;
+  const relatedSlugs = Array.isArray(relatedSlugsRaw)
+    ? relatedSlugsRaw.map(String).map((s) => s.trim()).filter(Boolean)
+    : typeof relatedSlugsRaw === "string" && relatedSlugsRaw.trim()
+      ? [relatedSlugsRaw.trim()]
+      : undefined;
+
   const sanitized = sanitizeTrustedHtml(bodyCandidate);
   const { html: enrichedHtml, toc } = enrichArticleHtml(sanitized);
 
@@ -340,6 +357,7 @@ function normalizeMicroCmsArticle(item: MicroCmsArticle): Article | null {
     themeTags,
     sourceUrls,
     takeaways,
+    relatedSlugs,
     htmlBody: enrichedHtml,
     toc,
   };
@@ -431,7 +449,11 @@ export type RelatedArticlesResult = {
   source: RelatedArticlesSource;
 };
 
-/** クラスター定義を優先し、なければ同カテゴリ→他カテゴリの新着で埋める */
+/**
+ * 「次に読む」動線用の関連記事を返す。
+ * ① frontmatter の relatedSlugs（手動指定・最優先・記載順）→ ② クラスター定義 →
+ * ③ 同テーマタグ共有（共有数降順）→ ④ 同カテゴリ→他カテゴリの新着、の順で limit まで補充する。
+ */
 export async function getRelatedArticles(
   slug: string,
   category: string,
@@ -439,64 +461,70 @@ export async function getRelatedArticles(
 ): Promise<RelatedArticlesResult> {
   const all = await getAllArticles();
   const bySlug = new Map(all.map((a) => [a.slug, a]));
-
-  const cluster = getArticleCluster(slug);
-  if (cluster) {
-    const out: Article[] = [];
-    for (const memberSlug of cluster) {
-      if (memberSlug === slug) continue;
-      const article = bySlug.get(memberSlug);
-      if (!article) continue;
-      out.push(article);
-      if (out.length >= limit) {
-        return { articles: out, source: "cluster" };
-      }
-    }
-    if (out.length > 0) {
-      return { articles: out, source: "cluster" };
-    }
-  }
-
-  // ② 同じテーマタグを共有する記事（共有数が多い順／同数は公開日降順）。
   const self = bySlug.get(slug);
-  const selfThemeTags = self ? self.tags.filter(isThemeTag) : [];
-  if (selfThemeTags.length > 0) {
-    const selfThemeSet = new Set(selfThemeTags);
-    const scored: { article: Article; shared: number }[] = [];
-    for (const a of all) {
-      if (a.slug === slug) continue;
-      const shared = a.tags.filter((t) => selfThemeSet.has(t)).length;
-      if (shared > 0) scored.push({ article: a, shared });
-    }
-    if (scored.length > 0) {
-      scored.sort(
-        (x, y) => y.shared - x.shared || sortByDateDesc(x.article, y.article),
-      );
-      return {
-        articles: scored.slice(0, limit).map((s) => s.article),
-        source: "theme",
-      };
-    }
-  }
 
   const out: Article[] = [];
-  const seen = new Set<string>();
+  const seen = new Set<string>([slug]);
+  const add = (article: Article | undefined): boolean => {
+    if (!article || seen.has(article.slug)) return false;
+    out.push(article);
+    seen.add(article.slug);
+    return true;
+  };
 
-  for (const a of all) {
-    if (a.slug === slug || a.category !== category) continue;
-    out.push(a);
-    seen.add(a.slug);
-    if (out.length >= limit) return { articles: out, source: "category" };
+  // ① frontmatter で手動指定した「次に読む」動線（最優先・記載順を維持）
+  for (const s of self?.relatedSlugs ?? []) {
+    if (out.length >= limit) break;
+    add(bySlug.get(s));
+  }
+  const manualUsed = out.length > 0;
+
+  // ② クラスター定義
+  let clusterUsed = false;
+  const cluster = getArticleCluster(slug);
+  if (cluster) {
+    for (const memberSlug of cluster) {
+      if (out.length >= limit) break;
+      if (add(bySlug.get(memberSlug))) clusterUsed = true;
+    }
   }
 
-  for (const a of all) {
-    if (a.slug === slug || seen.has(a.slug)) continue;
-    out.push(a);
-    seen.add(a.slug);
-    if (out.length >= limit) return { articles: out, source: "category" };
+  // ③ 同じテーマタグを共有する記事（共有数が多い順／同数は公開日降順）
+  let themeUsed = false;
+  const selfThemeTags = self ? self.tags.filter(isThemeTag) : [];
+  if (out.length < limit && selfThemeTags.length > 0) {
+    const selfThemeSet = new Set(selfThemeTags);
+    const scored = all
+      .filter((a) => !seen.has(a.slug))
+      .map((a) => ({
+        article: a,
+        shared: a.tags.filter((t) => selfThemeSet.has(t)).length,
+      }))
+      .filter((x) => x.shared > 0)
+      .sort(
+        (x, y) => y.shared - x.shared || sortByDateDesc(x.article, y.article),
+      );
+    for (const x of scored) {
+      if (out.length >= limit) break;
+      if (add(x.article)) themeUsed = true;
+    }
   }
 
-  return { articles: out, source: "category" };
+  // ④ 同カテゴリ→他カテゴリの新着で不足分を補う
+  if (out.length < limit) {
+    for (const a of all) {
+      if (out.length >= limit) break;
+      if (a.category === category) add(a);
+    }
+    for (const a of all) {
+      if (out.length >= limit) break;
+      add(a);
+    }
+  }
+
+  const source: RelatedArticlesSource =
+    clusterUsed || manualUsed ? "cluster" : themeUsed ? "theme" : "category";
+  return { articles: out.slice(0, limit), source };
 }
 
 /** 全記事からユニークなタグ（記事データ上の文字列・ソート済み） */

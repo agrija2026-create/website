@@ -1,6 +1,10 @@
 ---
 title: "野菜価格安定制度とは｜指定野菜・特定野菜の違いと価格差補給金（補助金）を解説"
 slug: "vegetable-price-stability-system"
+relatedSlugs:
+  - "contract-vegetable-stable-supply"
+  - "vegetable-designated-production-area"
+  - "vegetable-market-situation-overview"
 description: "野菜価格安定制度の仕組みを、指定野菜（15品目）・特定野菜（34品目）の対象品目一覧と違い、価格差補給金（補助金）の負担割合・保証基準額・交付の流れ、収入保険との違いと使い分け、令和8年度の変更点（ブロッコリーの指定野菜追加）まで解説します。特定野菜も価格差補給金の対象です。"
 publishedAt: "2026-05-26"
 updatedAt: "2026-07-01"

@@ -10,9 +10,9 @@ type Props = {
 };
 
 const SOURCE_HINT: Record<RelatedArticlesSource, string> = {
-  cluster: "同じテーマの関連記事です。",
-  theme: "同じテーマの関連記事です。",
-  category: "同じカテゴリを優先して表示しています。",
+  cluster: "読んだ内容の続き・関連するテーマの記事です。",
+  theme: "読んだ内容に関連するテーマの記事です。",
+  category: "同じカテゴリの記事です。",
 };
 
 function formatDate(iso: string): string {
@@ -34,30 +34,41 @@ export function RelatedArticles({ articles, source = "category" }: Props) {
       className="mt-14 border-t border-stone-200 pt-10"
     >
       <h2 id="related-heading" className="text-lg font-bold text-stone-900">
-        関連記事
+        この続きを読む
       </h2>
       <p className="mt-1 text-sm text-stone-500">{SOURCE_HINT[source]}</p>
-      <ul className="mt-6 space-y-4">
+      <ul className="mt-6 grid gap-4 sm:grid-cols-2">
         {articles.map((a) => (
           <li key={a.slug}>
             <Link
               href={`/articles/${a.slug}`}
-              className="group block rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-colors hover:border-orange-200 hover:bg-orange-50/40"
+              className="group flex gap-3 rounded-lg border border-stone-200 bg-white p-3 shadow-sm transition-colors hover:border-orange-200 hover:bg-orange-50/40"
             >
-              <time
-                dateTime={a.publishedAt}
-                className="text-xs text-stone-500"
-              >
-                {formatDate(a.publishedAt)}
-              </time>
-              <span className="mt-1 block font-semibold text-stone-900 group-hover:text-orange-900 group-hover:underline">
-                {a.title}
-              </span>
-              {a.description ? (
-                <span className="mt-2 line-clamp-2 text-sm text-stone-600">
-                  {a.description}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/articles/${a.slug}/opengraph-image`}
+                alt=""
+                width={1200}
+                height={630}
+                loading="lazy"
+                className="h-16 w-28 flex-none rounded-md border border-stone-100 object-cover"
+              />
+              <span className="min-w-0 flex-1">
+                <time
+                  dateTime={a.publishedAt}
+                  className="text-xs text-stone-500"
+                >
+                  {formatDate(a.publishedAt)}
+                </time>
+                <span className="mt-0.5 line-clamp-2 block font-semibold leading-snug text-stone-900 group-hover:text-orange-900 group-hover:underline">
+                  {a.title}
                 </span>
-              ) : null}
+                {a.description ? (
+                  <span className="mt-1 line-clamp-2 text-sm text-stone-600">
+                    {a.description}
+                  </span>
+                ) : null}
+              </span>
             </Link>
           </li>
         ))}

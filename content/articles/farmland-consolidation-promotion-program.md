@@ -1,6 +1,10 @@
 ---
 title: "農地集約化促進事業【令和8年度】最大7.6万円/10aの単価と要件"
 slug: "farmland-consolidation-promotion-program"
+relatedSlugs:
+  - "farmland-bank-guide"
+  - "farmland-bank-zero-farmer-infrastructure"
+  - "farmland-cultivation-condition-improvement"
 description: "農林水産省の農地集約化促進事業（旧機構集積協力金）を令和8年度の要綱ベースで解説。集約化加速タイプ1万〜5万円/10a・地域集約化実現タイプ2万〜2.6万円/10aの単価一覧と、両方で最大7.6万円/10aになる条件、対象・要件、申請から受け取りまでの流れ、支援金の使いみちを整理します。"
 publishedAt: "2026-05-21"
 updatedAt: '2026-07-09'

@@ -1,6 +1,10 @@
 ---
 title: "令和9年度からの新たな水田政策を解説｜水活は収量に応じた面積払いへ・5年水張りルールは不要に"
 slug: "new-paddy-field-policy-r9"
+relatedSlugs:
+  - "paddy-field-direct-payment-r8"
+  - "rice-price-and-policy-overview"
+  - "feed-rice-wcs-subsidy"
 description: "令和9年度から始まる新たな水田政策を、米・麦・大豆・飼料作物をつくる農家向けに解説します。水田活用の直接支払交付金は作物ごとの収量に応じた面積払いへ転換され、5年水張りルールは求められなくなります。作物別の変更点と全国8ブロックの地方説明会の日程を整理します。詳細は農林水産省の一次情報をご覧ください。"
 publishedAt: "2026-06-12"
 updatedAt: "2026-07-11"

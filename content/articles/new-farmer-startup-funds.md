@@ -1,6 +1,10 @@
 ---
 title: "経営開始資金・就農準備資金とは｜新規就農者育成総合対策の金額・要件を令和8年度版で解説"
 slug: "new-farmer-startup-funds"
+relatedSlugs:
+  - "young-farmer-interest-free-loan"
+  - "municipal-certified-new-farmer-plan-mechanism"
+  - "employment-route-farming-fund"
 description: "新規就農者育成総合対策の経営開始資金（就農後・月13.75万円×最長3年）と就農準備資金（研修中・月13.75万円×最長2年）の違い・対象・要件・申請の流れを令和8年度版で解説します。金額の増額（年150万円→165万円）、機械・施設を支える経営発展支援事業、併給の可否、交付停止・返還の注意点まで農林水産省の資料をもとに整理します。"
 publishedAt: "2026-06-03"
 updatedAt: "2026-07-10"
