@@ -42,7 +42,7 @@ export function RelatedArticles({ articles, source = "category" }: Props) {
           <li key={a.slug}>
             <Link
               href={`/articles/${a.slug}`}
-              className="group flex gap-3 rounded-lg border border-stone-200 bg-white p-3 shadow-sm transition-colors hover:border-orange-200 hover:bg-orange-50/40"
+              className="group flex items-center gap-3 rounded-lg border border-stone-200 bg-white p-3 shadow-sm transition-colors hover:border-orange-200 hover:bg-orange-50/40"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
