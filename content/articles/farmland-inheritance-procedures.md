@@ -3,6 +3,7 @@ title: "農地の相続手続き｜名義変更（相続登記）と農業委員
 slug: "farmland-inheritance-procedures"
 description: "農地を相続したらまず何をするかを生産者向けに整理します。3年以内の相続登記（名義変更）とおおむね10か月以内の農業委員会への届出、そして自分で耕す・農地バンクに貸す・売るの選び方と相続税の納税猶予までを解説します。"
 publishedAt: "2026-06-04"
+updatedAt: "2026-07-15"
 category: "farmland"
 tags:
   - "生産者向け"
