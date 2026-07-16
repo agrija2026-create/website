@@ -450,9 +450,20 @@ export type RelatedArticlesResult = {
 };
 
 /**
+ * ③ の関連度スコアの重み。テーマタグ一致を最優先、同カテゴリを次点、読者タグ一致は補助。
+ * 読者タグ（生産者向け等）は「生産者向け」が大半の記事に付き識別力が弱いため軽めにする。
+ */
+const RELATED_WEIGHT = {
+  theme: 3,
+  category: 2,
+  audience: 1,
+} as const;
+
+/**
  * 「次に読む」動線用の関連記事を返す。
  * ① frontmatter の relatedSlugs（手動指定・最優先・記載順）→ ② クラスター定義 →
- * ③ 同テーマタグ共有（共有数降順）→ ④ 同カテゴリ→他カテゴリの新着、の順で limit まで補充する。
+ * ③ 関連度スコア（テーマタグ一致×3＋同カテゴリ×2＋読者タグ一致×1・同点は公開日降順）→
+ * ④ 同カテゴリ→他カテゴリの新着、の順で limit まで補充する。
  */
 export async function getRelatedArticles(
   slug: string,
@@ -489,20 +500,30 @@ export async function getRelatedArticles(
     }
   }
 
-  // ③ 同じテーマタグを共有する記事（共有数が多い順／同数は公開日降順）
+  // ③ 関連度スコアで補充。テーマタグの一致だけでなく「同カテゴリ」「読者タグの一致」
+  //    も重み付けして合算する（読者=対象が違う記事が広いテーマタグ1個で紛れ込むのを防ぐ）。
+  //    公開日は同点時のタイブレークのみに使い、新着だけが浮上しないようにする。
   let themeUsed = false;
-  const selfThemeTags = self ? self.tags.filter(isThemeTag) : [];
-  if (out.length < limit && selfThemeTags.length > 0) {
-    const selfThemeSet = new Set(selfThemeTags);
+  if (out.length < limit && self) {
+    const selfThemeSet = new Set(self.tags.filter(isThemeTag));
+    const selfAudienceSet = new Set(self.tags.filter(isAudienceTag));
     const scored = all
       .filter((a) => !seen.has(a.slug))
-      .map((a) => ({
-        article: a,
-        shared: a.tags.filter((t) => selfThemeSet.has(t)).length,
-      }))
-      .filter((x) => x.shared > 0)
+      .map((a) => {
+        const sharedTheme = a.tags.filter((t) => selfThemeSet.has(t)).length;
+        const sharedAudience = a.tags.filter((t) =>
+          selfAudienceSet.has(t),
+        ).length;
+        const sameCategory = a.category === self.category ? 1 : 0;
+        const score =
+          RELATED_WEIGHT.theme * sharedTheme +
+          RELATED_WEIGHT.category * sameCategory +
+          RELATED_WEIGHT.audience * sharedAudience;
+        return { article: a, score };
+      })
+      .filter((x) => x.score > 0)
       .sort(
-        (x, y) => y.shared - x.shared || sortByDateDesc(x.article, y.article),
+        (x, y) => y.score - x.score || sortByDateDesc(x.article, y.article),
       );
     for (const x of scored) {
       if (out.length >= limit) break;
