@@ -3,7 +3,7 @@ title: "先進的有機農業拡大促進事業とは？支援の中身をわか
 slug: "advanced-organic-farming-expansion"
 description: "先進的有機農業拡大促進事業とは何か、誰が対象で、どんな支援を受けられるかをわかりやすく解説します。有機農業を団地・産地で面的に広げる取組を、スマート農業技術等の機械・設備導入と地域一体の支援でどう後押しするか、要件や他の有機施策との関係まで整理します。"
 publishedAt: "2026-05-19"
-updatedAt: '2026-06-04'
+updatedAt: '2026-07-16'
 category: "budget"
 tags:
   - "生産者向け"

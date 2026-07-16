@@ -3,6 +3,7 @@ title: "ほ場整備の進め方と農家負担｜区画整理の費用・負担
 slug: "paddy-field-consolidation-cost"
 description: "ほ場整備（圃場整備）の費用と農家負担の仕組みを解説します。国・都道府県・市町村と農家の負担割合の考え方、農家負担なしで実施できる農地中間管理機構関連農地整備事業、地域の合意形成から工事・換地までの進め方をまとめます。"
 publishedAt: "2026-06-10"
+updatedAt: '2026-07-16'
 category: "farmland"
 tags:
   - "生産者向け"
