@@ -3,7 +3,7 @@ title: "土地改良区の賦課金は払わないとどうなる？やめられ
 slug: "land-improvement-district-fees"
 description: "土地改良区の賦課金を払わないとどうなるのか、やめられる（脱退できる）のかを正面から解説。督促・延滞金・差押えの流れ、脱退・地区除外の条件と決済金、減免や軽減の可能性、貸借・相続で誰が払うかまで、土地改良法に基づいて整理します。"
 publishedAt: "2026-06-10"
-updatedAt: "2026-06-17"
+updatedAt: "2026-07-17"
 category: "farmland"
 tags:
   - "生産者向け"

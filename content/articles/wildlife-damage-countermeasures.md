@@ -4,7 +4,7 @@ slug: wildlife-damage-countermeasures
 description: >-
   鳥獣被害対策とは？農作物被害は年164億円で、シカ・イノシシで約6割を占めます。とる・まもる・よせつけないの3つの柱、電気柵など侵入防止と捕獲の進め方、鳥獣被害防止総合対策交付金など使える支援を、農家・自治体向けに解説します。
 publishedAt: '2026-05-29'
-updatedAt: '2026-06-04'
+updatedAt: '2026-07-17'
 category: policy
 tags:
   - 生産者向け
