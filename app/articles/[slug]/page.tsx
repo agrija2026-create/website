@@ -230,6 +230,7 @@ export default async function ArticlePage({ params }: Props) {
             <RelatedArticles
               articles={relatedArticles.map(toRelatedArticleData)}
               source={relatedSource}
+              currentSlug={slug}
             />
           </div>
           <div className="max-w-3xl">

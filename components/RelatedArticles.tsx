@@ -1,12 +1,22 @@
+"use client";
+
 import Link from "next/link";
 import type {
   RelatedArticleData,
   RelatedArticlesSource,
 } from "@/lib/articles";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 type Props = {
   articles: RelatedArticleData[];
   source?: RelatedArticlesSource;
+  /** 表示中（リンク元）の記事slug。related_click の from_slug に使う */
+  currentSlug?: string;
 };
 
 const SOURCE_HINT: Record<RelatedArticlesSource, string> = {
@@ -14,6 +24,12 @@ const SOURCE_HINT: Record<RelatedArticlesSource, string> = {
   theme: "読んだ内容に関連するテーマの記事です。",
   category: "同じカテゴリの記事です。",
 };
+
+function sendGaEvent(name: string, params?: Record<string, unknown>) {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", name, params);
+  }
+}
 
 function formatDate(iso: string): string {
   const d = new Date(iso);
@@ -25,7 +41,11 @@ function formatDate(iso: string): string {
   });
 }
 
-export function RelatedArticles({ articles, source = "category" }: Props) {
+export function RelatedArticles({
+  articles,
+  source = "category",
+  currentSlug,
+}: Props) {
   if (articles.length === 0) return null;
 
   return (
@@ -38,10 +58,18 @@ export function RelatedArticles({ articles, source = "category" }: Props) {
       </h2>
       <p className="mt-1 text-sm text-stone-500">{SOURCE_HINT[source]}</p>
       <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-        {articles.map((a) => (
+        {articles.map((a, i) => (
           <li key={a.slug}>
             <Link
               href={`/articles/${a.slug}`}
+              onClick={() =>
+                sendGaEvent("related_click", {
+                  article_slug: a.slug,
+                  from_slug: currentSlug,
+                  position: i + 1,
+                  related_source: source,
+                })
+              }
               className="group flex items-center gap-3 rounded-lg border border-stone-200 bg-white p-3 shadow-sm transition-colors hover:border-orange-200 hover:bg-orange-50/40"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
