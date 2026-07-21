@@ -6,7 +6,7 @@ relatedSlugs:
   - "rice-advance-payment"
   - "government-stockpiled-rice"
 description: "米の概算金の金額を産地・銘柄別に整理します。令和8年産の発表状況と発表時期の流れ、記録的高値だった令和7年産の産地別の水準、農林水産省の相対取引価格との関係を、コメ農家向けにまとめます。"
-publishedAt: "2026-07-21"
+publishedAt: "2026-07-22"
 category: "market"
 tags:
   - "生産者向け"
