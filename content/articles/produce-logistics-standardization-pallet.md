@@ -1,8 +1,13 @@
 ---
 title: "青果物のパレット化・流通標準化とは｜11型パレットと2030年80%目標、物流2024年問題への備えを解説"
 slug: "produce-logistics-standardization-pallet"
+relatedSlugs:
+  - "produce-shipping-standard-revision"
+  - "sell-vegetables-without-ja"
+  - "school-lunch-local-vegetables"
 description: "青果物のパレット化と流通標準化を解説します。農林水産省は輸送パレットを11型（1100mm×1100mm）にそろえ、2030年度までにパレット化率を80%以上にする目標を掲げています。段ボール外装の標準化、一貫パレット輸送で積み込みが2.5時間から30〜60分に縮んだ実証、物流2024年問題への備え、産地が使える補助まで、産地・JA・卸・小売の物流担当が次に動くための要点をまとめます。"
 publishedAt: "2026-06-17"
+updatedAt: "2026-07-23"
 category: "logistics"
 tags:
   - "生産者向け"

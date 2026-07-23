@@ -1,9 +1,13 @@
 ---
-title: "野菜の価格はなぜ変動しやすい？高い・安い理由を需給・天候・市場から解説"
+title: "野菜が高い・安いのはなぜ？価格変動の理由を天候・需給・卸売市場から解説"
 slug: "vegetable-market-situation-overview"
-description: "野菜の価格はなぜ変動しやすく、高くなったり安くなったりするのか。天候・需給・出荷量に加え、保存の効きにくさ、卸売市場のセリ、円安・資材高による生産コストまで、価格が決まる仕組みをわかりやすく整理します。加工・業務用の拡大や輸入、生産農家の現状、価格の波への備え方も農林水産省の数値で解説します。"
+relatedSlugs:
+  - "why-fruit-prices-high"
+  - "vegetable-price-stability-system"
+  - "vegetable-heat-price-maff-countermeasures"
+description: "野菜の価格が高くなったり安くなったりするのはなぜか。天候による出荷量の変動、卸売市場のセリ、円安・肥料高の生産コストまで、価格が決まる仕組みを農林水産省の数値で解説。加工・業務用の拡大や輸入、価格の波への備え方も整理します。"
 publishedAt: "2026-05-26"
-updatedAt: "2026-07-01"
+updatedAt: "2026-07-23"
 category: "market"
 tags:
   - "生産者向け"

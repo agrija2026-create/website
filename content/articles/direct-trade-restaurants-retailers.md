@@ -3,7 +3,7 @@ title: "飲食店・スーパーとの直接取引の始め方｜直荷引きと
 slug: "direct-trade-restaurants-retailers"
 description: "農家が飲食店・スーパーと直接取引（店直）を始める手順を4ステップで解説。卸売市場法改正で広がった直荷引きとは何か、市場出荷との違い、固定価格・市場価格連動・シーズン契約の3つの価格方式、契約書に盛り込む項目、欠品・代金回収・物流費リスクへの備えまで整理します。"
 publishedAt: "2026-06-10"
-updatedAt: "2026-07-06"
+updatedAt: "2026-07-23"
 category: "logistics"
 tags:
   - "生産者向け"

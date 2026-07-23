@@ -3,7 +3,7 @@ title: "多面的機能支払交付金とは？単価・対象をわかりやす
 slug: "hilly-area-and-multifunction-direct-payment"
 description: "多面的機能支払交付金とは何かを、農家・集落・JA・自治体の担当者向けにわかりやすく解説。農地維持支払と資源向上支払の2階建ての仕組み、誰が受け取れるか、10aあたりの交付単価（田・畑・草地）、活動期間、中山間地域等直接支払との違い・併用、第6期のスマート農業加算まで、表とFAQで整理します。"
 publishedAt: "2026-06-03"
-updatedAt: "2026-06-17"
+updatedAt: "2026-07-23"
 category: "policy"
 tags:
   - "生産者向け"
