@@ -1,9 +1,13 @@
 ---
 title: "猛暑で野菜価格高騰！？　農水省が進める高温対策"
 slug: "vegetable-heat-price-maff-countermeasures"
+relatedSlugs:
+  - "vegetable-market-situation-overview"
+  - "vegetable-price-stability-system"
+  - "fruit-tree-sunburn-prevention"
 description: "猛暑で野菜が高いのはなぜか、いつまで続くのか。記録的高温が野菜の生育・出荷・価格に及ぼす影響と、農林水産省の高温対策（遮光・耐暑品種・産地生産基盤パワーアップ事業）、遮光ネットの選び方や産地で使える支援まで解説します。"
 publishedAt: "2026-05-29"
-updatedAt: "2026-06-19"
+updatedAt: "2026-07-23"
 category: "policy"
 tags:
   - "生産者向け"
@@ -12,7 +16,7 @@ tags:
 takeaways:
   - "令和6年・7年の夏は記録的な高温となり、猛暑が野菜の生育・出荷・卸売価格に広く影響しています。"
   - "夏季の高温は、当該期の歩留まり低下に加え、秋冬作の播種・定植時期の障害など翌季以降の供給にもつながり、価格の高止まりを招きやすい構造になっています。"
-  - "国は、適応技術と高温耐性品種の普及、産地生産基盤パワーアップ事業による生産資材の導入支援、気候変動に対応した研究開発を組み合わせて対策を進めています。"
+  - "国は、適応技術と高温耐性品種の普及、産地生産基盤パワーアップ事業やスマ転事業などの生産資材・技術導入支援、気候変動に対応した研究開発を組み合わせて対策を進めています。"
   - "農業従事者は、遮光・かん水・防除などの栽培管理と品種転換に加え、産地として計画をまとめれば国の支援事業を活用できる場合があります。"
 sourceHtmlFile: "content/source-html/vegetable-heat-price-maff-countermeasures.html"
 ---
