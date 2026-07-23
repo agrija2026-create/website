@@ -3,7 +3,7 @@ title: "認定農業者とは｜メリット・デメリットと要件、農業
 slug: "certified-farmer-requirements-benefits"
 description: "認定農業者とは何かをわかりやすく解説。メリット・デメリットと認定の要件、農業経営改善計画（5年後の目標）の書き方と認定までの流れ、スーパーL資金や税制特例、農業経営改善支援の相談窓口までを生産者向けにまとめます。"
 publishedAt: "2026-06-04"
-updatedAt: "2026-06-17"
+updatedAt: "2026-07-23"
 category: "farmland"
 tags:
   - "生産者向け"

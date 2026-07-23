@@ -1,8 +1,13 @@
 ---
 title: "学校給食に地場野菜を納入するには｜相談先・規格と量の壁・使える支援を解説"
 slug: "school-lunch-local-vegetables"
+relatedSlugs:
+  - "sell-vegetables-without-ja"
+  - "produce-shipping-standard-revision"
+  - "contract-vegetable-stable-supply"
 description: "学校給食に地場野菜を卸す手順を解説します。最初の相談先は教育委員会・給食センター・栄養教諭・地産地消コーディネーターです。定時定量と規格の壁は、複数生産者でまとまる・JAや直売所に集荷を任せる・給食用に規格をゆるめてもらう工夫で越えられます。無料のコーディネーター派遣や消費・安全対策交付金も使えます。"
 publishedAt: "2026-06-17"
+updatedAt: "2026-07-23"
 category: "logistics"
 tags:
   - "生産者向け"
