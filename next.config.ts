@@ -5,8 +5,11 @@ const SLUG_REDIRECTS: ReadonlyArray<readonly [string, string]> = [
   ["trial-on-farm-employment-promotion", "trial-farming-employment-promotion"],
   ["farmland-efficiency-loan-support-type", "farm-land-efficiency-loan-support-r8"],
   ["seibi-55", "rural-resource-facility-infrastructure"],
-  ["index-163", "vegetable-price-outlook-r8-may"],
-  ["index-164", "vegetable-price-outlook-r8-june"],
+  // 野菜価格見通しは毎月更新の恒久ページ vegetable-price-outlook に一本化（月別の旧slugは301集約）
+  ["index-163", "vegetable-price-outlook"],
+  ["index-164", "vegetable-price-outlook"],
+  ["vegetable-price-outlook-r8-may", "vegetable-price-outlook"],
+  ["vegetable-price-outlook-r8-june", "vegetable-price-outlook"],
   ["sanchipu-71", "production-base-power-up-program"],
   ["budget-15", "domestic-fertilizer-resource-expansion"],
   ["kokusan-shea-dakkan-85", "domestic-vegetable-share-recovery"],
