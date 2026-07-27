@@ -49,6 +49,7 @@ export function buildArticleJsonLd(
     },
     articleSection: categoryName,
     inLanguage: "ja",
+    isAccessibleForFree: true,
   };
 
   if (article.themeTags.length > 0) {

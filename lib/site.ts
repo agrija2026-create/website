@@ -23,6 +23,29 @@ export const ORGANIZATION_ID = `${SITE_URL_ORIGIN}/#organization`;
 
 export const SAME_AS_SOCIAL = ["https://x.com/agri_ja"] as const;
 
+/**
+ * 発行元 Organization の説明文（構造化データ用）。
+ * AI検索・生成エンジンが「発行元が何の専門か」を理解し、引用時に帰属できるようにするシグナル。
+ */
+export const SITE_ORG_DESCRIPTION =
+  "農林水産省など一次情報をもとに、農業政策・制度・補助金・予算の動きを、生産者・流通・小売向けにわかりやすく整理する農業情報メディア。";
+
+/**
+ * 発行元の専門領域（knowsAbout）。サイトが実際にカバーするトピックの権威性宣言。
+ */
+export const SITE_KNOWS_ABOUT = [
+  "農業政策",
+  "農業補助金",
+  "米政策",
+  "水田政策",
+  "農業経営の安定",
+  "新規就農",
+  "農産物の流通・直売",
+  "農業共済・収入保険",
+  "施設園芸",
+  "農地の集約・農地バンク",
+] as const;
+
 export function absoluteUrl(path: string): string {
   const p = path.startsWith("/") ? path : `/${path}`;
   return `${SITE_URL_ORIGIN}${p}`;
