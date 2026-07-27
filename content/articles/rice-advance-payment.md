@@ -7,6 +7,7 @@ relatedSlugs:
   - "ja-vs-direct-sales-income"
 description: "米の概算金の仕組みをわかりやすく解説します。JAが出荷時に支払う前払い金の位置づけ、共同計算による精算と追加払いの流れ、農林水産省が公表する相対取引価格との関係、令和7年産の動向と経営上の注意点まで整理します。"
 publishedAt: "2026-06-10"
+updatedAt: "2026-07-27"
 category: "market"
 tags:
   - "生産者向け"
