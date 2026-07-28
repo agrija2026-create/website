@@ -3,6 +3,7 @@ title: "ゲタ・ナラシとは？米・畑作の収入減を補てんする経
 slug: "farm-income-stabilization-geta-narashi"
 description: "ゲタ対策・ナラシ対策とは何かをわかりやすく解説します。米・麦・大豆などの収入が下がったときに差額の9割を補てんする経営所得安定対策の対象者・交付単価・申請の流れと、収入保険・農業共済との違いや選び方を、認定農業者・集落営農向けに整理します。"
 publishedAt: "2026-07-14"
+updatedAt: '2026-07-28'
 category: "farmland"
 tags:
   - "生産者向け"
