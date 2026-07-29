@@ -7,6 +7,7 @@ import {
   SITE_LOCALE,
   SITE_NAME,
   absoluteUrl,
+  buildAlternates,
 } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     absolute: `新着記事一覧 | ${SITE_NAME}`,
   },
   description: "農業情報メディアの新着記事を日付順に一覧します。",
-  alternates: { canonical: absoluteUrl("/recent") },
+  alternates: buildAlternates(absoluteUrl("/recent")),
   openGraph: {
     type: "website",
     url: absoluteUrl("/recent"),

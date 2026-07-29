@@ -7,6 +7,7 @@ const themeHubs = getSeoHeadThemeTags();
 const siteLinks = [
   { href: "/", label: "トップ" },
   { href: "/recent", label: "新着記事" },
+  { href: "/feed.xml", label: "RSS フィード" },
   { href: "/privacy", label: "プライバシーポリシー" },
 ];
 
@@ -28,14 +29,21 @@ function FooterColumn({
 }
 
 function FooterLink({ href, label }: { href: string; label: string }) {
+  const className =
+    "text-stone-600 underline-offset-2 transition-colors hover:text-orange-800 hover:underline";
+  // /feed.xml のようなページ以外のルート（Route Handler）は通常のリンクで開く
+  const isFileRoute = /\.[a-z0-9]+$/i.test(href);
   return (
     <li>
-      <Link
-        href={href}
-        className="text-stone-600 underline-offset-2 transition-colors hover:text-orange-800 hover:underline"
-      >
-        {label}
-      </Link>
+      {isFileRoute ? (
+        <a href={href} className={className}>
+          {label}
+        </a>
+      ) : (
+        <Link href={href} className={className}>
+          {label}
+        </Link>
+      )}
     </li>
   );
 }

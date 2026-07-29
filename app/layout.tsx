@@ -12,6 +12,7 @@ import {
   SITE_NAME,
   SITE_URL_ORIGIN,
   SITE_X_HANDLE,
+  buildAlternates,
 } from "@/lib/site";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  alternates: buildAlternates(),
   robots: {
     index: true,
     follow: true,

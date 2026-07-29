@@ -14,6 +14,7 @@ import {
   SITE_LOCALE,
   SITE_NAME,
   absoluteUrl,
+  buildAlternates,
   buildCategoryPageDescription,
 } from "@/lib/site";
 
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       absolute: fullTitle,
     },
     description,
-    alternates: { canonical: url },
+    alternates: buildAlternates(url),
     openGraph: {
       type: "website",
       url,

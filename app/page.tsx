@@ -11,6 +11,7 @@ import {
   SITE_NAME,
   TOP_PAGE_TITLE,
   absoluteUrl,
+  buildAlternates,
 } from "@/lib/site";
 
 const RECENT_COUNT = 3;
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     absolute: TOP_PAGE_TITLE,
   },
   description: SITE_DESCRIPTION,
-  alternates: { canonical: absoluteUrl("/") },
+  alternates: buildAlternates(absoluteUrl("/")),
   openGraph: {
     type: "website",
     url: absoluteUrl("/"),

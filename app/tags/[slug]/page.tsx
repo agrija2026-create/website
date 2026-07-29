@@ -13,6 +13,7 @@ import {
   SITE_LOCALE,
   SITE_NAME,
   absoluteUrl,
+  buildAlternates,
   buildAudiencePageDescription,
   buildThemeTagPageDescription,
 } from "@/lib/site";
@@ -63,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       absolute: fullTitle,
     },
     description,
-    alternates: { canonical: url },
+    alternates: buildAlternates(url),
     robots: {
       index: shouldIndex,
       follow: true,

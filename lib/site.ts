@@ -46,6 +46,23 @@ export const SITE_KNOWS_ABOUT = [
   "農地の集約・農地バンク",
 ] as const;
 
+/** RSS フィード（新着記事）のパスと表示名 */
+export const FEED_PATH = "/feed.xml";
+export const FEED_TITLE = `${SITE_NAME} 新着記事`;
+
+/**
+ * metadata の alternates。canonical だけを書くと layout 側の types が
+ * 上書きされて RSS の自動検出リンクが消えるため、必ずこれを通す。
+ */
+export function buildAlternates(canonical?: string) {
+  return {
+    ...(canonical ? { canonical } : {}),
+    types: {
+      "application/rss+xml": [{ url: FEED_PATH, title: FEED_TITLE }],
+    },
+  };
+}
+
 export function absoluteUrl(path: string): string {
   const p = path.startsWith("/") ? path : `/${path}`;
   return `${SITE_URL_ORIGIN}${p}`;

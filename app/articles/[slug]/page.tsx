@@ -25,6 +25,7 @@ import {
   SITE_LOCALE,
   SITE_NAME,
   absoluteUrl,
+  buildAlternates,
   toIsoDateTime,
 } from "@/lib/site";
 import { encodeTagForUrl, partitionTags } from "@/lib/tags";
@@ -54,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       absolute: fullTitle,
     },
     description,
-    alternates: { canonical: url },
+    alternates: buildAlternates(url),
     openGraph: {
       type: "article",
       url,
