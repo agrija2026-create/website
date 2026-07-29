@@ -3,6 +3,7 @@ title: "耕作放棄地・荒廃農地の再生に使える補助金｜再生で
 slug: "abandoned-farmland-restoration-subsidy"
 description: "相続などで荒れた耕作放棄地・荒廃農地を再生したい方へ。再生できる農地と困難な農地の見分け方、国の農山漁村振興交付金や都道府県・市町村の再生事業、10アール当たりの補助額、相談先までを整理します。"
 publishedAt: "2026-07-23"
+updatedAt: "2026-07-29"
 category: "farmland"
 tags:
   - "生産者向け"

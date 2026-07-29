@@ -3,6 +3,7 @@ title: "養蜂の始め方｜ミツバチの飼育届・はちみつ販売の許
 slug: "beekeeping-startup-subsidy"
 description: "養蜂（ミツバチ飼育）を始めるには、毎年1月末までに住所地の都道府県へ蜜蜂飼育届を出すのが義務です。趣味や日本みつばち・重箱式でも対象です。転飼の許可、はちみつ販売の許可・表示、個人が使える国の支援や相談先まで整理します。"
 publishedAt: "2026-07-22"
+updatedAt: "2026-07-29"
 category: "production"
 tags:
   - "生産者向け"
