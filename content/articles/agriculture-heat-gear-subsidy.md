@@ -3,6 +3,7 @@ title: "農作業の暑さ対策に使える補助金・助成金｜空調服・
 slug: "agriculture-heat-gear-subsidy"
 description: "農作業の暑さ対策に使える補助金・助成金を解説します。空調服など個人装備は国のエイジフレンドリー補助金や一部の自治体が対象。ヒートポンプなど設備は国の省力化補助、雇用のない個人経営は税制も使えます。市町村の制度の探し方も紹介します。"
 publishedAt: "2026-07-15"
+updatedAt: "2026-07-30"
 category: "production"
 tags:
   - "生産者向け"
