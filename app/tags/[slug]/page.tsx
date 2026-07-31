@@ -19,6 +19,7 @@ import {
 } from "@/lib/site";
 import {
   decodeTagFromUrl,
+  getAudiencePageSubtitle,
   getTagLabel,
   getThemeTagSeoHead,
   isAudienceTag,
@@ -29,9 +30,9 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-// テーマタグの一覧ページは、束ねる記事がこの本数以上あるときだけ
+// タグ一覧ページは、束ねる記事がこの本数以上あるときだけ
 // インデックス解放する（薄い一覧ページを検索結果に出さないため）。
-const MIN_INDEXABLE_THEME_TAG_ARTICLES = 3;
+const MIN_INDEXABLE_TAG_ARTICLES = 3;
 
 export async function generateStaticParams() {
   return (await getAllTagUrlParams()).map((slug) => ({ slug }));
@@ -47,12 +48,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const label = getTagLabel(canonicalTag);
   const isAudiencePage = isAudienceTag(canonicalTag);
   const shouldIndex =
-    isAudiencePage ||
-    (isThemeTag(canonicalTag) &&
-      articles.length >= MIN_INDEXABLE_THEME_TAG_ARTICLES);
+    (isAudiencePage || isThemeTag(canonicalTag)) &&
+    articles.length >= MIN_INDEXABLE_TAG_ARTICLES;
   const themeHead = getThemeTagSeoHead(canonicalTag);
   const title = isAudiencePage
-    ? `${label}の農業情報まとめ｜補助金・制度の解説`
+    ? `${label}の農業情報まとめ｜${getAudiencePageSubtitle(canonicalTag)}`
     : `${themeHead}｜解説記事まとめ`;
   const fullTitle = `${title} | ${SITE_NAME}`;
   const description = isAudiencePage
@@ -100,9 +100,8 @@ export default async function TagPage({ params }: Props) {
     : buildThemeTagPageDescription(themeHead);
   // 一覧ページの構造化データは、index 解放するページ（generateMetadata と同条件）のみ出力する。
   const shouldIndex =
-    isAudiencePage ||
-    (isThemeTag(canonicalTag) &&
-      articles.length >= MIN_INDEXABLE_THEME_TAG_ARTICLES);
+    (isAudiencePage || isThemeTag(canonicalTag)) &&
+    articles.length >= MIN_INDEXABLE_TAG_ARTICLES;
   const url = absoluteUrl(`/tags/${slug}`);
 
   return (

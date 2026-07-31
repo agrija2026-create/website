@@ -2,7 +2,7 @@
 # 確認済みHTMLを WEB 公開用ファイルに反映する
 # 使い方:
 #   bash scripts/stage-article-for-web.sh <html-path|workdir> <slug> [publishedAt] [category] [tags_csv]
-# tags_csv … カンマ区切り。先頭に読者タグ（生産者向け・小売向け・流通向け）を1〜3個含めること。
+# tags_csv … カンマ区切り。先頭に読者タグ（生産者向け・小売向け・流通向け・消費者向け）を1〜3個含めること。
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -227,7 +227,7 @@ else:
 if not tags:
     tags = list(DEFAULT_TAGS)
 
-AUDIENCE = {"生産者向け", "小売向け", "流通向け"}
+AUDIENCE = {"生産者向け", "小売向け", "流通向け", "消費者向け"}
 if not has_tags:
     audience = [t for t in tags if t in AUDIENCE] or list(DEFAULT_TAGS)
     import importlib.util

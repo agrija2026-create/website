@@ -83,8 +83,17 @@ export function getDefaultOgImage() {
   ];
 }
 
+/** 読者タグ一覧ページ用。既定は制度解説向けなので、消費者向けだけ文面を分ける。 */
+const AUDIENCE_PAGE_DESCRIPTION: Record<string, string> = {
+  消費者向け:
+    "今月お買い得な野菜と、その野菜を使い切るレシピをまとめて読めます。農林水産省が公表する野菜の価格見通しをもとに、買い時の品目をわかりやすく整理します。",
+};
+
 export function buildAudiencePageDescription(label: string): string {
-  return `${label}に役立つ農業政策・制度・補助金・予算の記事を一覧で読めます。農業情報メディアが、一次情報ベースで要点をわかりやすく整理します。`;
+  return (
+    AUDIENCE_PAGE_DESCRIPTION[label] ??
+    `${label}に役立つ農業政策・制度・補助金・予算の記事を一覧で読めます。農業情報メディアが、一次情報ベースで要点をわかりやすく整理します。`
+  );
 }
 
 /** テーマタグ一覧ページ用。head は getThemeTagSeoHead で得た検索ヘッドワード。 */

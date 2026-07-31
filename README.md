@@ -170,7 +170,7 @@ microCMS を有効にする場合も、各記事の `tags` に読者タグを1�
 - `lib/articles.ts` — 記事データ層
 - `lib/categories.ts` / `lib/tags.ts` — カテゴリ・読者タグ・テーマタグ正規語彙（`THEME_TAG_REGISTRY`）
 
-記事の `tags` には **読者タグ**（`生産者向け` / `小売向け` / `流通向け`）を **必ず1〜3個** 含めてください。テーマタグは [docs/theme-tags.md](docs/theme-tags.md) の正規語彙から **0〜3個** 付けます。未登録タグや読者タグ個数違反はビルド時にエラーになります。
+記事の `tags` には **読者タグ**（`生産者向け` / `小売向け` / `流通向け` / `消費者向け`）を **必ず1〜3個** 含めてください。テーマタグは [docs/theme-tags.md](docs/theme-tags.md) の正規語彙から **0〜3個** 付けます。未登録タグや読者タグ個数違反はビルド時にエラーになります。
 
 新規記事のテーマタグ提案: `python3 scripts/suggest-theme-tags.py <slug> <category>`
 

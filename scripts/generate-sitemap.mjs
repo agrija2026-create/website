@@ -83,13 +83,13 @@ function loadThemeTagUrlSlug() {
   return map;
 }
 
-/** app/tags/[slug]/page.tsx の MIN_INDEXABLE_THEME_TAG_ARTICLES を導出 */
-function loadMinIndexableThemeTagArticles() {
+/** app/tags/[slug]/page.tsx の MIN_INDEXABLE_TAG_ARTICLES を導出 */
+function loadMinIndexableTagArticles() {
   const src = readSource("app/tags/[slug]/page.tsx");
-  const m = src.match(/MIN_INDEXABLE_THEME_TAG_ARTICLES\s*=\s*(\d+)/);
+  const m = src.match(/MIN_INDEXABLE_TAG_ARTICLES\s*=\s*(\d+)/);
   if (!m)
     throw new Error(
-      "generate-sitemap: MIN_INDEXABLE_THEME_TAG_ARTICLES を解析できません",
+      "generate-sitemap: MIN_INDEXABLE_TAG_ARTICLES を解析できません",
     );
   return Number(m[1]);
 }
@@ -98,7 +98,7 @@ const CATEGORY_SLUGS = loadCategorySlugs();
 const READER_TAG_PATH = loadReaderTagPath();
 const AUDIENCE_TAG_PATHS = new Set(Object.values(READER_TAG_PATH));
 const THEME_TAG_URLSLUG = loadThemeTagUrlSlug();
-const MIN_INDEXABLE_THEME_TAG_ARTICLES = loadMinIndexableThemeTagArticles();
+const MIN_INDEXABLE_TAG_ARTICLES = loadMinIndexableTagArticles();
 
 function siteOrigin() {
   const raw =
@@ -153,17 +153,21 @@ function readArticles() {
     .filter((a) => a.slug);
 }
 
+/** index 解放される読者タグ（記事 N 本以上）の URL セグメントを返す */
 function collectAudienceTagPaths(articles) {
-  const paths = new Set();
+  const counts = new Map();
   for (const article of articles) {
     for (const tag of article.tags) {
       const segment = READER_TAG_PATH[tag];
       if (segment && AUDIENCE_TAG_PATHS.has(segment)) {
-        paths.add(segment);
+        counts.set(segment, (counts.get(segment) ?? 0) + 1);
       }
     }
   }
-  return Array.from(paths).sort((a, b) => a.localeCompare(b, "ja"));
+  return Array.from(counts.entries())
+    .filter(([, n]) => n >= MIN_INDEXABLE_TAG_ARTICLES)
+    .map(([segment]) => segment)
+    .sort((a, b) => a.localeCompare(b, "ja"));
 }
 
 /** index 解放されるテーマタグ（記事 N 本以上）の URL セグメントを返す */
@@ -176,7 +180,7 @@ function collectThemeTagPaths(articles) {
     }
   }
   return Array.from(counts.entries())
-    .filter(([, n]) => n >= MIN_INDEXABLE_THEME_TAG_ARTICLES)
+    .filter(([, n]) => n >= MIN_INDEXABLE_TAG_ARTICLES)
     .map(([slug]) => slug)
     .sort((a, b) => a.localeCompare(b, "ja"));
 }

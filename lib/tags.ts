@@ -2,7 +2,12 @@
  * 読者向けタグ（表記固定）。`tags` に1〜3個必須。
  * テーマタグは日本語ラベル固定・正規語彙のみ（`THEME_TAG_REGISTRY`）。
  */
-export const AUDIENCE_TAGS = ["生産者向け", "小売向け", "流通向け"] as const;
+export const AUDIENCE_TAGS = [
+  "生産者向け",
+  "小売向け",
+  "流通向け",
+  "消費者向け",
+] as const;
 
 export type AudienceTag = (typeof AUDIENCE_TAGS)[number];
 
@@ -89,6 +94,7 @@ export const LEGACY_THEME_TAG_MAP: Record<string, string | null> = {
 /** 読者タグは URL を ASCII に固定 */
 export const READER_TAG_PATH: Record<string, string> = {
   生産者向け: "reader-producers",
+  消費者向け: "reader-consumers",
   小売向け: "reader-retail",
   流通向け: "reader-distribution",
 };
@@ -213,6 +219,18 @@ const THEME_TAG_SEO_HEAD: Record<string, string> = {
 /** テーマタグ一覧ページの SEO タイトル先頭に置く検索ヘッドワードを返す。 */
 export function getThemeTagSeoHead(label: string): string {
   return THEME_TAG_SEO_HEAD[label] ?? `農業の${label}`;
+}
+
+/**
+ * 読者タグ一覧ページのタイトル副題。既定は制度・補助金の解説だが、
+ * 消費者向けは制度ではなく売り場の話なので副題を分ける。
+ */
+const AUDIENCE_PAGE_SUBTITLE: Record<string, string> = {
+  消費者向け: "野菜の値段と旬",
+};
+
+export function getAudiencePageSubtitle(label: string): string {
+  return AUDIENCE_PAGE_SUBTITLE[label] ?? "補助金・制度の解説";
 }
 
 /** フッター等のハブ用：ヘッドワードを持つ主要テーマタグ（label / head / URL セグメント）。 */

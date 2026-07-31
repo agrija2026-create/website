@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ARTICLES = ROOT / "content" / "articles"
 
-AUDIENCE = {"生産者向け", "小売向け", "流通向け"}
+AUDIENCE = {"生産者向け", "小売向け", "流通向け", "消費者向け"}
 
 # lib/themeTagAssign.ts と同期（Python 単体実行用）
 TAG_RULES: list[tuple[str, list[str]]] = [

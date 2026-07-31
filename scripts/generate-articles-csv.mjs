@@ -30,6 +30,7 @@ const READER_TAG_PATH = {
   生産者向け: "reader-producers",
   小売向け: "reader-retail",
   流通向け: "reader-distribution",
+  消費者向け: "reader-consumers",
 };
 
 /** lib/tags.ts の THEME_TAG_REGISTRY（label / urlSlug）と同期 */
