@@ -3,6 +3,7 @@ title: "牛・豚・鶏の暑熱対策｜乳量・受胎率を守る基本と使
 slug: "livestock-heat-stress-countermeasures"
 description: "乳牛は約19度から暑さを感じ、乳量・受胎率の低下や死亡につながります。農林水産省が示す畜舎の暑熱対策の基本と、送風機・細霧装置・断熱材の導入に補助率2分の1以内で使える支援事業を、酪農家・肉用牛・養豚・養鶏農家向けに整理します。詳細は一次情報でご確認ください。"
 publishedAt: "2026-07-03"
+updatedAt: "2026-07-31"
 category: "production"
 tags:
   - "生産者向け"
