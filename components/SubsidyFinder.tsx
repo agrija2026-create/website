@@ -155,6 +155,25 @@ export function SubsidyFinder({
     [answered, answers, programs],
   );
 
+  // 0件で行き止まりにしない。条件をひとつ外すと何件になるかを出して、そこへ進めるようにする
+  const relaxOptions = useMemo(() => {
+    if (answered === 0 || results.length > 0) return [];
+    const labels: Record<keyof Answers, string> = {
+      audience: "立場",
+      purpose: "やりたいこと",
+      crop: "品目",
+    };
+    return (["audience", "purpose", "crop"] as const)
+      .filter((key) => answers[key] !== null)
+      .map((key) => ({
+        key,
+        label: labels[key],
+        count: programs.filter((p) => matches(p, { ...answers, [key]: null })).length,
+      }))
+      .filter((o) => o.count > 0)
+      .sort((a, b) => b.count - a.count);
+  }, [answered, answers, programs, results.length]);
+
   // 結果件数は条件が変わるたびに送る（0件の組み合わせを見つけるため）
   useEffect(() => {
     if (answered === 0) return;
@@ -218,10 +237,27 @@ export function SubsidyFinder({
             </div>
 
             {results.length === 0 ? (
-              <div className="rounded-xl border border-stone-200 bg-stone-50 p-4 text-sm leading-relaxed text-stone-700">
+              <div className="space-y-3 rounded-xl border border-stone-200 bg-stone-50 p-4 text-sm leading-relaxed text-stone-700">
                 <p>
-                  この組み合わせに当てはまる制度は、まだこのサイトに解説記事がありません。品目を「その他・複合」に変えるか、条件をひとつ外して探してみてください。
+                  この組み合わせに当てはまる制度は、まだこのサイトに解説記事がありません。条件をひとつ外すと候補が出ます。
                 </p>
+                {relaxOptions.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {relaxOptions.map((option) => (
+                      <button
+                        key={option.key}
+                        type="button"
+                        onClick={() => {
+                          setAnswers((prev) => ({ ...prev, [option.key]: null }));
+                          sendGaEvent("subsidy_finder_relax", { question: option.key });
+                        }}
+                        className="inline-flex items-center rounded-md border border-orange-300 bg-white px-3 py-1.5 text-sm font-semibold text-orange-900 transition-colors hover:bg-orange-50"
+                      >
+                        「{option.label}」の条件を外す（{option.count}件）
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
               </div>
             ) : (
               <ul className="space-y-3">

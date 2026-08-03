@@ -135,7 +135,7 @@
     {
       "slug": "agricultural-improvement-fund",
       "keyPoint": "新しい取組に無利子。限度額は個人5,000万円・法人1億5,000万円",
-      "audiences": ["individual", "corporation"],
+      "audiences": ["new-farmer", "individual", "corporation"],
       "purposes": ["loan", "sales"],
       "crops": ["any"]
     },
@@ -296,7 +296,7 @@
     {
       "slug": "rural-resource-value-creation-promotion",
       "keyPoint": "新商品開発・販路開拓に交付率1/2等・事業期間あたり上限500万円",
-      "audiences": ["individual", "corporation", "community"],
+      "audiences": ["new-farmer", "individual", "corporation", "community"],
       "purposes": ["sales"],
       "crops": ["any"]
     },
@@ -352,49 +352,49 @@
     {
       "slug": "paddy-field-direct-payment-r8",
       "keyPoint": "麦・大豆・飼料作物は3.5万円／10a、飼料用米は収量に応じ5.5万〜10.5万円／10a",
-      "audiences": ["individual", "corporation", "community"],
+      "audiences": ["new-farmer", "individual", "corporation", "community"],
       "purposes": ["crop-payment"],
       "crops": ["rice", "field-crop"]
     },
     {
       "slug": "wheat-soybean-grower-payment",
       "keyPoint": "水田なら戦略作物助成3.5万円／10a＋ゲタの数量払・面積払（2万円／10a）",
-      "audiences": ["individual", "corporation", "community"],
+      "audiences": ["new-farmer", "individual", "corporation", "community"],
       "purposes": ["crop-payment"],
       "crops": ["field-crop", "rice"]
     },
     {
       "slug": "feed-rice-wcs-subsidy",
       "keyPoint": "WCS用稲は10アール8万円の定額、多収品種の飼料用米は5.5万〜10.5万円",
-      "audiences": ["individual", "corporation", "community"],
+      "audiences": ["new-farmer", "individual", "corporation", "community"],
       "purposes": ["crop-payment"],
       "crops": ["rice", "livestock"]
     },
     {
       "slug": "buckwheat-grower-payment",
       "keyPoint": "45キロ当たり15,930円の数量払と、10アール1.3万円の面積払",
-      "audiences": ["individual", "corporation"],
+      "audiences": ["new-farmer", "individual", "corporation"],
       "purposes": ["crop-payment"],
       "crops": ["field-crop"]
     },
     {
       "slug": "rapeseed-grower-payment",
       "keyPoint": "60キロ当たり6,410円の数量払と、10アール2万円の面積払（令和8年産）",
-      "audiences": ["individual", "corporation"],
+      "audiences": ["new-farmer", "individual", "corporation"],
       "purposes": ["crop-payment"],
       "crops": ["field-crop"]
     },
     {
       "slug": "starch-crop-grower-payment",
       "keyPoint": "でん粉原料用かんしょは1,000キロ当たり32,150〜36,010円（令和8年産）",
-      "audiences": ["individual", "corporation"],
+      "audiences": ["new-farmer", "individual", "corporation"],
       "purposes": ["crop-payment"],
       "crops": ["field-crop"]
     },
     {
       "slug": "sugarcane-sugarbeet-grower-payment",
       "keyPoint": "令和7年産は1,000キロ当たり16,860円（免税事業者）＋面積払2万円／10a",
-      "audiences": ["individual", "corporation"],
+      "audiences": ["new-farmer", "individual", "corporation"],
       "purposes": ["crop-payment"],
       "crops": ["field-crop"]
     },
@@ -408,21 +408,21 @@
     {
       "slug": "tea-replanting-transition-subsidy",
       "keyPoint": "改植は10アール15.2万円・新植12万円。未収益期間に14.1万円",
-      "audiences": ["individual", "corporation"],
+      "audiences": ["new-farmer", "individual", "corporation"],
       "purposes": ["crop-payment", "scale"],
       "crops": ["other"]
     },
     {
       "slug": "japan-flower-project-subsidy",
       "keyPoint": "国から民間団体へ定額交付。生産者は実証・普及活動への参加で成果を受け取る",
-      "audiences": ["individual", "corporation", "community"],
+      "audiences": ["new-farmer", "individual", "corporation", "community"],
       "purposes": ["crop-payment", "sales"],
       "crops": ["flower"]
     },
     {
       "slug": "domestic-feed-production-expansion-subsidy",
       "keyPoint": "機械導入・簡易倉庫等の整備は補助率2分の1以内が基本",
-      "audiences": ["individual", "corporation", "community"],
+      "audiences": ["new-farmer", "individual", "corporation", "community"],
       "purposes": ["crop-payment", "machine", "facility"],
       "crops": ["livestock"]
     },
