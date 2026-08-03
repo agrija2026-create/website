@@ -7,6 +7,8 @@ const themeHubs = getSeoHeadThemeTags();
 const siteLinks = [
   { href: "/", label: "トップ" },
   { href: "/recent", label: "新着記事" },
+  { href: "/tools/subsidy-finder", label: "補助金かんたん診断" },
+  { href: "/data/rice-advance-payment", label: "概算金データ（CSV）" },
   { href: "/feed.xml", label: "RSS フィード" },
   { href: "/privacy", label: "プライバシーポリシー" },
 ];

@@ -1,6 +1,11 @@
 ---
 title: "果樹共済と収入保険の違い｜果樹農家はどちらを選ぶ？補償範囲と掛金を解説"
 slug: "fruit-tree-mutual-aid-income-insurance"
+relatedSlugs:
+  - "fruit-tree-replanting-subsidy"
+  - "agricultural-income-insurance"
+  - "income-insurance-comparison"
+  - "fruit-tree-sunburn-prevention"
 description: "果樹共済と収入保険の違いを果樹農家向けに整理します。果樹共済は台風・凍霜害・ひょう害などによる減収を品目ごとに補償し、掛金の半分を国が負担します。収入保険は価格低下も含めて経営全体の収入減少を補償します。両制度は同時に加入できないため、選び方の目安も解説します。"
 publishedAt: "2026-07-09"
 category: "production"

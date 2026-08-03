@@ -3,6 +3,7 @@ import { getSidebarThemeTags } from "@/lib/articles";
 import { CATEGORY_MAP } from "@/lib/categories";
 import type { TocItem } from "@/lib/articleHtml";
 import { ArticleToc } from "@/components/ArticleToc";
+import { XFollowButton } from "@/components/XFollowCta";
 import {
   AUDIENCE_TAGS,
   encodeTagForUrl,
@@ -31,23 +32,23 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
           </p>
           <div className="mt-3 space-y-2">
             <p className="text-sm leading-relaxed text-stone-600">運営：農業情報メディア編集部</p>
-            <a
-              href="https://x.com/agri_ja"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Xの公式アカウント @agri_ja"
-              className="inline-flex items-center gap-2 rounded-md border border-stone-200 bg-stone-50 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:border-orange-300 hover:bg-orange-50 hover:text-orange-900"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                className="h-4 w-4 fill-current"
-              >
-                <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.54l-5.12-6.69L5.24 22H2l7.61-8.7L1.25 2h6.71l4.63 6.1L18.244 2zm-1.15 18h1.8L6.98 3.9H5.04L17.093 20z" />
-              </svg>
-              <span>@agri_ja</span>
-            </a>
+            <XFollowButton placement="sidebar" />
           </div>
+        </section>
+
+        <section>
+          <h2 className="text-sm font-bold text-stone-900">使える制度を探す</h2>
+          <Link
+            href="/tools/subsidy-finder"
+            className="mt-3 block rounded-lg border border-orange-200 bg-orange-50/70 p-3 transition-colors hover:border-orange-300 hover:bg-orange-50"
+          >
+            <span className="block text-sm font-semibold text-orange-900">
+              補助金かんたん診断
+            </span>
+            <span className="mt-1 block text-xs leading-relaxed text-stone-600">
+              立場・やりたいこと・品目の3つを選ぶと、使える補助金や制度資金の候補が出ます。
+            </span>
+          </Link>
         </section>
 
         <section>

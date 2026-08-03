@@ -1,6 +1,10 @@
 ---
 title: "野菜指定産地の一覧と要件｜指定されるメリットは？全国881産地・ブロッコリー追加を解説"
 slug: "vegetable-designated-production-area"
+relatedSlugs:
+  - "vegetable-price-stability-system"
+  - "contract-vegetable-stable-supply"
+  - "vegetable-market-situation-overview"
 description: "野菜指定産地の一覧・指定要件・メリットを解説します。指定産地は全国881産地（令和8年5月現在）で、作付面積20ヘクタール以上（葉茎菜・根菜類）と出荷割合3分の2以上が要件です。指定野菜は令和8年度からブロッコリーが加わり15品目になりました。"
 publishedAt: "2026-07-09"
 category: "market"

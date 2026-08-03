@@ -1,6 +1,11 @@
 ---
 title: "農業共済（NOSAI）とは？対象・掛金・補償と収入保険との違いを解説"
 slug: "agricultural-mutual-aid-r8"
+relatedSlugs:
+  - "agricultural-income-insurance"
+  - "income-insurance-comparison"
+  - "horticultural-facility-mutual-aid"
+  - "fruit-tree-mutual-aid-income-insurance"
 description: "農業共済（NOSAI）とは何か、農作物・家畜・果樹・畑作物・園芸施設など何を補償するのか、掛金は国がどれだけ負担するのか、収入保険やナラシとどう違い、どちらを選べばよいのかを、加入を検討する農家向けにわかりやすく解説します。"
 publishedAt: "2026-05-18"
 updatedAt: '2026-06-04'

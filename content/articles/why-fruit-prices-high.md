@@ -1,6 +1,10 @@
 ---
 title: "果物はなぜ高い？値上がりの理由と価格変動の仕組みをデータで解説"
 slug: "why-fruit-prices-high"
+relatedSlugs:
+  - "vegetable-market-situation-overview"
+  - "fruit-tree-replanting-subsidy"
+  - "fruit-tree-sunburn-prevention"
 description: "果物がなぜ高いのか、値上がりの理由を農林水産省のデータで解説します。国内生産量はピーク時の3分の1に減り、農家の高齢化で供給の縮小が続いています。高温・大雪による不作や高単価品種への転換も重なり、直近のりんごの卸売価格は平年より2割高です。"
 publishedAt: "2026-07-09"
 category: "market"

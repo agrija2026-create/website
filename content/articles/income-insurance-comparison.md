@@ -1,6 +1,11 @@
 ---
 title: "収入保険と農業共済の違い・選び方｜ナラシとの比較とデメリットも整理"
 slug: "income-insurance-comparison"
+relatedSlugs:
+  - "agricultural-income-insurance"
+  - "agricultural-mutual-aid-r8"
+  - "farm-income-stabilization-geta-narashi"
+  - "fruit-tree-mutual-aid-income-insurance"
 description: "収入保険・農業共済・ナラシ対策の違いを、対象・補償範囲・保険料や掛金・加入要件で比較します。それぞれのデメリットや併用の可否、経営に応じた選び方を生産者向けにわかりやすく解説します。"
 publishedAt: "2026-06-04"
 updatedAt: "2026-06-29"

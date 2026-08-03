@@ -1,0 +1,437 @@
+{
+  "note": "補助金かんたん診断のマスタ。タイトル・説明は content/articles の frontmatter から取るため、ここには分類と要点だけを書く。keyPoint の数値は必ず該当記事に書かれている値だけを転記する（新しい数字をここで作らない）。",
+  "alwaysShow": [
+    "agricultural-subsidies-guide",
+    "certified-farmer-requirements-benefits",
+    "emaff-guide"
+  ],
+  "programs": [
+    {
+      "slug": "successor-farm-machinery-facility-r8",
+      "keyPoint": "補助率は購入で3/10以内、上限は個人1,500万円・法人3,000万円",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["machine", "facility"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "tractor-purchase-subsidy",
+      "keyPoint": "認定農業者でなくても小規模事業者持続化補助金（上限最大200万円）などが使える",
+      "audiences": ["new-farmer", "individual"],
+      "purposes": ["machine"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "farm-land-efficiency-loan-support-r8",
+      "keyPoint": "融資とセットで補助率3/10・上限300万円（大規模な担い手は600万円）",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["machine", "facility", "scale"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "smart-tech-system-conversion-subsidy",
+      "keyPoint": "スマート農機の導入に2分の1補助・上限は1件2.5億円。労働生産性5％以上向上が要件",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["machine"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "smart-farm-machinery-support",
+      "keyPoint": "投資促進税制で取得した機械等の32％を特別償却（2027年3月31日まで）",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["machine"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "machinery-shared-use",
+      "keyPoint": "1台を地域で使い切る共同利用と、作業を外部に頼む農業支援サービス",
+      "audiences": ["individual", "community"],
+      "purposes": ["machine", "labor"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "farm-machinery-lease-vs-buy",
+      "keyPoint": "リース・購入・中古の損得と、資金調達の選び方",
+      "audiences": ["new-farmer", "individual", "corporation"],
+      "purposes": ["machine", "loan"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "production-base-power-up-program",
+      "keyPoint": "補助率は定額または2分の1以内。産地全体で収益力を上げる取組が対象",
+      "audiences": ["corporation", "community"],
+      "purposes": ["facility", "machine", "scale", "sales"],
+      "crops": ["vegetable", "fruit", "flower", "field-crop", "rice"]
+    },
+    {
+      "slug": "strong-agriculture-comprehensive-grant-r8",
+      "keyPoint": "補助率1/2以内など。産地基幹施設タイプは受益者5名以上・総事業費5,000万円以上",
+      "audiences": ["corporation", "community"],
+      "purposes": ["facility", "sales"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "shared-facility-infrastructure-support-r8",
+      "keyPoint": "共同利用施設の整備におおむね2分の1以内",
+      "audiences": ["community", "corporation"],
+      "purposes": ["facility"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "precooling-facility-subsidy",
+      "keyPoint": "予冷庫は産地パワーアップ事業・強い農業づくり交付金で2分の1以内等",
+      "audiences": ["corporation", "community"],
+      "purposes": ["facility", "sales"],
+      "crops": ["vegetable", "fruit", "flower"]
+    },
+    {
+      "slug": "weather-resistant-greenhouse-cost",
+      "keyPoint": "本体価格は10アール当たり数百万円〜1,700万円程度。仕様の見直しで1割ほど削減できる",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["facility", "disaster"],
+      "crops": ["vegetable", "fruit", "flower"]
+    },
+    {
+      "slug": "greenhouse-heat-pump-subsidy",
+      "keyPoint": "設備導入・ハウス改良は2分の1以内・上限2,000万円",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["facility", "environment"],
+      "crops": ["vegetable", "fruit", "flower"]
+    },
+    {
+      "slug": "energy-saving-greenhouse-conversion",
+      "keyPoint": "化石燃料に頼らないハイブリッド型園芸施設への転換を支援",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["facility", "environment"],
+      "crops": ["vegetable", "fruit", "flower"]
+    },
+    {
+      "slug": "livestock-cluster-project",
+      "keyPoint": "牛舎などの整備・機械導入に2分の1以内。施設整備の上限は年5億円",
+      "audiences": ["corporation", "community", "individual"],
+      "purposes": ["facility", "machine", "scale"],
+      "crops": ["livestock"]
+    },
+    {
+      "slug": "haccp-facility-export-r7",
+      "keyPoint": "輸出向け施設整備に2分の1以内・事業者ごとの上限6億円",
+      "audiences": ["corporation"],
+      "purposes": ["facility", "sales"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "super-l-agricultural-infrastructure-loan",
+      "keyPoint": "限度額は個人3億円・法人10億円。利子助成で当初5年が実質無利子になる場合も",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["loan", "scale", "facility", "machine"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "agricultural-modernization-fund",
+      "keyPoint": "限度額は個人1,800万円・法人2億円。認定なしでもJA・銀行から借りられる",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["loan", "machine", "facility"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "agricultural-improvement-fund",
+      "keyPoint": "新しい取組に無利子。限度額は個人5,000万円・法人1億5,000万円",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["loan", "sales"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "young-farmer-interest-free-loan",
+      "keyPoint": "認定新規就農者だけが使える無利子融資。限度額3,700万円・据置5年以内",
+      "audiences": ["new-farmer"],
+      "purposes": ["loan", "machine", "facility"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "private-capital-agriculture-finance-r8",
+      "keyPoint": "民間資金を活用する新しい制度資金。一般資金との違いと対象を整理",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["loan"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "jfc-agrifood-export-baseline-finance",
+      "keyPoint": "輸出向け設備投資に負担額の80%以内・原則25年以内",
+      "audiences": ["corporation"],
+      "purposes": ["loan", "sales"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "disaster-farm-loan-repayment-deferral",
+      "keyPoint": "運転資金600万円・施設復旧は1施設300万円まで（激甚指定で1,200万円）",
+      "audiences": ["new-farmer", "individual", "corporation"],
+      "purposes": ["disaster", "loan"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "agricultural-income-insurance",
+      "keyPoint": "収入が基準の9割を下回った額の9割を補てん。保険料に50％の国庫補助",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["risk"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "agricultural-mutual-aid-r8",
+      "keyPoint": "台風・冷害・病虫害・家畜事故に備える品目ごとの公的な保険",
+      "audiences": ["new-farmer", "individual", "corporation"],
+      "purposes": ["risk", "disaster"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "income-insurance-comparison",
+      "keyPoint": "収入保険・農業共済・ナラシのどれを選ぶかを比較",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["risk"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "farm-income-stabilization-geta-narashi",
+      "keyPoint": "ゲタは数量払＋面積払（10アール2万円）、ナラシは収入減の9割を補てん",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["risk", "crop-payment"],
+      "crops": ["rice", "field-crop"]
+    },
+    {
+      "slug": "vegetable-price-stability-system",
+      "keyPoint": "指定野菜は保証基準額を下回った差額の原則9割が補給金",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["risk"],
+      "crops": ["vegetable"]
+    },
+    {
+      "slug": "facility-horticulture-fuel-safety-net",
+      "keyPoint": "燃油が基準を超えた分を補填。対象数量は原則が当月購入の70％",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["risk"],
+      "crops": ["vegetable", "fruit", "flower"]
+    },
+    {
+      "slug": "blue-return-farming-tax",
+      "keyPoint": "青色申告は収入保険に入る前提。控除と記帳の始め方",
+      "audiences": ["new-farmer", "individual"],
+      "purposes": ["risk"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "large-scale-growth-investment-subsidy-5",
+      "keyPoint": "補助率・上限は公募要領による。賃上げ（年平均5.0％以上）が要件",
+      "audiences": ["corporation"],
+      "purposes": ["scale", "facility", "machine"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "regional-farm-structure-transition-support",
+      "keyPoint": "補助率3/10以内が基本、上限は個人1,500万円・法人3,000万円",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["scale", "machine", "facility"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "abandoned-farmland-restoration-subsidy",
+      "keyPoint": "再生作業に10アール当たり3万円前後。放牧での解消は最大5万円",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["scale"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "eco-friendly-agriculture-direct-payment",
+      "keyPoint": "令和8年度は有機14,000円・緑肥5,000円・堆肥3,600円（10アール当たり）",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["environment", "crop-payment"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "organic-conversion-promotion",
+      "keyPoint": "転換初年度の農地に10アール当たり2万円以内の定額",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["environment"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "organic-farming-hub-expansion",
+      "keyPoint": "定額または費用の1/2以内。上限や公募時期は都道府県の案内による",
+      "audiences": ["community", "corporation"],
+      "purposes": ["environment", "sales"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "advanced-organic-farming-expansion",
+      "keyPoint": "有機農業を団地・産地として面的に広げる産地・市町村向けの交付金",
+      "audiences": ["community"],
+      "purposes": ["environment"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "green-production-system-acceleration",
+      "keyPoint": "環境負荷を減らす栽培・飼養体系への転換に2分の1補助",
+      "audiences": ["corporation", "community"],
+      "purposes": ["environment", "machine"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "compost-soil-building-subsidy",
+      "keyPoint": "堆肥の施用に10アール3,600円、堆肥舎の整備はみどり交付金で2分の1以内",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["environment", "facility"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "domestic-fertilizer-resource-expansion",
+      "keyPoint": "広域流通向け施設は上限20億円、ほ場等は試作200万円・その他3,000万円",
+      "audiences": ["corporation", "community"],
+      "purposes": ["environment", "facility"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "disaster-farmer-facility-machinery-support",
+      "keyPoint": "機械等の修繕・再取得は事業費の3割・上限300万円（要件を満たせば600万円）",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["disaster", "machine", "facility"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "rural-resource-value-creation-promotion",
+      "keyPoint": "新商品開発・販路開拓に交付率1/2等・事業期間あたり上限500万円",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["sales"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "food-logistics-modal-shift-subsidy",
+      "keyPoint": "共同輸配送・モーダルシフトに定額または2分の1以内（協議会等が対象）",
+      "audiences": ["corporation", "community"],
+      "purposes": ["sales"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "new-farmer-startup-funds",
+      "keyPoint": "就農準備・経営開始資金が月13.75万円（年165万円）。初期投資は上限1,000万円",
+      "audiences": ["new-farmer"],
+      "purposes": ["labor", "machine", "facility"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "employment-route-farming-fund",
+      "keyPoint": "雇用して研修する取組に年間最大60万円を最長4年間",
+      "audiences": ["corporation", "individual"],
+      "purposes": ["labor"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "trial-farming-employment-promotion",
+      "keyPoint": "就農希望者1人当たり月2万円以内・最長3か月",
+      "audiences": ["corporation"],
+      "purposes": ["labor"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "farm-succession-subsidy",
+      "keyPoint": "親元就農・第三者継承の後継者に国費上限600万円（世代交代円滑化タイプ）",
+      "audiences": ["new-farmer", "individual", "corporation"],
+      "purposes": ["labor", "scale"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "farm-labor-shortage-support",
+      "keyPoint": "ソフト経費は1地区350万円、就労条件の改善は最大2,000万円（定額）",
+      "audiences": ["corporation", "community"],
+      "purposes": ["labor"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "agriculture-heat-gear-subsidy",
+      "keyPoint": "空調服などはエイジフレンドリー補助金（熱中症対策コース）。60歳以上を雇う中小企業が条件",
+      "audiences": ["corporation", "individual"],
+      "purposes": ["labor", "machine"],
+      "crops": ["any"]
+    },
+    {
+      "slug": "paddy-field-direct-payment-r8",
+      "keyPoint": "麦・大豆・飼料作物は3.5万円／10a、飼料用米は収量に応じ5.5万〜10.5万円／10a",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["crop-payment"],
+      "crops": ["rice", "field-crop"]
+    },
+    {
+      "slug": "wheat-soybean-grower-payment",
+      "keyPoint": "水田なら戦略作物助成3.5万円／10a＋ゲタの数量払・面積払（2万円／10a）",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["crop-payment"],
+      "crops": ["field-crop", "rice"]
+    },
+    {
+      "slug": "feed-rice-wcs-subsidy",
+      "keyPoint": "WCS用稲は10アール8万円の定額、多収品種の飼料用米は5.5万〜10.5万円",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["crop-payment"],
+      "crops": ["rice", "livestock"]
+    },
+    {
+      "slug": "buckwheat-grower-payment",
+      "keyPoint": "45キロ当たり15,930円の数量払と、10アール1.3万円の面積払",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["crop-payment"],
+      "crops": ["field-crop"]
+    },
+    {
+      "slug": "rapeseed-grower-payment",
+      "keyPoint": "60キロ当たり6,410円の数量払と、10アール2万円の面積払（令和8年産）",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["crop-payment"],
+      "crops": ["field-crop"]
+    },
+    {
+      "slug": "starch-crop-grower-payment",
+      "keyPoint": "でん粉原料用かんしょは1,000キロ当たり32,150〜36,010円（令和8年産）",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["crop-payment"],
+      "crops": ["field-crop"]
+    },
+    {
+      "slug": "sugarcane-sugarbeet-grower-payment",
+      "keyPoint": "令和7年産は1,000キロ当たり16,860円（免税事業者）＋面積払2万円／10a",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["crop-payment"],
+      "crops": ["field-crop"]
+    },
+    {
+      "slug": "fruit-tree-replanting-subsidy",
+      "keyPoint": "改植はかんきつ慣行で10アール23万円など。未収益期間に22万円",
+      "audiences": ["new-farmer", "individual", "corporation"],
+      "purposes": ["crop-payment", "scale"],
+      "crops": ["fruit"]
+    },
+    {
+      "slug": "tea-replanting-transition-subsidy",
+      "keyPoint": "改植は10アール15.2万円・新植12万円。未収益期間に14.1万円",
+      "audiences": ["individual", "corporation"],
+      "purposes": ["crop-payment", "scale"],
+      "crops": ["other"]
+    },
+    {
+      "slug": "japan-flower-project-subsidy",
+      "keyPoint": "国から民間団体へ定額交付。生産者は実証・普及活動への参加で成果を受け取る",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["crop-payment", "sales"],
+      "crops": ["flower"]
+    },
+    {
+      "slug": "domestic-feed-production-expansion-subsidy",
+      "keyPoint": "機械導入・簡易倉庫等の整備は補助率2分の1以内が基本",
+      "audiences": ["individual", "corporation", "community"],
+      "purposes": ["crop-payment", "machine", "facility"],
+      "crops": ["livestock"]
+    },
+    {
+      "slug": "electric-fence-subsidy",
+      "keyPoint": "イノシシ・シカ対策の柵の整備支援と、設置時に守る安全基準",
+      "audiences": ["new-farmer", "individual", "corporation", "community"],
+      "purposes": ["risk", "machine"],
+      "crops": ["any"]
+    }
+  ]
+}

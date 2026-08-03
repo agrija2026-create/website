@@ -1,6 +1,10 @@
 ---
 title: "野菜の種子安定供給対策とは？採種・防除と支援をわかりやすく解説"
 slug: "vegetable-seed-supply-stability-r8"
+relatedSlugs:
+  - "vegetable-market-situation-overview"
+  - "domestic-vegetable-supply-system-support"
+  - "vegetable-designated-production-area"
 description: "野菜の種子はなぜ安定供給が課題なのか、海外・国内の採種地確保、種子の防除技術、対象品目、支援の考え方をわかりやすく解説します。採種や種苗に関わる産地・種苗事業者、関心ある農家向けに整理します。"
 publishedAt: "2026-04-27"
 updatedAt: "2026-07-14"

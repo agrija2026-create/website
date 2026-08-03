@@ -1,6 +1,10 @@
 ---
 title: "加工・業務用野菜の国産化とは｜輸入の現状と国産シェア奪還の取り組みを解説"
 slug: "domestic-vegetable-share-recovery"
+relatedSlugs:
+  - "domestic-vegetable-supply-system-support"
+  - "contract-vegetable-stable-supply"
+  - "vegetable-market-situation-overview"
 description: "加工業務用野菜の約3割が輸入という現状と、冷凍野菜を含む国産野菜のシェア、業務用野菜の国産切替えに向けた国産野菜シェア奪還プロジェクトと推進協議会の取り組みを、生産者と実需者の両視点でわかりやすく解説します。"
 publishedAt: "2026-05-11"
 updatedAt: "2026-06-10"

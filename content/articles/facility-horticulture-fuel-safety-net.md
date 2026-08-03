@@ -1,6 +1,10 @@
 ---
 title: "加温費が高い月に差額が戻る――セーフティネットの発動と補填のしくみ"
 slug: "facility-horticulture-fuel-safety-net"
+relatedSlugs:
+  - "energy-saving-greenhouse-conversion"
+  - "greenhouse-heat-pump-subsidy"
+  - "horticultural-facility-mutual-aid"
 description: "施設園芸等燃料価格高騰対策におけるセーフティネットの発動と補填のしくみ。農業者団体の対象条件、国と半分ずつの補填積立、発動基準価格、補填金の算定、当月購入の70％から100％まで上がる特例を図解つきで整理します。最新の事業年度・単価・要件は農林水産省の一次情報で確認してください。"
 publishedAt: "2026-05-11"
 updatedAt: "2026-07-08"

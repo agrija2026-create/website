@@ -1,6 +1,11 @@
 ---
 title: "果樹の改植・新植に使える補助金｜品目別の支援単価と未収益期間の支援"
 slug: "fruit-tree-replanting-subsidy"
+relatedSlugs:
+  - "why-fruit-prices-high"
+  - "fruit-tree-sunburn-prevention"
+  - "fruit-tree-mutual-aid-income-insurance"
+  - "agricultural-subsidies-guide"
 description: "みかん・りんごなど果樹の改植・新植で受けられる果樹経営支援対策事業の支援単価を、省力樹形・慣行樹形の別に整理します。改植後4年分の幼木管理経費22万円や、園地整備・高温対策の支援もまとめます。果樹生産者・産地協議会向け。要件の詳細は農林水産省の一次情報をご覧ください。"
 publishedAt: "2026-07-08"
 category: "production"

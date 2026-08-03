@@ -1,6 +1,10 @@
 ---
 title: "耐候性ハウスの価格はどれくらい？費用を左右する仕様と使える補助金を解説"
 slug: "weather-resistant-greenhouse-cost"
+relatedSlugs:
+  - "greenhouse-heat-pump-subsidy"
+  - "horticultural-facility-mutual-aid"
+  - "energy-saving-greenhouse-conversion"
 description: "耐候性ハウス（低コスト耐候性ハウス）の価格を解説します。国の調査事例では10アール当たりの本体価格は数百万円から1,700万円程度まで仕様で大きく変わり、耐風速を50m/sから35m/sに抑えると本体費用を1割ほど減らせます。産地生産基盤パワーアップ事業による2分の1以内の補助も整理します。"
 publishedAt: "2026-07-09"
 category: "production"

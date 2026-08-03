@@ -1,6 +1,11 @@
 ---
 title: "果樹の日焼け対策｜日焼け果・着色不良を防ぐ夏の園地管理と発生後の対応"
 slug: "fruit-tree-sunburn-prevention"
+relatedSlugs:
+  - "fruit-tree-mutual-aid-income-insurance"
+  - "fruit-tree-replanting-subsidy"
+  - "why-fruit-prices-high"
+  - "vegetable-heat-price-maff-countermeasures"
 description: "果樹の日焼け対策を整理します。日焼け果は遮光資材・かん水・樹冠表層の摘果で減らせます。りんご・ぶどう・うんしゅうみかんの品目別対策、発生後の摘果の判断、春先の凍霜害対策まで、農林水産省の技術指導に基づき解説します。"
 publishedAt: "2026-07-09"
 category: "production"

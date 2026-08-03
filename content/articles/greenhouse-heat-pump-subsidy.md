@@ -1,6 +1,10 @@
 ---
 title: "ハウスのヒートポンプ・木質バイオマス暖房機に使える補助金｜対象設備・補助率と要件"
 slug: "greenhouse-heat-pump-subsidy"
+relatedSlugs:
+  - "energy-saving-greenhouse-conversion"
+  - "facility-horticulture-fuel-safety-net"
+  - "weather-resistant-greenhouse-cost"
 description: "ハウスのヒートポンプや木質バイオマス暖房機の導入に使える補助金を解説します。みどりの食料システム戦略推進交付金の省エネルギー型ハウス転換事業の対象設備、補助率2分の1以内・上限2,000万円の条件、申請の流れ、設備ごとの省エネ効果を整理します。"
 publishedAt: "2026-07-10"
 category: "production"

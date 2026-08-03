@@ -21,7 +21,10 @@ export const SITE_URL_ORIGIN = new URL(
 
 export const ORGANIZATION_ID = `${SITE_URL_ORIGIN}/#organization`;
 
-export const SAME_AS_SOCIAL = ["https://x.com/agri_ja"] as const;
+/** X 公式アカウントのプロフィールURL。フォロー導線はすべてここを参照する */
+export const X_PROFILE_URL = "https://x.com/agri_ja";
+
+export const SAME_AS_SOCIAL = [X_PROFILE_URL] as const;
 
 /**
  * 発行元 Organization の説明文（構造化データ用）。

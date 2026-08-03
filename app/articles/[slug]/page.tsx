@@ -11,6 +11,7 @@ import { NextReadBar } from "@/components/NextReadBar";
 import { ReadCompleteBeacon } from "@/components/ReadCompleteBeacon";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { Sidebar } from "@/components/Sidebar";
+import { XFollowCta } from "@/components/XFollowCta";
 import { extractFaqItems } from "@/lib/articleFaq";
 import { estimateReadingMinutesJa } from "@/lib/articleHtml";
 import { extractHowToSteps } from "@/lib/articleHowTo";
@@ -29,6 +30,7 @@ import {
   toIsoDateTime,
 } from "@/lib/site";
 import { encodeTagForUrl, partitionTags } from "@/lib/tags";
+import { buildXFollowCtaCopy } from "@/lib/xFollowCta";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -227,6 +229,9 @@ export default async function ArticlePage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
           />
           <ReadCompleteBeacon />
+          <div className="max-w-3xl">
+            <XFollowCta slug={slug} {...buildXFollowCtaCopy(article)} />
+          </div>
           <div className="max-w-3xl">
             <RelatedArticles
               articles={relatedArticles.map(toRelatedArticleData)}

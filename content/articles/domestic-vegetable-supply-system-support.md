@@ -1,6 +1,10 @@
 ---
 title: "加工・業務用野菜の国産化に使える補助｜産地への10アール15万円とマッチング支援を解説"
 slug: "domestic-vegetable-supply-system-support"
+relatedSlugs:
+  - "domestic-vegetable-share-recovery"
+  - "contract-vegetable-stable-supply"
+  - "agricultural-subsidies-guide"
 description: "加工・業務用に野菜を作る産地は、10アール当たり15万円の定額助成（国産野菜周年安定供給強化事業）を受けられます。対象となる取組、申請の窓口、売り先とつなぐマッチング支援、令和8年度の公募の見込みを、産地・農家が知りたい順にまとめました。"
 publishedAt: "2026-06-17"
 category: "production"

@@ -1,6 +1,11 @@
 ---
 title: "園芸施設共済とは｜ハウスの台風・大雪補償と掛金・国庫補助を解説"
 slug: "horticultural-facility-mutual-aid"
+relatedSlugs:
+  - "agricultural-mutual-aid-r8"
+  - "weather-resistant-greenhouse-cost"
+  - "facility-horticulture-fuel-safety-net"
+  - "agricultural-income-insurance"
 description: "ハウスが台風・大雪・火災で壊れたときに使える園芸施設共済を、掛金の目安・補償額・国庫補助・付保割合・撤去復旧費用までまとめて解説します。掛金の半分を国が負担し、設置面積2アール以上のハウスから加入できます。NOSAIへの相談前に補償と掛金を把握できます。"
 publishedAt: "2026-06-17"
 category: "farmland"

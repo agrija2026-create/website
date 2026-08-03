@@ -1,6 +1,10 @@
 ---
 title: "契約野菜安定供給事業とは｜3タイプの補給金・負担割合・加入要件を解説"
 slug: "contract-vegetable-stable-supply"
+relatedSlugs:
+  - "vegetable-price-stability-system"
+  - "domestic-vegetable-supply-system-support"
+  - "domestic-vegetable-share-recovery"
 description: "契約野菜安定供給事業は、加工・業務用の契約取引で生じる数量不足・価格低落・過剰生産のリスクを補給金で補てんする制度です。3タイプの仕組み、対象野菜、加入要件、生産者の負担25%で4倍まで受けられる交付の仕組み、収入保険との同時加入までを、契約取引する産地と実需者の双方に向けて解説します。実施は農畜産業振興機構です。"
 publishedAt: "2026-06-17"
 category: "market"

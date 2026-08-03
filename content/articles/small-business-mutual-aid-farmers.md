@@ -1,6 +1,11 @@
 ---
 title: "小規模企業共済は農家も入れる｜加入条件・節税効果・農業者年金との違いと併用"
 slug: "small-business-mutual-aid-farmers"
+relatedSlugs:
+  - "agricultural-income-insurance"
+  - "blue-return-farming-tax"
+  - "farmers-retirement-planning-guide"
+  - "farmers-pension-fund"
 description: "農家は小規模企業共済に入れるのか、加入できる農業者の条件（従業員20人以下・共同経営者2名・農事組合法人の役員）、掛金月1,000〜70,000円の全額所得控除による節税、農業者年金やiDeCoとの違い・併用、元本割れのデメリットまで、中小機構の公式情報をもとに解説します。"
 publishedAt: "2026-06-10"
 updatedAt: "2026-06-17"

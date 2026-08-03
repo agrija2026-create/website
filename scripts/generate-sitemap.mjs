@@ -223,6 +223,22 @@ function main() {
       priority: 0.8,
     }),
   );
+  entries.push(
+    urlEntry({
+      origin,
+      loc: absoluteUrl(origin, "/tools/subsidy-finder"),
+      changefreq: "monthly",
+      priority: 0.8,
+    }),
+  );
+  entries.push(
+    urlEntry({
+      origin,
+      loc: absoluteUrl(origin, "/data/rice-advance-payment"),
+      changefreq: "weekly",
+      priority: 0.7,
+    }),
+  );
 
   for (const slug of CATEGORY_SLUGS) {
     entries.push(

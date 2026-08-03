@@ -1,6 +1,10 @@
 ---
 title: "JAを通さず野菜を売ってもいい？直接販売の販路の種類と自分に合う選び方"
 slug: "sell-vegetables-without-ja"
+relatedSlugs:
+  - "ja-vs-direct-sales-income"
+  - "farm-stand-shipping-guide"
+  - "produce-shipping-standard-revision"
 description: "JAを通さず野菜を売ることは法律上自由です。農協法がJAによる事業利用の強制を禁じ、出荷先は農家が選べます。直売所・ネット販売・飲食店との直接取引・ふるさと納税・加工品という直接販売の販路の特徴と手数料の目安、自分に合う選び方を解説します。"
 publishedAt: "2026-07-15"
 category: "market"

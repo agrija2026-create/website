@@ -1,6 +1,10 @@
 ---
 title: "野菜・果物の出荷作業を軽くする方法｜出荷規格の見直しで選別・箱詰めの手間とコストを減らす"
 slug: "produce-shipping-standard-revision"
+relatedSlugs:
+  - "produce-logistics-standardization-pallet"
+  - "sell-vegetables-without-ja"
+  - "school-lunch-local-vegetables"
 description: "野菜・果物の出荷にかかる選別・箱詰めの手間とコストは、出荷規格の見直しで減らせます。等階級の大くくり化、簡素な形態での直接取引、パッケージセンターへの委託、段ボールの規格統一や通いコンテナまで、産地の作業を軽くする進め方と実例を解説します。"
 publishedAt: "2026-07-12"
 category: "logistics"

@@ -1,6 +1,11 @@
 ---
 title: "収入保険とは｜農業のメリット・7つのデメリットと加入要件・保険料をわかりやすく"
 slug: "agricultural-income-insurance"
+relatedSlugs:
+  - "income-insurance-comparison"
+  - "agricultural-mutual-aid-r8"
+  - "farm-income-stabilization-geta-narashi"
+  - "blue-return-farming-tax"
 description: "農業の収入保険とは、米を含む全農産物の販売収入を、自然災害だけでなく価格低下まで守る制度です。7つのデメリットは青色申告が必須・保険料と積立金の自己負担・補てんは翌年精算・経費増や補助金は対象外・他制度と併用不可など。メリットは品目を問わず収入全体を守れること。加入要件・保険料の目安（基準収入1,000万円で初年度約35万円・2年目以降約13万円）・シミュレーション・e-MAFFでの加入手続き・農業共済との違いを、農林水産省の情報をもとにわかりやすく整理します。"
 publishedAt: "2026-06-03"
 updatedAt: '2026-07-15'

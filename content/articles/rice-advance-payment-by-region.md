@@ -7,7 +7,7 @@ relatedSlugs:
   - "government-stockpiled-rice"
 description: "令和8年産（2026年産）米の概算金は前年から大幅安。宮崎コシヒカリ18,000円・熊本20,700円・千葉18,000円・高知14,000円と、多くがコスト指標20,535円を下回りました。産地・銘柄別の最新金額、主食用うるち米の発表時期、未発表産地の見通しを、発表され次第更新します。"
 publishedAt: "2026-07-22"
-updatedAt: "2026-08-02"
+updatedAt: "2026-08-03"
 category: "market"
 tags:
   - "生産者向け"

@@ -1,6 +1,10 @@
 ---
 title: "施設園芸の省エネ・ハウス転換支援とは？対象と補助をわかりやすく解説"
 slug: "energy-saving-greenhouse-conversion"
+relatedSlugs:
+  - "greenhouse-heat-pump-subsidy"
+  - "facility-horticulture-fuel-safety-net"
+  - "weather-resistant-greenhouse-cost"
 description: "高い燃料費に悩む施設園芸農家・産地向けに、省エネ設備やハウス転換でコストを下げる支援をわかりやすく解説します。みどりの食料システム戦略推進交付金の省エネルギー型ハウス転換事業の対象となる取組、補助の考え方、燃料費対策の全体像を整理します。"
 publishedAt: "2026-05-19"
 updatedAt: '2026-07-08'
