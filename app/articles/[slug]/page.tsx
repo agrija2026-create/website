@@ -11,6 +11,7 @@ import { NextReadBar } from "@/components/NextReadBar";
 import { ReadCompleteBeacon } from "@/components/ReadCompleteBeacon";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { Sidebar } from "@/components/Sidebar";
+import { SubsidyFinderCta } from "@/components/SubsidyFinderCta";
 import { XFollowCta } from "@/components/XFollowCta";
 import { extractFaqItems } from "@/lib/articleFaq";
 import { estimateReadingMinutesJa } from "@/lib/articleHtml";
@@ -29,6 +30,7 @@ import {
   buildAlternates,
   toIsoDateTime,
 } from "@/lib/site";
+import { getSubsidyFinderArticleLink, getSubsidyFinderData } from "@/lib/subsidyFinder";
 import { encodeTagForUrl, partitionTags } from "@/lib/tags";
 import { buildXFollowCtaCopy } from "@/lib/xFollowCta";
 
@@ -106,6 +108,11 @@ export default async function ArticlePage({ params }: Props) {
   const articleBodyHtml = stripLeadingArticleHeader(article.htmlBody);
   const faqItems = extractFaqItems(article.htmlBody);
   const howToSteps = extractHowToSteps(article.htmlBody);
+  // 制度マスタに載っている記事だけ、診断ツールへの導線を出す
+  const subsidyFinderLink = await getSubsidyFinderArticleLink(slug);
+  const subsidyProgramCount = subsidyFinderLink
+    ? (await getSubsidyFinderData()).programs.length
+    : 0;
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
@@ -229,6 +236,16 @@ export default async function ArticlePage({ params }: Props) {
             dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
           />
           <ReadCompleteBeacon />
+          {subsidyFinderLink ? (
+            <div className="max-w-3xl">
+              <SubsidyFinderCta
+                slug={slug}
+                href={subsidyFinderLink.href}
+                purposeLabel={subsidyFinderLink.purposeLabel}
+                programCount={subsidyProgramCount}
+              />
+            </div>
+          ) : null}
           <div className="max-w-3xl">
             <XFollowCta slug={slug} {...buildXFollowCtaCopy(article)} />
           </div>

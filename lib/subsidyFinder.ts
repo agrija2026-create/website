@@ -151,3 +151,34 @@ export const getSubsidyFinderData = cache(async (): Promise<SubsidyFinderData> =
 
   return { programs, alwaysShow };
 });
+
+export type SubsidyFinderArticleLink = {
+  /** 診断ツールのURL。その制度の目的（と品目）を選んだ状態で開く */
+  href: string;
+  /** 先に選ばれる「やりたいこと」の表示名 */
+  purposeLabel: string;
+};
+
+/**
+ * 制度マスタに載っている記事から診断ツールへ送る導線のリンクを作る。
+ * マスタが正なので、記事側のHTMLを1本ずつ編集しなくても導線が付き、
+ * マスタから外した制度では自動的に消える。
+ */
+export const getSubsidyFinderArticleLink = cache(
+  async (slug: string): Promise<SubsidyFinderArticleLink | null> => {
+    const { programs } = await getSubsidyFinderData();
+    const program = programs.find((p) => p.slug === slug);
+    if (!program) return null;
+
+    const purposeId = program.purposes[0];
+    const purpose = PURPOSE_OPTIONS.find((o) => o.id === purposeId);
+    if (!purpose) return null;
+
+    // 品目が1つに決まる制度だけ品目も選んだ状態にする（any や複数は読者に選ばせる）
+    const cropId =
+      program.crops.length === 1 && program.crops[0] !== "any" ? program.crops[0] : "";
+    // 立場は読者ごとに違うので空にする（#/目的/品目 の形）
+    const hash = `#/${purposeId}${cropId ? `/${cropId}` : ""}`;
+    return { href: `/tools/subsidy-finder${hash}`, purposeLabel: purpose.label };
+  },
+);
