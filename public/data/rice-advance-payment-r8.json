@@ -2,9 +2,9 @@
   "name": "令和8年産（2026年産）米の概算金 産地・銘柄別データ",
   "description": "全農県本部・経済連などが提示した令和8年産米の概算金（玄米60キロ当たり）を、産地・銘柄別に集約したデータ。未提示の産地は令和7年産の水準と見通しを収録。",
   "unit": "円（玄米60キロ・1等当たり）",
-  "updated": "2026-07-28",
-  "rowCount": 17,
-  "announcedCount": 7,
+  "updated": "2026-08-04",
+  "rowCount": 19,
+  "announcedCount": 9,
   "license": "出典として「農業情報メディア（agri-ja.net）」の記載と、データページへのリンクを条件に、自由に利用・再配布できます。",
   "source": "https://agri-ja.net/articles/rice-advance-payment-by-region",
   "dataPage": "https://agri-ja.net/data/rice-advance-payment",
@@ -46,6 +46,18 @@
       "note": "7月27日決定・7月28日報道"
     },
     {
+      "prefecture": "鹿児島",
+      "organization": "JAさつま日置",
+      "brand": "金峰コシヒカリ",
+      "riceType": "早期米",
+      "status": "発表済み",
+      "amountR8Yen": 21600,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": "約2割安",
+      "announcedOn": "2026-07-23",
+      "note": "鹿児島県南さつま市の早期米。一昨年より少し高い水準で、コスト指標20,535円を上回る"
+    },
+    {
       "prefecture": "高知",
       "organization": "JA高知県",
       "brand": "南国そだち",
@@ -82,6 +94,18 @@
       "note": "令和6年産並みの水準"
     },
     {
+      "prefecture": "愛媛",
+      "organization": "愛媛県内のJA",
+      "brand": "コシヒカリ",
+      "riceType": "早期米",
+      "status": "発表済み",
+      "amountR8Yen": 15400,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": "前年価格の約54%（約46%安）",
+      "announcedOn": "2026-08-04",
+      "note": "1等米・JA米。JA名は報道で特定されておらず「愛媛県内のJA」"
+    },
+    {
       "prefecture": "千葉",
       "organization": "JA全農ちば",
       "brand": "コシヒカリ",
@@ -115,7 +139,7 @@
       "amountR7Yen": 30000,
       "changeFromPreviousYear": null,
       "announcedOn": null,
-      "note": "令和7年産で示していた最低保証額の提示を令和8年産では見送り（2026年7月報道）。魚沼産コシヒカリの令和7年産は32,500円"
+      "note": "令和7年産で示していた最低保証額の提示を令和8年産では見送り（2026年7月報道）。県農協中央会会長は「提示は令和6年以前と同様、収穫直前の時期となる見込み」と表明（2026年6月29日会見）。魚沼産コシヒカリの令和7年産は32,500円"
     },
     {
       "prefecture": "青森",
