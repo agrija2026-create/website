@@ -49,6 +49,17 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
               立場・やりたいこと・品目の3つを選ぶと、使える補助金や制度資金の候補が出ます。
             </span>
           </Link>
+          <Link
+            href="/tools/market-calendar"
+            className="mt-3 block rounded-lg border border-orange-200 bg-orange-50/70 p-3 transition-colors hover:border-orange-300 hover:bg-orange-50"
+          >
+            <span className="block text-sm font-semibold text-orange-900">
+              卸売市場の休市日カレンダー
+            </span>
+            <span className="mt-1 block text-xs leading-relaxed text-stone-600">
+              市場と部門を選ぶと休市日がまとまります。青果と水産で休みが食い違う日もわかります。
+            </span>
+          </Link>
         </section>
 
         <section>

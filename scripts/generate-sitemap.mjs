@@ -234,6 +234,14 @@ function main() {
   entries.push(
     urlEntry({
       origin,
+      loc: absoluteUrl(origin, "/tools/market-calendar"),
+      changefreq: "monthly",
+      priority: 0.8,
+    }),
+  );
+  entries.push(
+    urlEntry({
+      origin,
       loc: absoluteUrl(origin, "/data/rice-advance-payment"),
       changefreq: "weekly",
       priority: 0.7,
