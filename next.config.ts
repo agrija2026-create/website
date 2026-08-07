@@ -49,6 +49,19 @@ const nextConfig: NextConfig = {
       "./content/tools/**",
     ],
   },
+  /**
+   * MCP公式レジストリのドメイン認証ファイル。
+   * Vercel は public/ 配下のドットディレクトリを配信しないため、
+   * public/mcp-registry-auth を /.well-known/ 配下に見せる。
+   */
+  async rewrites() {
+    return [
+      {
+        source: "/.well-known/mcp-registry-auth",
+        destination: "/mcp-registry-auth",
+      },
+    ];
+  },
   async redirects() {
     return SLUG_REDIRECTS.map(([source, destination]) => ({
       source: `/articles/${source}`,
