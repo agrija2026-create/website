@@ -176,6 +176,24 @@ microCMS を有効にする場合も、各記事の `tags` に読者タグを1�
 
 **計測**: MCP経由の利用は GA4 にも Search Console にも映りません。Vercel の Function Logs に出る `[mcp] <method> <status> <ms>` が唯一の計測点です。
 
+### 公式レジストリ（registry.modelcontextprotocol.io）
+
+`net.agri-ja/agri-ja` として登録済み（2026-08-07・status active）。名前空間は GitHub ではなく **agri-ja.net のドメイン認証（HTTP方式）** で取っています。
+
+- 公開鍵: `public/mcp-registry-auth` → `next.config.ts` の rewrites で `/.well-known/mcp-registry-auth` として配信（**Vercel は `public/` 配下のドットディレクトリを配信しないため**、`public/.well-known/` に直接置くと本番で404になります）
+- 秘密鍵: `~/.config/mcp-registry/agri-ja-key.pem` と `agri-ja-privkey.hex`（**リポジトリ外。コミットしない**）
+- CLI: `~/.local/bin/mcp-publisher`
+
+ツールを追加・変更したら `server.json` の `version` を上げて再公開します:
+
+```bash
+cd nogyo-media
+~/.local/bin/mcp-publisher validate
+~/.local/bin/mcp-publisher login http --domain agri-ja.net --private-key "$(cat ~/.config/mcp-registry/agri-ja-privkey.hex)"
+~/.local/bin/mcp-publisher publish
+curl -s "https://registry.modelcontextprotocol.io/v0.1/servers?search=agri-ja"
+```
+
 動作確認（ローカル）:
 
 ```bash
