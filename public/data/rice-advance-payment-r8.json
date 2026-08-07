@@ -2,9 +2,9 @@
   "name": "令和8年産（2026年産）米の概算金 産地・銘柄別データ",
   "description": "全農県本部・経済連などが提示した令和8年産米の概算金（玄米60キロ当たり）を、産地・銘柄別に集約したデータ。未提示の産地は令和7年産の水準と見通しを収録。",
   "unit": "円（玄米60キロ・1等当たり）",
-  "updated": "2026-08-04",
-  "rowCount": 19,
-  "announcedCount": 9,
+  "updated": "2026-08-07",
+  "rowCount": 22,
+  "announcedCount": 10,
   "license": "出典として「農業情報メディア（agri-ja.net）」の記載と、データページへのリンクを条件に、自由に利用・再配布できます。",
   "source": "https://agri-ja.net/articles/rice-advance-payment-by-region",
   "dataPage": "https://agri-ja.net/data/rice-advance-payment",
@@ -118,6 +118,18 @@
       "note": "関東の早場米で最初の提示"
     },
     {
+      "prefecture": "佐賀",
+      "organization": "JAさが",
+      "brand": null,
+      "riceType": "早期米",
+      "status": "発表済み",
+      "amountR8Yen": 18000,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": "2026-08-07",
+      "note": "2026年8月7日報道。銘柄は報道で特定されていない。同じ時期にJAグループ佐賀は主食用うるち米の最低価格の提示を見送っている"
+    },
+    {
       "prefecture": "石川",
       "organization": null,
       "brand": null,
@@ -128,6 +140,30 @@
       "changeFromPreviousYear": null,
       "announcedOn": null,
       "note": "JA石川県中央会会長が「前年を下回る」との見通しを表明（2026年7月14日報道）。例年のお盆前提示は困難との見方。令和7年産は過去最高の30,000円台"
+    },
+    {
+      "prefecture": "福井",
+      "organization": "JA福井県",
+      "brand": null,
+      "riceType": "主食用うるち米",
+      "status": "未提示",
+      "amountR8Yen": null,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": null,
+      "note": "コメ余りで概算金の決定を先送りし、2026年8月13日の臨時理事会で審議する方針（2026年7月24日報道）。8月上旬にハナエチゼンの収穫が始まった時点でも金額を示せず、生産者からは「生産原価は2万2000円」との声（2026年8月4日報道）。JA福井県5連会長は「内金2万円は厳しい状況」と表明（2026年7月25日報道）"
+    },
+    {
+      "prefecture": "佐賀",
+      "organization": "JAグループ佐賀",
+      "brand": "さがびより",
+      "riceType": "主食用うるち米",
+      "status": "未提示",
+      "amountR8Yen": null,
+      "amountR7Yen": 29500,
+      "changeFromPreviousYear": null,
+      "announcedOn": null,
+      "note": "主食用うるち米の最低価格（最低保証額）の提示を令和8年産では見送り（2026年8月7日報道）。新潟に続く見送りの動き。令和7年産の「さがびより」は29,500円で前年同期の約1.8倍"
     },
     {
       "prefecture": "新潟",
