@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "net.agri-ja/agri-ja",
+  "title": "agri-ja 日本の農業政策・補助金・米の概算金",
+  "description": "Japanese agriculture policy, subsidies and rice advance payments. 日本の農業政策・補助金・米の概算金",
+  "version": "1.0.0",
+  "websiteUrl": "https://agri-ja.net",
+  "repository": {
+    "url": "https://github.com/agrija2026-create/website",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://agri-ja.net/mcp"
+    }
+  ]
+}
