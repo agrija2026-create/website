@@ -37,6 +37,18 @@ const SLUG_REDIRECTS: ReadonlyArray<readonly [string, string]> = [
 ];
 
 const nextConfig: NextConfig = {
+  /**
+   * /mcp は実行時に fs で content/ を読む唯一のルート（他ページはビルド時に読む）。
+   * トレースに含めないと Vercel 上で ENOENT になるので明示する。
+   */
+  outputFileTracingIncludes: {
+    "/mcp": [
+      "./content/articles/**",
+      "./content/source-html/**",
+      "./content/data/**",
+      "./content/tools/**",
+    ],
+  },
   async redirects() {
     return SLUG_REDIRECTS.map(([source, destination]) => ({
       source: `/articles/${source}`,

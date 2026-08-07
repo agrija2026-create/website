@@ -31,6 +31,13 @@ export async function GET() {
     `全記事の機械可読な索引は ${absoluteUrl("/sitemap.xml")} にあります。`,
   );
   lines.push("");
+  // MCPサーバーの所在。自動発見の標準（Server Card）が固まるまでは、ここが唯一の告知点になる
+  lines.push("## AIエージェント向け（MCP）");
+  lines.push("");
+  lines.push(
+    `記事検索・記事の要点取得・令和8年産米の概算金（産地別）・補助金診断を、MCP（Model Context Protocol）ツールとして公開しています。エンドポイントは ${absoluteUrl("/mcp")}（Streamable HTTP・認証不要・読み取り専用）。Claude や ChatGPT にはカスタムコネクタとしてこのURLを登録すると利用できます。`,
+  );
+  lines.push("");
 
   // カテゴリ別にまとめる（CATEGORY_SLUGS の順を優先し、未定義カテゴリは末尾へ）
   const byCategory = new Map<string, Art[]>();

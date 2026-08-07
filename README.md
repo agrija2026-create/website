@@ -162,6 +162,29 @@ GitHub 上のリポジトリの **Actions** タブで、ワークフロー「CI�
 
 microCMS を有効にする場合も、各記事の `tags` に読者タグを1〜3個含めないとビルドに失敗します。
 
+## MCP サーバー（AIエージェント向け公開エンドポイント）
+
+`https://agri-ja.net/mcp` で、記事と公開データを **MCP（Model Context Protocol）** のツールとして提供しています。実体は [app/mcp/route.ts](app/mcp/route.ts) の1ファイルだけです。
+
+- 読み取り専用・認証なし。MCP 2026-07-28（ステートレス）と 2025 系 Streamable HTTP の両方を同じURLで受けます。
+- ツールは4つ: `search_articles` / `get_article` / `rice_advance_payment` / `find_subsidy`
+- 記事本文は全文を返さず「要点＋冒頭抜粋＋URL」に留めます。AIの回答に出典URLが載り、読者がサイトに来られる状態を保つためです。
+- データ源は記事とサイト内ツールと同じ（`content/`）。記事を publish すればMCP側も自動で最新になります。
+- `/mcp` は実行時に `content/` を読む唯一のルートなので、`next.config.ts` の `outputFileTracingIncludes` から外さないでください（外すと本番で ENOENT）。
+
+**利用のしかた（案内するとき）**: Claude / ChatGPT / Cursor の「カスタムコネクタ」に `https://agri-ja.net/mcp` を登録するだけです。所在は [/llms.txt](app/llms.txt/route.ts) でも告知しています。
+
+**計測**: MCP経由の利用は GA4 にも Search Console にも映りません。Vercel の Function Logs に出る `[mcp] <method> <status> <ms>` が唯一の計測点です。
+
+動作確認（ローカル）:
+
+```bash
+curl -s -X POST http://localhost:3000/mcp \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'
+```
+
 ## ディレクトリ概要
 
 - `app/` — App Router のページ・レイアウト
