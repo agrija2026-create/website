@@ -14,7 +14,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { SubsidyFinderCta } from "@/components/SubsidyFinderCta";
 import { XFollowCta } from "@/components/XFollowCta";
 import { extractFaqItems } from "@/lib/articleFaq";
-import { estimateReadingMinutesJa } from "@/lib/articleHtml";
+import { estimateReadingMinutesJa, splitArticleHtmlForMidCta } from "@/lib/articleHtml";
 import { extractHowToSteps } from "@/lib/articleHowTo";
 import {
   getAllArticles,
@@ -30,7 +30,11 @@ import {
   buildAlternates,
   toIsoDateTime,
 } from "@/lib/site";
-import { getSubsidyFinderArticleLink, getSubsidyFinderData } from "@/lib/subsidyFinder";
+import {
+  getSubsidyFinderArticleLink,
+  getSubsidyFinderData,
+  getSubsidyFinderEntryLink,
+} from "@/lib/subsidyFinder";
 import { encodeTagForUrl, partitionTags } from "@/lib/tags";
 import { buildXFollowCtaCopy } from "@/lib/xFollowCta";
 
@@ -108,11 +112,15 @@ export default async function ArticlePage({ params }: Props) {
   const articleBodyHtml = stripLeadingArticleHeader(article.htmlBody);
   const faqItems = extractFaqItems(article.htmlBody);
   const howToSteps = extractHowToSteps(article.htmlBody);
-  // 制度マスタに載っている記事だけ、診断ツールへの導線を出す
-  const subsidyFinderLink = await getSubsidyFinderArticleLink(slug);
+  // 制度マスタに載っている記事＋流入の大きい記事に、診断ツールへの導線を出す
+  const subsidyFinderLink =
+    (await getSubsidyFinderArticleLink(slug)) ?? (await getSubsidyFinderEntryLink(slug));
   const subsidyProgramCount = subsidyFinderLink
     ? (await getSubsidyFinderData()).programs.length
     : 0;
+  // 記事末だと読者の15〜37%にしか見えていないので、本文の中ほどに置く。
+  // 割れない記事（h2が少ない・入れ子）は従来どおり記事末に出す。
+  const splitBody = subsidyFinderLink ? splitArticleHtmlForMidCta(articleBodyHtml) : null;
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
@@ -230,18 +238,35 @@ export default async function ArticlePage({ params }: Props) {
               summaryHint="クリックで開く"
             />
           </div>
-          <div
-            className="article-body mt-6 max-w-3xl"
-            data-tts-root={slug}
-            dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
-          />
-          <ReadCompleteBeacon />
-          {subsidyFinderLink ? (
-            <div className="max-w-3xl">
+          {subsidyFinderLink && splitBody ? (
+            <div className="article-body mt-6 max-w-3xl" data-tts-root={slug}>
+              <div dangerouslySetInnerHTML={{ __html: splitBody.before }} />
               <SubsidyFinderCta
-                slug={slug}
+                context={slug}
+                placement="article-mid"
                 href={subsidyFinderLink.href}
                 purposeLabel={subsidyFinderLink.purposeLabel}
+                cropLabel={subsidyFinderLink.cropLabel}
+                programCount={subsidyProgramCount}
+              />
+              <div dangerouslySetInnerHTML={{ __html: splitBody.after }} />
+            </div>
+          ) : (
+            <div
+              className="article-body mt-6 max-w-3xl"
+              data-tts-root={slug}
+              dangerouslySetInnerHTML={{ __html: articleBodyHtml }}
+            />
+          )}
+          <ReadCompleteBeacon />
+          {subsidyFinderLink && !splitBody ? (
+            <div className="max-w-3xl">
+              <SubsidyFinderCta
+                context={slug}
+                placement="article-end"
+                href={subsidyFinderLink.href}
+                purposeLabel={subsidyFinderLink.purposeLabel}
+                cropLabel={subsidyFinderLink.cropLabel}
                 programCount={subsidyProgramCount}
               />
             </div>

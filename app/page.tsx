@@ -3,8 +3,10 @@ import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Sidebar } from "@/components/Sidebar";
+import { SubsidyFinderCta } from "@/components/SubsidyFinderCta";
 import { getAllArticles, toArticleCardData } from "@/lib/articles";
 import { CATEGORY_SLUGS, getCategoryName } from "@/lib/categories";
+import { getSubsidyFinderData } from "@/lib/subsidyFinder";
 import {
   SITE_DESCRIPTION,
   SITE_LOCALE,
@@ -41,6 +43,7 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   const allArticles = await getAllArticles();
   const recent = allArticles.slice(0, RECENT_COUNT);
+  const subsidyProgramCount = (await getSubsidyFinderData()).programs.length;
 
   return (
     <>
@@ -70,6 +73,12 @@ export default async function HomePage() {
                   </Link>
                 </div>
               </section>
+
+              <SubsidyFinderCta
+                context="home"
+                placement="home"
+                programCount={subsidyProgramCount}
+              />
 
               <section aria-labelledby="by-category-heading" className="space-y-10">
                 <h2

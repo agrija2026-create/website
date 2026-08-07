@@ -4,11 +4,13 @@ import { notFound } from "next/navigation";
 import { ArticleCard } from "@/components/ArticleCard";
 import { ListPageStructuredData } from "@/components/ListPageStructuredData";
 import { Sidebar } from "@/components/Sidebar";
+import { SubsidyFinderCta } from "@/components/SubsidyFinderCta";
 import {
   getArticlesByTag,
   getAllTagUrlParams,
   toArticleCardData,
 } from "@/lib/articles";
+import { getSubsidyFinderData, getSubsidyFinderTagLink } from "@/lib/subsidyFinder";
 import {
   SITE_LOCALE,
   SITE_NAME,
@@ -103,6 +105,9 @@ export default async function TagPage({ params }: Props) {
     (isAudiencePage || isThemeTag(canonicalTag)) &&
     articles.length >= MIN_INDEXABLE_TAG_ARTICLES;
   const url = absoluteUrl(`/tags/${slug}`);
+  // お金の制度を探しに来た読者が集まるタグでは、記事一覧の前に診断へ送る
+  const finderLink = getSubsidyFinderTagLink(canonicalTag);
+  const subsidyProgramCount = finderLink ? (await getSubsidyFinderData()).programs.length : 0;
 
   return (
     <div className="px-4 py-10 md:px-6 md:py-14">
@@ -130,6 +135,16 @@ export default async function TagPage({ params }: Props) {
           </h1>
           <p className="mt-2 text-stone-600">{intro}</p>
           <p className="mt-2 text-sm text-stone-500">{articles.length}件の記事</p>
+          {finderLink ? (
+            <SubsidyFinderCta
+              context={canonicalTag}
+              placement="tag"
+              href={finderLink.href}
+              purposeLabel={finderLink.purposeLabel}
+              cropLabel={finderLink.cropLabel}
+              programCount={subsidyProgramCount}
+            />
+          ) : null}
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {articles.map((article) => (
               <ArticleCard key={article.slug} article={toArticleCardData(article)} />

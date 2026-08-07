@@ -172,6 +172,84 @@ function appendClassToTable(chunk: string, className: string): string {
   });
 }
 
+/**
+ * 本文の途中にCTAを挟むために、記事HTMLを2つに割る。
+ *
+ * 記事末に置いたCTAは記事PVの15〜37%にしか表示されていなかった（2026-08-07のGA4実測）ため、
+ * 読者が離脱する前に通る位置＝本文の中ほどの h2 の直前で割る。
+ * 割った両側とも `<article>` で包み直す（`.article-body article > * + *` が段落間の余白を作っており、
+ * 素の断片にすると本文の行間が崩れるため）。
+ *
+ * 割れないときは null を返す（呼び出し側は記事末に置いたままにする）:
+ * - `<article>` で包まれていない
+ * - h2 が3つ未満（最初と最後の h2 は候補にしない。冒頭すぎ・末尾すぎになる）
+ * - どの候補でも前半のタグが閉じきらない（h2 が section や div の中にある記事）
+ */
+const BALANCE_CHECK_TAGS = [
+  "div",
+  "section",
+  "table",
+  "ul",
+  "ol",
+  "nav",
+  "figure",
+  "aside",
+  "dl",
+  "blockquote",
+  "details",
+];
+
+function hasBalancedContainers(html: string): boolean {
+  return BALANCE_CHECK_TAGS.every((tag) => {
+    const open = html.match(new RegExp(`<${tag}[\\s>]`, "gi"))?.length ?? 0;
+    const close = html.match(new RegExp(`</${tag}\\s*>`, "gi"))?.length ?? 0;
+    return open === close;
+  });
+}
+
+/**
+ * CTAを置きたい位置（本文の文字数に対する割合）。
+ * 本文の説明が一通り終わってFAQ・関連の節に入るあたり。手前すぎると読者が知りたい節を
+ * 遮り、後ろすぎると記事末と変わらない。HTMLの長さではなく本文の文字数で測る
+ * （表や属性が多い記事はHTMLが長くなり、実際の読む位置とずれるため）。
+ */
+const MID_CTA_TARGET_RATIO = 0.6;
+
+export function splitArticleHtmlForMidCta(
+  html: string,
+): { before: string; after: string } | null {
+  const openMatch = html.match(/^\s*<article\b[^>]*>/i);
+  if (!openMatch) return null;
+  const openTag = openMatch[0].trimStart();
+  const closeIndex = html.toLowerCase().lastIndexOf("</article>");
+  if (closeIndex < 0) return null;
+
+  const inner = html.slice(openMatch[0].length, closeIndex);
+  const offsets = [...inner.matchAll(/<h2[\s>]/gi)].map((m) => m.index ?? 0);
+  if (offsets.length < 3) return null;
+
+  const totalTextLength = stripTags(inner).length || 1;
+  const candidates = offsets.slice(1, -1);
+  const ratioAt = new Map(
+    candidates.map((index) => [index, stripTags(inner.slice(0, index)).length / totalTextLength]),
+  );
+  candidates.sort(
+    (a, b) =>
+      Math.abs((ratioAt.get(a) ?? 0) - MID_CTA_TARGET_RATIO) -
+      Math.abs((ratioAt.get(b) ?? 0) - MID_CTA_TARGET_RATIO),
+  );
+
+  for (const index of candidates) {
+    const head = inner.slice(0, index);
+    if (!hasBalancedContainers(head)) continue;
+    return {
+      before: `${openTag}${head}</article>`,
+      after: `${openTag}${inner.slice(index)}</article>`,
+    };
+  }
+  return null;
+}
+
 /** 日本語本文のおおよその読了時間（分）。文字数÷1200、最低1分 */
 export function estimateReadingMinutesJa(html: string, description: string): number {
   const text = stripTags(html) + " " + (description || "");

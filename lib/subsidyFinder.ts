@@ -152,12 +152,88 @@ export const getSubsidyFinderData = cache(async (): Promise<SubsidyFinderData> =
   return { programs, alwaysShow };
 });
 
-export type SubsidyFinderArticleLink = {
-  /** 診断ツールのURL。その制度の目的（と品目）を選んだ状態で開く */
+export type SubsidyFinderEntryLink = {
+  /** 診断ツールのURL。目的や品目を選んだ状態で開く */
   href: string;
   /** 先に選ばれる「やりたいこと」の表示名 */
+  purposeLabel?: string;
+  /** 先に選ばれる「品目」の表示名 */
+  cropLabel?: string;
+};
+
+/** 制度マスタに載っている記事からの導線。目的は必ず決まる */
+export type SubsidyFinderArticleLink = SubsidyFinderEntryLink & {
   purposeLabel: string;
 };
+
+/** `#立場/やりたいこと/品目` の形。選ばせる項目は空にする */
+function buildFinderHref(purposeId?: string, cropId?: string): string {
+  if (!purposeId && !cropId) return "/tools/subsidy-finder";
+  const hash = `/${purposeId ?? ""}${cropId ? `/${cropId}` : ""}`;
+  return `/tools/subsidy-finder#${hash}`;
+}
+
+function labelOf(options: FinderOption[], id?: string): string | undefined {
+  return id ? options.find((o) => o.id === id)?.label : undefined;
+}
+
+/**
+ * 制度マスタに載っていない記事のうち、診断ツールの入口を出すもの。
+ *
+ * 2026-08-07 時点の実測で、診断ツールへの導線は制度マスタの記事の記事末だけにあり、
+ * その61本は1本あたりのPVが小さい（最大でも週160PV）。一方でサイト流入の大半は
+ * 米価・概算金の記事に集まっている（rice-advance-payment-by-region が2週で14,091PV）。
+ * 入口が枯れていたのが利用が伸びない主因なので、流入の大きい記事から送る。
+ * PV上位は定期的に変わるので、GA4で見直したらこの表を更新する。
+ */
+const HIGH_TRAFFIC_ENTRY_SLUGS: Record<string, { purposeId?: string; cropId?: string }> = {
+  "rice-advance-payment-by-region": { cropId: "rice" },
+  "rice-advance-payment": { cropId: "rice" },
+  "rice-price-and-policy-overview": { cropId: "rice" },
+  "new-paddy-field-policy-r9": { cropId: "rice" },
+  "government-stockpiled-rice": { cropId: "rice" },
+  "revised-food-supply-act": { cropId: "rice" },
+};
+
+/**
+ * 制度マスタに載っていない流入の大きい記事から診断ツールへ送る導線。
+ * マスタに載っている記事は `getSubsidyFinderArticleLink` が優先されるので、ここでは返さない。
+ */
+export const getSubsidyFinderEntryLink = cache(
+  async (slug: string): Promise<SubsidyFinderEntryLink | null> => {
+    const entry = HIGH_TRAFFIC_ENTRY_SLUGS[slug];
+    if (!entry) return null;
+    if (await getSubsidyFinderArticleLink(slug)) return null;
+    return {
+      href: buildFinderHref(entry.purposeId, entry.cropId),
+      purposeLabel: labelOf(PURPOSE_OPTIONS, entry.purposeId),
+      cropLabel: labelOf(CROP_OPTIONS, entry.cropId),
+    };
+  },
+);
+
+/**
+ * 診断ツールの入口を出すタグ一覧ページ。タグの意味に合う条件を先に選んだ状態で開く。
+ * お金の制度を探しに来た読者が集まるタグと、読者数が最も多い「米」を対象にする。
+ */
+const TAG_ENTRY_PRESELECTS: Record<string, { purposeId?: string; cropId?: string }> = {
+  補助金: {},
+  交付金: { purposeId: "crop-payment" },
+  "金融・融資": { purposeId: "loan" },
+  災害対応: { purposeId: "disaster" },
+  就農: { purposeId: "labor" },
+  米: { cropId: "rice" },
+};
+
+export function getSubsidyFinderTagLink(tagLabel: string): SubsidyFinderEntryLink | null {
+  const preselect = TAG_ENTRY_PRESELECTS[tagLabel];
+  if (!preselect) return null;
+  return {
+    href: buildFinderHref(preselect.purposeId, preselect.cropId),
+    purposeLabel: labelOf(PURPOSE_OPTIONS, preselect.purposeId),
+    cropLabel: labelOf(CROP_OPTIONS, preselect.cropId),
+  };
+}
 
 /**
  * 制度マスタに載っている記事から診断ツールへ送る導線のリンクを作る。
