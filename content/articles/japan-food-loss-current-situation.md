@@ -3,7 +3,7 @@ title: "日本の食品ロスはどれくらい？量・原因・削減の取り
 slug: "japan-food-loss-current-situation"
 description: "日本の食品ロスは令和5年度で年間約464万トン。事業系と家庭系の内訳、なぜ発生するのかという原因、環境や家計への影響、フードロス削減のために国・事業者・家庭でできる取り組みまでわかりやすく解説します。"
 publishedAt: "2026-05-28"
-updatedAt: "2026-06-04"
+updatedAt: "2026-08-07"
 category: "logistics"
 tags:
   - "流通向け"

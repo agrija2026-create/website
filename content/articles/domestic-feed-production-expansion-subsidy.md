@@ -3,6 +3,7 @@ title: "飼料の高騰対策に使える補助金｜国産飼料・粗飼料の
 slug: "domestic-feed-production-expansion-subsidy"
 description: "輸入飼料の高騰対策として、国産飼料（粗飼料・飼料用米・エコフィードなど）の生産や利用の拡大に使える補助金を解説します。飼料生産組織や農業法人などの対象、補助率2分の1以内などの支援内容、申請先の地方農政局と六次公募の締切までを畜産農家向けに整理します。"
 publishedAt: "2026-07-12"
+updatedAt: "2026-08-07"
 category: "production"
 tags:
   - "生産者向け"
