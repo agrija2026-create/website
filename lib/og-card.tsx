@@ -71,6 +71,8 @@ export async function renderOgCard({
           fontFamily: "NotoJP",
         }}
       >
+        {/* next/og(Satori)のJSXはブラウザDOMではないため next/image は使えない。alt も出力されない */}
+        {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
         <img
           src={photo}
           width={1200}

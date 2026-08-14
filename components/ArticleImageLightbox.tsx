@@ -45,6 +45,8 @@ export function ArticleImageLightbox() {
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
       onClick={() => setImage(null)}
     >
+      {/* クリック後にだけ描画する拡大表示。LCPに関与せず、原寸のsrcをそのまま出す必要がある */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={image.src}
         alt={image.alt}
