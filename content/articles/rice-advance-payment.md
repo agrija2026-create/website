@@ -7,7 +7,7 @@ relatedSlugs:
   - "ja-vs-direct-sales-income"
 description: "米の概算金の仕組みをわかりやすく解説します。JAが出荷時に支払う前払い金の位置づけ、追加払い（精算金）がいつ・いくら出るか、販売額を下回った場合の扱い、買取価格との違い、相対取引価格との関係、下落局面の令和8年産で収入減を補う収入保険・ナラシ対策まで整理します。"
 publishedAt: "2026-06-10"
-updatedAt: "2026-08-12"
+updatedAt: "2026-08-14"
 category: "market"
 tags:
   - "生産者向け"
