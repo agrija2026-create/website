@@ -125,6 +125,15 @@
   font-weight: 700;
 }
 
+/* 複数段落の .note（生きたページの更新情報など）。箱の内側で段落を分ける */
+.article-body .note p {
+  margin: 0;
+}
+
+.article-body .note p + p {
+  margin-top: 0.75rem;
+}
+
 .article-body ul {
   list-style-type: disc;
   padding-left: 1.5rem;
