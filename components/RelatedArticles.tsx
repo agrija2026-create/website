@@ -62,6 +62,7 @@ export function RelatedArticles({
           <li key={a.slug}>
             <Link
               href={`/articles/${a.slug}`}
+              prefetch={false}
               onClick={() =>
                 sendGaEvent("related_click", {
                   article_slug: a.slug,

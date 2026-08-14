@@ -65,7 +65,7 @@ export default async function HomePage() {
                   ))}
                 </div>
                 <div className="mt-6">
-                  <Link
+                  <Link prefetch={false}
                     href="/recent"
                     className="inline-flex items-center rounded-lg border border-orange-200 bg-orange-50 px-4 py-2.5 text-sm font-semibold text-orange-900 transition-colors hover:border-orange-300 hover:bg-orange-100"
                   >

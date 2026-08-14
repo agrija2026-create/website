@@ -301,7 +301,7 @@ export default function NotFoundField({ cards, categories }: Props) {
             </h2>
             <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
               {categories.map((c) => (
-                <Link
+                <Link prefetch={false}
                   key={c.slug}
                   href={`/categories/${c.slug}`}
                   className="relative rounded-lg border border-amber-200 bg-amber-50/70 px-3 py-3 text-center text-sm font-semibold text-stone-700 shadow-sm transition-colors hover:border-orange-300 hover:bg-orange-50 hover:text-orange-800"
@@ -319,19 +319,19 @@ export default function NotFoundField({ cards, categories }: Props) {
 
         {/* === 主要ナビ === */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <Link
+          <Link prefetch={false}
             href="/"
             className="inline-flex items-center rounded-lg bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-500"
           >
             トップへ戻る
           </Link>
-          <Link
+          <Link prefetch={false}
             href="/search"
             className="inline-flex items-center rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm font-semibold text-stone-700 transition-colors hover:border-orange-300 hover:bg-orange-50"
           >
             記事を検索する
           </Link>
-          <Link
+          <Link prefetch={false}
             href="/recent"
             className="inline-flex items-center rounded-lg border border-stone-300 bg-white px-5 py-2.5 text-sm font-semibold text-stone-700 transition-colors hover:border-orange-300 hover:bg-orange-50"
           >

@@ -36,6 +36,9 @@ function FooterLink({ href, label }: { href: string; label: string }) {
     "text-stone-600 underline-offset-2 transition-colors hover:text-orange-800 hover:underline";
   // /feed.xml のようなページ以外のルート（Route Handler）は通常のリンクで開く
   const isFileRoute = /\.[a-z0-9]+$/i.test(href);
+  // prefetch={false}: 全ページの末尾に常時あるハブリンクなので、スクロールで
+  // 通過しただけで先読みされるとリクエストが跳ね上がる。ホバー/タップ時の
+  // 先読みは残るので、実際にクリックするときの体感速度は落ちない。
   return (
     <li>
       {isFileRoute ? (
@@ -43,7 +46,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
           {label}
         </a>
       ) : (
-        <Link href={href} className={className}>
+        <Link href={href} className={className} prefetch={false}>
           {label}
         </Link>
       )}

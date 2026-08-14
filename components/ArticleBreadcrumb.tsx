@@ -12,7 +12,7 @@ export function ArticleBreadcrumb({ categorySlug, articleTitle }: Props) {
     <nav aria-label="パンくず" className="text-sm text-stone-500">
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <li>
-          <Link href="/" className="hover:text-orange-800 hover:underline">
+          <Link href="/" className="hover:text-orange-800 hover:underline" prefetch={false}>
             トップ
           </Link>
         </li>
@@ -23,6 +23,7 @@ export function ArticleBreadcrumb({ categorySlug, articleTitle }: Props) {
           <Link
             href={`/categories/${categorySlug}`}
             className="hover:text-orange-800 hover:underline"
+            prefetch={false}
           >
             {categoryName}
           </Link>

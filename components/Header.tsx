@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <Link href="/" className="group flex shrink-0 items-center gap-3">
+        <Link href="/" className="group flex shrink-0 items-center gap-3" prefetch={false}>
           <span
             className="h-8 w-1 rounded-full bg-orange-600 transition-colors group-hover:bg-orange-500"
             aria-hidden
@@ -76,6 +76,7 @@ export function Header() {
                       ? "font-semibold text-orange-800"
                       : "font-medium text-stone-600"
                   }`}
+                  prefetch={false}
                 >
                   {item.label}
                 </Link>
@@ -105,6 +106,7 @@ export function Header() {
                         ? "border-orange-300 bg-orange-50"
                         : "border-stone-200 bg-white hover:border-orange-200 hover:bg-orange-50/40"
                     }`}
+                    prefetch={false}
                   >
                     <span className="block text-sm font-semibold text-stone-900">{item.label}</span>
                   </Link>

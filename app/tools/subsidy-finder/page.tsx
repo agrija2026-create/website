@@ -47,7 +47,7 @@ export default async function SubsidyFinderPage() {
       <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-start lg:gap-10">
         <main className="min-w-0 flex-1 space-y-8 rounded-xl border border-stone-200 bg-white p-6 shadow-lg md:p-8">
           <nav className="text-sm text-stone-500">
-            <Link href="/" className="hover:text-orange-800 hover:underline">
+            <Link prefetch={false} href="/" className="hover:text-orange-800 hover:underline">
               トップ
             </Link>
           </nav>
@@ -79,7 +79,7 @@ export default async function SubsidyFinderPage() {
               <ul className="space-y-3">
                 {alwaysShow.map((article) => (
                   <li key={article.slug}>
-                    <Link
+                    <Link prefetch={false}
                       href={`/articles/${article.slug}`}
                       className="block rounded-lg border border-stone-200 bg-stone-50/70 p-3 transition-colors hover:border-orange-300 hover:bg-orange-50/60"
                     >

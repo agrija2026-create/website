@@ -177,6 +177,7 @@ export default async function ArticlePage({ params }: Props) {
               <Link
                 href={`/categories/${article.category}`}
                 className="rounded-full bg-orange-50 px-3 py-1 text-xs font-medium text-orange-900 hover:bg-orange-100"
+                prefetch={false}
               >
                 {getCategoryName(article.category)}
               </Link>
@@ -185,6 +186,7 @@ export default async function ArticlePage({ params }: Props) {
                   key={t}
                   href={`/tags/${encodeTagForUrl(t)}`}
                   className="rounded-full bg-sky-50 px-3 py-1 text-xs font-medium text-sky-900 hover:bg-sky-100"
+                  prefetch={false}
                 >
                   {t}
                 </Link>
@@ -194,6 +196,7 @@ export default async function ArticlePage({ params }: Props) {
                   key={t}
                   href={`/tags/${encodeTagForUrl(t)}`}
                   className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-700 hover:border-orange-200 hover:bg-orange-50/80"
+                  prefetch={false}
                 >
                   {t}
                 </Link>

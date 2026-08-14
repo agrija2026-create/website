@@ -18,6 +18,9 @@ type Props = {
   article: ArticleCardData;
 };
 
+// prefetch={false}: 一覧ページ（/recent は記事リンク256本、タグ・カテゴリ・トップも同様）で
+// カードが画面に入るたびに先読みが走ると、1ページ表示で数百リクエストになる。記事が増えるほど
+// 線形に悪化するため既定で切る。ホバー/タップ時の先読みは Next.js 側で残るので体感速度は落ちない。
 export function ArticleCard({ article }: Props) {
   const { audience } = partitionTags(article.tags);
   const themeTags = getVisibleThemeTags(article.tags, article.category);
@@ -30,6 +33,7 @@ export function ArticleCard({ article }: Props) {
         <Link
           href={`/categories/${article.category}`}
           className="rounded-full bg-orange-50 px-2 py-0.5 font-medium text-orange-800 transition-colors hover:bg-orange-100"
+          prefetch={false}
         >
           {getCategoryName(article.category)}
         </Link>
@@ -42,6 +46,7 @@ export function ArticleCard({ article }: Props) {
               key={t}
               href={`/tags/${encodeTagForUrl(t)}`}
               className="rounded-full bg-sky-50 px-2 py-0.5 text-xs font-medium text-sky-900 transition-colors hover:bg-sky-100"
+              prefetch={false}
             >
               {t}
             </Link>
@@ -56,6 +61,7 @@ export function ArticleCard({ article }: Props) {
               key={t}
               href={`/tags/${encodeTagForUrl(t)}`}
               className="rounded-full border border-stone-200 bg-stone-50 px-2 py-0.5 text-xs font-medium text-stone-700 transition-colors hover:border-orange-200 hover:bg-orange-50/80"
+              prefetch={false}
             >
               {t}
             </Link>
@@ -66,6 +72,7 @@ export function ArticleCard({ article }: Props) {
         <Link
           href={`/articles/${article.slug}`}
           className="transition-colors group-hover:text-orange-800"
+          prefetch={false}
         >
           {article.title}
         </Link>
@@ -76,6 +83,7 @@ export function ArticleCard({ article }: Props) {
       <Link
         href={`/articles/${article.slug}`}
         className="mt-3 inline-flex text-sm font-semibold text-orange-700 underline-offset-4 hover:underline"
+        prefetch={false}
       >
         記事を読む
       </Link>

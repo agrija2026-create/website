@@ -33,7 +33,7 @@ export default function PrivacyPage() {
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-10 lg:flex-row lg:items-start">
         <main className="min-w-0 flex-1 space-y-8 rounded-xl border border-stone-200 bg-white p-6 shadow-lg md:p-8">
           <nav className="text-sm text-stone-500">
-            <Link href="/" className="hover:text-orange-800 hover:underline">
+            <Link prefetch={false} href="/" className="hover:text-orange-800 hover:underline">
               トップ
             </Link>
           </nav>

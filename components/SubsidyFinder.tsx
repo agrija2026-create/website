@@ -266,7 +266,7 @@ export function SubsidyFinder({
                     key={program.slug}
                     className="rounded-xl border border-stone-200 bg-white p-4 transition-colors hover:border-orange-300"
                   >
-                    <Link
+                    <Link prefetch={false}
                       href={`/articles/${program.slug}`}
                       onClick={() =>
                         sendGaEvent("subsidy_finder_article_click", {

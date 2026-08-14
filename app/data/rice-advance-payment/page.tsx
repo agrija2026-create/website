@@ -90,7 +90,7 @@ export default async function RiceAdvancePaymentDataPage() {
       <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-start lg:gap-10">
         <main className="min-w-0 flex-1 space-y-8 rounded-xl border border-stone-200 bg-white p-6 shadow-lg md:p-8">
           <nav className="text-sm text-stone-500">
-            <Link href="/" className="hover:text-orange-800 hover:underline">
+            <Link prefetch={false} href="/" className="hover:text-orange-800 hover:underline">
               トップ
             </Link>
           </nav>
@@ -134,7 +134,7 @@ export default async function RiceAdvancePaymentDataPage() {
             <h2 className="text-lg font-bold text-stone-900">利用条件</h2>
             <p className="text-sm leading-relaxed text-stone-700">
               出典の記載と、このページまたは
-              <Link href={ARTICLE_PATH} className="text-orange-800 underline underline-offset-2">
+              <Link prefetch={false} href={ARTICLE_PATH} className="text-orange-800 underline underline-offset-2">
                 解説記事
               </Link>
               へのリンクを条件に、報道・研究・社内資料・アプリなどで自由に利用・再配布できます。加工したデータの公開も可能です。事前の連絡は不要です。
@@ -200,7 +200,7 @@ export default async function RiceAdvancePaymentDataPage() {
             <h2 className="text-lg font-bold text-stone-900">出典と更新</h2>
             <p className="text-sm leading-relaxed text-stone-700">
               各全農県本部・経済連の発表と、その報道をもとに農業情報メディア編集部が集約しています。産地ごとの背景や発表時期の見通しは
-              <Link href={ARTICLE_PATH} className="text-orange-800 underline underline-offset-2">
+              <Link prefetch={false} href={ARTICLE_PATH} className="text-orange-800 underline underline-offset-2">
                 令和8年産（2026年）米の概算金｜産地・銘柄別の最新金額と発表時期
               </Link>
               で解説しています。主食用うるち米は8月下旬から9月に順次提示されるため、発表され次第このデータを更新します。

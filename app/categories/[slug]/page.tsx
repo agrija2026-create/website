@@ -83,7 +83,7 @@ export default async function CategoryPage({ params }: Props) {
             />
           ) : null}
           <nav className="text-sm text-stone-500">
-            <Link href="/" className="hover:text-orange-800 hover:underline">
+            <Link prefetch={false} href="/" className="hover:text-orange-800 hover:underline">
               トップ
             </Link>
           </nav>

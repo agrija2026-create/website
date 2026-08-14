@@ -94,6 +94,7 @@ export function NextReadBar({ currentSlug, article }: Props) {
       <div className="mx-auto flex max-w-3xl items-center gap-2 rounded-xl border border-orange-200 bg-white p-3 shadow-lg lg:max-w-none lg:rounded-2xl">
         <Link
           href={`/articles/${article.slug}`}
+          prefetch={false}
           onClick={() =>
             sendGaEvent("next_read_click", { article_slug: article.slug })
           }

@@ -41,6 +41,7 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
           <Link
             href="/tools/subsidy-finder"
             className="mt-3 block rounded-lg border border-orange-200 bg-orange-50/70 p-3 transition-colors hover:border-orange-300 hover:bg-orange-50"
+            prefetch={false}
           >
             <span className="block text-sm font-semibold text-orange-900">
               補助金かんたん診断
@@ -52,6 +53,7 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
           <Link
             href="/tools/market-calendar"
             className="mt-3 block rounded-lg border border-orange-200 bg-orange-50/70 p-3 transition-colors hover:border-orange-300 hover:bg-orange-50"
+            prefetch={false}
           >
             <span className="block text-sm font-semibold text-orange-900">
               卸売市場の休市日カレンダー
@@ -70,6 +72,7 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
                 <Link
                   href={`/tags/${encodeTagForUrl(label)}`}
                   className="inline-block rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-medium text-sky-900 transition-colors hover:border-sky-300 hover:bg-sky-100"
+                  prefetch={false}
                 >
                   {label}
                 </Link>
@@ -86,6 +89,7 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
                 <Link
                   href={`/tags/${encodeTagForUrl(label)}`}
                   className="inline-block rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-xs font-medium text-stone-700 transition-colors hover:border-orange-300 hover:bg-orange-50 hover:text-orange-900"
+                  prefetch={false}
                 >
                   {label}
                 </Link>
@@ -102,6 +106,7 @@ export async function Sidebar({ tocItems }: SidebarProps = {}) {
                 <Link
                   href={`/categories/${slug}`}
                   className="text-stone-700 underline-offset-2 hover:text-orange-800 hover:underline"
+                  prefetch={false}
                 >
                   {name}
                 </Link>

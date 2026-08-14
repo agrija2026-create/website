@@ -91,6 +91,7 @@ export function SubsidyFinderCta({
         </div>
         <Link
           href={href}
+          prefetch={false}
           onClick={() =>
             sendGaEvent("subsidy_finder_cta_click", {
               article_slug: context,
