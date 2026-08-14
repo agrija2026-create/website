@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
-# 指定した記事ファイルをコミットして push する
+# 指定した記事ファイルを「コミットまで」行う（既定では push しない）
+#
 # 使い方:
-#   bash scripts/publish-article.sh <slug> [commit-message]
-# 例:
-#   bash scripts/publish-article.sh smart-agriculture-trend
+#   bash scripts/publish-article.sh <slug> [commit-message]      # コミットのみ
+#   PUSH=1 bash scripts/publish-article.sh <slug> [message]      # コミット＋push（非推奨）
+#
+# なぜ push しないか（2026-08-14 ユーザー指示・運営ポリシー §0）:
+#   Vercel の課金は読者のアクセス量ではなく push 回数（ビルドCPU時間）でほぼ決まる。
+#   1 push ≈ $0.14 で Pro の月間クレジットは $20。記事ごとに push すると月内に
+#   使い切ってサイトが停止する（2026-08-10 に実際に3日22時間停止）。
+#   その日の分をコミットで積み上げ、最後に 1 回だけ `npm run article:push` する。
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -52,12 +58,24 @@ if git diff --staged --quiet; then
 fi
 
 git commit -m "$MESSAGE"
-git push
 
-if [[ -n "${SOURCE_HTML_FILE}" && -d "${PUBLIC_IMAGE_DIR}" ]]; then
-  echo "公開完了: ${FILE} と ${SOURCE_HTML_FILE}、${PUBLIC_IMAGE_DIR} を push しました。"
-elif [[ -n "${SOURCE_HTML_FILE}" ]]; then
-  echo "公開完了: ${FILE} と ${SOURCE_HTML_FILE} を push しました。"
-else
-  echo "公開完了: ${FILE} を push しました。"
+COMMITTED="${FILE}"
+[[ -n "${SOURCE_HTML_FILE}" ]] && COMMITTED="${COMMITTED}、${SOURCE_HTML_FILE}"
+[[ -d "${PUBLIC_IMAGE_DIR}" ]] && COMMITTED="${COMMITTED}、${PUBLIC_IMAGE_DIR}"
+
+if [[ "${PUSH:-0}" == "1" ]]; then
+  git push
+  echo "公開完了: ${COMMITTED} を push しました。"
+  exit 0
 fi
+
+echo "コミット完了: ${COMMITTED}"
+echo
+
+git fetch --quiet origin || true
+PENDING="$(git log --oneline origin/main..HEAD 2>/dev/null | wc -l | tr -d ' ')"
+echo "未pushのコミット: ${PENDING} 件"
+git log --oneline origin/main..HEAD 2>/dev/null | sed 's/^/  /' || true
+echo
+echo "※ push はまだしていません（運営ポリシー §0: push はユーザーの明示指示があるときだけ・1日1回）。"
+echo "   その日の分をすべてコミットし終えたら、最後に1回だけ:  npm run article:push"
