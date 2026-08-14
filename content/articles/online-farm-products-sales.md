@@ -13,6 +13,7 @@ takeaways:
   - "ジャムや漬物などの加工品を売るには、保健所の営業許可や届出が必要です。"
   - "通信販売でも、届く商品への食品表示と、販売ページの特定商取引法に基づく表記の両方が必要です。"
   - "販路は自社サイト・産直ECモール・SNSで性格が異なり、自分の経営と発信力に合わせて選びます。"
+updatedAt: "2026-08-14"
 sourceHtmlFile: "content/source-html/online-farm-products-sales.html"
 ---
 <!-- 本文は sourceHtmlFile で指定した元HTMLの <article>...</article> を読み込みます -->
