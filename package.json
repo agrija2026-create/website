@@ -15,6 +15,7 @@
     "setup:vercel": "bash scripts/vercel-first-deploy.sh",
     "article:start": "bash scripts/create-article-workdir.sh",
     "article:stage": "bash scripts/stage-article-for-web.sh",
+    "article:verify": "node scripts/verify-article-quality.mjs",
     "article:publish": "bash scripts/publish-article.sh",
     "article:push": "bash scripts/push-pending.sh"
   },
