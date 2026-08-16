@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Node.js をセットアップ
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "22"
           # package-lock.json をコミットしたら cache: npm を追加すると高速化できます
