@@ -3,7 +3,7 @@
   "description": "全農県本部・経済連などが提示した令和8年産米の概算金（玄米60キロ当たり）を、産地・銘柄別に集約したデータ。未提示の産地は令和7年産の水準と見通しを収録。",
   "unit": "円（玄米60キロ・1等当たり）",
   "updated": "2026-08-13",
-  "rowCount": 29,
+  "rowCount": 30,
   "announcedCount": 18,
   "license": "出典として「農業情報メディア（agri-ja.net）」の記載と、データページへのリンクを条件に、自由に利用・再配布できます。",
   "source": "https://agri-ja.net/articles/rice-advance-payment-by-region",
@@ -40,10 +40,10 @@
       "riceType": "早期米",
       "status": "発表済み",
       "amountR8Yen": 20700,
-      "amountR7Yen": null,
-      "changeFromPreviousYear": "数千円安",
+      "amountR7Yen": 30000,
+      "changeFromPreviousYear": "9,300円安（約31%安）",
       "announcedOn": "2026-07-27",
-      "note": "7月27日決定・7月28日報道"
+      "note": "1等。7月27日決定・7月28日報道。前年産30,000円（過去最高）と9,300円安は熊本日日新聞（2026年8月6日）による"
     },
     {
       "prefecture": "鹿児島",
@@ -236,6 +236,18 @@
       "changeFromPreviousYear": "約12,000円安",
       "announcedOn": "2026-08-13",
       "note": "同日にJA福井県と同水準を提示"
+    },
+    {
+      "prefecture": "岐阜",
+      "organization": "JAぎふ",
+      "brand": null,
+      "riceType": "主食用うるち米",
+      "status": "未提示",
+      "amountR8Yen": null,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": null,
+      "note": "集荷・販売環境を踏まえ検討中で例年より提示が遅れる見込みとJAぎふが告知（2026年8月10日）。コシヒカリ・にじのきらめき・ひとめぼれ・あさひの夢は8月下旬、ハツシモは9月下旬に提示予定"
     },
     {
       "prefecture": "佐賀",
