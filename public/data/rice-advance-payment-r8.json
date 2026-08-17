@@ -3,8 +3,8 @@
   "description": "全農県本部・経済連などが提示した令和8年産米の概算金（玄米60キロ当たり）を、産地・銘柄別に集約したデータ。未提示の産地は令和7年産の水準と見通しを収録。",
   "unit": "円（玄米60キロ・1等当たり）",
   "updated": "2026-08-13",
-  "rowCount": 30,
-  "announcedCount": 18,
+  "rowCount": 31,
+  "announcedCount": 19,
   "license": "出典として「農業情報メディア（agri-ja.net）」の記載と、データページへのリンクを条件に、自由に利用・再配布できます。",
   "source": "https://agri-ja.net/articles/rice-advance-payment-by-region",
   "dataPage": "https://agri-ja.net/data/rice-advance-payment",
@@ -188,6 +188,18 @@
       "changeFromPreviousYear": null,
       "announcedOn": null,
       "note": "JA石川県中央会会長が「前年を下回る」との見通しを表明（2026年7月14日報道）。例年のお盆前提示は困難との見方。令和7年産は過去最高の30,000円台"
+    },
+    {
+      "prefecture": "愛知",
+      "organization": "JAあいち経済連",
+      "brand": "コシヒカリ",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "amountR8Yen": 16800,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": "2026-08-10",
+      "note": "1等・玄米60キロ。JAあいち経済連は金額を公表しておらず、関係者への取材として2026年8月11日に報道された。「10日までに示した」と報じられたもので決定日は特定されていない。「あきたこまち」も同時に示されたが金額は未確認"
     },
     {
       "prefecture": "福井",
