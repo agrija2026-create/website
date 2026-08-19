@@ -131,7 +131,7 @@ function main() {
       "全農県本部・経済連などが提示した令和8年産米の概算金（玄米60キロ当たり）を、産地・銘柄別に集約したデータ。未提示の産地は令和7年産の水準と見通しを収録。",
     unit: "円（玄米60キロ・1等当たり）",
     confirmationNote:
-      "情報区分（confirmation）は、決定＝JA・全農が決めたことが日付まで確認できる金額（日付は決定・公表日）、報道＝報道で金額が伝わった段階でJAは金額を公表しておらず決定日も特定されていないもの（日付は報道日）。",
+      "情報区分（confirmation）は、決定＝JA・全農が決定を自ら発表・公表した金額（発表日は announcedOn）、報道＝報道機関の取材で判明しJA・全農は金額を公表していない金額（announcedOn は金額が明らかになった日）。報道もJAが決めた金額であり、未決定という意味ではない。",
     updated: updated ?? null,
     rowCount: rows.length,
     announcedCount: announced.length,

@@ -8,7 +8,7 @@ export type RiceAdvanceRow = {
   brand: string | null;
   riceType: string;
   status: "発表済み" | "未提示" | string;
-  /** 決定＝JA・全農の決定日が確認できる金額／報道＝報道でのみ伝わっている金額 */
+  /** 決定＝JA・全農が自ら発表・公表した金額／報道＝報道の取材で判明しJAは公表していない金額 */
   confirmation: "決定" | "報道" | null;
   amountR8Yen: number | null;
   amountR7Yen: number | null;
