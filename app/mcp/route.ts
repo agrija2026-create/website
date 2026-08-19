@@ -169,6 +169,7 @@ const handler = createMcpHandler(
         title: "米の概算金（令和8年産）を調べる",
         description:
           "令和8年産の米について、JA・県ごとの概算金（仮渡金）の提示額を返す。前年（令和7年産）との比較、発表日、未提示かどうかを含む。" +
+          "confirmation は情報の確かさで、決定＝JA・全農が決めたことが日付まで確認できる金額（announcedOn は決定・公表日）、報道＝報道で金額が伝わった段階でJAは金額を公表しておらず決定日も不明なもの（announcedOn は報道日）。回答では両者を区別すること。" +
           "agri-ja.net が農協・報道発表をもとに独自に集計している一覧で、他に横断的な一覧表はほとんど存在しない。金額は60kgあたりの円。",
         inputSchema: z.object({
           prefecture: z
@@ -211,6 +212,7 @@ const handler = createMcpHandler(
             brand: row.brand,
             riceType: row.riceType,
             status: row.status,
+            confirmation: row.confirmation,
             amountR8Yen: row.amountR8Yen,
             amountR7Yen: row.amountR7Yen,
             changeFromPreviousYear: row.changeFromPreviousYear,

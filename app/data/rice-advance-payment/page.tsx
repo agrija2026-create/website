@@ -163,7 +163,7 @@ export default async function RiceAdvancePaymentDataPage() {
                     <th className="border border-stone-200 px-3 py-2">区分</th>
                     <th className="border border-stone-200 px-3 py-2">令和8年産</th>
                     <th className="border border-stone-200 px-3 py-2">令和7年産</th>
-                    <th className="border border-stone-200 px-3 py-2">発表日</th>
+                    <th className="border border-stone-200 px-3 py-2">発表日・情報区分</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -185,6 +185,11 @@ export default async function RiceAdvancePaymentDataPage() {
                       </td>
                       <td className="border border-stone-200 px-3 py-2">
                         {row.announcedOn ?? "—"}
+                        {row.confirmation ? (
+                          <span className="block text-xs text-stone-500">
+                            {row.confirmation}
+                          </span>
+                        ) : null}
                       </td>
                     </tr>
                   ))}
@@ -192,7 +197,7 @@ export default async function RiceAdvancePaymentDataPage() {
               </table>
             </div>
             <p className="text-xs leading-relaxed text-stone-600">
-              金額は各産地の当初提示額です。同じ県内でもJAごとに上乗せや独自の奨励金が付く場合があり、等級や検査結果でも変わります。実際の手取りは出荷先のJAが示す最新の提示額で確認してください。備考と前年産との差を含む全項目は CSV・JSON に収録しています。
+              情報区分の「決定」は、JA・全農が決めたことが日付まで確認できる金額（日付は決定・公表日）、「報道」は報道で金額が伝わった段階で、JAが金額を公表しておらず決定日も特定されていないもの（日付は報道日）です。金額は各産地の当初提示額です。同じ県内でもJAごとに上乗せや独自の奨励金が付く場合があり、等級や検査結果でも変わります。実際の手取りは出荷先のJAが示す最新の提示額で確認してください。備考と前年産との差を含む全項目は CSV・JSON に収録しています。
             </p>
           </section>
 

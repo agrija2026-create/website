@@ -8,6 +8,8 @@ export type RiceAdvanceRow = {
   brand: string | null;
   riceType: string;
   status: "発表済み" | "未提示" | string;
+  /** 決定＝JA・全農の決定日が確認できる金額／報道＝報道でのみ伝わっている金額 */
+  confirmation: "決定" | "報道" | null;
   amountR8Yen: number | null;
   amountR7Yen: number | null;
   changeFromPreviousYear: string | null;
@@ -49,6 +51,7 @@ export const getRiceAdvanceDataset = cache(async (): Promise<RiceAdvanceDataset>
       brand: dash(get("銘柄")),
       riceType: get("区分"),
       status: get("状態"),
+      confirmation: dash(get("情報区分")) as RiceAdvanceRow["confirmation"],
       amountR8Yen: num(get("令和8年産_円")),
       amountR7Yen: num(get("令和7年産_円")),
       changeFromPreviousYear: dash(get("前年産との差")),

@@ -57,7 +57,7 @@ function readTsv(file) {
 
 /** 正本の取りこぼしはビルドで止める（列ずれに気づかないまま公開しないため） */
 function validate(header, rows) {
-  const required = ["産地", "銘柄", "区分", "状態", "令和8年産_円"];
+  const required = ["産地", "銘柄", "区分", "状態", "情報区分", "令和8年産_円"];
   const missing = required.filter((key) => !header.includes(key));
   if (missing.length > 0) {
     throw new Error(`TSV に必要な列がありません: ${missing.join(", ")}`);
@@ -69,6 +69,12 @@ function validate(header, rows) {
     if (row["状態"] === "発表済み" && !row["令和8年産_円"]) {
       throw new Error(
         `${i + 2} 行目（${row["産地"]}）: 状態が発表済みなのに金額が空です`,
+      );
+    }
+    // 決定（JA・全農の決定日が確認できる）と報道（報道でのみ伝わっている）を必ず区別する
+    if (row["状態"] === "発表済み" && !["決定", "報道"].includes(row["情報区分"])) {
+      throw new Error(
+        `${i + 2} 行目（${row["産地"]}）: 情報区分は「決定」か「報道」で書いてください（現在: ${row["情報区分"] || "空"}）`,
       );
     }
     for (const col of NUMERIC_COLUMNS) {
@@ -90,6 +96,7 @@ function toJsonRow(row) {
     brand: row["銘柄"] === "—" ? null : row["銘柄"] || null,
     riceType: row["区分"],
     status: row["状態"],
+    confirmation: row["情報区分"] === "—" ? null : row["情報区分"] || null,
     amountR8Yen: num("令和8年産_円"),
     amountR7Yen: num("令和7年産_円"),
     changeFromPreviousYear: row["前年産との差"] || null,
@@ -123,6 +130,8 @@ function main() {
     description:
       "全農県本部・経済連などが提示した令和8年産米の概算金（玄米60キロ当たり）を、産地・銘柄別に集約したデータ。未提示の産地は令和7年産の水準と見通しを収録。",
     unit: "円（玄米60キロ・1等当たり）",
+    confirmationNote:
+      "情報区分（confirmation）は、決定＝JA・全農が決めたことが日付まで確認できる金額（日付は決定・公表日）、報道＝報道で金額が伝わった段階でJAは金額を公表しておらず決定日も特定されていないもの（日付は報道日）。",
     updated: updated ?? null,
     rowCount: rows.length,
     announcedCount: announced.length,
