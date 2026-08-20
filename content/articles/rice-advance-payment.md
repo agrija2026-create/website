@@ -7,7 +7,7 @@ relatedSlugs:
   - "ja-vs-direct-sales-income"
 description: "米の概算金の仕組みをわかりやすく解説します。報道の金額がそのまま入金されない理由（JA手数料・等級・JA米かどうか）、追加払いがいつ・いくら出るか（石川の実額で+5,282円）、販売額を下回った場合の扱い、買取価格との違い、令和8年産で収入減を補う収入保険・ナラシ対策まで整理します。"
 publishedAt: "2026-06-10"
-updatedAt: "2026-08-19"
+updatedAt: "2026-08-21"
 category: "market"
 tags:
   - "生産者向け"
