@@ -3,9 +3,9 @@
   "description": "全農県本部・経済連などが提示した令和8年産米の概算金（玄米60キロ当たり）を、産地・銘柄別に集約したデータ。未提示の産地は令和7年産の水準と見通しを収録。",
   "unit": "円（玄米60キロ・1等当たり）",
   "confirmationNote": "情報区分（confirmation）は、決定＝JA・全農が決定を自ら発表・公表した金額（発表日は announcedOn）、報道＝報道機関の取材で判明しJA・全農は金額を公表していない金額（announcedOn は金額が明らかになった日）。報道もJAが決めた金額であり、未決定という意味ではない。",
-  "updated": "2026-08-19",
-  "rowCount": 49,
-  "announcedCount": 38,
+  "updated": "2026-08-20",
+  "rowCount": 51,
+  "announcedCount": 41,
   "license": "出典として「農業情報メディア（agri-ja.net）」の記載と、データページへのリンクを条件に、自由に利用・再配布できます。",
   "source": "https://agri-ja.net/articles/rice-advance-payment-by-region",
   "dataPage": "https://agri-ja.net/data/rice-advance-payment",
@@ -182,7 +182,7 @@
     {
       "prefecture": "佐賀",
       "organization": "JAさが",
-      "brand": null,
+      "brand": "七夕こしひかり",
       "riceType": "早期米",
       "status": "発表済み",
       "confirmation": "報道",
@@ -190,7 +190,7 @@
       "amountR7Yen": null,
       "changeFromPreviousYear": null,
       "announcedOn": "2026-08-07",
-      "note": "2026年8月7日報道。銘柄は報道で特定されていない。同じ時期にJAグループ佐賀は主食用うるち米の最低価格の提示を見送っている"
+      "note": "生産者概算金。白石町で8月上旬から出回る極早生品種。JAさがは金額を公表しておらず、日本農業新聞（2026年8月7日）が関係者への取材として報道。同じ時期にJAグループ佐賀は主食用うるち米の最低価格の提示を見送っている"
     },
     {
       "prefecture": "香川",
@@ -388,6 +388,19 @@
       "note": "主食用うるち米の最低価格（最低保証額）の提示を令和8年産では見送り（2026年8月7日報道）。新潟に続く見送りの動き。令和7年産の「さがびより」は29,500円で前年同期の約1.8倍"
     },
     {
+      "prefecture": "島根",
+      "organization": "JAしまね",
+      "brand": null,
+      "riceType": "主食用うるち米",
+      "status": "未提示",
+      "confirmation": null,
+      "amountR8Yen": null,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": null,
+      "note": "令和8年産の集荷に際して農家に示す概算金の「最低保証価格」について、今年は提示を見送る方針を決めた（2026年7月3日報道）。米価下落と卸業者との事前交渉の難航が理由"
+    },
+    {
       "prefecture": "新潟",
       "organization": "全農にいがた",
       "brand": "一般コシヒカリ",
@@ -544,6 +557,45 @@
       "note": "1等・税込。ＪＡ概算金（全農→ＪＡ）。コシヒカリと同額。令和7年産26,000円は報道の前年比▲6,000円から逆算した参考値"
     },
     {
+      "prefecture": "静岡",
+      "organization": "JA静岡経済連",
+      "brand": "コシヒカリ",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 14040,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": "2026-08-18",
+      "note": "1等・玄米60キロ。ＪＡ概算金（経済連→ＪＡ）。JA静岡経済連は金額を公表しておらず、日本農業新聞（2026年8月18日）が関係者への取材として報道。決定日は特定されていない。令和8年産の主食用うるち米で最も低い水準。前年産の金額は報道されておらず前年比は不明"
+    },
+    {
+      "prefecture": "北海道",
+      "organization": "ホクレン",
+      "brand": "ゆめぴりか",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 18000,
+      "amountR7Yen": 30000,
+      "changeFromPreviousYear": "12,000円安（約40%安）",
+      "announcedOn": "2026-08-20",
+      "note": "1等・玄米60キロ。たんぱく値の低い第1区分の金額。ＪＡ概算金（ホクレン→ＪＡ）。8月20日に札幌市で開かれた「うるち米全道共計運営会議」で決定。ホクレンは金額を公表しておらず、日本農業新聞（2026年8月21日）が報道。コスト指標20,535円を2,535円下回る"
+    },
+    {
+      "prefecture": "北海道",
+      "organization": "ホクレン",
+      "brand": "ななつぼし",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 17000,
+      "amountR7Yen": 29000,
+      "changeFromPreviousYear": "12,000円安（約41%安）",
+      "announcedOn": "2026-08-20",
+      "note": "1等・玄米60キロ。道内作付面積の約半数を占める主力銘柄。ＪＡ概算金（ホクレン→ＪＡ）。8月20日の「うるち米全道共計運営会議」で決定。北海道ニュースUHBが同日に速報。コスト指標20,535円を3,535円下回る。需給改善を前提に追加払いをめざす考えとみられる"
+    },
+    {
       "prefecture": "青森",
       "organization": null,
       "brand": null,
@@ -581,32 +633,6 @@
       "changeFromPreviousYear": null,
       "announcedOn": null,
       "note": "令和7年産は当初28,300円前後、追加払いを含め最終3万円で現行制度下の過去最高水準"
-    },
-    {
-      "prefecture": "北海道",
-      "organization": "ホクレン",
-      "brand": "ゆめぴりか",
-      "riceType": "主食用うるち米",
-      "status": "未提示",
-      "confirmation": null,
-      "amountR8Yen": null,
-      "amountR7Yen": 30000,
-      "changeFromPreviousYear": null,
-      "announcedOn": null,
-      "note": "令和7年産は前年当初比で7割超の引き上げ"
-    },
-    {
-      "prefecture": "北海道",
-      "organization": "ホクレン",
-      "brand": "ななつぼし",
-      "riceType": "主食用うるち米",
-      "status": "未提示",
-      "confirmation": null,
-      "amountR8Yen": null,
-      "amountR7Yen": 29000,
-      "changeFromPreviousYear": null,
-      "announcedOn": null,
-      "note": "令和7年産は前年当初比で7割超の引き上げ"
     },
     {
       "prefecture": "宮城",
