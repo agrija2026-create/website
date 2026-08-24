@@ -3,9 +3,9 @@
   "description": "全農県本部・経済連などが提示した令和8年産米の概算金（玄米60キロ当たり）を、産地・銘柄別に集約したデータ。未提示の産地は令和7年産の水準と見通しを収録。",
   "unit": "円（玄米60キロ・1等当たり）",
   "confirmationNote": "情報区分（confirmation）は、決定＝JA・全農が決定を自ら発表・公表した金額（発表日は announcedOn）、報道＝報道機関の取材で判明しJA・全農は金額を公表していない金額（announcedOn は金額が明らかになった日）。報道もJAが決めた金額であり、未決定という意味ではない。",
-  "updated": "2026-08-21",
-  "rowCount": 60,
-  "announcedCount": 48,
+  "updated": "2026-08-24",
+  "rowCount": 62,
+  "announcedCount": 51,
   "license": "出典として「農業情報メディア（agri-ja.net）」の記載と、データページへのリンクを条件に、自由に利用・再配布できます。",
   "source": "https://agri-ja.net/articles/rice-advance-payment-by-region",
   "dataPage": "https://agri-ja.net/data/rice-advance-payment",
@@ -375,19 +375,6 @@
       "note": "主食用うるち米の最低価格（最低保証額）の提示を令和8年産では見送り（2026年8月7日報道）。新潟に続く見送りの動き。令和7年産の「さがびより」は29,500円で前年同期の約1.8倍"
     },
     {
-      "prefecture": "島根",
-      "organization": "JAしまね",
-      "brand": null,
-      "riceType": "主食用うるち米",
-      "status": "未提示",
-      "confirmation": null,
-      "amountR8Yen": null,
-      "amountR7Yen": null,
-      "changeFromPreviousYear": null,
-      "announcedOn": null,
-      "note": "令和8年産の集荷に際して農家に示す概算金の「最低保証価格」について、今年は提示を見送る方針を決めた（2026年7月3日報道）。米価下落と卸業者との事前交渉の難航が理由"
-    },
-    {
       "prefecture": "新潟",
       "organization": "全農にいがた",
       "brand": "一般コシヒカリ",
@@ -672,6 +659,45 @@
       "changeFromPreviousYear": "前年比4割以上安",
       "announcedOn": "2026-08-21",
       "note": "1等・玄米60キロ。生産者概算金（ＪＡ→農家）。提示額の下限16,700円と同じ報道による。ＪＡ名は特定されていない"
+    },
+    {
+      "prefecture": "島根",
+      "organization": "JAしまね",
+      "brand": "コシヒカリ",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "決定",
+      "amountR8Yen": 16000,
+      "amountR7Yen": 28400,
+      "changeFromPreviousYear": "12,400円安（約44%安）",
+      "announcedOn": "2026-08-24",
+      "note": "1等・玄米60キロ。生産者概算金（ＪＡ→農家）。8月24日にJAしまねが公表。全銘柄で過去最大の下げ幅。令和8年産では概算金の「最低保証価格」の提示を見送っていた（2026年7月3日報道）。組合長は「生産農家の皆様のご苦労を思うと、まさしく断腸の思いでの概算金決定となった」と述べた"
+    },
+    {
+      "prefecture": "島根",
+      "organization": "JAしまね",
+      "brand": "きぬむすめ",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "決定",
+      "amountR8Yen": 15800,
+      "amountR7Yen": 28000,
+      "changeFromPreviousYear": "12,200円安（約44%安）",
+      "announcedOn": "2026-08-24",
+      "note": "1等・玄米60キロ。生産者概算金（ＪＡ→農家）。8月24日公表。県内で作付けの多い銘柄で、3銘柄のうち最も低い"
+    },
+    {
+      "prefecture": "島根",
+      "organization": "JAしまね",
+      "brand": "つや姫",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "決定",
+      "amountR8Yen": 16600,
+      "amountR7Yen": 29200,
+      "changeFromPreviousYear": "12,600円安（約43%安）",
+      "announcedOn": "2026-08-24",
+      "note": "1等・玄米60キロ。生産者概算金（ＪＡ→農家）。8月24日公表。令和7年産は特別栽培米として29,200円。3銘柄のうち最も高い"
     },
     {
       "prefecture": "青森",
