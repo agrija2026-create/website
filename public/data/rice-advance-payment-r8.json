@@ -3,9 +3,9 @@
   "description": "全農県本部・経済連などが提示した令和8年産米の概算金（玄米60キロ当たり）を、産地・銘柄別に集約したデータ。未提示の産地は令和7年産の水準と見通しを収録。",
   "unit": "円（玄米60キロ・1等当たり）",
   "confirmationNote": "情報区分（confirmation）は、決定＝JA・全農が決定を自ら発表・公表した金額（発表日は announcedOn）、報道＝報道機関の取材で判明しJA・全農は金額を公表していない金額（announcedOn は金額が明らかになった日）。報道もJAが決めた金額であり、未決定という意味ではない。",
-  "updated": "2026-08-20",
-  "rowCount": 51,
-  "announcedCount": 41,
+  "updated": "2026-08-21",
+  "rowCount": 60,
+  "announcedCount": 48,
   "license": "出典として「農業情報メディア（agri-ja.net）」の記載と、データページへのリンクを条件に、自由に利用・再配布できます。",
   "source": "https://agri-ja.net/articles/rice-advance-payment-by-region",
   "dataPage": "https://agri-ja.net/data/rice-advance-payment",
@@ -206,19 +206,6 @@
       "note": "生産者概算金（報道では仮渡金）。2026年8月7日にKSB瀬戸内海放送が報道（日本農業新聞は8月8日）。JA香川県の決定日は特定されていない。令和7年産26,100円は報道の「前年より約3割・8,100円安」から逆算した参考値。担当者は追加払いでコスト指標20,535円に近づけたいとしている"
     },
     {
-      "prefecture": "石川",
-      "organization": null,
-      "brand": null,
-      "riceType": "主食用うるち米",
-      "status": "未提示",
-      "confirmation": null,
-      "amountR8Yen": null,
-      "amountR7Yen": null,
-      "changeFromPreviousYear": null,
-      "announcedOn": null,
-      "note": "JA石川県中央会会長が「前年を下回る」との見通しを表明（2026年7月14日報道）。例年のお盆前提示は困難との見方。令和7年産は過去最高の30,000円台"
-    },
-    {
       "prefecture": "愛知",
       "organization": "JAあいち経済連",
       "brand": "コシヒカリ",
@@ -229,7 +216,7 @@
       "amountR7Yen": 28500,
       "changeFromPreviousYear": "11,700円安（約41%安）",
       "announcedOn": "2026-08-10",
-      "note": "1等・玄米60キロ。ＪＡ概算金（経済連→ＪＡ）。JAあいち経済連は金額を公表しておらず、2026年8月11日に日本農業新聞が関係者への取材として、8月18日に農業協同組合新聞が報道した。決定日は特定されていない。前年産28,500円は報道の前年比▲11,700円から逆算した参考値"
+      "note": "1等・玄米60キロ。ＪＡ概算金（経済連→ＪＡ）。JAあいち経済連は金額を公表しておらず、2026年8月11日に日本農業新聞が関係者への取材として、8月18日に農業協同組合新聞が報道した。決定日は特定されていない。前年産28,500円は報道の前年比▲11,700円から逆算した参考値。1等16,800円のほか2等16,400円・3等15,300円が示されている（CBCテレビ2026年8月21日）"
     },
     {
       "prefecture": "愛知",
@@ -372,7 +359,7 @@
       "amountR7Yen": null,
       "changeFromPreviousYear": null,
       "announcedOn": null,
-      "note": "集荷・販売環境を踏まえ検討中で例年より提示が遅れる見込みとJAぎふが告知（2026年8月10日）。コシヒカリ・にじのきらめき・ひとめぼれ・あさひの夢は8月下旬、ハツシモは9月下旬に提示予定"
+      "note": "集荷・販売環境を踏まえ検討中で例年より提示が遅れる見込みとJAぎふが告知（2026年8月10日）。コシヒカリ・にじのきらめき・ひとめぼれ・あさひの夢は8月下旬、ハツシモは9月下旬に提示予定。全農岐阜は8月21日時点で「最終決定はしていないものの、4割ほど下がる印象」としている（CBCテレビ2026年8月21日）"
     },
     {
       "prefecture": "佐賀",
@@ -596,6 +583,97 @@
       "note": "1等・玄米60キロ。道内作付面積の約半数を占める主力銘柄。ＪＡ概算金（ホクレン→ＪＡ）。8月20日の「うるち米全道共計運営会議」で決定。北海道ニュースUHBが同日に速報。コスト指標20,535円を3,535円下回る。需給改善を前提に追加払いをめざす考えとみられる"
     },
     {
+      "prefecture": "石川",
+      "organization": "全農いしかわ",
+      "brand": "コシヒカリ",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 17500,
+      "amountR7Yen": 25200,
+      "changeFromPreviousYear": "7,700円安（約31%安）",
+      "announcedOn": "2026-08-21",
+      "note": "1等・玄米60キロ。ＪＡ概算金（全農→ＪＡ）。8月21日に決定し県内各ＪＡへ提示。令和6年産当初を1,300円上回る水準。全農いしかわは金額を公表しておらず、日本農業新聞・北陸中日新聞（いずれも2026年8月22日）が関係者への取材として報道。令和7年産は当初25,200円で、期中に31,200円へ引き上げられた"
+    },
+    {
+      "prefecture": "石川",
+      "organization": "全農いしかわ",
+      "brand": "ひゃくまん穀",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 17500,
+      "amountR7Yen": 27000,
+      "changeFromPreviousYear": "9,500円安（約35%安）",
+      "announcedOn": "2026-08-21",
+      "note": "1等・玄米60キロ。ＪＡ概算金（全農→ＪＡ）。県独自品種でコシヒカリと同額。令和7年産27,000円は報道の前年比▲9,500円から逆算した参考値"
+    },
+    {
+      "prefecture": "鳥取",
+      "organization": "全農とっとり",
+      "brand": "主要銘柄（一律）",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 16000,
+      "amountR7Yen": 22000,
+      "changeFromPreviousYear": "6,000円安（約27%安）",
+      "announcedOn": "2026-08-21",
+      "note": "1等・玄米60キロ。ＪＡ概算金（全農→ＪＡ）。県内ＪＡが取り扱ううるち米・もち米など主要銘柄を一律で設定し、翌年夏に精算金を予定。日本農業新聞（2026年8月22日・23日）の報道による。令和7年産22,000円も銘柄一律で、山陰中央新報（2025年7月3日）による"
+    },
+    {
+      "prefecture": "岩手",
+      "organization": "全農いわて",
+      "brand": "ひとめぼれ",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 17200,
+      "amountR7Yen": 28000,
+      "changeFromPreviousYear": "10,800円安（約39%安）",
+      "announcedOn": "2026-08-21",
+      "note": "1等・玄米60キロ。ＪＡ概算金（全農→ＪＡ）。8月21日に県内7ＪＡの組合長らが協議して決定。現行の概算金の仕組みになった2015年以降で最大の下げ幅で、令和6年産と同水準。全農いわては金額を公表しておらず、IBC岩手放送・テレビ岩手・岩手めんこいテレビ（いずれも2026年8月21日）の報道による。令和7年産は当初28,000円で追加払い後31,000円"
+    },
+    {
+      "prefecture": "岩手",
+      "organization": "全農いわて",
+      "brand": "銀河のしずく",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 17700,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": "2026-08-21",
+      "note": "1等・玄米60キロ。ＪＡ概算金（全農→ＪＡ）。県のブランド米でひとめぼれより500円高い。前年産との比較は報じられていない"
+    },
+    {
+      "prefecture": "三重",
+      "organization": "三重県内の複数のＪＡ",
+      "brand": "コシヒカリ（提示額の下限）",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 16700,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": "前年比4割以上安",
+      "announcedOn": "2026-08-21",
+      "note": "1等・玄米60キロ。生産者概算金（ＪＡ→農家）。県内の複数ＪＡが16,700〜18,500円を提示。令和7年産は30,000〜33,000円ほどで、いずれも4割以上安。一部ＪＡは10月以降さらに約5,000円低い12,000円ほどを提示しており、期中にこれだけ減額するのは初めて。CBCテレビ（2026年8月21日）の報道による"
+    },
+    {
+      "prefecture": "三重",
+      "organization": "三重県内の複数のＪＡ",
+      "brand": "コシヒカリ（提示額の上限）",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 18500,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": "前年比4割以上安",
+      "announcedOn": "2026-08-21",
+      "note": "1等・玄米60キロ。生産者概算金（ＪＡ→農家）。提示額の下限16,700円と同じ報道による。ＪＡ名は特定されていない"
+    },
+    {
       "prefecture": "青森",
       "organization": null,
       "brand": null,
@@ -607,19 +685,6 @@
       "changeFromPreviousYear": null,
       "announcedOn": null,
       "note": "生産者概算金が2万円を割り込むとの見方が広がっていると報道（2026年7月）。令和7年産は過去最高"
-    },
-    {
-      "prefecture": "岩手",
-      "organization": "全農いわて",
-      "brand": "ひとめぼれ",
-      "riceType": "主食用うるち米",
-      "status": "未提示",
-      "confirmation": null,
-      "amountR8Yen": null,
-      "amountR7Yen": 28000,
-      "changeFromPreviousYear": null,
-      "announcedOn": null,
-      "note": "基準となる金額を8月下旬に提示する方針（2026年7月報道）。令和7年産は追加払い後31,000円"
     },
     {
       "prefecture": "秋田",
@@ -672,6 +737,58 @@
       "changeFromPreviousYear": null,
       "announcedOn": null,
       "note": "令和7年産の提示額"
+    },
+    {
+      "prefecture": "山形",
+      "organization": null,
+      "brand": null,
+      "riceType": "主食用うるち米",
+      "status": "未提示",
+      "confirmation": null,
+      "amountR8Yen": null,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": null,
+      "note": "令和8年産の提示はまだ確認されていない。主食用うるち米の提示は8月下旬から9月にかけて順次で、監視対象として行のみ先に置いた"
+    },
+    {
+      "prefecture": "福島",
+      "organization": null,
+      "brand": null,
+      "riceType": "主食用うるち米",
+      "status": "未提示",
+      "confirmation": null,
+      "amountR8Yen": null,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": null,
+      "note": "令和8年産の提示はまだ確認されていない。主食用うるち米の提示は8月下旬から9月にかけて順次で、監視対象として行のみ先に置いた"
+    },
+    {
+      "prefecture": "茨城",
+      "organization": null,
+      "brand": null,
+      "riceType": "主食用うるち米",
+      "status": "未提示",
+      "confirmation": null,
+      "amountR8Yen": null,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": null,
+      "note": "令和8年産の提示はまだ確認されていない。主食用うるち米の提示は8月下旬から9月にかけて順次で、監視対象として行のみ先に置いた"
+    },
+    {
+      "prefecture": "栃木",
+      "organization": null,
+      "brand": null,
+      "riceType": "主食用うるち米",
+      "status": "未提示",
+      "confirmation": null,
+      "amountR8Yen": null,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": null,
+      "note": "令和8年産の提示はまだ確認されていない。主食用うるち米の提示は8月下旬から9月にかけて順次で、監視対象として行のみ先に置いた"
     }
   ]
 }
