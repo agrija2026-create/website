@@ -3,7 +3,7 @@ title: "農業の経営継承に使える補助金｜親元就農・第三者継
 slug: "farm-succession-subsidy"
 description: "親元就農や第三者継承で農業経営を引き継ぐ後継者は、令和7年度補正予算の世代交代円滑化タイプ（世代交代・初期投資促進事業）で、機械・施設の修繕・導入や法人化の費用に国費上限600万円の補助を受けられます。対象者・補助率・要件と市町村への申請の流れを整理します。詳細は農林水産省の一次情報をご覧ください。"
 publishedAt: "2026-07-03"
-updatedAt: "2026-08-02"
+updatedAt: "2026-08-26"
 category: "farmland"
 relatedSlugs:
   - "new-farmer-startup-funds"

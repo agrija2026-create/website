@@ -3,7 +3,7 @@ title: "遊休農地解消対策事業とは？農地バンクの条件・10ア�
 slug: "idle-farmland-elimination-measures"
 description: "遊休農地解消対策事業（10アール当たり最大43,000円）と農地バンク（農地中間管理機構）の条件を、借りる側・貸す側の要件、原則10年以上の貸付期間、令和7年4月からの農地バンク経由への一本化、固定資産税の軽減や機構集積協力金まで整理して解説します。"
 publishedAt: "2026-05-21"
-updatedAt: "2026-07-21"
+updatedAt: "2026-08-26"
 category: "farmland"
 tags:
   - "生産者向け"
