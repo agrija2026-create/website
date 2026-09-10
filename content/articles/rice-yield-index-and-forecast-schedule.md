@@ -3,6 +3,7 @@ title: "作況指数が作況単収指数に変わりました｜米の作柄は
 slug: "rice-yield-index-and-forecast-schedule"
 description: "作況指数は作況単収指数に変わりました。比べる相手が過去30年のトレンドから前年産までの5か年中3年平均になり、公表の中身も入れ替わっています。自分の県の収量見込みが出る時期、ふるい目別の収穫量、指数がナラシ対策や共済に効く場面を整理します。"
 publishedAt: "2026-08-10"
+updatedAt: "2026-09-10"
 category: "policy"
 tags:
   - "生産者向け"
