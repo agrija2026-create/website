@@ -3,6 +3,7 @@ title: "買参権の取り方｜卸売市場で直接仕入れる売買参加者
 slug: "baisanken-market-buyer-approval"
 description: "買参権（売買参加者の承認）の取り方を、申請先・要件・費用の順に整理します。申請先は卸売業者ではなく市場の開設者で、要件は市場ごとに違います。買出人や仲卸との使い分け、取る前に確認したい数字までわかります。"
 publishedAt: "2026-08-06"
+updatedAt: "2026-09-10"
 category: "logistics"
 tags:
   - "流通向け"
