@@ -4,8 +4,8 @@
   "unit": "円（玄米60キロ・1等当たり）",
   "confirmationNote": "情報区分（confirmation）は、決定＝JA・全農が決定を自ら発表・公表した金額（発表日は announcedOn）、報道＝報道機関の取材で判明しJA・全農は金額を公表していない金額（announcedOn は金額が明らかになった日）。報道もJAが決めた金額であり、未決定という意味ではない。",
   "updated": "2026-09-07",
-  "rowCount": 84,
-  "announcedCount": 79,
+  "rowCount": 86,
+  "announcedCount": 81,
   "license": "出典として「農業情報メディア（agri-ja.net）」の記載と、データページへのリンクを条件に、自由に利用・再配布できます。",
   "source": "https://agri-ja.net/articles/rice-advance-payment-by-region",
   "dataPage": "https://agri-ja.net/data/rice-advance-payment",
@@ -737,6 +737,32 @@
       "changeFromPreviousYear": "12,000円安（約37%安）",
       "announcedOn": "2026-08-28",
       "note": "1等・玄米60キロ。ＪＡ概算金（全農→ＪＡ）。県ブランド米で、コスト指標20,535円まで235円に迫る。令和7年産32,300円は報道の前年比▲12,000円から逆算した参考値"
+    },
+    {
+      "prefecture": "兵庫",
+      "organization": "JA丹波ひかみ",
+      "brand": "コシヒカリ",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 17000,
+      "amountR7Yen": 30000,
+      "changeFromPreviousYear": "13,000円安（約43%安）",
+      "announcedOn": "2026-08-30",
+      "note": "生産者概算金（ＪＡ→農家）で、県の代表値ではありません。1等米。報道は30キロ8,500円・前年産30キロ15,000円で、玄米60キロに換算した金額。丹波新聞（2026年8月30日）による報道で、JA丹波ひかみの決定日は特定されていない。要件を満たすと30キロ当たり150円、出荷契約対策で100円が加算され、総額8,750円（60キロ換算17,500円）"
+    },
+    {
+      "prefecture": "兵庫",
+      "organization": "JA丹波ひかみ",
+      "brand": "夢たんば（特別栽培米）",
+      "riceType": "主食用うるち米",
+      "status": "発表済み",
+      "confirmation": "報道",
+      "amountR8Yen": 17900,
+      "amountR7Yen": null,
+      "changeFromPreviousYear": null,
+      "announcedOn": "2026-08-30",
+      "note": "生産者概算金（ＪＡ→農家）。加算金を含む総額30キロ8,950円を玄米60キロに換算した金額。丹波新聞（2026年8月30日）による"
     },
     {
       "prefecture": "岐阜",
