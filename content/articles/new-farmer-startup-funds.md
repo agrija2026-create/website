@@ -7,7 +7,7 @@ relatedSlugs:
   - "employment-route-farming-fund"
 description: "新規就農者育成総合対策（令和8年度）の経営開始資金・就農準備資金は月13.75万円（年150万円→165万円に増額）。就農後最長3年・研修中最長2年の対象と原則49歳以下の要件、機械・施設の経営発展支援事業、申請の流れをまとめて解説します。"
 publishedAt: "2026-06-03"
-updatedAt: "2026-07-23"
+updatedAt: "2026-09-17"
 category: "budget"
 tags:
   - "生産者向け"
