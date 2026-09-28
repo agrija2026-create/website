@@ -701,6 +701,12 @@
 <priority>0.8</priority>
 </url>
 <url>
+<loc>https://agri-ja.net/articles/fertilizer-price</loc>
+<lastmod>2026-09-24T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
 <loc>https://agri-ja.net/articles/fig-farming-startup-guide</loc>
 <lastmod>2026-07-29T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
@@ -1392,7 +1398,7 @@
 </url>
 <url>
 <loc>https://agri-ja.net/articles/rice-advance-payment-by-region</loc>
-<lastmod>2026-09-16T00:00:00.000Z</lastmod>
+<lastmod>2026-09-28T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
